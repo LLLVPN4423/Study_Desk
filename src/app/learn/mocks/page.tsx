@@ -55,7 +55,11 @@ export default function MocksPage() {
 function MocksContent({ plan }: { plan: "free" | "pro" }) {
   const params = useSearchParams();
   const track = (params.get("track") === "en" ? "en" : "jp") as TrackId;
-  const [mode, setMode] = useState<"vocab" | "listening">("vocab");
+  const modeParam = params.get("mode") === "listening" ? "listening" : "vocab";
+  const [mode, setMode] = useState<"vocab" | "listening">(modeParam);
+  useEffect(() => {
+    setMode(modeParam);
+  }, [modeParam]);
   const mock = (
     mode === "listening"
       ? track === "jp"

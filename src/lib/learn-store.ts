@@ -18,22 +18,18 @@ import jpSeedN4 from "@/data/openjlpt-n4-seed.json";
 import jpSeedN3 from "@/data/openjlpt-n3-seed.json";
 import jpSeedN2 from "@/data/openjlpt-n2-seed.json";
 import jpSeedN1 from "@/data/openjlpt-n1-seed.json";
-import enSeed from "@/data/cefrj-a1a2-seed.json";
+import enSeed from "@/data/cefrj-vocab-seed.json";
+import {
+  buildRoadmap,
+  curriculumVocab,
+  type RoadmapPlan,
+  type VocabSeed,
+} from "./roadmap";
 
 export type TrackId = "jp" | "en";
 export type JpBand = "N5" | "N4" | "N3" | "N2" | "N1";
 export type EnBand = "A2" | "B1" | "B2" | "C1";
-
-export type VocabSeed = {
-  id: string;
-  word: string;
-  reading?: string;
-  romaji?: string;
-  meanings: string[];
-  level: string;
-  pos?: string;
-  examples?: { ja: string; en: string }[];
-};
+export type { VocabSeed, RoadmapPlan };
 
 export type SerializedCard = {
   sourceId: string;
@@ -51,6 +47,7 @@ type TrackState = {
   placementDone: boolean;
   pathActive: boolean;
   cards: SerializedCard[];
+  roadmap: RoadmapPlan | null;
 };
 
 export type LearnState = {
@@ -73,7 +70,13 @@ function monthKey() {
 }
 
 function emptyTrack(): TrackState {
-  return { band: null, placementDone: false, pathActive: false, cards: [] };
+  return {
+    band: null,
+    placementDone: false,
+    pathActive: false,
+    cards: [],
+    roadmap: null,
+  };
 }
 
 function defaultLearn(): LearnState {
@@ -116,6 +119,7 @@ function migrate(raw: Record<string, unknown>): LearnState {
         track: "jp" as const,
         card: coerceSnapshot(c.card as CardSnapshot),
       })),
+      roadmap: null,
     },
     reviewsToday: Number(raw.reviewsToday) || 0,
     lookupsToday: Number(raw.lookupsToday) || 0,
@@ -125,6 +129,10 @@ function migrate(raw: Record<string, unknown>): LearnState {
 
 function normalize(state: LearnState): LearnState {
   let next = { ...state };
+  if (!next.jp) next.jp = emptyTrack();
+  if (!next.en) next.en = emptyTrack();
+  if (next.jp.roadmap === undefined) next.jp = { ...next.jp, roadmap: null };
+  if (next.en.roadmap === undefined) next.en = { ...next.en, roadmap: null };
   if (next.dayKey !== todayKey()) {
     next = { ...next, dayKey: todayKey(), reviewsToday: 0, lookupsToday: 0 };
   }
@@ -193,39 +201,17 @@ export function searchVocab(query: string, track: TrackId = "jp", limit = 8): Vo
     .slice(0, limit);
 }
 
-function jpPool(band: string): VocabSeed[] {
-  const all = getJpSeed();
-  const by = (lv: string) => all.filter((w) => w.level === lv);
-  if (band === "N5") return by("N5").slice(0, 100);
-  if (band === "N4") return [...by("N5").slice(0, 40), ...by("N4").slice(0, 100)];
-  if (band === "N3") return [...by("N4").slice(0, 40), ...by("N3").slice(0, 120)];
-  if (band === "N2") return [...by("N3").slice(0, 40), ...by("N2").slice(0, 120)];
-  return [...by("N2").slice(0, 40), ...by("N1").slice(0, 100)];
-}
-
 function seedCards(track: TrackId, band: string): SerializedCard[] {
-  if (track === "jp") {
-    return jpPool(band).map((w) => ({
-      sourceId: w.id,
-      track,
-      word: w.word,
-      reading: w.reading,
-      meanings: w.meanings,
-      exampleJa: w.examples?.[0]?.ja,
-      exampleEn: w.examples?.[0]?.en,
-      card: serializeCard(newCard(new Date())),
-    }));
-  }
-  const count = band === "A2" ? 40 : band === "B1" ? 60 : 80;
-  return getEnSeed()
-    .slice(0, count)
-    .map((w) => ({
-      sourceId: w.id,
-      track,
-      word: w.word,
-      meanings: w.meanings,
-      card: serializeCard(newCard(new Date())),
-    }));
+  return curriculumVocab(track, band).map((w) => ({
+    sourceId: w.id,
+    track,
+    word: w.word,
+    reading: w.reading,
+    meanings: w.meanings,
+    exampleJa: w.examples?.[0]?.ja,
+    exampleEn: w.examples?.[0]?.en,
+    card: serializeCard(newCard(new Date())),
+  }));
 }
 
 export function activatePath(track: TrackId, band: string) {
@@ -235,13 +221,35 @@ export function activatePath(track: TrackId, band: string) {
     state.en.pathActive = false;
   }
   const t = track === "jp" ? state.jp : state.en;
+  const plan = buildRoadmap(track, band);
   t.band = band;
   t.placementDone = true;
   t.pathActive = true;
+  t.roadmap = plan;
   t.cards = seedCards(track, band);
   state.preferredTrack = track;
   saveLearn(state);
   return state;
+}
+
+/** Ensure older desks get a real roadmap after placement without re-testing. */
+export function ensureRoadmap(track: TrackId) {
+  const state = loadLearn();
+  const t = getTrack(state, track);
+  if (!t.placementDone || !t.band) return state;
+  if (t.roadmap?.band === t.band && t.roadmap.weeks?.length) return state;
+  t.roadmap = buildRoadmap(track, t.band);
+  if (!t.cards.length) t.cards = seedCards(track, t.band);
+  saveLearn(state);
+  return state;
+}
+
+/** Rough path progress from FSRS: reviewed at least once / total cards. */
+export function pathProgress(track: TrackId, state = loadLearn()) {
+  const t = getTrack(state, track);
+  if (!t.pathActive || !t.cards.length) return 0;
+  const touched = t.cards.filter((c) => (c.card?.reps ?? 0) > 0).length;
+  return Math.round((touched / t.cards.length) * 100);
 }
 
 export function dueCards(track?: TrackId, state = loadLearn()) {
@@ -326,67 +334,6 @@ export function addManualCard(input: {
 
 export { Rating };
 
-export function roadmapFor(track: TrackId, band: string) {
-  if (track === "en") {
-    const templates: Record<string, { week: number; title: string; focus: string }[]> = {
-      A2: [
-        { week: 1, title: "Từ vựng A2 cốt lõi", focus: "Ôn CEFR-J mỗi ngày + đọc ngắn." },
-        { week: 2, title: "Hiện tại & quá khứ", focus: "Luyện grammar trên Learn." },
-        { week: 3, title: "Nghe trên bàn học", focus: "Upload MP3 + mock listening TTS." },
-        { week: 4, title: "Viết ngắn", focus: "5 câu mỗi ngày trong Tasks." },
-      ],
-      B1: [
-        { week: 1, title: "Mở rộng B1", focus: "Tăng SRS từ CEFR-J." },
-        { week: 2, title: "Điều kiện & hoàn thành", focus: "Grammar drills." },
-        { week: 3, title: "Đọc bền", focus: "Ghi chú PDF trên desk." },
-        { week: 4, title: "Mock từ vựng/nghe", focus: "1 mock Free / tháng." },
-      ],
-      B2: [
-        { week: 1, title: "Sắc thái từ", focus: "Thẻ khó hơn trong reviews." },
-        { week: 2, title: "Bị động & mệnh đề quan hệ", focus: "Grammar." },
-        { week: 3, title: "Đọc dày", focus: "Highlight → flashcard." },
-        { week: 4, title: "Section mock", focus: "Luyện có đồng hồ." },
-      ],
-      C1: [
-        { week: 1, title: "Từ học thuật", focus: "Dictionary + SRS." },
-        { week: 2, title: "Ngữ pháp phức", focus: "Inversion / reporting." },
-        { week: 3, title: "Nghe dài", focus: "MP3 trên desk." },
-        { week: 4, title: "Mock đầy đủ (Pro)", focus: "Thêm mock khi bật Pro." },
-      ],
-    };
-    return templates[band] || templates.A2;
-  }
-  const templates: Record<string, { week: number; title: string; focus: string }[]> = {
-    N5: [
-      { week: 1, title: "Hiragana vững", focus: "Động từ & chào hỏi N5." },
-      { week: 2, title: "Danh từ đời sống", focus: "SRS + kanji N5." },
-      { week: 3, title: "て-form", focus: "Grammar drills." },
-      { week: 4, title: "Nghe ngắn", focus: "Mock listening TTS." },
-    ],
-    N4: [
-      { week: 1, title: "Cầu N4", focus: "Trộn N5 + N4 vocab." },
-      { week: 2, title: "Khả năng & ý muốn", focus: "Grammar + kanji N4." },
-      { week: 3, title: "Đọc", focus: "PDF trên desk." },
-      { week: 4, title: "Nghe", focus: "MP3 + TTS mock." },
-    ],
-    N3: [
-      { week: 1, title: "Bùng từ N3", focus: "Seed N3 + ôn N4." },
-      { week: 2, title: "Mệnh đề phức", focus: "Grammar N3." },
-      { week: 3, title: "Đọc tin nhẹ", focus: "Highlight → thẻ." },
-      { week: 4, title: "Output", focus: "Viết 5 câu / ngày." },
-    ],
-    N2: [
-      { week: 1, title: "Từ chính xác", focus: "N2 seed + kanji N2." },
-      { week: 2, title: "Đọc dày", focus: "PDF + timer." },
-      { week: 3, title: "Nghe bền", focus: "MP3 dài." },
-      { week: 4, title: "Section mock", focus: "Mock hẹn giờ." },
-    ],
-    N1: [
-      { week: 1, title: "Từ nâng cao", focus: "N1 seed (subset)." },
-      { week: 2, title: "Đọc học thuật", focus: "Desk PDF." },
-      { week: 3, title: "Ngữ pháp tinh", focus: "Drills N2/N1." },
-      { week: 4, title: "Mock tổng hợp", focus: "Vocab + listening TTS." },
-    ],
-  };
-  return templates[band] || templates.N5;
+export function roadmapFor(track: TrackId, band: string): RoadmapPlan {
+  return buildRoadmap(track, band);
 }

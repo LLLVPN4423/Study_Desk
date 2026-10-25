@@ -1,82 +1,2387 @@
 [
   {
     "id": "g-en-1",
-    "level": "A2",
-    "pattern": "Present simple",
-    "prompt": "She ___ coffee every morning.",
-    "meaning": "Habitual present",
-    "choices": ["drink", "drinks", "drinking", "drank"],
-    "answer": 1,
-    "note": "Unofficial CEFR-style practice."
+    "level": "A1",
+    "pattern": "be (am/is/are)",
+    "prompt": "I ___ a student.",
+    "meaning": "Copula present",
+    "choices": [
+      "am",
+      "is",
+      "are",
+      "be"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · I + am"
   },
   {
     "id": "g-en-2",
-    "level": "A2",
-    "pattern": "There is / are",
-    "prompt": "There ___ two chairs in the room.",
-    "meaning": "Existence",
-    "choices": ["is", "are", "be", "was"],
+    "level": "A1",
+    "pattern": "be (am/is/are)",
+    "prompt": "She ___ my friend.",
+    "meaning": "Copula present",
+    "choices": [
+      "am",
+      "is",
+      "are",
+      "be"
+    ],
     "answer": 1,
-    "note": "Plural agreement."
+    "note": "Unofficial CEFR-style · She/he/it + is"
   },
   {
     "id": "g-en-3",
-    "level": "B1",
-    "pattern": "Present perfect",
-    "prompt": "I have ___ seen that film.",
-    "meaning": "Experience / completed with present relevance",
-    "choices": ["never", "yet", "still", "ago"],
-    "answer": 0,
-    "note": "never + present perfect."
+    "level": "A1",
+    "pattern": "be (am/is/are)",
+    "prompt": "They ___ at home.",
+    "meaning": "Copula present",
+    "choices": [
+      "am",
+      "is",
+      "are",
+      "be"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · They/we/you + are"
   },
   {
     "id": "g-en-4",
-    "level": "B1",
-    "pattern": "First conditional",
-    "prompt": "If you study, you ___ pass.",
-    "meaning": "Real future condition",
-    "choices": ["will", "would", "would have", "are"],
-    "answer": 0,
-    "note": "if + present, will + base."
+    "level": "A1",
+    "pattern": "a / an",
+    "prompt": "I have ___ apple.",
+    "meaning": "Indefinite article",
+    "choices": [
+      "a",
+      "an",
+      "the",
+      "some"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · an + vowel sound"
   },
   {
     "id": "g-en-5",
-    "level": "B2",
-    "pattern": "Passive",
-    "prompt": "The email ___ yesterday.",
-    "meaning": "Passive past",
-    "choices": ["sent", "was sent", "has sent", "sending"],
-    "answer": 1,
-    "note": "be + past participle."
+    "level": "A1",
+    "pattern": "a / an",
+    "prompt": "This is ___ book.",
+    "meaning": "Indefinite article",
+    "choices": [
+      "a",
+      "an",
+      "the",
+      "-"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · a + consonant"
   },
   {
     "id": "g-en-6",
-    "level": "B2",
-    "pattern": "Relative clause",
-    "prompt": "The book ___ I borrowed was excellent.",
-    "meaning": "Defining relative",
-    "choices": ["who", "which", "where", "whose"],
-    "answer": 1,
-    "note": "which for things."
+    "level": "A1",
+    "pattern": "the",
+    "prompt": "___ sun is hot.",
+    "meaning": "Definite article",
+    "choices": [
+      "A",
+      "An",
+      "The",
+      "-"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · unique things: the"
   },
   {
     "id": "g-en-7",
-    "level": "B2",
-    "pattern": "Reported speech",
-    "prompt": "She said she ___ busy.",
-    "meaning": "Backshift",
-    "choices": ["is", "was", "be", "been"],
-    "answer": 1,
-    "note": "Present → past in reporting."
+    "level": "A1",
+    "pattern": "This / That",
+    "prompt": "___ is my bag (near me).",
+    "meaning": "Demonstrative",
+    "choices": [
+      "This",
+      "That",
+      "These",
+      "Those"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · this = near"
   },
   {
     "id": "g-en-8",
-    "level": "C1",
-    "pattern": "Inversion",
-    "prompt": "Rarely ___ such dedication.",
-    "meaning": "Negative adverb inversion",
-    "choices": ["I have seen", "have I seen", "I saw", "did I saw"],
+    "level": "A1",
+    "pattern": "These / Those",
+    "prompt": "___ are my keys (near).",
+    "meaning": "Demonstrative plural",
+    "choices": [
+      "This",
+      "That",
+      "These",
+      "Those"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · these = near plural"
+  },
+  {
+    "id": "g-en-9",
+    "level": "A1",
+    "pattern": "Possessive adjectives",
+    "prompt": "This is ___ pen (I).",
+    "meaning": "my/your/his…",
+    "choices": [
+      "my",
+      "me",
+      "I",
+      "mine"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · adjective form: my"
+  },
+  {
+    "id": "g-en-10",
+    "level": "A1",
+    "pattern": "Possessive adjectives",
+    "prompt": "Is this ___ book (you)?",
+    "meaning": "my/your/his…",
+    "choices": [
+      "you",
+      "your",
+      "yours",
+      "you're"
+    ],
     "answer": 1,
-    "note": "Unofficial advanced practice."
+    "note": "Unofficial CEFR-style · your + noun"
+  },
+  {
+    "id": "g-en-11",
+    "level": "A1",
+    "pattern": "There is / are",
+    "prompt": "There ___ a cat on the sofa.",
+    "meaning": "Existence",
+    "choices": [
+      "is",
+      "are",
+      "have",
+      "has"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · singular → is"
+  },
+  {
+    "id": "g-en-12",
+    "level": "A1",
+    "pattern": "There is / are",
+    "prompt": "There ___ three books here.",
+    "meaning": "Existence",
+    "choices": [
+      "is",
+      "are",
+      "have",
+      "has"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · plural → are"
+  },
+  {
+    "id": "g-en-13",
+    "level": "A1",
+    "pattern": "Present simple",
+    "prompt": "I ___ English every day.",
+    "meaning": "Habit",
+    "choices": [
+      "study",
+      "studies",
+      "studying",
+      "studied"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · I/you/we/they + base"
+  },
+  {
+    "id": "g-en-14",
+    "level": "A1",
+    "pattern": "Present simple",
+    "prompt": "He ___ TV at night.",
+    "meaning": "Habit 3rd person",
+    "choices": [
+      "watch",
+      "watches",
+      "watching",
+      "watched"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · he/she/it + -s"
+  },
+  {
+    "id": "g-en-15",
+    "level": "A1",
+    "pattern": "Present simple negative",
+    "prompt": "I ___ like coffee.",
+    "meaning": "don't / doesn't",
+    "choices": [
+      "don't",
+      "doesn't",
+      "not",
+      "no"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · I/you/we/they + don't"
+  },
+  {
+    "id": "g-en-16",
+    "level": "A1",
+    "pattern": "Present simple negative",
+    "prompt": "She ___ eat meat.",
+    "meaning": "don't / doesn't",
+    "choices": [
+      "don't",
+      "doesn't",
+      "isn't",
+      "aren't"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · he/she/it + doesn't"
+  },
+  {
+    "id": "g-en-17",
+    "level": "A1",
+    "pattern": "Yes/No questions",
+    "prompt": "___ you like pizza?",
+    "meaning": "Do/Does",
+    "choices": [
+      "Do",
+      "Does",
+      "Are",
+      "Is"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Do + you"
+  },
+  {
+    "id": "g-en-18",
+    "level": "A1",
+    "pattern": "Yes/No questions",
+    "prompt": "___ she work here?",
+    "meaning": "Do/Does",
+    "choices": [
+      "Do",
+      "Does",
+      "Are",
+      "Is"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · Does + he/she/it"
+  },
+  {
+    "id": "g-en-19",
+    "level": "A1",
+    "pattern": "Wh- questions",
+    "prompt": "___ is your name?",
+    "meaning": "Question words",
+    "choices": [
+      "What",
+      "Where",
+      "When",
+      "Who"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · What for things"
+  },
+  {
+    "id": "g-en-20",
+    "level": "A1",
+    "pattern": "Wh- questions",
+    "prompt": "___ do you live?",
+    "meaning": "Question words",
+    "choices": [
+      "What",
+      "Where",
+      "When",
+      "Who"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · Where for place"
+  },
+  {
+    "id": "g-en-21",
+    "level": "A1",
+    "pattern": "can (ability)",
+    "prompt": "I ___ swim.",
+    "meaning": "Ability",
+    "choices": [
+      "can",
+      "cans",
+      "could",
+      "must"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · can + base verb"
+  },
+  {
+    "id": "g-en-22",
+    "level": "A1",
+    "pattern": "can (ability)",
+    "prompt": "___ you help me?",
+    "meaning": "Ability question",
+    "choices": [
+      "Can",
+      "Do",
+      "Are",
+      "Must"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Can + subject"
+  },
+  {
+    "id": "g-en-23",
+    "level": "A1",
+    "pattern": "like + noun/-ing",
+    "prompt": "I like ___ music.",
+    "meaning": "Preferences",
+    "choices": [
+      "listen",
+      "listening",
+      "listened",
+      "listens"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · like + -ing / noun"
+  },
+  {
+    "id": "g-en-24",
+    "level": "A1",
+    "pattern": "Prepositions of place",
+    "prompt": "The book is ___ the table.",
+    "meaning": "in/on/under",
+    "choices": [
+      "in",
+      "on",
+      "at",
+      "to"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · on a surface"
+  },
+  {
+    "id": "g-en-25",
+    "level": "A1",
+    "pattern": "Prepositions of place",
+    "prompt": "She is ___ school.",
+    "meaning": "in/on/at",
+    "choices": [
+      "in",
+      "on",
+      "at",
+      "to"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · at school/work"
+  },
+  {
+    "id": "g-en-26",
+    "level": "A1",
+    "pattern": "and / but / or",
+    "prompt": "I like tea ___ coffee.",
+    "meaning": "Linking",
+    "choices": [
+      "and",
+      "but",
+      "or",
+      "so"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · choice → or"
+  },
+  {
+    "id": "g-en-27",
+    "level": "A1",
+    "pattern": "Object pronouns",
+    "prompt": "Please call ___.",
+    "meaning": "me/him/her…",
+    "choices": [
+      "I",
+      "me",
+      "my",
+      "mine"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · object: me"
+  },
+  {
+    "id": "g-en-28",
+    "level": "A1",
+    "pattern": "have / has",
+    "prompt": "She ___ two brothers.",
+    "meaning": "Possession",
+    "choices": [
+      "have",
+      "has",
+      "having",
+      "had"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · he/she/it + has"
+  },
+  {
+    "id": "g-en-29",
+    "level": "A1",
+    "pattern": "Imperatives",
+    "prompt": "___ the door, please.",
+    "meaning": "Commands",
+    "choices": [
+      "Open",
+      "Opens",
+      "Opening",
+      "Opened"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · base form"
+  },
+  {
+    "id": "g-en-30",
+    "level": "A1",
+    "pattern": "Adverbs of frequency",
+    "prompt": "I ___ drink tea.",
+    "meaning": "always/usually…",
+    "choices": [
+      "always",
+      "yesterday",
+      "ago",
+      "yet"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · before main verb"
+  },
+  {
+    "id": "g-en-31",
+    "level": "A2",
+    "pattern": "Present continuous",
+    "prompt": "She ___ coffee now.",
+    "meaning": "happening now",
+    "choices": [
+      "drink",
+      "drinks",
+      "is drinking",
+      "drank"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · be + -ing"
+  },
+  {
+    "id": "g-en-32",
+    "level": "A2",
+    "pattern": "Present continuous",
+    "prompt": "___ you working today?",
+    "meaning": "Question",
+    "choices": [
+      "Do",
+      "Does",
+      "Are",
+      "Is"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · Are + you + -ing"
+  },
+  {
+    "id": "g-en-33",
+    "level": "A2",
+    "pattern": "Past simple (be)",
+    "prompt": "I ___ tired yesterday.",
+    "meaning": "was/were",
+    "choices": [
+      "am",
+      "was",
+      "were",
+      "be"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · I/he/she/it + was"
+  },
+  {
+    "id": "g-en-34",
+    "level": "A2",
+    "pattern": "Past simple (be)",
+    "prompt": "They ___ at home last night.",
+    "meaning": "was/were",
+    "choices": [
+      "was",
+      "were",
+      "are",
+      "been"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · you/we/they + were"
+  },
+  {
+    "id": "g-en-35",
+    "level": "A2",
+    "pattern": "Past simple regular",
+    "prompt": "We ___ football yesterday.",
+    "meaning": "ed past",
+    "choices": [
+      "play",
+      "played",
+      "playing",
+      "plays"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · verb + -ed"
+  },
+  {
+    "id": "g-en-36",
+    "level": "A2",
+    "pattern": "Past simple irregular",
+    "prompt": "I ___ a good book last week.",
+    "meaning": "irregular past",
+    "choices": [
+      "read",
+      "reads",
+      "reading",
+      "readed"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · read → read /rɛd/"
+  },
+  {
+    "id": "g-en-37",
+    "level": "A2",
+    "pattern": "Past simple irregular",
+    "prompt": "She ___ to Paris in 2020.",
+    "meaning": "go → went",
+    "choices": [
+      "go",
+      "goes",
+      "went",
+      "gone"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · went"
+  },
+  {
+    "id": "g-en-38",
+    "level": "A2",
+    "pattern": "Past simple negative",
+    "prompt": "I ___ go out yesterday.",
+    "meaning": "didn't",
+    "choices": [
+      "don't",
+      "doesn't",
+      "didn't",
+      "wasn't"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · didn't + base"
+  },
+  {
+    "id": "g-en-39",
+    "level": "A2",
+    "pattern": "Past simple questions",
+    "prompt": "___ you see the film?",
+    "meaning": "Did",
+    "choices": [
+      "Do",
+      "Does",
+      "Did",
+      "Are"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · Did + subject + base"
+  },
+  {
+    "id": "g-en-40",
+    "level": "A2",
+    "pattern": "going to (future)",
+    "prompt": "I ___ visit my aunt tomorrow.",
+    "meaning": "plans",
+    "choices": [
+      "am going to",
+      "will to",
+      "go to",
+      "going"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · be going to + verb"
+  },
+  {
+    "id": "g-en-41",
+    "level": "A2",
+    "pattern": "will (future)",
+    "prompt": "I think it ___ rain.",
+    "meaning": "prediction",
+    "choices": [
+      "will",
+      "going",
+      "is",
+      "does"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · will + base"
+  },
+  {
+    "id": "g-en-42",
+    "level": "A2",
+    "pattern": "Comparatives",
+    "prompt": "This bag is ___ than that one.",
+    "meaning": "-er / more",
+    "choices": [
+      "big",
+      "bigger",
+      "biggest",
+      "more big"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · short adj + -er"
+  },
+  {
+    "id": "g-en-43",
+    "level": "A2",
+    "pattern": "Comparatives",
+    "prompt": "English is ___ interesting than I thought.",
+    "meaning": "more + adj",
+    "choices": [
+      "more",
+      "most",
+      "-er",
+      "as"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · long adj: more"
+  },
+  {
+    "id": "g-en-44",
+    "level": "A2",
+    "pattern": "Superlatives",
+    "prompt": "This is the ___ café in town.",
+    "meaning": "-est / most",
+    "choices": [
+      "good",
+      "better",
+      "best",
+      "well"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · good → best"
+  },
+  {
+    "id": "g-en-45",
+    "level": "A2",
+    "pattern": "Countable / uncountable",
+    "prompt": "I need ___ information.",
+    "meaning": "some/any/much",
+    "choices": [
+      "a",
+      "an",
+      "some",
+      "many"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · uncountable: some"
+  },
+  {
+    "id": "g-en-46",
+    "level": "A2",
+    "pattern": "much / many",
+    "prompt": "How ___ apples do you want?",
+    "meaning": "quantity",
+    "choices": [
+      "much",
+      "many",
+      "a little",
+      "bit"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · many + plural"
+  },
+  {
+    "id": "g-en-47",
+    "level": "A2",
+    "pattern": "much / many",
+    "prompt": "There isn't ___ milk left.",
+    "meaning": "quantity",
+    "choices": [
+      "much",
+      "many",
+      "a few",
+      "several"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · much + uncountable"
+  },
+  {
+    "id": "g-en-48",
+    "level": "A2",
+    "pattern": "some / any",
+    "prompt": "Do you have ___ questions?",
+    "meaning": "some/any",
+    "choices": [
+      "some",
+      "any",
+      "a",
+      "much"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · any in questions"
+  },
+  {
+    "id": "g-en-49",
+    "level": "A2",
+    "pattern": "should (advice)",
+    "prompt": "You ___ sleep more.",
+    "meaning": "advice",
+    "choices": [
+      "should",
+      "must to",
+      "can to",
+      "will"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · should + base"
+  },
+  {
+    "id": "g-en-50",
+    "level": "A2",
+    "pattern": "have to",
+    "prompt": "I ___ wear a uniform at work.",
+    "meaning": "obligation",
+    "choices": [
+      "have to",
+      "has to",
+      "must to",
+      "should to"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · I/you/we/they have to"
+  },
+  {
+    "id": "g-en-51",
+    "level": "A2",
+    "pattern": "Present perfect",
+    "prompt": "I have ___ finished my homework.",
+    "meaning": "just/already/yet",
+    "choices": [
+      "just",
+      "ago",
+      "yesterday",
+      "last"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · just + present perfect"
+  },
+  {
+    "id": "g-en-52",
+    "level": "A2",
+    "pattern": "Present perfect",
+    "prompt": "Have you ___ been to Japan?",
+    "meaning": "ever/never",
+    "choices": [
+      "ever",
+      "ago",
+      "yet",
+      "still"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · ever in questions"
+  },
+  {
+    "id": "g-en-53",
+    "level": "A2",
+    "pattern": "Present perfect vs past",
+    "prompt": "I ___ her yesterday.",
+    "meaning": "saw / have seen",
+    "choices": [
+      "see",
+      "saw",
+      "have seen",
+      "seen"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · finished time → past simple"
+  },
+  {
+    "id": "g-en-54",
+    "level": "A2",
+    "pattern": "First conditional",
+    "prompt": "If it rains, we ___ stay home.",
+    "meaning": "real future",
+    "choices": [
+      "will",
+      "would",
+      "would have",
+      "are"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · if + present, will"
+  },
+  {
+    "id": "g-en-55",
+    "level": "A2",
+    "pattern": "because / so",
+    "prompt": "I stayed home ___ I was ill.",
+    "meaning": "reason",
+    "choices": [
+      "so",
+      "because",
+      "but",
+      "or"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · because + reason"
+  },
+  {
+    "id": "g-en-56",
+    "level": "A2",
+    "pattern": "too / enough",
+    "prompt": "This box is ___ heavy.",
+    "meaning": "too + adj",
+    "choices": [
+      "too",
+      "enough",
+      "very enough",
+      "so enough"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · too + adjective"
+  },
+  {
+    "id": "g-en-57",
+    "level": "A2",
+    "pattern": "too / enough",
+    "prompt": "He isn't old ___ to drive.",
+    "meaning": "adj + enough",
+    "choices": [
+      "too",
+      "enough",
+      "so",
+      "very"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · adj + enough"
+  },
+  {
+    "id": "g-en-58",
+    "level": "A2",
+    "pattern": "adverbs of manner",
+    "prompt": "She speaks English ___.",
+    "meaning": "-ly",
+    "choices": [
+      "good",
+      "well",
+      "nice",
+      "bad"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · well (irregular)"
+  },
+  {
+    "id": "g-en-59",
+    "level": "A2",
+    "pattern": "Prepositions of time",
+    "prompt": "I was born ___ 1999.",
+    "meaning": "in/on/at",
+    "choices": [
+      "in",
+      "on",
+      "at",
+      "to"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · in + year"
+  },
+  {
+    "id": "g-en-60",
+    "level": "A2",
+    "pattern": "Prepositions of time",
+    "prompt": "See you ___ Monday.",
+    "meaning": "in/on/at",
+    "choices": [
+      "in",
+      "on",
+      "at",
+      "to"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · on + day"
+  },
+  {
+    "id": "g-en-61",
+    "level": "A2",
+    "pattern": "used to",
+    "prompt": "I ___ play tennis when I was a child.",
+    "meaning": "past habit",
+    "choices": [
+      "used to",
+      "use to",
+      "am used to",
+      "using to"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · used to + base"
+  },
+  {
+    "id": "g-en-62",
+    "level": "B1",
+    "pattern": "Present perfect continuous",
+    "prompt": "I ___ for two hours.",
+    "meaning": "have been + -ing",
+    "choices": [
+      "study",
+      "studied",
+      "have been studying",
+      "am studying"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · duration to now"
+  },
+  {
+    "id": "g-en-63",
+    "level": "B1",
+    "pattern": "Past continuous",
+    "prompt": "I ___ when you called.",
+    "meaning": "was/were + -ing",
+    "choices": [
+      "slept",
+      "was sleeping",
+      "have slept",
+      "sleep"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · interrupted past"
+  },
+  {
+    "id": "g-en-64",
+    "level": "B1",
+    "pattern": "Past perfect",
+    "prompt": "She ___ left before I arrived.",
+    "meaning": "had + PP",
+    "choices": [
+      "has",
+      "had",
+      "have",
+      "was"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · earlier past: had"
+  },
+  {
+    "id": "g-en-65",
+    "level": "B1",
+    "pattern": "Second conditional",
+    "prompt": "If I ___ rich, I would travel.",
+    "meaning": "unreal present",
+    "choices": [
+      "am",
+      "was",
+      "were",
+      "be"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · If I were…"
+  },
+  {
+    "id": "g-en-66",
+    "level": "B1",
+    "pattern": "Second conditional",
+    "prompt": "If she studied more, she ___ pass.",
+    "meaning": "would + base",
+    "choices": [
+      "will",
+      "would",
+      "would have",
+      "can"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · would + verb"
+  },
+  {
+    "id": "g-en-67",
+    "level": "B1",
+    "pattern": "Passive present",
+    "prompt": "English ___ around the world.",
+    "meaning": "is + PP",
+    "choices": [
+      "speaks",
+      "is spoken",
+      "spoke",
+      "speaking"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · is/are + past participle"
+  },
+  {
+    "id": "g-en-68",
+    "level": "B1",
+    "pattern": "Passive past",
+    "prompt": "The window ___ yesterday.",
+    "meaning": "was + PP",
+    "choices": [
+      "broke",
+      "was broken",
+      "is broken",
+      "breaking"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · was/were + PP"
+  },
+  {
+    "id": "g-en-69",
+    "level": "B1",
+    "pattern": "Reported speech",
+    "prompt": "He said he ___ tired.",
+    "meaning": "backshift",
+    "choices": [
+      "is",
+      "was",
+      "be",
+      "were being"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · present → past"
+  },
+  {
+    "id": "g-en-70",
+    "level": "B1",
+    "pattern": "Relative clauses",
+    "prompt": "The man ___ lives next door is a doctor.",
+    "meaning": "who/which/that",
+    "choices": [
+      "who",
+      "which",
+      "where",
+      "whose"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · who for people"
+  },
+  {
+    "id": "g-en-71",
+    "level": "B1",
+    "pattern": "Relative clauses",
+    "prompt": "This is the book ___ I bought.",
+    "meaning": "who/which/that",
+    "choices": [
+      "who",
+      "which",
+      "where",
+      "whose"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · which/that for things"
+  },
+  {
+    "id": "g-en-72",
+    "level": "B1",
+    "pattern": "Modals of deduction",
+    "prompt": "He ___ be at home — the lights are on.",
+    "meaning": "must/might/can't",
+    "choices": [
+      "must",
+      "can't",
+      "mustn't",
+      "should to"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · must = strong certainty"
+  },
+  {
+    "id": "g-en-73",
+    "level": "B1",
+    "pattern": "Modals of deduction",
+    "prompt": "She ___ be French — she doesn't speak French.",
+    "meaning": "must/might/can't",
+    "choices": [
+      "must",
+      "might",
+      "can't",
+      "should"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · can't = impossible"
+  },
+  {
+    "id": "g-en-74",
+    "level": "B1",
+    "pattern": "Gerunds / infinitives",
+    "prompt": "I enjoy ___ films.",
+    "meaning": "-ing after enjoy",
+    "choices": [
+      "watch",
+      "to watch",
+      "watching",
+      "watched"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · enjoy + -ing"
+  },
+  {
+    "id": "g-en-75",
+    "level": "B1",
+    "pattern": "Gerunds / infinitives",
+    "prompt": "I decided ___ early.",
+    "meaning": "to + verb",
+    "choices": [
+      "leave",
+      "to leave",
+      "leaving",
+      "left"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · decide + to"
+  },
+  {
+    "id": "g-en-76",
+    "level": "B1",
+    "pattern": "wish (present)",
+    "prompt": "I wish I ___ more time.",
+    "meaning": "unreal present",
+    "choices": [
+      "have",
+      "had",
+      "will have",
+      "am having"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · wish + past"
+  },
+  {
+    "id": "g-en-77",
+    "level": "B1",
+    "pattern": "although / despite",
+    "prompt": "___ it was raining, we went out.",
+    "meaning": "contrast",
+    "choices": [
+      "Although",
+      "Despite",
+      "Because",
+      "So"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Although + clause"
+  },
+  {
+    "id": "g-en-78",
+    "level": "B1",
+    "pattern": "so / such",
+    "prompt": "It was ___ a good film.",
+    "meaning": "so/such",
+    "choices": [
+      "so",
+      "such",
+      "too",
+      "enough"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · such + a + adj + noun"
+  },
+  {
+    "id": "g-en-79",
+    "level": "B1",
+    "pattern": "Question tags",
+    "prompt": "You're tired, ___?",
+    "meaning": "tags",
+    "choices": [
+      "are you",
+      "aren't you",
+      "do you",
+      "don't you"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · positive → negative tag"
+  },
+  {
+    "id": "g-en-80",
+    "level": "B1",
+    "pattern": "Present perfect for / since",
+    "prompt": "I have lived here ___ 2019.",
+    "meaning": "for/since",
+    "choices": [
+      "for",
+      "since",
+      "during",
+      "ago"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · since + point in time"
+  },
+  {
+    "id": "g-en-81",
+    "level": "B1",
+    "pattern": "Present perfect for / since",
+    "prompt": "We have studied ___ three years.",
+    "meaning": "for/since",
+    "choices": [
+      "for",
+      "since",
+      "during",
+      "ago"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · for + period"
+  },
+  {
+    "id": "g-en-82",
+    "level": "B2",
+    "pattern": "Third conditional",
+    "prompt": "If I had studied, I ___ passed.",
+    "meaning": "unreal past",
+    "choices": [
+      "will have",
+      "would",
+      "would have",
+      "had"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · would have + PP"
+  },
+  {
+    "id": "g-en-83",
+    "level": "B2",
+    "pattern": "Mixed conditional",
+    "prompt": "If I had taken that job, I ___ in London now.",
+    "meaning": "past→present",
+    "choices": [
+      "will be",
+      "would be",
+      "would have been",
+      "am"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · would + present"
+  },
+  {
+    "id": "g-en-84",
+    "level": "B2",
+    "pattern": "wish (past)",
+    "prompt": "I wish I ___ harder at school.",
+    "meaning": "regret",
+    "choices": [
+      "study",
+      "studied",
+      "had studied",
+      "have studied"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · wish + past perfect"
+  },
+  {
+    "id": "g-en-85",
+    "level": "B2",
+    "pattern": "Passive causative",
+    "prompt": "I ___ my hair cut yesterday.",
+    "meaning": "have/get something done",
+    "choices": [
+      "had",
+      "have",
+      "made",
+      "did"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · had + object + PP"
+  },
+  {
+    "id": "g-en-86",
+    "level": "B2",
+    "pattern": "Future perfect",
+    "prompt": "By next year I ___ graduated.",
+    "meaning": "will have + PP",
+    "choices": [
+      "will",
+      "will have",
+      "have",
+      "am"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · will have + past participle"
+  },
+  {
+    "id": "g-en-87",
+    "level": "B2",
+    "pattern": "Future continuous",
+    "prompt": "This time tomorrow I ___ on a plane.",
+    "meaning": "will be + -ing",
+    "choices": [
+      "will sit",
+      "will be sitting",
+      "sit",
+      "am sitting"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · will be + -ing"
+  },
+  {
+    "id": "g-en-88",
+    "level": "B2",
+    "pattern": "Inversion (rarely)",
+    "prompt": "Rarely ___ such a view.",
+    "meaning": "inversion",
+    "choices": [
+      "I see",
+      "do I see",
+      "I saw",
+      "have I"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · negative adverb + aux + subject"
+  },
+  {
+    "id": "g-en-89",
+    "level": "B2",
+    "pattern": "Cleft sentences",
+    "prompt": "___ I need is more time.",
+    "meaning": "What/It cleft",
+    "choices": [
+      "What",
+      "That",
+      "Which",
+      "Who"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · What … is …"
+  },
+  {
+    "id": "g-en-90",
+    "level": "B2",
+    "pattern": "Participle clauses",
+    "prompt": "___ the news, she started crying.",
+    "meaning": "-ing clause",
+    "choices": [
+      "Hearing",
+      "Heard",
+      "Hear",
+      "To hear"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · -ing = same time / cause"
+  },
+  {
+    "id": "g-en-91",
+    "level": "B2",
+    "pattern": "Advanced modals",
+    "prompt": "You ___ have told me earlier!",
+    "meaning": "criticism",
+    "choices": [
+      "should",
+      "must",
+      "can",
+      "will"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · should have + PP"
+  },
+  {
+    "id": "g-en-92",
+    "level": "A1",
+    "pattern": "Numbers",
+    "prompt": "There are ___ students in the class.",
+    "meaning": "cardinals",
+    "choices": [
+      "twelve",
+      "twelfth",
+      "twelves",
+      "dozen of"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · cardinal for count"
+  },
+  {
+    "id": "g-en-93",
+    "level": "A1",
+    "pattern": "Days / months",
+    "prompt": "My birthday is in ___.",
+    "meaning": "months",
+    "choices": [
+      "Monday",
+      "July",
+      "morning",
+      "o'clock"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · in + month"
+  },
+  {
+    "id": "g-en-94",
+    "level": "A1",
+    "pattern": "Telling the time",
+    "prompt": "It's half ___ six.",
+    "meaning": "time",
+    "choices": [
+      "to",
+      "past",
+      "at",
+      "of"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · half past"
+  },
+  {
+    "id": "g-en-95",
+    "level": "A1",
+    "pattern": "want / need",
+    "prompt": "I ___ a new phone.",
+    "meaning": "want/need",
+    "choices": [
+      "want",
+      "wants",
+      "wanting",
+      "wanted"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · I + want"
+  },
+  {
+    "id": "g-en-96",
+    "level": "A1",
+    "pattern": "would like",
+    "prompt": "I ___ like a coffee, please.",
+    "meaning": "polite request",
+    "choices": [
+      "will",
+      "would",
+      "do",
+      "am"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · would like"
+  },
+  {
+    "id": "g-en-97",
+    "level": "A1",
+    "pattern": "Let's",
+    "prompt": "___ go to the park.",
+    "meaning": "suggestion",
+    "choices": [
+      "Let's",
+      "Let",
+      "Lets",
+      "Letting"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Let's + base"
+  },
+  {
+    "id": "g-en-98",
+    "level": "A1",
+    "pattern": "How much / many",
+    "prompt": "___ is this shirt?",
+    "meaning": "price",
+    "choices": [
+      "How many",
+      "How much",
+      "How long",
+      "How often"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · How much for price"
+  },
+  {
+    "id": "g-en-99",
+    "level": "A1",
+    "pattern": "Subject pronouns",
+    "prompt": "___ is a teacher (she).",
+    "meaning": "pronouns",
+    "choices": [
+      "He",
+      "She",
+      "They",
+      "We"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · she"
+  },
+  {
+    "id": "g-en-100",
+    "level": "A1",
+    "pattern": "Plural nouns",
+    "prompt": "I have two ___.",
+    "meaning": "regular plural",
+    "choices": [
+      "box",
+      "boxes",
+      "boxs",
+      "boxies"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · x → es"
+  },
+  {
+    "id": "g-en-101",
+    "level": "A1",
+    "pattern": "Present simple frequency",
+    "prompt": "She ___ goes to the gym.",
+    "meaning": "adverbs",
+    "choices": [
+      "usual",
+      "usually",
+      "use",
+      "used"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · usually before verb"
+  },
+  {
+    "id": "g-en-102",
+    "level": "A2",
+    "pattern": "somebody / anybody",
+    "prompt": "Is ___ at home?",
+    "meaning": "indefinite",
+    "choices": [
+      "somebody",
+      "anybody",
+      "nobody",
+      "everybody"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · any in questions"
+  },
+  {
+    "id": "g-en-103",
+    "level": "A2",
+    "pattern": "something / anything",
+    "prompt": "I didn't buy ___.",
+    "meaning": "indefinite",
+    "choices": [
+      "something",
+      "anything",
+      "everything",
+      "nothing"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · any in negatives"
+  },
+  {
+    "id": "g-en-104",
+    "level": "A2",
+    "pattern": "could (past ability)",
+    "prompt": "When I was five I ___ swim.",
+    "meaning": "past ability",
+    "choices": [
+      "can",
+      "could",
+      "must",
+      "should"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · could = past can"
+  },
+  {
+    "id": "g-en-105",
+    "level": "A2",
+    "pattern": "might (possibility)",
+    "prompt": "It ___ rain later.",
+    "meaning": "possibility",
+    "choices": [
+      "might",
+      "must to",
+      "can to",
+      "shall"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · might + base"
+  },
+  {
+    "id": "g-en-106",
+    "level": "A2",
+    "pattern": "must (obligation)",
+    "prompt": "You ___ wear a seatbelt.",
+    "meaning": "obligation",
+    "choices": [
+      "must",
+      "must to",
+      "can",
+      "might"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · must + base"
+  },
+  {
+    "id": "g-en-107",
+    "level": "A2",
+    "pattern": "as … as",
+    "prompt": "This test is ___ hard as the last one.",
+    "meaning": "equality",
+    "choices": [
+      "as",
+      "so",
+      "too",
+      "more"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · as + adj + as"
+  },
+  {
+    "id": "g-en-108",
+    "level": "A2",
+    "pattern": "both / neither",
+    "prompt": "___ of them like coffee.",
+    "meaning": "quantifiers",
+    "choices": [
+      "Both",
+      "Neither",
+      "Either",
+      "All"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · both = two affirmative"
+  },
+  {
+    "id": "g-en-109",
+    "level": "A2",
+    "pattern": "still / yet / already",
+    "prompt": "Have you finished ___?",
+    "meaning": "aspect adverbs",
+    "choices": [
+      "still",
+      "yet",
+      "already",
+      "just ago"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · yet in questions/negatives"
+  },
+  {
+    "id": "g-en-110",
+    "level": "A2",
+    "pattern": "still / yet / already",
+    "prompt": "I've ___ seen that film.",
+    "meaning": "aspect adverbs",
+    "choices": [
+      "still",
+      "yet",
+      "already",
+      "ago"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · already = sooner than expected"
+  },
+  {
+    "id": "g-en-111",
+    "level": "A2",
+    "pattern": "Infinitive of purpose",
+    "prompt": "I went to the shop ___ milk.",
+    "meaning": "to + verb",
+    "choices": [
+      "buy",
+      "to buy",
+      "buying",
+      "bought"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · to + purpose"
+  },
+  {
+    "id": "g-en-112",
+    "level": "A2",
+    "pattern": "look / feel / seem",
+    "prompt": "You ___ tired today.",
+    "meaning": "linking verbs",
+    "choices": [
+      "look",
+      "looks",
+      "looking",
+      "looked"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · you look + adj"
+  },
+  {
+    "id": "g-en-113",
+    "level": "A2",
+    "pattern": "Present continuous future",
+    "prompt": "I ___ meeting her at 6.",
+    "meaning": "arranged future",
+    "choices": [
+      "am",
+      "will",
+      "do",
+      "have"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · be + -ing for plans"
+  },
+  {
+    "id": "g-en-114",
+    "level": "A2",
+    "pattern": "Whose",
+    "prompt": "___ bag is this?",
+    "meaning": "possession question",
+    "choices": [
+      "Who",
+      "Whose",
+      "Which",
+      "Whom"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · Whose + noun"
+  },
+  {
+    "id": "g-en-115",
+    "level": "A2",
+    "pattern": "each / every",
+    "prompt": "___ student has a book.",
+    "meaning": "distributives",
+    "choices": [
+      "Each",
+      "Every of",
+      "All of them",
+      "Both"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · each + singular"
+  },
+  {
+    "id": "g-en-116",
+    "level": "B1",
+    "pattern": "used to vs be used to",
+    "prompt": "I'm ___ getting up early now.",
+    "meaning": "be used to",
+    "choices": [
+      "used to",
+      "use to",
+      "used to be",
+      "being used"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · be used to + -ing"
+  },
+  {
+    "id": "g-en-117",
+    "level": "B1",
+    "pattern": "make / let / allow",
+    "prompt": "My parents won't ___ me go out late.",
+    "meaning": "causatives",
+    "choices": [
+      "make",
+      "let",
+      "allow",
+      "permit to"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · let + object + base"
+  },
+  {
+    "id": "g-en-118",
+    "level": "B1",
+    "pattern": "have something done",
+    "prompt": "We're ___ the house painted next week.",
+    "meaning": "causative",
+    "choices": [
+      "having",
+      "making",
+      "doing",
+      "letting"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · have + object + PP"
+  },
+  {
+    "id": "g-en-119",
+    "level": "B1",
+    "pattern": "Defining relative",
+    "prompt": "That's the woman ___ I told you about.",
+    "meaning": "that/who/whom",
+    "choices": [
+      "which",
+      "where",
+      "that",
+      "whose"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · that for people/things"
+  },
+  {
+    "id": "g-en-120",
+    "level": "B1",
+    "pattern": "Non-defining relative",
+    "prompt": "Paris, ___ is in France, is beautiful.",
+    "meaning": "which",
+    "choices": [
+      "who",
+      "which",
+      "that",
+      "where"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · which + comma clause"
+  },
+  {
+    "id": "g-en-121",
+    "level": "B1",
+    "pattern": "able to / managed to",
+    "prompt": "I finally ___ open the door.",
+    "meaning": "success",
+    "choices": [
+      "could",
+      "managed to",
+      "can",
+      "may"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · managed to = succeeded"
+  },
+  {
+    "id": "g-en-122",
+    "level": "B1",
+    "pattern": "in case",
+    "prompt": "Take an umbrella ___ it rains.",
+    "meaning": "precaution",
+    "choices": [
+      "if",
+      "in case",
+      "unless",
+      "when"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · in case = precaution"
+  },
+  {
+    "id": "g-en-123",
+    "level": "B1",
+    "pattern": "unless",
+    "prompt": "I won't go ___ you come with me.",
+    "meaning": "condition",
+    "choices": [
+      "if",
+      "unless",
+      "when",
+      "while"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · unless = if not"
+  },
+  {
+    "id": "g-en-124",
+    "level": "B1",
+    "pattern": "by the time",
+    "prompt": "___ the time we arrived, the film had started.",
+    "meaning": "time clause",
+    "choices": [
+      "By",
+      "Until",
+      "During",
+      "While"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · by the time"
+  },
+  {
+    "id": "g-en-125",
+    "level": "B1",
+    "pattern": "while / during / for",
+    "prompt": "I slept ___ the flight.",
+    "meaning": "time prepositions",
+    "choices": [
+      "while",
+      "during",
+      "for",
+      "since"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · during + noun"
+  },
+  {
+    "id": "g-en-126",
+    "level": "B1",
+    "pattern": "Reported questions",
+    "prompt": "She asked me where I ___.",
+    "meaning": "reported speech",
+    "choices": [
+      "live",
+      "lived",
+      "do live",
+      "am living"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · backshift in reports"
+  },
+  {
+    "id": "g-en-127",
+    "level": "B1",
+    "pattern": "advise / suggest",
+    "prompt": "I suggested ___ a break.",
+    "meaning": "verb patterns",
+    "choices": [
+      "take",
+      "to take",
+      "taking",
+      "took"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · suggest + -ing"
+  },
+  {
+    "id": "g-en-128",
+    "level": "B1",
+    "pattern": "prefer / would rather",
+    "prompt": "I'd rather ___ home tonight.",
+    "meaning": "preference",
+    "choices": [
+      "stay",
+      "to stay",
+      "staying",
+      "stayed"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · would rather + base"
+  },
+  {
+    "id": "g-en-129",
+    "level": "B1",
+    "pattern": "enough / too with nouns",
+    "prompt": "There isn't ___ time.",
+    "meaning": "quantity",
+    "choices": [
+      "enough",
+      "too",
+      "too many",
+      "enough of"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · enough + noun"
+  },
+  {
+    "id": "g-en-130",
+    "level": "B1",
+    "pattern": "Purpose: so that",
+    "prompt": "I spoke slowly ___ everyone could understand.",
+    "meaning": "purpose",
+    "choices": [
+      "so that",
+      "in order",
+      "for",
+      "because of"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · so that + clause"
+  },
+  {
+    "id": "g-en-131",
+    "level": "B2",
+    "pattern": "as if / as though",
+    "prompt": "He talks ___ he knew everything.",
+    "meaning": "comparison",
+    "choices": [
+      "as if",
+      "even if",
+      "as",
+      "like if"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · as if + unreal past"
+  },
+  {
+    "id": "g-en-132",
+    "level": "B2",
+    "pattern": "It's time",
+    "prompt": "It's time we ___ home.",
+    "meaning": "subjunctive-ish",
+    "choices": [
+      "go",
+      "went",
+      "going",
+      "to go"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · It's time + past"
+  },
+  {
+    "id": "g-en-133",
+    "level": "B2",
+    "pattern": "I'd rather + past",
+    "prompt": "I'd rather you ___ smoke here.",
+    "meaning": "preference about others",
+    "choices": [
+      "don't",
+      "didn't",
+      "not",
+      "won't"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · I'd rather + past"
+  },
+  {
+    "id": "g-en-134",
+    "level": "B2",
+    "pattern": "Not only … but also",
+    "prompt": "Not only ___ late, but he also forgot the files.",
+    "meaning": "inversion",
+    "choices": [
+      "he was",
+      "was he",
+      "he is",
+      "did he"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · Not only + aux + subject"
+  },
+  {
+    "id": "g-en-135",
+    "level": "B2",
+    "pattern": "Hardly … when",
+    "prompt": "Hardly ___ sat down when the phone rang.",
+    "meaning": "inversion",
+    "choices": [
+      "I had",
+      "had I",
+      "I have",
+      "have I"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · Hardly had + subject"
+  },
+  {
+    "id": "g-en-136",
+    "level": "B2",
+    "pattern": "Despite / in spite of",
+    "prompt": "___ the rain, we went hiking.",
+    "meaning": "contrast",
+    "choices": [
+      "Despite",
+      "Although",
+      "Because",
+      "However"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Despite + noun"
+  },
+  {
+    "id": "g-en-137",
+    "level": "B2",
+    "pattern": "Nevertheless / however",
+    "prompt": "It was expensive; ___, we bought it.",
+    "meaning": "contrast linkers",
+    "choices": [
+      "nevertheless",
+      "because",
+      "so",
+      "unless"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · nevertheless = contrast"
+  },
+  {
+    "id": "g-en-138",
+    "level": "B2",
+    "pattern": "Be supposed to",
+    "prompt": "You're ___ to wear a helmet.",
+    "meaning": "expectation",
+    "choices": [
+      "supposed",
+      "suppose",
+      "supposing",
+      "allegedly"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · be supposed to"
+  },
+  {
+    "id": "g-en-139",
+    "level": "B2",
+    "pattern": "Needn't have",
+    "prompt": "You ___ have brought food — there's plenty.",
+    "meaning": "unnecessary past",
+    "choices": [
+      "needn't",
+      "mustn't",
+      "can't",
+      "shouldn't to"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · needn't have + PP"
+  },
+  {
+    "id": "g-en-140",
+    "level": "B2",
+    "pattern": "Passive with reporting",
+    "prompt": "It ___ that the mayor will resign.",
+    "meaning": "impersonal passive",
+    "choices": [
+      "is said",
+      "says",
+      "said",
+      "is saying"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · It is said that"
+  },
+  {
+    "id": "g-en-141",
+    "level": "B2",
+    "pattern": "Reduced relative",
+    "prompt": "The man ___ by the door is my uncle.",
+    "meaning": "participle relative",
+    "choices": [
+      "standing",
+      "stood",
+      "stands",
+      "to stand"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · -ing relative"
+  },
+  {
+    "id": "g-en-142",
+    "level": "B2",
+    "pattern": "Emphatic do",
+    "prompt": "I ___ want to help, honestly.",
+    "meaning": "emphasis",
+    "choices": [
+      "do",
+      "does",
+      "did to",
+      "am"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · do + base for emphasis"
+  },
+  {
+    "id": "g-en-143",
+    "level": "B2",
+    "pattern": "Whatever / whenever",
+    "prompt": "Call me ___ you need help.",
+    "meaning": "wh-ever",
+    "choices": [
+      "whatever",
+      "whenever",
+      "wherever",
+      "whichever"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · whenever = any time"
+  },
+  {
+    "id": "g-en-144",
+    "level": "B2",
+    "pattern": "On + -ing",
+    "prompt": "___ arriving, she called her boss.",
+    "meaning": "time participle",
+    "choices": [
+      "On",
+      "In",
+      "At",
+      "By"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · On + -ing"
+  },
+  {
+    "id": "g-en-145",
+    "level": "C1",
+    "pattern": "Inversion after negative adverbials",
+    "prompt": "Under no circumstances ___ you open this door.",
+    "meaning": "formal inversion",
+    "choices": [
+      "should",
+      "you should",
+      "should you",
+      "you"
+    ],
+    "answer": 2,
+    "note": "Unofficial CEFR-style · neg. adverbial + aux + subject"
+  },
+  {
+    "id": "g-en-146",
+    "level": "C1",
+    "pattern": "Cleft: It was … that",
+    "prompt": "___ was the manager that approved the deal.",
+    "meaning": "cleft",
+    "choices": [
+      "It",
+      "What",
+      "There",
+      "This"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · It was X that…"
+  },
+  {
+    "id": "g-en-147",
+    "level": "C1",
+    "pattern": "Nominalisation",
+    "prompt": "The ___ of the project surprised everyone.",
+    "meaning": "noun from verb",
+    "choices": [
+      "cancel",
+      "cancellation",
+      "cancelled",
+      "cancelling"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · prefer noun forms in formal EN"
+  },
+  {
+    "id": "g-en-148",
+    "level": "C1",
+    "pattern": "Hedging",
+    "prompt": "It ___ be argued that remote work boosts focus.",
+    "meaning": "academic hedging",
+    "choices": [
+      "can",
+      "must",
+      "will",
+      "shall"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · can/could/might be argued"
+  },
+  {
+    "id": "g-en-149",
+    "level": "C1",
+    "pattern": "Subjunctive (formal)",
+    "prompt": "The board insisted that he ___ present.",
+    "meaning": "present subjunctive",
+    "choices": [
+      "be",
+      "is",
+      "was",
+      "being"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · insist that + base"
+  },
+  {
+    "id": "g-en-150",
+    "level": "C1",
+    "pattern": "Fronting",
+    "prompt": "___ the proposal, the committee approved it.",
+    "meaning": "fronted object/clause",
+    "choices": [
+      "Impressed by",
+      "Impressing",
+      "To impress",
+      "Impressed"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · fronted participle clause"
+  },
+  {
+    "id": "g-en-151",
+    "level": "C1",
+    "pattern": "Discourse markers",
+    "prompt": "The plan failed; ___, funding was cut.",
+    "meaning": "consequence",
+    "choices": [
+      "consequently",
+      "meanwhile",
+      "whereas",
+      "lest"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · consequently = result"
+  },
+  {
+    "id": "g-en-152",
+    "level": "C1",
+    "pattern": "Mixed conditionals advanced",
+    "prompt": "If she ___ more carefully, she wouldn't be in trouble now.",
+    "meaning": "past→present",
+    "choices": [
+      "drove",
+      "had driven",
+      "drives",
+      "would drive"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · past perfect + would"
+  },
+  {
+    "id": "g-en-153",
+    "level": "C1",
+    "pattern": "Ellipsis / substitution",
+    "prompt": "I asked her to help, and she ___.",
+    "meaning": "substitution",
+    "choices": [
+      "did",
+      "helped to",
+      "does",
+      "was"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · did = substituted verb"
+  },
+  {
+    "id": "g-en-154",
+    "level": "C1",
+    "pattern": "Complex relative with preposition",
+    "prompt": "The issue ___ which we disagreed remains open.",
+    "meaning": "prep + which",
+    "choices": [
+      "on",
+      "about",
+      "for",
+      "to"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · disagree on"
+  },
+  {
+    "id": "g-en-155",
+    "level": "C1",
+    "pattern": "Binomials / fixed pairs",
+    "prompt": "The contract is null and ___.",
+    "meaning": "fixed pairs",
+    "choices": [
+      "void",
+      "empty",
+      "invalidly",
+      "none"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · null and void"
+  },
+  {
+    "id": "g-en-156",
+    "level": "C1",
+    "pattern": "Register shift",
+    "prompt": "Customers are ___ to wait outside.",
+    "meaning": "formal passive",
+    "choices": [
+      "requested",
+      "told casually",
+      "gonna ask",
+      "wanting"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · are requested to"
+  },
+  {
+    "id": "g-en-157",
+    "level": "C1",
+    "pattern": "Concessive inversion",
+    "prompt": "Difficult ___ it may seem, the task is doable.",
+    "meaning": "as/though inversion",
+    "choices": [
+      "though",
+      "as",
+      "so",
+      "if"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · adj + as/though + clause"
+  },
+  {
+    "id": "g-en-158",
+    "level": "C1",
+    "pattern": "Future in the past",
+    "prompt": "She said she ___ call later.",
+    "meaning": "reported future",
+    "choices": [
+      "will",
+      "would",
+      "is going",
+      "calls"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · would for future-in-past"
+  },
+  {
+    "id": "g-en-159",
+    "level": "C1",
+    "pattern": "Advanced participle",
+    "prompt": "___ carefully, the report reveals several gaps.",
+    "meaning": "viewed/read",
+    "choices": [
+      "Read",
+      "Reading",
+      "To read",
+      "Having read"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · past participle = passive sense"
   }
 ]

@@ -4,14 +4,18 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { Icon, type IconName } from "@/components/Icon";
+import { PathTimeline } from "@/components/PathTimeline";
 import { RequireAuth } from "@/components/RequireAuth";
 import {
   dueCards,
+  ensureRoadmap,
   loadLearn,
+  pathProgress,
   setPreferredTrack,
   type LearnState,
   type TrackId,
 } from "@/lib/learn-store";
+import { useI18n } from "@/lib/i18n";
 
 export default function LearnPage() {
   return (
@@ -26,16 +30,18 @@ export default function LearnPage() {
 }
 
 function LearnContent({ plan }: { plan: "free" | "pro" }) {
+  const { t, lang } = useI18n();
   const [state, setState] = useState<LearnState | null>(null);
 
   useEffect(() => {
-    setState(loadLearn());
+    const s = loadLearn();
+    setState(ensureRoadmap(s.preferredTrack));
   }, []);
 
   if (!state) {
     return (
       <div className="page">
-        <h1>Loading…</h1>
+        <h1>{t("loading")}</h1>
       </div>
     );
   }
@@ -43,57 +49,97 @@ function LearnContent({ plan }: { plan: "free" | "pro" }) {
   const track = state.preferredTrack;
   const active = track === "jp" ? state.jp : state.en;
   const due = dueCards(track, state).length;
+  const progress = pathProgress(track, state);
+  const inv = active.roadmap?.inventory;
+  const hasPath = Boolean(active.roadmap && active.pathActive);
+  const trackLabel = track === "jp" ? t("trackJp") : t("trackEn");
+  const otherLabel = track === "jp" ? t("trackEn") : t("trackJp");
 
   function switchTrack(next: TrackId) {
-    setState(setPreferredTrack(next));
+    setPreferredTrack(next);
+    setState(ensureRoadmap(next));
   }
 
-  const actions: { name: string; desc: string; icon: IconName; href: string }[] = [
+  const starterActions: { name: string; desc: string; icon: IconName; href: string }[] = [
     {
-      name: "Placement",
+      name: t("placement"),
       desc: active.placementDone
-        ? `Approx. ${active.band} (retake anytime)`
-        : "Check your approximate level",
+        ? `~${active.band} · ${t("placementDone")}`
+        : t("placementTodo"),
       icon: "layers",
       href: `/learn/placement?track=${track}`,
     },
     {
-      name: "Roadmap",
-      desc: active.placementDone ? "See what comes next" : "Complete placement first",
+      name: t("roadmap"),
+      desc: active.roadmap
+        ? `${active.roadmap.weeks.length} ${t("weeks")} · ${active.roadmap.inventory.vocab} ${t("vocabSrs")}`
+        : t("roadmapAfter"),
       icon: "road",
       href: `/learn/roadmap?track=${track}`,
     },
     {
-      name: "Reviews",
-      desc: active.pathActive ? `${due} cards due` : "Seeded after placement",
+      name: t("reviews"),
+      desc: active.pathActive
+        ? `${due} ${t("dueCards")} · ${active.cards.length} ${t("inDeck")}`
+        : t("reviewsEmpty"),
       icon: "book",
       href: `/learn/review?track=${track}`,
     },
+  ];
+
+  const catalogActions: { name: string; desc: string; icon: IconName; href: string }[] = [
     {
-      name: "Grammar",
-      desc: "Unofficial pattern drills",
+      name: t("catalogVocab"),
+      desc:
+        track === "jp"
+          ? lang === "en"
+            ? "Full OpenJLPT · ~7.8k words N5–N1"
+            : "OpenJLPT đầy đủ · ~7.8k từ N5–N1"
+          : lang === "en"
+            ? "CEFR-J + Octanove · ~9.9k entries A1–C2"
+            : "CEFR-J + Octanove · ~9.9k mục A1–C2",
+      icon: "book",
+      href: `/learn/vocab?track=${track}${active.band ? `&level=${active.band}` : ""}`,
+    },
+    {
+      name: t("catalogGrammar"),
+      desc:
+        track === "jp"
+          ? lang === "en"
+            ? "OpenJLPT ~526 patterns + drills N5–N1"
+            : "OpenJLPT ~526 mẫu + drills N5–N1"
+          : lang === "en"
+            ? "CEFR-style drills A1–C1"
+            : "CEFR-style drills A1–C1",
       icon: "layers",
-      href: `/learn/grammar?track=${track}`,
+      href: `/learn/grammar?track=${track}&view=list${active.band ? `&level=${active.band}` : ""}`,
     },
     ...(track === "jp"
       ? [
           {
-            name: "Kanji",
-            desc: "Kanji N5–N2 (OpenJLPT)",
+            name: t("catalogKanji"),
+            desc: lang === "en" ? "List + flash N5–N1" : "Danh sách + flash N5–N1",
             icon: "book" as IconName,
-            href: "/learn/kanji",
+            href: `/learn/kanji?view=list&level=${active.band || "N5"}`,
           },
         ]
       : []),
     {
-      name: "Dictionary",
-      desc: track === "jp" ? "OpenJLPT N5–N1" : "CEFR-J A1/A2 (VI gloss)",
+      name: t("catalogDict"),
+      desc:
+        track === "jp"
+          ? lang === "en"
+            ? "Look up OpenJLPT N5–N1"
+            : "Tra cứu OpenJLPT N5–N1"
+          : lang === "en"
+            ? "Look up CEFR A1–C2"
+            : "Tra cứu CEFR A1–C2",
       icon: "search",
       href: `/learn/dictionary?track=${track}`,
     },
     {
-      name: "Mocks",
-      desc: "Timed section practice",
+      name: t("catalogMocks"),
+      desc: lang === "en" ? "Timed vocab / listening" : "Vocab / nghe có đồng hồ",
       icon: "road",
       href: `/learn/mocks?track=${track}`,
     },
@@ -103,16 +149,14 @@ function LearnContent({ plan }: { plan: "free" | "pro" }) {
     <div className="page learn-page">
       <div className="page-head">
         <div>
-          <p className="eyebrow">Learn</p>
-          <h1>Your language path</h1>
-          <p>Steady progress, without the noise.</p>
+          <p className="eyebrow">{t("learnEyebrow")}</p>
+          <h1>{t("learnTitle")}</h1>
+          <p>{t("learnSub")}</p>
         </div>
         <div className="quota">
-          {plan === "pro" ? "Pro plan" : "Free plan"}
+          {plan === "pro" ? "Pro" : "Free"}
           <br />
-          <strong>
-            {plan === "pro" ? "JP + EN allowed" : "1 active path on Free"}
-          </strong>
+          <strong>{plan === "pro" ? "JP + EN" : t("onePath")}</strong>
         </div>
       </div>
 
@@ -122,14 +166,14 @@ function LearnContent({ plan }: { plan: "free" | "pro" }) {
           className={track === "jp" ? "active" : ""}
           onClick={() => switchTrack("jp")}
         >
-          Japanese
+          {t("trackJp")}
         </button>
         <button
           type="button"
           className={track === "en" ? "active" : ""}
           onClick={() => switchTrack("en")}
         >
-          English
+          {t("trackEn")}
         </button>
       </div>
 
@@ -137,38 +181,53 @@ function LearnContent({ plan }: { plan: "free" | "pro" }) {
         <div>
           <span className="language-mark">{track === "jp" ? "日" : "EN"}</span>
           <p className="eyebrow">
-            {active.pathActive ? "Active path" : "Path"} · {track === "jp" ? "Japanese" : "English"}
+            {active.pathActive ? t("pathActive") : t("pathIdle")} · {trackLabel}
           </p>
           <h2>
             {active.placementDone
-              ? `Approx. ${active.band} path`
-              : "Start with placement"}
+              ? `${t("pathRoadmapApprox")} ~${active.band}`
+              : t("pathBeginPlacement")}
           </h2>
-          <p>
-            {active.placementDone
-              ? track === "jp"
-                ? "Vocab SRS, grammar drills, and unofficial mocks — keep the desk nearby."
-                : "CEFR-J vocab SRS, grammar drills, and IELTS-style unofficial practice."
-              : "Take a short unofficial placement to generate your roadmap and SRS deck."}
-          </p>
+          <p>{active.roadmap ? active.roadmap.summary : t("pathBeginHint")}</p>
           <small>
-            Unofficial estimate · not certified {track === "jp" ? "JLPT" : "IELTS/CEFR"}
-            {plan === "free" && active.pathActive
-              ? " · Activating the other path replaces this one on Free"
+            {t("pathUnofficial")} {track === "jp" ? "JLPT" : "IELTS/CEFR"}
+            {inv
+              ? ` · ${inv.vocab} · ${inv.grammar}${inv.kanji ? ` · ${inv.kanji} kanji` : ""}`
               : ""}
           </small>
         </div>
         <div className="path-progress">
-          <strong>{active.pathActive ? "34%" : "0%"}</strong>
+          <strong>{active.pathActive ? `${progress}%` : "0%"}</strong>
           <span>
-            <i style={{ width: active.pathActive ? "34%" : "0%" }} />
+            <i style={{ width: active.pathActive ? `${progress}%` : "0%" }} />
           </span>
-          <small>{due} reviews due</small>
+          <small>
+            {due} {t("reviewsDue")}
+          </small>
         </div>
       </section>
 
+      {hasPath && active.roadmap ? (
+        <PathTimeline plan={active.roadmap} progress={progress} />
+      ) : null}
+
+      <h3 className="learn-section-title">{hasPath ? t("pathTools") : t("pathStart")}</h3>
       <div className="action-grid">
-        {actions.map((a) => (
+        {starterActions.map((a) => (
+          <Link key={a.name} href={a.href}>
+            <Icon name={a.icon} />
+            <span>
+              <strong>{a.name}</strong>
+              <small>{a.desc}</small>
+            </span>
+            <Icon name="arrow" />
+          </Link>
+        ))}
+      </div>
+
+      <h3 className="learn-section-title">{t("pathLibrary")}</h3>
+      <div className="action-grid catalog-grid">
+        {catalogActions.map((a) => (
           <Link key={a.name} href={a.href}>
             <Icon name={a.icon} />
             <span>
@@ -183,15 +242,23 @@ function LearnContent({ plan }: { plan: "free" | "pro" }) {
       <section className="coming">
         <span className="language-mark muted">{track === "jp" ? "EN" : "日"}</span>
         <div>
-          <p className="eyebrow">{track === "jp" ? "English path" : "Japanese path"}</p>
-          <h3>{track === "jp" ? (state.en.pathActive ? `Approx. ${state.en.band}` : "Also available") : state.jp.pathActive ? `Approx. ${state.jp.band}` : "Also available"}</h3>
+          <p className="eyebrow">{otherLabel}</p>
+          <h3>
+            {track === "jp"
+              ? state.en.pathActive
+                ? `~${state.en.band}`
+                : t("pathOtherAlso")
+              : state.jp.pathActive
+                ? `~${state.jp.band}`
+                : t("pathOtherAlso")}
+          </h3>
           <p>
-            Switch tabs above to study the other track.
-            {plan === "free" ? " Free keeps one path active at a time." : " Pro can keep both active."}
+            {t("pathSwitchHint")}
+            {plan === "free" ? t("pathFreeOne") : t("pathProBoth")}
           </p>
         </div>
         <button type="button" onClick={() => switchTrack(track === "jp" ? "en" : "jp")}>
-          Switch
+          {t("pathSwitch")}
         </button>
       </section>
     </div>

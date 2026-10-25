@@ -1,9 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
+  experimental: {
+    optimizePackageImports: [
+      "@tiptap/react",
+      "@tiptap/starter-kit",
+      "@inkbar/react",
+      "docx",
+      "pdf-lib",
+    ],
+  },
   turbopack: {
     rules: {
       "*.css": {

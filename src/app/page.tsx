@@ -1,11 +1,19 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Icon } from "@/components/Icon";
 import { useI18n } from "@/lib/i18n";
+import { loadSession } from "@/lib/session";
 
 export default function LandingPage() {
   const { t, lang, setLang } = useI18n();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (loadSession()) router.replace("/desk");
+  }, [router]);
 
   return (
     <div className="landing">

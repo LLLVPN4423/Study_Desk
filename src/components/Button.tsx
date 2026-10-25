@@ -9,6 +9,7 @@ export function Button({
   icon,
   type = "button",
   className = "",
+  disabled,
 }: {
   children: React.ReactNode;
   variant?: Variant;
@@ -16,13 +17,15 @@ export function Button({
   icon?: IconName;
   type?: "button" | "submit";
   className?: string;
+  disabled?: boolean;
 }) {
+  const isDisabled = disabled || variant === "disabled";
   return (
     <button
       type={type}
-      className={`button ${variant} ${className}`.trim()}
+      className={`button ${isDisabled ? "disabled" : variant} ${className}`.trim()}
       onClick={onClick}
-      disabled={variant === "disabled"}
+      disabled={isDisabled}
     >
       {icon && <Icon name={icon} size={16} />}
       {children}

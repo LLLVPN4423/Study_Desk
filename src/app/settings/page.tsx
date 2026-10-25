@@ -7,6 +7,7 @@ import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { RequireAuth } from "@/components/RequireAuth";
 import { downloadBackup, restoreBackup } from "@/lib/backup";
+import { useI18n } from "@/lib/i18n";
 import { clearSession, loadSession, saveSession, type SessionUser } from "@/lib/session";
 
 export default function SettingsPage() {
@@ -22,6 +23,7 @@ export default function SettingsPage() {
 }
 
 function SettingsContent({ user }: { user: SessionUser }) {
+  const { t } = useI18n();
   const router = useRouter();
   const [plan, setPlan] = useState(user.plan);
   const [msg, setMsg] = useState<string | null>(null);
@@ -41,23 +43,23 @@ function SettingsContent({ user }: { user: SessionUser }) {
     try {
       const text = await file.text();
       restoreBackup(text);
-      setMsg("Backup restored. Reloading…");
+      setMsg(t("backupRestored"));
       window.setTimeout(() => window.location.assign("/desk"), 600);
     } catch {
-      setMsg("Could not restore backup. Check the JSON file.");
+      setMsg(t("backupFailed"));
     }
   }
 
   return (
     <div className="page">
-      <p className="eyebrow">Settings</p>
-      <h1>Account</h1>
+      <p className="eyebrow">{t("settingsEyebrow")}</p>
+      <h1>{t("settingsTitle")}</h1>
       <p style={{ color: "var(--muted)", margin: "12px 0 28px" }}>
-        {user.email} · {plan === "pro" ? "Pro" : "Free"} plan · 1 desk
+        {user.email} · {plan === "pro" ? "Pro" : "Free"} {t("settingsPlan")} · {t("settingsOneDesk")}
       </p>
       <div className="actions">
         <Button variant="secondary" onClick={togglePro}>
-          {plan === "pro" ? "Switch to Free flag" : "Enable Pro flag (dev)"}
+          {plan === "pro" ? t("switchFree") : t("enablePro")}
         </Button>
         <Button
           variant="danger"
@@ -66,22 +68,20 @@ function SettingsContent({ user }: { user: SessionUser }) {
             router.push("/");
           }}
         >
-          Sign out
+          {t("signOut")}
         </Button>
         <Link href="/learn" className="button ghost">
-          Back to learn
+          {t("backToLearn")}
         </Link>
       </div>
 
       <section style={{ marginTop: 40, maxWidth: 520 }}>
-        <h2 style={{ fontSize: 24, marginBottom: 10 }}>Backup</h2>
-        <p style={{ color: "var(--muted)", fontSize: 13, marginBottom: 16 }}>
-          Data lives in this browser. Export JSON regularly; import on another device/browser.
-        </p>
+        <h2 style={{ fontSize: 24, marginBottom: 10 }}>{t("backupTitle")}</h2>
+        <p style={{ color: "var(--muted)", fontSize: 13, marginBottom: 16 }}>{t("backupBody")}</p>
         <div className="actions">
-          <Button onClick={() => downloadBackup()}>Export backup</Button>
+          <Button onClick={() => downloadBackup()}>{t("exportBackup")}</Button>
           <Button variant="secondary" onClick={() => fileRef.current?.click()}>
-            Import backup
+            {t("importBackup")}
           </Button>
           <input
             ref={fileRef}
@@ -95,8 +95,7 @@ function SettingsContent({ user }: { user: SessionUser }) {
       </section>
 
       <p style={{ marginTop: 40, fontSize: 12, color: "var(--muted)", maxWidth: 520 }}>
-        MiniHongo is optional (see docs/MINIHONGO-MODULE.md). Pro flag unlocks dual JP+EN paths —
-        no payment gateway yet. Unofficial practice — not affiliated with JLPT/IELTS.
+        {t("settingsFoot")}
       </p>
     </div>
   );

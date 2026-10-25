@@ -39,6 +39,9 @@ yarn-error.log*
 /data/*.db
 /data/*.db-*
 
+# raw curriculum downloads (re-fetch via scripts/import-curriculum.mjs)
+/scripts/_raw/
+
 # vercel
 .vercel
 
@@ -48,4 +51,10 @@ next-env.d.ts
 
 docs/figma/node_modules/
 docs/figma/dist/
+docs/figma/.figma/
+docs/figma/pnpm-lock.yaml
+
+# pdf.js assets — regenerate: npm run copy-pdfjs
+/public/pdfjs/
+
 .DS_Store

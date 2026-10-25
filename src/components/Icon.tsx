@@ -14,7 +14,11 @@ export type IconName =
   | "road"
   | "layers"
   | "moon"
-  | "alert";
+  | "alert"
+  | "trash"
+  | "edit"
+  | "download"
+  | "plus";
 
 export function Icon({ name, size = 18 }: { name: IconName; size?: number }) {
   const paths: Record<IconName, React.ReactNode> = {
@@ -90,6 +94,24 @@ export function Icon({ name, size = 18 }: { name: IconName; size?: number }) {
         <path d="M12 9v5m0 3v.1" />
       </>
     ),
+    trash: (
+      <>
+        <path d="M3 6h18M8 6V4h8v2m-1 0v14H9V6" />
+        <path d="M10 11v6m4-6v6" />
+      </>
+    ),
+    edit: (
+      <>
+        <path d="M12 20h9" />
+        <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+      </>
+    ),
+    download: (
+      <>
+        <path d="M12 3v12m0 0 5-5m-5 5-5-5M4 21h16" />
+      </>
+    ),
+    plus: <path d="M12 5v14M5 12h14" />,
   };
 
   return (

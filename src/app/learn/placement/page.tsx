@@ -91,16 +91,19 @@ function PlacementContent() {
         <Link href="/learn" className="back">
           ← Back to learn
         </Link>
-        <p className="eyebrow">Placement complete · {track.toUpperCase()}</p>
-        <h1>Approx. {band}</h1>
+        <p className="eyebrow">Placement xong · {track.toUpperCase()}</p>
+        <h1>Ước lượng ~{band}</h1>
         <p style={{ color: "var(--muted)", margin: "12px 0 28px" }}>
-          Score {correct}/{bank.length}. Unofficial practice estimate — not a certified{" "}
-          {track === "jp" ? "JLPT" : "IELTS/CEFR"} result. Your path and FSRS deck are ready.
+          Điểm {correct}/{bank.length}. Không phải kết quả chứng chỉ{" "}
+          {track === "jp" ? "JLPT" : "IELTS/CEFR"}. App đã dựng lộ trình từ ngân hàng từ /{" "}
+          {track === "jp" ? "kanji / " : ""}grammar / mock trong app và nạp deck SRS (FSRS).
         </p>
         <div className="actions">
-          <Button onClick={() => router.push(`/learn/roadmap?track=${track}`)}>View roadmap</Button>
+          <Button onClick={() => router.push(`/learn/roadmap?track=${track}`)}>
+            Xem lộ trình thật
+          </Button>
           <Button variant="secondary" onClick={() => router.push(`/learn/review?track=${track}`)}>
-            Start reviews
+            Bắt đầu ôn SRS
           </Button>
         </div>
       </div>

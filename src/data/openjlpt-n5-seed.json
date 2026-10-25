@@ -8,6 +8,7 @@
       "to meet"
     ],
     "level": "N5",
+    "pos": "v5u,vi",
     "examples": [
       {
         "ja": "もうスミスさんに会われましたね。",
@@ -24,6 +25,7 @@
       "blue"
     ],
     "level": "N5",
+    "pos": "n,adj-no",
     "examples": [
       {
         "ja": "信号が青に変わったわよ。",
@@ -40,6 +42,7 @@
       "blue"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "お前はまだ「青い」な。",
@@ -56,6 +59,7 @@
       "red"
     ],
     "level": "N5",
+    "pos": "n,adj-no",
     "examples": [
       {
         "ja": "赤インクで書いてはいけない。",
@@ -72,6 +76,7 @@
       "red"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "彼女は赤いスカートをはいていた。",
@@ -88,6 +93,7 @@
       "bright"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "外はだんだん明るくなっていく。",
@@ -104,6 +110,7 @@
       "autumn"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "秋はもうすぐそこまで来ている。",
@@ -121,6 +128,7 @@
       "to become open"
     ],
     "level": "N5",
+    "pos": "v5k,vi",
     "examples": [
       {
         "ja": "ぐいと押すとドアは開いた。",
@@ -137,6 +145,7 @@
       "to open"
     ],
     "level": "N5",
+    "pos": "v1,vt",
     "examples": [
       {
         "ja": "ドアはジムによって開けられます。",
@@ -153,6 +162,7 @@
       "to give"
     ],
     "level": "N5",
+    "pos": "v1,vt",
     "examples": [
       {
         "ja": "左手を上げなさい。",
@@ -169,6 +179,7 @@
       "morning"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "朝のラッシュは今がピークだ。",
@@ -185,6 +196,7 @@
       "breakfast"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "朝ごはんにはなにがよろしいですか。",
@@ -201,6 +213,7 @@
       "day after tomorrow"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "あさって彼にここへ来てもらうつもりです。",
@@ -218,6 +231,7 @@
       "leg"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "また足がしびれた。",
@@ -234,6 +248,7 @@
       "tomorrow"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "あしたは一日中ひまです。",
@@ -250,6 +265,7 @@
       "over there"
     ],
     "level": "N5",
+    "pos": "pn",
     "examples": [
       {
         "ja": "先生、アソコがかゆいんです。",
@@ -267,6 +283,7 @@
       "to make a visit"
     ],
     "level": "N5",
+    "pos": "v5b,vi",
     "examples": [
       {
         "ja": "ビルはよく一人でおもちゃで遊ぶ。",
@@ -283,6 +300,7 @@
       "warm"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "だんだん暖かくなります。",
@@ -299,6 +317,7 @@
       "head"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "アリスは頭に花をさしています。",
@@ -315,6 +334,7 @@
       "new"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "先生は新しい車が気に入っている。",
@@ -331,6 +351,7 @@
       "there"
     ],
     "level": "N5",
+    "pos": "pn",
     "examples": [
       {
         "ja": "こっちの本はあっちの本よりやさしい。",
@@ -349,6 +370,7 @@
       "thick"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "それは４ｃｍの厚さです。",
@@ -365,6 +387,7 @@
       "hot"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "どうして、こんなに暑いのですか。",
@@ -381,6 +404,7 @@
       "hot to the touch"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "熱いコーヒーを入れてあげましょう。",
@@ -397,6 +421,7 @@
       "over there"
     ],
     "level": "N5",
+    "pos": "pn",
     "examples": [
       {
         "ja": "こっちの本はあっちの本よりやさしい。",
@@ -413,6 +438,7 @@
       "afterwards"
     ],
     "level": "N5",
+    "pos": "n,adj-no",
     "examples": [
       {
         "ja": "雨天の後には晴天が来る。",
@@ -429,6 +455,7 @@
       "you"
     ],
     "level": "N5",
+    "pos": "pn",
     "examples": [
       {
         "ja": "ねえあなたたち行かないで。",
@@ -445,6 +472,7 @@
       "(humble) older brother"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "これは兄です。かっこいいですね。",
@@ -461,6 +489,7 @@
       "(humble) older sister"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "先月、姉は６ポンドの男の子を生んだ。",
@@ -477,6 +506,7 @@
       "that over there"
     ],
     "level": "N5",
+    "pos": "adj-pn",
     "examples": [
       {
         "ja": "あのおいしいワインをなぜ飲まないんだい。",
@@ -493,6 +523,7 @@
       "apartment"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "兄はアパートをさがしています。",
@@ -510,6 +541,7 @@
       "to shower"
     ],
     "level": "N5",
+    "pos": "v1,vt",
     "examples": [
       {
         "ja": "その時はシャワーを浴びていた。",
@@ -526,6 +558,7 @@
       "dangerous"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "間一髪！危ないところでした。",
@@ -542,6 +575,7 @@
       "sweet"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "メアリーにはつい甘くなってしまう。",
@@ -558,6 +592,7 @@
       "not very"
     ],
     "level": "N5",
+    "pos": "adv",
     "examples": [
       {
         "ja": "この手の本はあまり読まない。",
@@ -574,6 +609,7 @@
       "candy"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "いい子にしていたら、あめをあげよう。",
@@ -590,6 +626,7 @@
       "rain"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "木のおかげで雨にぬれずにすんだ。",
@@ -606,6 +643,7 @@
       "to wash"
     ],
     "level": "N5",
+    "pos": "v5u,vt",
     "examples": [
       {
         "ja": "いつこの車は洗われましたか。",
@@ -622,6 +660,7 @@
       "Thank you"
     ],
     "level": "N5",
+    "pos": "int",
     "examples": [
       {
         "ja": "はるばる来てくれてありがとう。",
@@ -639,6 +678,7 @@
       "to have (used for inanimate objects)"
     ],
     "level": "N5",
+    "pos": "v5r-i,vi",
     "examples": [
       {
         "ja": "話があったら電話をかけて下さい。",
@@ -655,6 +695,7 @@
       "to walk"
     ],
     "level": "N5",
+    "pos": "v5k,vi",
     "examples": [
       {
         "ja": "歩いて行きますか？それともバスで行きますか？",
@@ -671,6 +712,7 @@
       "that"
     ],
     "level": "N5",
+    "pos": "pn",
     "examples": []
   },
   {
@@ -682,6 +724,7 @@
       "good"
     ],
     "level": "N5",
+    "pos": "adj-ix",
     "examples": [
       {
         "ja": "もう２、３ページ読みさえすればいい。",
@@ -698,6 +741,7 @@
       "no"
     ],
     "level": "N5",
+    "pos": "int",
     "examples": []
   },
   {
@@ -709,6 +753,7 @@
       "to say"
     ],
     "level": "N5",
+    "pos": "v5u,vt",
     "examples": [
       {
         "ja": "「みんなひと休みしようぜ」とジョンは言った。",
@@ -725,6 +770,7 @@
       "house"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "木立の間に家が見える。",
@@ -741,6 +787,7 @@
       "how"
     ],
     "level": "N5",
+    "pos": "adv",
     "examples": [
       {
         "ja": "コンタクトを入れるというのはいかがでしょう？",
@@ -757,6 +804,7 @@
       "to go"
     ],
     "level": "N5",
+    "pos": "v5k-s,vi",
     "examples": [
       {
         "ja": "お母さん、泳ぎに行ってもいい？",
@@ -774,6 +822,7 @@
       "how old?"
     ],
     "level": "N5",
+    "pos": "adv",
     "examples": [
       {
         "ja": "あなたのお父さんはおいくつですか。",
@@ -790,6 +839,7 @@
       "how much?"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "このハンカチはいくらですか。",
@@ -806,6 +856,7 @@
       "pond"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "その池にはほとんど水がない。",
@@ -822,6 +873,7 @@
       "medical doctor"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "医者になるつもりだったのですが。",
@@ -838,6 +890,7 @@
       "chair"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "ちょっと椅子をずらしてくれない？",
@@ -855,6 +908,7 @@
       "irritated"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "忙しくてそれどころじゃないよ。",
@@ -871,6 +925,7 @@
       "painful"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "ほかに痛いところはありますか。",
@@ -887,6 +942,7 @@
       "expression of gratitude before meals"
     ],
     "level": "N5",
+    "pos": "exp",
     "examples": [
       {
         "ja": "８ドル５０セントいただきます。",
@@ -903,6 +959,7 @@
       "one"
     ],
     "level": "N5",
+    "pos": "num,pref",
     "examples": [
       {
         "ja": "これは東京一のインドレストランです。",
@@ -920,6 +977,7 @@
       "first of month"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "一日で５００ドルつかってしまった。",
@@ -937,6 +995,7 @@
       "first"
     ],
     "level": "N5",
+    "pos": "n,adj-no",
     "examples": [
       {
         "ja": "このリンゴがいちばんおいしい。",
@@ -953,6 +1012,7 @@
       "when"
     ],
     "level": "N5",
+    "pos": "pn",
     "examples": [
       {
         "ja": "いつ旅行においでになりますか。",
@@ -970,6 +1030,7 @@
       "fifth day"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "１月５日から１月１５日までおねがいします。",
@@ -986,6 +1047,7 @@
       "together"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "「ご一緒してもいいですか」「もちろんです」",
@@ -1002,6 +1064,7 @@
       "five"
     ],
     "level": "N5",
+    "pos": "num",
     "examples": [
       {
         "ja": "この箱にはリンゴが五つ入っている。",
@@ -1018,6 +1081,7 @@
       "always"
     ],
     "level": "N5",
+    "pos": "adv",
     "examples": [
       {
         "ja": "あの子はいつもニコニコしている。",
@@ -1034,6 +1098,7 @@
       "dog"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "その犬はかみついたりしませんよ。",
@@ -1050,6 +1115,7 @@
       "now"
     ],
     "level": "N5",
+    "pos": "n,adj-no,adv",
     "examples": [
       {
         "ja": "今のアナウンスは何だったのですか。",
@@ -1066,6 +1132,7 @@
       "meaning"
     ],
     "level": "N5",
+    "pos": "n,vs,vt",
     "examples": [
       {
         "ja": "その語にはいくつかの意味がある。",
@@ -1082,6 +1149,7 @@
       "(humble) younger sister"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "男の子は妹を見下ろしがちである。",
@@ -1098,6 +1166,7 @@
       "unpleasant"
     ],
     "level": "N5",
+    "pos": "adj-na",
     "examples": [
       {
         "ja": "毎日うっとうしくていやですね。",
@@ -1114,6 +1183,7 @@
       "entrance"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "１台の車が入り口に止まった。",
@@ -1131,6 +1201,7 @@
       "to have (used for people and animals)"
     ],
     "level": "N5",
+    "pos": "aux-v,v1",
     "examples": [
       {
         "ja": "すっかり食べ終わってはいない。",
@@ -1147,6 +1218,7 @@
       "to need"
     ],
     "level": "N5",
+    "pos": "v5r,vi",
     "examples": [
       {
         "ja": "今のところお金はいらない。",
@@ -1163,6 +1235,7 @@
       "to put in"
     ],
     "level": "N5",
+    "pos": "v1,vt",
     "examples": [
       {
         "ja": "それは引き出しに入れておきました。",
@@ -1179,6 +1252,7 @@
       "colour"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "カメレオンはどんな色にでもなれる。",
@@ -1195,6 +1269,7 @@
       "various"
     ],
     "level": "N5",
+    "pos": "adj-na,adj-no",
     "examples": [
       {
         "ja": "先生といってもいろいろある。",
@@ -1211,6 +1286,7 @@
       "on top of"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "テーブルの上にリンゴがあります。",
@@ -1227,6 +1303,7 @@
       "behind"
     ],
     "level": "N5",
+    "pos": "n,adj-no",
     "examples": [
       {
         "ja": "校長が先生の後ろから入ってきた。",
@@ -1244,6 +1321,7 @@
       "weak"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "コーヒーは薄いのが好きです。",
@@ -1260,6 +1338,7 @@
       "song"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "歌がうまければいいのになあ。",
@@ -1276,6 +1355,7 @@
       "to sing"
     ],
     "level": "N5",
+    "pos": "v5u,vt,vi",
     "examples": [
       {
         "ja": "ジョンはステージで何を歌いましたか。",
@@ -1292,6 +1372,7 @@
       "to be born"
     ],
     "level": "N5",
+    "pos": "v1,vi",
     "examples": [
       {
         "ja": "どんぐりからオークが生まれる。",
@@ -1308,6 +1389,7 @@
       "sea"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "何としても海をひと目みたいものだ。",
@@ -1324,6 +1406,7 @@
       "to sell"
     ],
     "level": "N5",
+    "pos": "v5r,vt",
     "examples": [
       {
         "ja": "トムはメアリーにバイクを売った。",
@@ -1341,6 +1424,7 @@
       "annoying"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "あの子はなんてうるさい子だろう。",
@@ -1357,6 +1441,7 @@
       "jacket"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "ドアのそばのかぎに上着をかけなさい。",
@@ -1373,6 +1458,7 @@
       "picture"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "絵がテーブルの上にかかっている。",
@@ -1389,6 +1475,7 @@
       "movie"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "その映画をもう一度見たいな。",
@@ -1405,6 +1492,7 @@
       "cinema"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "その映画館は人々でいっぱいだった。",
@@ -1421,6 +1509,7 @@
       "English language"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "アメリカでは英語を話します。",
@@ -1437,6 +1526,7 @@
       "yes"
     ],
     "level": "N5",
+    "pos": "int",
     "examples": [
       {
         "ja": "「テニスをしましょうか」「ええ」",
@@ -1453,6 +1543,7 @@
       "station"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "グランド・セントラル駅までやってください。",
@@ -1469,6 +1560,7 @@
       "elevator"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "エレベーターはどこですか。",
@@ -1485,6 +1577,7 @@
       "pencil"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "えんぴつであなたの名前を書きなさい。",
@@ -1501,6 +1594,7 @@
       "delicious"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "おいしい食事をありがとう。",
@@ -1517,6 +1611,7 @@
       "many"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "この学校は男子よりも女子が多い。",
@@ -1533,6 +1628,7 @@
       "big"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "もっと大きいサイズはありますか。",
@@ -1549,6 +1645,7 @@
       "big"
     ],
     "level": "N5",
+    "pos": "adj-pn",
     "examples": [
       {
         "ja": "それらはとても大きなりんごです。",
@@ -1565,6 +1662,7 @@
       "great number of people"
     ],
     "level": "N5",
+    "pos": "n,adj-no",
     "examples": [
       {
         "ja": "大ぜいの人たちがいた。",
@@ -1581,6 +1679,7 @@
       "(honorable) mother"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "お母さんに口答えしてはいけませんよ。",
@@ -1598,6 +1697,7 @@
       "candy"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "もうすこしお菓子を食べませんか。",
@@ -1614,6 +1714,7 @@
       "money"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "どうやってそのお金を手に入れたんですか。",
@@ -1630,6 +1731,7 @@
       "to get up"
     ],
     "level": "N5",
+    "pos": "v1,vi",
     "examples": [
       {
         "ja": "お子さんはまだ起きているのですか。",
@@ -1646,6 +1748,7 @@
       "to put"
     ],
     "level": "N5",
+    "pos": "v5k,vt",
     "examples": [
       {
         "ja": "それをテーブルの上に置きなさい。",
@@ -1662,6 +1765,7 @@
       "(honorable) wife"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "奥さんがどこかに出かけているらしいから。",
@@ -1679,6 +1783,7 @@
       "rice wine"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "マイクはお酒をやめたの？",
@@ -1696,6 +1801,7 @@
       "dish"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "スープを入れるくぼんだお皿がありますか。",
@@ -1713,6 +1819,7 @@
       "male senior citizen"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "おじいさんはとてもゆっくりと話す。",
@@ -1730,6 +1837,7 @@
       "to tell"
     ],
     "level": "N5",
+    "pos": "v1,vt",
     "examples": [
       {
         "ja": "生年月日を教えてくださいますか？",
@@ -1747,6 +1855,7 @@
       "to stamp something"
     ],
     "level": "N5",
+    "pos": "v5s,vt",
     "examples": [
       {
         "ja": "シャッターを押してくれますか。",
@@ -1764,6 +1873,7 @@
       "slow"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "遅くなっても何もないよりはまし。",
@@ -1780,6 +1890,7 @@
       "green tea"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "３時はお茶にしよう。",
@@ -1796,6 +1907,7 @@
       "bathroom"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "お手洗いはどこですか。",
@@ -1812,6 +1924,7 @@
       "(honorable) father"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "お父さんからことづけがあります。",
@@ -1828,6 +1941,7 @@
       "younger brother"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "弟のことなんかほっときなさい。",
@@ -1844,6 +1958,7 @@
       "man"
     ],
     "level": "N5",
+    "pos": "n,n-pref",
     "examples": [
       {
         "ja": "その男とつきあってはいけないよ。",
@@ -1860,6 +1975,7 @@
       "boy"
     ],
     "level": "N5",
+    "pos": "exp,n",
     "examples": [
       {
         "ja": "あのハンサムな男の子を見て。",
@@ -1876,6 +1992,7 @@
       "day before yesterday"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "一昨日、彼は学校を休んだかもしれない。",
@@ -1892,6 +2009,7 @@
       "year before last"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "彼女は、一昨年よりもはるかに暮らし向きがよい。",
@@ -1908,6 +2026,7 @@
       "adult"
     ],
     "level": "N5",
+    "pos": "n,adj-no,adj-na",
     "examples": [
       {
         "ja": "大人だけこの映画が見える。",
@@ -1924,6 +2043,7 @@
       "stomach"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "何かおなかに入れてから出かけなさい。",
@@ -1940,6 +2060,7 @@
       "same"
     ],
     "level": "N5",
+    "pos": "adj-f,adj-na",
     "examples": [
       {
         "ja": "この木はあの木とほぼ同じ高さだ。",
@@ -1956,6 +2077,7 @@
       "(honorable) older brother"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "私はあなたのお兄さんより年上です。",
@@ -1972,6 +2094,7 @@
       "(honorable) older sister"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "あなたのお姉さんは今何をしているの？",
@@ -1988,6 +2111,7 @@
       "please"
     ],
     "level": "N5",
+    "pos": "exp",
     "examples": [
       {
         "ja": "ファーストクラスでお願いします。",
@@ -2005,6 +2129,7 @@
       "female senior-citizen"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "トムのおばあさんは元気そうですよ。",
@@ -2021,6 +2146,7 @@
       "aunt"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "叔母さんを訪ねた時はすごいごちそうだったね。",
@@ -2037,6 +2163,7 @@
       "(abbreviation) Good morning"
     ],
     "level": "N5",
+    "pos": "int",
     "examples": [
       {
         "ja": "おはよう。ご飯をよそっても良いかしら？",
@@ -2053,6 +2180,7 @@
       "bath"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "私はほとんど毎日お風呂に入ります。",
@@ -2069,6 +2197,7 @@
       "boxed lunch"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "彼は今日、お弁当を持って来た。",
@@ -2085,6 +2214,7 @@
       "to remember"
     ],
     "level": "N5",
+    "pos": "v1,vt",
     "examples": [
       {
         "ja": "日本語は外人にとって覚えにくい。",
@@ -2101,6 +2231,7 @@
       "friendly term for policeman"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "すみません、おまわりさん。ここはどこですか。",
@@ -2117,6 +2248,7 @@
       "heavy"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "トムはジャックよりも１０ポンド重い。",
@@ -2133,6 +2265,7 @@
       "interesting"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "スケートはとてもおもしろかった。",
@@ -2149,6 +2282,7 @@
       "to swim"
     ],
     "level": "N5",
+    "pos": "v5g,vi",
     "examples": [
       {
         "ja": "トムはすぐに泳げるようになるよ。",
@@ -2166,6 +2300,7 @@
       "to descend"
     ],
     "level": "N5",
+    "pos": "v1,vi",
     "examples": [
       {
         "ja": "ここで降りましょう。",
@@ -2182,6 +2317,7 @@
       "to finish"
     ],
     "level": "N5",
+    "pos": "v5r,vi",
     "examples": [
       {
         "ja": "そのコンサートは十時に終わった。",
@@ -2198,6 +2334,7 @@
       "music"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "この音楽を聞いてくつろぎなさい。",
@@ -2214,6 +2351,7 @@
       "woman"
     ],
     "level": "N5",
+    "pos": "n,n-pref",
     "examples": [
       {
         "ja": "人は男か女のどちらかである。",
@@ -2230,6 +2368,7 @@
       "girl"
     ],
     "level": "N5",
+    "pos": "exp,n",
     "examples": [
       {
         "ja": "女の子はほとんどみんなやさしい。",
@@ -2246,6 +2385,7 @@
       "foreign country"
     ],
     "level": "N5",
+    "pos": "n,adj-no",
     "examples": [
       {
         "ja": "あなたは外国の本を持っていますか。",
@@ -2262,6 +2402,7 @@
       "foreigner"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "その外国人はかなりうまく日本語を話す。",
@@ -2278,6 +2419,7 @@
       "company"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "ビルは三年前にこの会社に入った。",
@@ -2294,6 +2436,7 @@
       "stairs"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "その階段を上ってはいけません。",
@@ -2310,6 +2453,7 @@
       "shopping"
     ],
     "level": "N5",
+    "pos": "n,vs,vi",
     "examples": [
       {
         "ja": "１日おきに買い物に行く。",
@@ -2326,6 +2470,7 @@
       "to buy"
     ],
     "level": "N5",
+    "pos": "v5u,vt",
     "examples": [
       {
         "ja": "買うかどうかはあなたしだいです。",
@@ -2342,6 +2487,7 @@
       "to return something"
     ],
     "level": "N5",
+    "pos": "v5s,vt",
     "examples": [
       {
         "ja": "車はいつ返したらいいでしょうか。",
@@ -2358,6 +2504,7 @@
       "to go back"
     ],
     "level": "N5",
+    "pos": "v5r,vi",
     "examples": [
       {
         "ja": "「帰ろ」「マックよってかない？」",
@@ -2374,6 +2521,7 @@
       "to take time or money"
     ],
     "level": "N5",
+    "pos": "v5r,vi",
     "examples": [
       {
         "ja": "どうしたらエンジンがかかりますか。",
@@ -2390,6 +2538,7 @@
       "key"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "車のカギをなくしちゃった。",
@@ -2406,6 +2555,7 @@
       "to write"
     ],
     "level": "N5",
+    "pos": "v5k,vt",
     "examples": [
       {
         "ja": "すぐに書かなければなりませんか。",
@@ -2422,6 +2572,7 @@
       "student"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "学生の半数が休んでいた。",
@@ -2438,6 +2589,7 @@
       "to call by phone"
     ],
     "level": "N5",
+    "pos": "v1,vt",
     "examples": [
       {
         "ja": "１０円で電話がかけられますか。",
@@ -2454,6 +2606,7 @@
       "umbrella"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "タクシーに傘を忘れてしまった。",
@@ -2470,6 +2623,7 @@
       "to lend"
     ],
     "level": "N5",
+    "pos": "v5s,vt",
     "examples": [
       {
         "ja": "ホッチキスを貸してくれませんか。",
@@ -2486,6 +2640,7 @@
       "wind"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "カーテンが風になびいた。",
@@ -2502,6 +2657,7 @@
       "a cold"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "ただの風邪でしょう。",
@@ -2518,6 +2674,7 @@
       "family"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "あなたの家族はきっと親切でしょう。",
@@ -2535,6 +2692,7 @@
       "way of doing"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "こちらはあなたがお話しになるお方です。",
@@ -2551,6 +2709,7 @@
       "school"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "この学校はたくさんの生徒がいます。",
@@ -2567,6 +2726,7 @@
       "cup"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "テーブルの上にカップがある。",
@@ -2583,6 +2743,7 @@
       "household"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "食事は家庭で食べますか、外食ですか。",
@@ -2599,6 +2760,7 @@
       "a corner"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "角のテーブルがいいのですが。",
@@ -2616,6 +2778,7 @@
       "basket"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "これはジェーンさんのかばんです。",
@@ -2632,6 +2795,7 @@
       "a vase"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "花びんに水を入れなさい。",
@@ -2648,6 +2812,7 @@
       "paper"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "紙は木から作られる。",
@@ -2664,6 +2829,7 @@
       "camera"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "おじさんがぼくにカメラをくれました。",
@@ -2680,6 +2846,7 @@
       "Tuesday"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "火曜日に国会が開かれる。",
@@ -2696,6 +2863,7 @@
       "spicy"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "このカレーは辛すぎて食べられない。",
@@ -2712,6 +2880,7 @@
       "body"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "とりわけ体に気をつけなさい。",
@@ -2728,6 +2897,7 @@
       "to borrow"
     ],
     "level": "N5",
+    "pos": "v1,vt",
     "examples": [
       {
         "ja": "この本をお借りしてもよろしいですか。",
@@ -2744,6 +2914,7 @@
       "light"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "軽く食べましょう。",
@@ -2760,6 +2931,7 @@
       "curry"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "このレストランのカレーはうまいよ。",
@@ -2776,6 +2948,7 @@
       "calendar"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "このカレンダーはどこにかけましょうか。",
@@ -2792,6 +2965,7 @@
       "river"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "その川はあまりきれいではなかった。",
@@ -2808,6 +2982,7 @@
       "cute"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "ルーシーはかわいい女の子だ。",
@@ -2824,6 +2999,7 @@
       "Chinese character"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "この漢字はどういう意味ですか。",
@@ -2841,6 +3017,7 @@
       "wood"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "その木には実がたわわになっていた。",
@@ -2857,6 +3034,7 @@
       "yellow"
     ],
     "level": "N5",
+    "pos": "n,adj-no,adj-na",
     "examples": [
       {
         "ja": "木の葉は秋には黄色になる。",
@@ -2873,6 +3051,7 @@
       "yellow"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "その黄色いのをいただきましょう。",
@@ -2889,6 +3068,7 @@
       "to disappear"
     ],
     "level": "N5",
+    "pos": "v1,vi",
     "examples": [
       {
         "ja": "火が消えないようにしてください。",
@@ -2907,6 +3087,7 @@
       "to ask"
     ],
     "level": "N5",
+    "pos": "v5k,vt",
     "examples": [
       {
         "ja": "ニューススタンドで聞いて下さい。",
@@ -2923,6 +3104,7 @@
       "north"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "その町はロンドンのすぐ北にある。",
@@ -2939,6 +3121,7 @@
       "guitar"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "どちらがあなたのギターですか。",
@@ -2955,6 +3138,7 @@
       "dirty"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "ジャックは私に汚いいたずらをした。",
@@ -2971,6 +3155,7 @@
       "coffee lounge"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "私たちは喫茶店で昼食をとった。",
@@ -2987,6 +3172,7 @@
       "postage stamp"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "切手の上からサインをしてください。",
@@ -3003,6 +3189,7 @@
       "ticket"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "この切符で二人入れるよ。",
@@ -3019,6 +3206,7 @@
       "yesterday"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "きのう先生は今日テストをすると言った。",
@@ -3035,6 +3223,7 @@
       "nine"
     ],
     "level": "N5",
+    "pos": "num",
     "examples": [
       {
         "ja": "彼は「九時だ」と言った。",
@@ -3051,6 +3240,7 @@
       "beef"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "日本人はイギリス人より牛肉を食べる。",
@@ -3067,6 +3257,7 @@
       "milk"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "牛乳はバターやチーズになります。",
@@ -3083,6 +3274,7 @@
       "today"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "今日は何をしたいですか。",
@@ -3099,6 +3291,7 @@
       "classroom"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "ＬＬ教室を使ってもよいですか。",
@@ -3115,6 +3308,7 @@
       "(humble) siblings"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "あなたは何人兄弟がいますか。",
@@ -3131,6 +3325,7 @@
       "last year"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "ビルは去年の秋に私に会いに来た。",
@@ -3147,6 +3342,7 @@
       "hate"
     ],
     "level": "N5",
+    "pos": "adj-na,n",
     "examples": [
       {
         "ja": "ジムくんは行き過ぎの嫌いがある。",
@@ -3163,6 +3359,7 @@
       "to cut"
     ],
     "level": "N5",
+    "pos": "v5r,vt",
     "examples": [
       {
         "ja": "トランプをよく切ってください。",
@@ -3179,6 +3376,7 @@
       "to put on from the shoulders down"
     ],
     "level": "N5",
+    "pos": "v1,vt",
     "examples": [
       {
         "ja": "このセーターを着てごらんなさい。",
@@ -3196,6 +3394,7 @@
       "clean"
     ],
     "level": "N5",
+    "pos": "adj-na",
     "examples": [
       {
         "ja": "それからすっきりきれいにしてくれ。",
@@ -3213,6 +3412,7 @@
       "kilogram"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "ヘレンはせいぜい４０キロだ。",
@@ -3229,6 +3429,7 @@
       "bank"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "銀行にどれだけお金がありますか。",
@@ -3245,6 +3446,7 @@
       "Friday"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "あなたは金曜日に何をするつもりですか。",
@@ -3261,6 +3463,7 @@
       "medicine"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "４時間おきにこの薬をのみなさい。",
@@ -3277,6 +3480,7 @@
       "please"
     ],
     "level": "N5",
+    "pos": "exp",
     "examples": [
       {
         "ja": "ニューススタンドで聞いて下さい。",
@@ -3293,6 +3497,7 @@
       "fruit"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "父はそんなに果物を食べないんです。",
@@ -3310,6 +3515,7 @@
       "opening"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "口にものをほおばってしゃべるな。",
@@ -3326,6 +3532,7 @@
       "shoes"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "靴のほこりをはけではらいなさい。",
@@ -3342,6 +3549,7 @@
       "socks"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "この靴下はちぐはぐだ。",
@@ -3358,6 +3566,7 @@
       "country"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "あなたの国では何語を話しますか。",
@@ -3374,6 +3583,7 @@
       "cloudy weather"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "曇りの日です。",
@@ -3391,6 +3601,7 @@
       "to become dim"
     ],
     "level": "N5",
+    "pos": "v5r,vi",
     "examples": [
       {
         "ja": "今日は曇っている。",
@@ -3407,6 +3618,7 @@
       "gloomy"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "あたりがもう暗くなっていることに気がついた。",
@@ -3423,6 +3635,7 @@
       "class"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "あいつはクラスでいちばんのまぬけだ。",
@@ -3439,6 +3652,7 @@
       "gram"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "プログラムをいただけますか。",
@@ -3455,6 +3669,7 @@
       "to come"
     ],
     "level": "N5",
+    "pos": "vk,vi",
     "examples": [
       {
         "ja": "１０時までに来ます。",
@@ -3472,6 +3687,7 @@
       "vehicle"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "車のわきの男の子をごらんなさい。",
@@ -3488,6 +3704,7 @@
       "black"
     ],
     "level": "N5",
+    "pos": "n,adj-no",
     "examples": [
       {
         "ja": "黒に黒をたしても白にはならぬ。",
@@ -3504,6 +3721,7 @@
       "black"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "ナンシーはヘレンよりもほんのすこし色が黒い。",
@@ -3520,6 +3738,7 @@
       "policeman"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "二人の警官もへとへとになった。",
@@ -3536,6 +3755,7 @@
       "this morning"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "今朝はとても寒かった。",
@@ -3553,6 +3773,7 @@
       "to turn off power"
     ],
     "level": "N5",
+    "pos": "v5s,vt",
     "examples": [
       {
         "ja": "寝る前に電気を消してください。",
@@ -3570,6 +3791,7 @@
       "enough"
     ],
     "level": "N5",
+    "pos": "adj-na",
     "examples": [
       {
         "ja": "いや結構です。たくさんいただきました。",
@@ -3586,6 +3808,7 @@
       "marriage"
     ],
     "level": "N5",
+    "pos": "n,vs,vi",
     "examples": [
       {
         "ja": "ジョンはジェーンと結婚していた。",
@@ -3602,6 +3825,7 @@
       "Monday"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "月曜日までにここに来ています。",
@@ -3618,6 +3842,7 @@
       "entry hall"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "玄関のカギはどうなっていますか。",
@@ -3635,6 +3860,7 @@
       "vitality"
     ],
     "level": "N5",
+    "pos": "adj-na,n",
     "examples": [
       {
         "ja": "こんにちは、ロジャー。とっても元気よ。",
@@ -3651,6 +3877,7 @@
       "five"
     ],
     "level": "N5",
+    "pos": "num",
     "examples": [
       {
         "ja": "どこかは今五時だろう。",
@@ -3667,6 +3894,7 @@
       "park"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "この公園はすべての人に公開されている。",
@@ -3683,6 +3911,7 @@
       "intersection"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "あの交差点で何が起こったのか。",
@@ -3699,6 +3928,7 @@
       "black tea"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "紅茶かコーヒーはいかがですか。",
@@ -3715,6 +3945,7 @@
       "police box"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "向こうの交番で聞いてください。",
@@ -3731,6 +3962,7 @@
       "voice"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "あなたの声が聞けてうれしいわ。",
@@ -3748,6 +3980,7 @@
       "tennis court"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "このコートいいですね。試着してもいいですか。",
@@ -3764,6 +3997,7 @@
       "coffee"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "そのコーヒーはいいにおいがする。",
@@ -3780,6 +4014,7 @@
       "here"
     ],
     "level": "N5",
+    "pos": "pn",
     "examples": []
   },
   {
@@ -3791,6 +4026,7 @@
       "afternoon"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "午後何時ごろうかがいましょうか。",
@@ -3808,6 +4044,7 @@
       "ninth day"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "スピーチコンテストは１１月９日に行われた。",
@@ -3824,6 +4061,7 @@
       "nine"
     ],
     "level": "N5",
+    "pos": "num",
     "examples": [
       {
         "ja": "私たちの学校にはクラスが９つある。",
@@ -3840,6 +4078,7 @@
       "morning"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "その電車は午前９時にここを出発します。",
@@ -3856,6 +4095,7 @@
       "to answer"
     ],
     "level": "N5",
+    "pos": "v1,vi",
     "examples": [
       {
         "ja": "「はい、ありません」とジョーダンさんは答えた。",
@@ -3872,6 +4112,7 @@
       "feast"
     ],
     "level": "N5",
+    "pos": "int",
     "examples": [
       {
         "ja": "コーヒー、ごちそうさまでした。",
@@ -3888,6 +4129,7 @@
       "this person or way"
     ],
     "level": "N5",
+    "pos": "pn",
     "examples": [
       {
         "ja": "今のところこちらだけになります。",
@@ -3904,6 +4146,7 @@
       "this person or way"
     ],
     "level": "N5",
+    "pos": "pn",
     "examples": [
       {
         "ja": "こっちへ来い、ぐずぐずしないで。",
@@ -3920,6 +4163,7 @@
       "a glass"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": []
   },
   {
@@ -3931,6 +4175,7 @@
       "this year"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "今年もよい年でありますように。",
@@ -3948,6 +4193,7 @@
       "language"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "言葉が出てこなかった。",
@@ -3964,6 +4210,7 @@
       "child"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "あなたには何人子供がいますか。",
@@ -3980,6 +4227,7 @@
       "this"
     ],
     "level": "N5",
+    "pos": "adj-pn",
     "examples": [
       {
         "ja": "このコップをミルクで満たした。",
@@ -3997,6 +4245,7 @@
       "meal"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "ご飯とパンどちらがいいですか。",
@@ -4013,6 +4262,7 @@
       "to copy"
     ],
     "level": "N5",
+    "pos": "n,vs,vt",
     "examples": [
       {
         "ja": "コピーするページに付箋をつけておいてください。",
@@ -4029,6 +4279,7 @@
       "to be worried"
     ],
     "level": "N5",
+    "pos": "v5r,vi",
     "examples": [
       {
         "ja": "時間がなくてたいへん困っている。",
@@ -4046,6 +4297,7 @@
       "excuse me"
     ],
     "level": "N5",
+    "pos": "exp",
     "examples": [
       {
         "ja": "お話し中、ごめんなさい。",
@@ -4062,6 +4314,7 @@
       "this"
     ],
     "level": "N5",
+    "pos": "pn",
     "examples": [
       {
         "ja": "これは兄です。かっこいいですね。",
@@ -4078,6 +4331,7 @@
       "this month"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "今月の売り上げはよくない。",
@@ -4094,6 +4348,7 @@
       "this week"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "今週はどちらにいらしゃいましたか。",
@@ -4110,6 +4365,7 @@
       "such"
     ],
     "level": "N5",
+    "pos": "adj-pn",
     "examples": [
       {
         "ja": "こんな本を読んで何になるのか。",
@@ -4127,6 +4383,7 @@
       "good day (daytime greeting, id)"
     ],
     "level": "N5",
+    "pos": "int",
     "examples": [
       {
         "ja": "こんにちはジョージ、どう？",
@@ -4143,6 +4400,7 @@
       "this evening"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "今晩はパーティーがあるのかなあ。",
@@ -4159,6 +4417,7 @@
       "good evening"
     ],
     "level": "N5",
+    "pos": "int",
     "examples": [
       {
         "ja": "シカゴのみなさん、こんばんは。",
@@ -4175,6 +4434,7 @@
       "well…"
     ],
     "level": "N5",
+    "pos": "int",
     "examples": [
       {
         "ja": "さあ、パーティーをおしまいにしよう。",
@@ -4191,6 +4451,7 @@
       "wallet"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "サイフがないのにふと気がついた。",
@@ -4207,6 +4468,7 @@
       "fish"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "日本人は魚をたくさん食べますか。",
@@ -4224,6 +4486,7 @@
       "previous"
     ],
     "level": "N5",
+    "pos": "n,adj-no",
     "examples": [
       {
         "ja": "それから先の話を聞きたい。",
@@ -4240,6 +4503,7 @@
       "to bloom"
     ],
     "level": "N5",
+    "pos": "v5k,vi",
     "examples": [
       {
         "ja": "チューリップがみごとに咲いた。",
@@ -4257,6 +4521,7 @@
       "writing"
     ],
     "level": "N5",
+    "pos": "n,vs,vi",
     "examples": [
       {
         "ja": "作文は書いてしまいましたか。",
@@ -4274,6 +4539,7 @@
       "to raise an umbrella"
     ],
     "level": "N5",
+    "pos": "v5s,vt",
     "examples": [
       {
         "ja": "彼は雨の中を傘もささずに歩きつづけた。",
@@ -4290,6 +4556,7 @@
       "magazine"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "その雑誌はどこで買えますか。",
@@ -4306,6 +4573,7 @@
       "sugar"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "ポットにはあまり砂糖がなかった。",
@@ -4322,6 +4590,7 @@
       "cold"
     ],
     "level": "N5",
+    "pos": "adj-i",
     "examples": [
       {
         "ja": "寒いからコートを着るべきだ。",
@@ -4338,6 +4607,7 @@
       "good-bye"
     ],
     "level": "N5",
+    "pos": "int",
     "examples": [
       {
         "ja": "では今晩またね、さようなら。",
@@ -4354,6 +4624,7 @@
       "year after next"
     ],
     "level": "N5",
+    "pos": "n,adv",
     "examples": [
       {
         "ja": "祖父は、再来年引退する予定です。",
@@ -4370,6 +4641,7 @@
       "three"
     ],
     "level": "N5",
+    "pos": "num",
     "examples": [
       {
         "ja": "二、三デメリットがありますね。",
@@ -4386,6 +4658,7 @@
       "to stroll"
     ],
     "level": "N5",
+    "pos": "n,vs,vi",
     "examples": [
       {
         "ja": "散歩に出かけてもよろしいですか。",
@@ -4402,6 +4675,7 @@
       "four"
     ],
     "level": "N5",
+    "pos": "num",
     "examples": [
       {
         "ja": "列車でならここからたった四分だ。",
@@ -4418,6 +4692,7 @@
       "salt"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "このスープは塩が少し足りない。",
@@ -4434,6 +4709,7 @@
       "however"
     ],
     "level": "N5",
+    "pos": "conj",
     "examples": [
       {
         "ja": "しかしこの本をしまっておきなさい。",
@@ -4450,6 +4726,7 @@
       "time"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "いつだって読書の時間は見つけられる。",
@@ -4466,6 +4743,7 @@
       "job"
     ],
     "level": "N5",
+    "pos": "n,vs,vi",
     "examples": [
       {
         "ja": "仕事をサボったからクビになった。",
@@ -4482,6 +4760,7 @@
       "dictionary"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "それはどの辞書にもでています。",
@@ -4498,6 +4777,7 @@
       "quiet"
     ],
     "level": "N5",
+    "pos": "adj-na",
     "examples": [
       {
         "ja": "キャプテンは静かにするように命じた。",
@@ -4514,6 +4794,7 @@
       "below"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "クッキーはテーブルの下にいる。",
@@ -4530,6 +4811,7 @@
       "seven"
     ],
     "level": "N5",
+    "pos": "num",
     "examples": [
       {
         "ja": "どういっても七時までにいかないと。",
@@ -4546,6 +4828,7 @@
       "question"
     ],
     "level": "N5",
+    "pos": "n,vs,vt,vi,adj-no",
     "examples": [
       {
         "ja": "あの先生に質問してもいいですよ。",
@@ -4562,6 +4845,7 @@
       "bicycle"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "ぼくの自転車はパンクしている。",
@@ -4578,6 +4862,7 @@
       "automobile"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "自動車にひかれたのではないですか。",
@@ -4594,6 +4879,7 @@
       "to die"
     ],
     "level": "N5",
+    "pos": "v5n,vi",
     "examples": [
       {
         "ja": "その少年は死んだものとしてあきらめられた。",
@@ -4610,6 +4896,7 @@
       "dictionary"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "ジョンソンさんはまるで生き字引です。",
@@ -4626,6 +4913,7 @@
       "oneself"
     ],
     "level": "N5",
+    "pos": "pn",
     "examples": [
       {
         "ja": "自分でそれをしなければならない。",
@@ -4643,6 +4931,7 @@
       "to be closed"
     ],
     "level": "N5",
+    "pos": "v5r,vi",
     "examples": [
       {
         "ja": "あいにく店は閉まっていた。",
@@ -4659,6 +4948,7 @@
       "to tie"
     ],
     "level": "N5",
+    "pos": "v1,vt",
     "examples": [
       {
         "ja": "いつもシートベルトを締めなさい。",
@@ -4675,6 +4965,7 @@
       "to close something"
     ],
     "level": "N5",
+    "pos": "v1,vt",
     "examples": [
       {
         "ja": "どうかドアを閉めてくれませんか。",
@@ -4691,6 +4982,7 @@
       "well then…"
     ],
     "level": "N5",
+    "pos": "conj",
     "examples": [
       {
         "ja": "じゃあ、キーをもらえますか。",
@@ -4707,6 +4999,7 @@
       "photograph"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "なんてキレイな写真なんでしょう。",
@@ -4723,6 +5016,7 @@
       "shirt"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "シャツにアイロンをかけてください。",
@@ -4739,6 +5033,7 @@
       "shower"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "シャワーの水が出ません。",
@@ -4755,6 +5050,7 @@
       "ten"
     ],
     "level": "N5",
+    "pos": "num",
     "examples": [
       {
         "ja": "その会は十時に終わった。",
@@ -4772,6 +5068,7 @@
       "class work"
     ],
     "level": "N5",
+    "pos": "n,vs,vi",
     "examples": [
       {
         "ja": "それは授業の終わりだった。",
@@ -4788,6 +5085,7 @@
       "homework"
     ],
     "level": "N5",
+    "pos": "n",
     "examples": [
       {
         "ja": "宿題はもうやってしまいましたか。",
@@ -4804,6 +5102,7 @@
       "skillful"
     ],
     "level": "N5",
+    "pos": "adj-na,n",
     "examples": [
       {
         "ja": "あなたは上手にバスケットボールができますか。",
@@ -4821,10 +5120,6404 @@
       "durable"
     ],
     "level": "N5",
+    "pos": "adj-na",
     "examples": [
       {
         "ja": "このロープはとてもじょうぶだ。",
         "en": "This rope is very tough."
+      }
+    ]
+  },
+  {
+    "id": "9476d7966d",
+    "word": "しょうゆ",
+    "reading": "しょうゆ",
+    "romaji": "shouyu",
+    "meanings": [
+      "soy sauce"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "同社は醤油その他の食品を生産する。",
+        "en": "The company produces soy sauce and other food products."
+      }
+    ]
+  },
+  {
+    "id": "dcc87a37fb",
+    "word": "食堂",
+    "reading": "しょくどう",
+    "romaji": "shokudou",
+    "meanings": [
+      "dining hall"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "食堂はセルフサービスでした。",
+        "en": "The cafeteria was self-service."
+      }
+    ]
+  },
+  {
+    "id": "1fcb2fece8",
+    "word": "知る",
+    "reading": "しる",
+    "romaji": "shiru",
+    "meanings": [
+      "to know"
+    ],
+    "level": "N5",
+    "pos": "v5r,vt",
+    "examples": [
+      {
+        "ja": "ぼくは知らないし、気にもしない。",
+        "en": "I don't know, nor do I care."
+      }
+    ]
+  },
+  {
+    "id": "98eace7008",
+    "word": "白",
+    "reading": "しろ",
+    "romaji": "shiro",
+    "meanings": [
+      "white"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no",
+    "examples": [
+      {
+        "ja": "黒に黒をたしても白にはならぬ。",
+        "en": "Two blacks do not make a white."
+      }
+    ]
+  },
+  {
+    "id": "8997f64f52",
+    "word": "白い",
+    "reading": "しろい",
+    "romaji": "shiroi",
+    "meanings": [
+      "white"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "白いベルトがついてるのがいいな。",
+        "en": "I like the one with a white belt."
+      }
+    ]
+  },
+  {
+    "id": "b8317395af",
+    "word": "新聞",
+    "reading": "しんぶん",
+    "romaji": "shinbun",
+    "meanings": [
+      "newspaper"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ジョンのことが新聞に出ていた。",
+        "en": "John was mentioned in the paper."
+      }
+    ]
+  },
+  {
+    "id": "44d9d70862",
+    "word": "水曜日",
+    "reading": "すいようび",
+    "romaji": "suiyoubi",
+    "meanings": [
+      "Wednesday"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "今度の水曜日ならいいですよ。",
+        "en": "Next Wednesday will be fine."
+      }
+    ]
+  },
+  {
+    "id": "e82727193e",
+    "word": "吸う",
+    "reading": "すう",
+    "romaji": "suu",
+    "meanings": [
+      "to smoke",
+      "to suck"
+    ],
+    "level": "N5",
+    "pos": "v5u,vt",
+    "examples": [
+      {
+        "ja": "この紙はインクを吸わない。",
+        "en": "This paper does not absorb ink."
+      }
+    ]
+  },
+  {
+    "id": "f0f5f6b29b",
+    "word": "スカート",
+    "reading": "スカート",
+    "romaji": "sukaato",
+    "meanings": [
+      "skirt"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "スカートを見せていただけませんか。",
+        "en": "Would you please show me that skirt?"
+      }
+    ]
+  },
+  {
+    "id": "20cbecd474",
+    "word": "好き",
+    "reading": "すき",
+    "romaji": "suki",
+    "meanings": [
+      "likeable"
+    ],
+    "level": "N5",
+    "pos": "adj-na,n",
+    "examples": [
+      {
+        "ja": "あなたのそんなところが好きです。",
+        "en": "I like that about you."
+      }
+    ]
+  },
+  {
+    "id": "ce75057c4c",
+    "word": "すぐ",
+    "reading": "すぐ",
+    "romaji": "sugu",
+    "meanings": [
+      "immediately",
+      "soon",
+      "easily",
+      "right (near)"
+    ],
+    "level": "N5",
+    "pos": "adv,n",
+    "examples": [
+      {
+        "ja": "すぐわかるところにあるよ。",
+        "en": "It's in plain sight."
+      }
+    ]
+  },
+  {
+    "id": "0d38b01113",
+    "word": "少ない",
+    "reading": "すくない",
+    "romaji": "sukunai",
+    "meanings": [
+      "a few"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "読書の時間がますます少なくなっている。",
+        "en": "I have less and less time for reading."
+      }
+    ]
+  },
+  {
+    "id": "a8722990f1",
+    "word": "すぐに",
+    "reading": "すぐに",
+    "romaji": "suguni",
+    "meanings": [
+      "instantly"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "すぐに書かなければなりませんか。",
+        "en": "Should I fill it in now?"
+      }
+    ]
+  },
+  {
+    "id": "c373555102",
+    "word": "少し",
+    "reading": "すこし",
+    "romaji": "sukoshi",
+    "meanings": [
+      "few"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "少しテレビを見てもいいですか。",
+        "en": "Do you mind if I watch TV for a while?"
+      }
+    ]
+  },
+  {
+    "id": "67f5908e10",
+    "word": "涼しい",
+    "reading": "すずしい",
+    "romaji": "suzushii",
+    "meanings": [
+      "refreshing"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "日増しに涼しくなっていく。",
+        "en": "It's getting cooler day by day."
+      }
+    ]
+  },
+  {
+    "id": "8149d77689",
+    "word": "ストーブ",
+    "reading": "ストーブ",
+    "romaji": "sutoobu",
+    "meanings": [
+      "heater"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "私は古いストーブに１０ドルの値をつけた。",
+        "en": "I bid ten dollars for the old stove."
+      }
+    ]
+  },
+  {
+    "id": "938a169f6c",
+    "word": "スプーン",
+    "reading": "スプーン",
+    "romaji": "supuun",
+    "meanings": [
+      "spoon"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "スプーンをいただけますか。",
+        "en": "Could we have a spoon?"
+      }
+    ]
+  },
+  {
+    "id": "0a33903ccf",
+    "word": "スポーツ",
+    "reading": "スポーツ",
+    "romaji": "supootsu",
+    "meanings": [
+      "sport"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ビリーはスポーツがうまいです。",
+        "en": "Billy is good at sports."
+      }
+    ]
+  },
+  {
+    "id": "10fe0704ca",
+    "word": "ズボン",
+    "reading": "ズボン",
+    "romaji": "zubon",
+    "meanings": [
+      "trousers"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ちょっとこのズボンにつめて。",
+        "en": "Please take the pants in a bit."
+      }
+    ]
+  },
+  {
+    "id": "feae64eac4",
+    "word": "すみません",
+    "reading": "すみません",
+    "romaji": "sumimasen",
+    "meanings": [
+      "sorry",
+      "excuse me"
+    ],
+    "level": "N5",
+    "pos": "exp,int",
+    "examples": [
+      {
+        "ja": "すみません、この席あいていますか。",
+        "en": "Excuse me, is this seat taken?"
+      }
+    ]
+  },
+  {
+    "id": "d671097071",
+    "word": "住む",
+    "reading": "すむ",
+    "romaji": "sumu",
+    "meanings": [
+      "to live in"
+    ],
+    "level": "N5",
+    "pos": "v5m,vi",
+    "examples": [
+      {
+        "ja": "どうしてアメリカに住んでいたの？",
+        "en": "Why did he live in the United States?"
+      }
+    ]
+  },
+  {
+    "id": "508131fe89",
+    "word": "スリッパ",
+    "reading": "スリッパ",
+    "romaji": "surippa",
+    "meanings": [
+      "slippers"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "スリッパをはいてください。",
+        "en": "Please put on your slippers."
+      }
+    ]
+  },
+  {
+    "id": "c4cdc162d7",
+    "word": "する",
+    "reading": "する",
+    "romaji": "suru",
+    "meanings": [
+      "to do"
+    ],
+    "level": "N5",
+    "pos": "vs-i",
+    "examples": [
+      {
+        "ja": "ログアウトするんじゃなかったよ。",
+        "en": "I shouldn't have logged off."
+      }
+    ]
+  },
+  {
+    "id": "c9a15e8777",
+    "word": "座る",
+    "reading": "すわる",
+    "romaji": "suwaru",
+    "meanings": [
+      "to sit"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "父と母は木の下に座っていました。",
+        "en": "My father and mother were sitting under a tree."
+      }
+    ]
+  },
+  {
+    "id": "898b067287",
+    "word": "背",
+    "reading": "せ",
+    "romaji": "se",
+    "meanings": [
+      "height",
+      "stature"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "トムはジャックと背が同じくらいだ。",
+        "en": "Tom is as tall as Jack."
+      }
+    ]
+  },
+  {
+    "id": "af7459ef1e",
+    "word": "生徒",
+    "reading": "せいと",
+    "romaji": "seito",
+    "meanings": [
+      "pupil"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "この学校はたくさんの生徒がいます。",
+        "en": "This school has many students."
+      }
+    ]
+  },
+  {
+    "id": "4b0b49a42d",
+    "word": "セーター",
+    "reading": "セーター",
+    "romaji": "seetaa",
+    "meanings": [
+      "sweater",
+      "jumper"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "このセーターは気に入らない。",
+        "en": "I don't like this sweater."
+      }
+    ]
+  },
+  {
+    "id": "b48d0c99d4",
+    "word": "せっけん",
+    "reading": "せっけん",
+    "romaji": "sekken",
+    "meanings": [
+      "economy"
+    ],
+    "level": "N5",
+    "pos": "n,vs,vt,vi",
+    "examples": [
+      {
+        "ja": "せっけんだらけの手で私にさわらないで。",
+        "en": "Don't touch me with your soapy hands."
+      }
+    ]
+  },
+  {
+    "id": "9d432ac114",
+    "word": "背広",
+    "reading": "せびろ",
+    "romaji": "sebiro",
+    "meanings": [
+      "business suit"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "私は新しい背広を買った。",
+        "en": "I bought a new suit of clothes."
+      }
+    ]
+  },
+  {
+    "id": "d12ee2e932",
+    "word": "狭い",
+    "reading": "せまい",
+    "romaji": "semai",
+    "meanings": [
+      "narrow"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "オランダは狭い国です。",
+        "en": "The Netherlands is a small country."
+      }
+    ]
+  },
+  {
+    "id": "434707d737",
+    "word": "ゼロ",
+    "reading": "ゼロ",
+    "romaji": "zero",
+    "meanings": [
+      "zero"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "私たちは商売をゼロから始めなければならなかった。",
+        "en": "We had to start our business from zero."
+      }
+    ]
+  },
+  {
+    "id": "1729d60f09",
+    "word": "千",
+    "reading": "せん",
+    "romaji": "sen",
+    "meanings": [
+      "thousand"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "このホールには人が二千人入れる。",
+        "en": "Two thousand people fit into this hall."
+      }
+    ]
+  },
+  {
+    "id": "0eaa93c144",
+    "word": "先月",
+    "reading": "せんげつ",
+    "romaji": "sengetsu",
+    "meanings": [
+      "last month"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "先月は、ほとんど雨が降らなかった。",
+        "en": "We had little rain last month."
+      }
+    ]
+  },
+  {
+    "id": "b8c4cd80db",
+    "word": "先週",
+    "reading": "せんしゅう",
+    "romaji": "senshuu",
+    "meanings": [
+      "last week"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "あの人は先週ここにいた人です。",
+        "en": "He's the man that was here last week."
+      }
+    ]
+  },
+  {
+    "id": "814bdc2cec",
+    "word": "先生",
+    "reading": "せんせい",
+    "romaji": "sensei",
+    "meanings": [
+      "teacher",
+      "doctor"
+    ],
+    "level": "N5",
+    "pos": "n,n-suf",
+    "examples": [
+      {
+        "ja": "校長が先生の後ろから入ってきた。",
+        "en": "The principal came in after the teacher."
+      }
+    ]
+  },
+  {
+    "id": "4d0ca7b320",
+    "word": "洗濯",
+    "reading": "せんたく",
+    "romaji": "sentaku",
+    "meanings": [
+      "washing"
+    ],
+    "level": "N5",
+    "pos": "n,vs,vt",
+    "examples": [
+      {
+        "ja": "洗濯はいつやってもいいですか。",
+        "en": "Can I use the laundry any time?"
+      }
+    ]
+  },
+  {
+    "id": "acba6e07ba",
+    "word": "全部",
+    "reading": "ぜんぶ",
+    "romaji": "zenbu",
+    "meanings": [
+      "all"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no,adv",
+    "examples": [
+      {
+        "ja": "トッピングは全部のせて下さい。",
+        "en": "I want everything on it."
+      }
+    ]
+  },
+  {
+    "id": "501df34d31",
+    "word": "掃除",
+    "reading": "そうじ",
+    "romaji": "souji",
+    "meanings": [
+      "to clean",
+      "to sweep"
+    ],
+    "level": "N5",
+    "pos": "n,vs,vt",
+    "examples": [
+      {
+        "ja": "父はガレージを掃除している。",
+        "en": "My father is sweeping the garage."
+      }
+    ]
+  },
+  {
+    "id": "e75777d218",
+    "word": "そうして",
+    "reading": "そうして",
+    "romaji": "soushite",
+    "meanings": [
+      "and"
+    ],
+    "level": "N5",
+    "pos": "conj",
+    "examples": [
+      {
+        "ja": "そうしてくださればとてもうれしい。",
+        "en": "I can't be sorry."
+      }
+    ]
+  },
+  {
+    "id": "5ef867ff81",
+    "word": "そこ",
+    "reading": "そこ",
+    "romaji": "soko",
+    "meanings": [
+      "that place"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": [
+      {
+        "ja": "バスでそこまで２時間かかります。",
+        "en": "It takes two hours to go there by bus."
+      }
+    ]
+  },
+  {
+    "id": "105df79571",
+    "word": "そちら",
+    "reading": "そちら",
+    "romaji": "sochira",
+    "meanings": [
+      "over there"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": [
+      {
+        "ja": "これとそちらとの違いは何だい。",
+        "en": "What is the difference between this and that?"
+      }
+    ]
+  },
+  {
+    "id": "80981fa136",
+    "word": "そっち",
+    "reading": "そっち",
+    "romaji": "sotchi",
+    "meanings": [
+      "over there"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": [
+      {
+        "ja": "そっちの天気は？",
+        "en": "How's the weather there?"
+      }
+    ]
+  },
+  {
+    "id": "68ad5f4363",
+    "word": "外",
+    "reading": "そと",
+    "romaji": "soto",
+    "meanings": [
+      "outside"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "外に出してやってくれませんか。",
+        "en": "Could you let him out?"
+      }
+    ]
+  },
+  {
+    "id": "cb1c02a574",
+    "word": "その",
+    "reading": "その",
+    "romaji": "sono",
+    "meanings": [
+      "that"
+    ],
+    "level": "N5",
+    "pos": "adj-pn",
+    "examples": []
+  },
+  {
+    "id": "38c854e97f",
+    "word": "そば",
+    "reading": "そば",
+    "romaji": "soba",
+    "meanings": [
+      "near",
+      "beside"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ガレージは家のそばにあります。",
+        "en": "The garage is at the side of the house."
+      }
+    ]
+  },
+  {
+    "id": "6ff51bace3",
+    "word": "空",
+    "reading": "そら",
+    "romaji": "sora",
+    "meanings": [
+      "sky"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "空はすっかりもやがかかっていた。",
+        "en": "The sky misted over."
+      }
+    ]
+  },
+  {
+    "id": "79d922e359",
+    "word": "それ",
+    "reading": "それ",
+    "romaji": "sore",
+    "meanings": [
+      "that"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": [
+      {
+        "ja": "わたしはそれを見てぎょっとした。",
+        "en": "I was appalled at the sight."
+      }
+    ]
+  },
+  {
+    "id": "799b7cabe0",
+    "word": "それから",
+    "reading": "それから",
+    "romaji": "sorekara",
+    "meanings": [
+      "after that"
+    ],
+    "level": "N5",
+    "pos": "exp",
+    "examples": [
+      {
+        "ja": "それからすっきりきれいにしてくれ。",
+        "en": "Then clean it really well."
+      }
+    ]
+  },
+  {
+    "id": "46c1721526",
+    "word": "それでは",
+    "reading": "それでは",
+    "romaji": "soredewa",
+    "meanings": [
+      "in that situation"
+    ],
+    "level": "N5",
+    "pos": "exp",
+    "examples": [
+      {
+        "ja": "それでは、あなたは来ないということですか。",
+        "en": "Does that mean you won't come?"
+      }
+    ]
+  },
+  {
+    "id": "5b303264b9",
+    "word": "大学",
+    "reading": "だいがく",
+    "romaji": "daigaku",
+    "meanings": [
+      "university"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "大学で何をするつもりですか。",
+        "en": "What are you going to do in college?"
+      }
+    ]
+  },
+  {
+    "id": "992fc07339",
+    "word": "大使館",
+    "reading": "たいしかん",
+    "romaji": "taishikan",
+    "meanings": [
+      "embassy"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "日本大使館はどこにありますか。",
+        "en": "Where is the Japanese Embassy?"
+      }
+    ]
+  },
+  {
+    "id": "2f62b9db5e",
+    "word": "大丈夫",
+    "reading": "だいじょうぶ",
+    "romaji": "daijoubu",
+    "meanings": [
+      "all right"
+    ],
+    "level": "N5",
+    "pos": "adj-na",
+    "examples": [
+      {
+        "ja": "いや、大丈夫だ。",
+        "en": "No, no, that's okay."
+      }
+    ]
+  },
+  {
+    "id": "9ee7cd3382",
+    "word": "大好き",
+    "reading": "だいすき",
+    "romaji": "daisuki",
+    "meanings": [
+      "to be very likeable"
+    ],
+    "level": "N5",
+    "pos": "adj-na",
+    "examples": [
+      {
+        "ja": "ロジャーはパーティーが大好きだ。",
+        "en": "Roger is a party animal."
+      }
+    ]
+  },
+  {
+    "id": "b3a8593e53",
+    "word": "大切",
+    "reading": "たいせつ",
+    "romaji": "taisetsu",
+    "meanings": [
+      "important"
+    ],
+    "level": "N5",
+    "pos": "adj-na",
+    "examples": [
+      {
+        "ja": "本を読むことは大切です。",
+        "en": "To read books is important."
+      }
+    ]
+  },
+  {
+    "id": "1c0b0f77b6",
+    "word": "台所",
+    "reading": "だいどころ",
+    "romaji": "daidokoro",
+    "meanings": [
+      "kitchen"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ルーシーは今台所にいるでしょう。",
+        "en": "Lucy should be in the kitchen now."
+      }
+    ]
+  },
+  {
+    "id": "e04372c490",
+    "word": "たいへん",
+    "reading": "たいへん",
+    "romaji": "taihen",
+    "meanings": [
+      "very"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "それはたいへんなショックでした。",
+        "en": "It was such a shock."
+      }
+    ]
+  },
+  {
+    "id": "c74892f565",
+    "word": "高い",
+    "reading": "たかい",
+    "romaji": "takai",
+    "meanings": [
+      "tall",
+      "expensive"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "二つのうちでどちらが高いですか。",
+        "en": "Which is the more expensive of the two?"
+      }
+    ]
+  },
+  {
+    "id": "a7c72d9bb1",
+    "word": "たくさん",
+    "reading": "たくさん",
+    "romaji": "takusan",
+    "meanings": [
+      "many"
+    ],
+    "level": "N5",
+    "pos": "adj-no,adj-na,n,adv",
+    "examples": [
+      {
+        "ja": "なすべきことがまだたくさんある。",
+        "en": "There still remains much to be done."
+      }
+    ]
+  },
+  {
+    "id": "2d5a93eb11",
+    "word": "タクシー",
+    "reading": "タクシー",
+    "romaji": "takushii",
+    "meanings": [
+      "taxi"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "そのタクシーはいきなり左に曲がった。",
+        "en": "The taxi abruptly turned left."
+      }
+    ]
+  },
+  {
+    "id": "6298cfc5d6",
+    "word": "出す",
+    "reading": "だす",
+    "romaji": "dasu",
+    "meanings": [
+      "to put out"
+    ],
+    "level": "N5",
+    "pos": "v5s,vt",
+    "examples": [
+      {
+        "ja": "ここではおいしい食べ物が出されます。",
+        "en": "They serve excellent food here."
+      }
+    ]
+  },
+  {
+    "id": "932afda20b",
+    "word": "立つ",
+    "reading": "たつ",
+    "romaji": "tatsu",
+    "meanings": [
+      "to stand"
+    ],
+    "level": "N5",
+    "pos": "v5t,vi",
+    "examples": [
+      {
+        "ja": "立っているのは、みんな男だった。",
+        "en": "Those standing were all men."
+      }
+    ]
+  },
+  {
+    "id": "e7ca1b2fd5",
+    "word": "たて",
+    "reading": "たて",
+    "romaji": "tate",
+    "meanings": [
+      "length",
+      "height"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "テーブルを縦一列に並べなさい。",
+        "en": "Put the tables end to end."
+      }
+    ]
+  },
+  {
+    "id": "372b08211e",
+    "word": "建物",
+    "reading": "たてもの",
+    "romaji": "tatemono",
+    "meanings": [
+      "building"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "建物がとっても小さく見えるよ。",
+        "en": "The buildings look so tiny."
+      }
+    ]
+  },
+  {
+    "id": "9b2d455dfe",
+    "word": "楽しい",
+    "reading": "たのしい",
+    "romaji": "tanoshii",
+    "meanings": [
+      "enjoyable"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "あなたと一緒にいて楽しかった。",
+        "en": "I really enjoyed your company."
+      }
+    ]
+  },
+  {
+    "id": "7e9d38afeb",
+    "word": "頼む",
+    "reading": "たのむ",
+    "romaji": "tanomu",
+    "meanings": [
+      "to ask"
+    ],
+    "level": "N5",
+    "pos": "v5m,vt",
+    "examples": [
+      {
+        "ja": "あなたに頼んでもよろしいですか。",
+        "en": "May I request a favour of you?"
+      }
+    ]
+  },
+  {
+    "id": "80beed00bf",
+    "word": "たばこ",
+    "reading": "たばこ",
+    "romaji": "tabako",
+    "meanings": [
+      "tobacco",
+      "cigarettes"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "男はライターでたばこに火をつけた。",
+        "en": "The man lit a cigarette with a lighter."
+      }
+    ]
+  },
+  {
+    "id": "d9eba03b7b",
+    "word": "たぶん",
+    "reading": "たぶん",
+    "romaji": "tabun",
+    "meanings": [
+      "probably"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "君にはたぶんみんなわかっていることでしょう。",
+        "en": "I expect you know all about it."
+      }
+    ]
+  },
+  {
+    "id": "5c89b3094a",
+    "word": "食べ物",
+    "reading": "たべもの",
+    "romaji": "tabemono",
+    "meanings": [
+      "food"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "食べ物はすべてなくなってしまった。",
+        "en": "All the food was gone."
+      }
+    ]
+  },
+  {
+    "id": "86f67e2dc3",
+    "word": "食べる",
+    "reading": "たべる",
+    "romaji": "taberu",
+    "meanings": [
+      "to eat"
+    ],
+    "level": "N5",
+    "pos": "v1,vt",
+    "examples": [
+      {
+        "ja": "ちょうど食べたかったものでした。",
+        "en": "That hit the spot."
+      }
+    ]
+  },
+  {
+    "id": "4d66739694",
+    "word": "卵",
+    "reading": "たまご",
+    "romaji": "tamago",
+    "meanings": [
+      "egg"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "卵を一ダースづつつめなさい。",
+        "en": "Pack eggs in dozens."
+      }
+    ]
+  },
+  {
+    "id": "3d2ca62c5f",
+    "word": "誰",
+    "reading": "だれ",
+    "romaji": "dare",
+    "meanings": [
+      "who"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": [
+      {
+        "ja": "誰がこれをしたのかはわからない。",
+        "en": "There is no telling who did this."
+      }
+    ]
+  },
+  {
+    "id": "2e610178ae",
+    "word": "誕生日",
+    "reading": "たんじょうび",
+    "romaji": "tanjoubi",
+    "meanings": [
+      "birthday"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "誕生日とは人が生まれた日のことだ。",
+        "en": "The birthday is the day on which a person was born."
+      }
+    ]
+  },
+  {
+    "id": "55dbb815ba",
+    "word": "だんだん",
+    "reading": "だんだん",
+    "romaji": "dandan",
+    "meanings": [
+      "gradually"
+    ],
+    "level": "N5",
+    "pos": "adv,adv-to",
+    "examples": [
+      {
+        "ja": "日がだんだん長くなってきています。",
+        "en": "The days are getting longer and longer."
+      }
+    ]
+  },
+  {
+    "id": "d4779ac36c",
+    "word": "小さい",
+    "reading": "ちいさい",
+    "romaji": "chiisai",
+    "meanings": [
+      "little"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "もっと小さいサイズがありますか。",
+        "en": "Do you have a smaller size?"
+      }
+    ]
+  },
+  {
+    "id": "38a8411ec3",
+    "word": "小さな",
+    "reading": "ちいさな",
+    "romaji": "chiisana",
+    "meanings": [
+      "little"
+    ],
+    "level": "N5",
+    "pos": "adj-pn",
+    "examples": [
+      {
+        "ja": "小さなことでくよくよするな。",
+        "en": "Don't trouble about small things."
+      }
+    ]
+  },
+  {
+    "id": "a21ba677f2",
+    "word": "近い",
+    "reading": "ちかい",
+    "romaji": "chikai",
+    "meanings": [
+      "near"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "クリスマスが近くなってきた。",
+        "en": "Christmas is fast approaching."
+      }
+    ]
+  },
+  {
+    "id": "35e9881c22",
+    "word": "違う",
+    "reading": "ちがう",
+    "romaji": "chigau",
+    "meanings": [
+      "to differ"
+    ],
+    "level": "N5",
+    "pos": "v5u,vi",
+    "examples": [
+      {
+        "ja": "ライオンとヒョウの違いは何ですか。",
+        "en": "What's the difference between lions and leopards?"
+      }
+    ]
+  },
+  {
+    "id": "6d7293f7cf",
+    "word": "近く",
+    "reading": "ちかく",
+    "romaji": "chikaku",
+    "meanings": [
+      "near"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no,adv",
+    "examples": [
+      {
+        "ja": "７時近くだ。学校へ行かなくては。",
+        "en": "It is close to seven o'clock. We have to go to school."
+      }
+    ]
+  },
+  {
+    "id": "3134199c25",
+    "word": "地下鉄",
+    "reading": "ちかてつ",
+    "romaji": "chikatetsu",
+    "meanings": [
+      "underground train"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "地下鉄で行きたいのです。",
+        "en": "I want to get there by subway."
+      }
+    ]
+  },
+  {
+    "id": "ffa3dda331",
+    "word": "地図",
+    "reading": "ちず",
+    "romaji": "chizu",
+    "meanings": [
+      "map"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "この大きなアメリカの地図を見て。",
+        "en": "Look at this large map of America."
+      }
+    ]
+  },
+  {
+    "id": "f9b377e253",
+    "word": "茶色",
+    "reading": "ちゃいろ",
+    "romaji": "chairo",
+    "meanings": [
+      "brown"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no",
+    "examples": [
+      {
+        "ja": "その犬は茶色で小さくて、やせています。",
+        "en": "The dog is brown, small and thin."
+      }
+    ]
+  },
+  {
+    "id": "3d12036023",
+    "word": "ちゃわん",
+    "reading": "ちゃわん",
+    "romaji": "chawan",
+    "meanings": [
+      "rice bowl"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "この茶わんはなんとすばらしいのでしょう。",
+        "en": "How nice this cup is!"
+      }
+    ]
+  },
+  {
+    "id": "9b08365493",
+    "word": "ちょうど",
+    "reading": "ちょうど",
+    "romaji": "choudo",
+    "meanings": [
+      "exactly"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "ちょうど食べたかったものでした。",
+        "en": "That hit the spot."
+      }
+    ]
+  },
+  {
+    "id": "602fdffbf2",
+    "word": "ちょっと",
+    "reading": "ちょっと",
+    "romaji": "chotto",
+    "meanings": [
+      "somewhat"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "ちょっと、そこのきみ！",
+        "en": "Hey, you there!"
+      }
+    ]
+  },
+  {
+    "id": "c88e0ba104",
+    "word": "使う",
+    "reading": "つかう",
+    "romaji": "tsukau",
+    "meanings": [
+      "to use"
+    ],
+    "level": "N5",
+    "pos": "v5u,vt",
+    "examples": [
+      {
+        "ja": "フラッシュを使ってもいいですか。",
+        "en": "Is it all right to use a flash here?"
+      }
+    ]
+  },
+  {
+    "id": "156f17113e",
+    "word": "疲れる",
+    "reading": "つかれる",
+    "romaji": "tsukareru",
+    "meanings": [
+      "to get tired"
+    ],
+    "level": "N5",
+    "pos": "v1,vi",
+    "examples": [
+      {
+        "ja": "とても疲れているように見えます。",
+        "en": "You look very tired."
+      }
+    ]
+  },
+  {
+    "id": "d00ef0a9d5",
+    "word": "次",
+    "reading": "つぎ",
+    "romaji": "tsugi",
+    "meanings": [
+      "next"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no",
+    "examples": [
+      {
+        "ja": "次はいつ来ればいいのでしょうか。",
+        "en": "When should I come again?"
+      }
+    ]
+  },
+  {
+    "id": "9d4a68ce12",
+    "word": "着く",
+    "reading": "つく",
+    "romaji": "tsuku",
+    "meanings": [
+      "to arrive at"
+    ],
+    "level": "N5",
+    "pos": "v5k,vi",
+    "examples": [
+      {
+        "ja": "シカゴに着いたらすぐ電話します。",
+        "en": "I'll call you as soon as I get to Chicago."
+      }
+    ]
+  },
+  {
+    "id": "672321bac9",
+    "word": "机",
+    "reading": "つくえ",
+    "romaji": "tsukue",
+    "meanings": [
+      "desk"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "机の上にペンが一本もありません。",
+        "en": "There are no pens on the desk."
+      }
+    ]
+  },
+  {
+    "id": "6e922a750e",
+    "word": "作る",
+    "reading": "つくる",
+    "romaji": "tsukuru",
+    "meanings": [
+      "to make"
+    ],
+    "level": "N5",
+    "pos": "v5r,vt",
+    "examples": [
+      {
+        "ja": "たまごを割らずにオムレツは作れない。",
+        "en": "You can't make an omelet without breaking eggs."
+      }
+    ]
+  },
+  {
+    "id": "edc22b8d98",
+    "word": "つける",
+    "reading": "つける",
+    "romaji": "tsukeru",
+    "meanings": [
+      "to turn on"
+    ],
+    "level": "N5",
+    "pos": "v1,vt",
+    "examples": [
+      {
+        "ja": "テレビをつけて。",
+        "en": "Please turn on the television."
+      }
+    ]
+  },
+  {
+    "id": "ba6c46f68c",
+    "word": "勤める",
+    "reading": "つとめる",
+    "romaji": "tsutomeru",
+    "meanings": [
+      "to work for someone"
+    ],
+    "level": "N5",
+    "pos": "v1,vt,vi",
+    "examples": [
+      {
+        "ja": "父は銀行に勤めています。",
+        "en": "My father works for a bank."
+      }
+    ]
+  },
+  {
+    "id": "3a94b5e981",
+    "word": "つまらない",
+    "reading": "つまらない",
+    "romaji": "tsumaranai",
+    "meanings": [
+      "boring"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "このビデオはつまらないよ。",
+        "en": "This video is boring."
+      }
+    ]
+  },
+  {
+    "id": "a23d308800",
+    "word": "冷たい",
+    "reading": "つめたい",
+    "romaji": "tsumetai",
+    "meanings": [
+      "cold to the touch"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "もう手が冷たくって。",
+        "en": "My hand's getting too cold."
+      }
+    ]
+  },
+  {
+    "id": "d99745fbb6",
+    "word": "強い",
+    "reading": "つよい",
+    "romaji": "tsuyoi",
+    "meanings": [
+      "powerful"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "トラとライオンとどちらが強いか。",
+        "en": "Which is stronger, a tiger or a lion?"
+      }
+    ]
+  },
+  {
+    "id": "5b9670420a",
+    "word": "手",
+    "reading": "て",
+    "romaji": "te",
+    "meanings": [
+      "hand"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ここに手のないナベがある。",
+        "en": "Here is a pan without handles."
+      }
+    ]
+  },
+  {
+    "id": "0cf2b43e9c",
+    "word": "テープ",
+    "reading": "テープ",
+    "romaji": "teepu",
+    "meanings": [
+      "tape"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "君はそのコンサートをテープにとったか。",
+        "en": "Did you tape that concert?"
+      }
+    ]
+  },
+  {
+    "id": "ff161262dd",
+    "word": "テーブル",
+    "reading": "テーブル",
+    "romaji": "teeburu",
+    "meanings": [
+      "table"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "このテーブルを頼んだのではない。",
+        "en": "I didn't ask for a table here."
+      }
+    ]
+  },
+  {
+    "id": "dc0ae29019",
+    "word": "テープレコーダー",
+    "reading": "テープレコーダー",
+    "romaji": "teepurekoodaa",
+    "meanings": [
+      "tape recorder"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "このテープレコーダーは新しくない。",
+        "en": "This tape recorder is not new."
+      }
+    ]
+  },
+  {
+    "id": "375cfbefdd",
+    "word": "出かける",
+    "reading": "でかける",
+    "romaji": "dekakeru",
+    "meanings": [
+      "to go out"
+    ],
+    "level": "N5",
+    "pos": "v1,vi",
+    "examples": [
+      {
+        "ja": "出かけるよりもじっとしていたい。",
+        "en": "I would sooner stay than go."
+      }
+    ]
+  },
+  {
+    "id": "218ea67735",
+    "word": "手紙",
+    "reading": "てがみ",
+    "romaji": "tegami",
+    "meanings": [
+      "letter"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "書かねばならない手紙があります。",
+        "en": "I have to write a letter."
+      }
+    ]
+  },
+  {
+    "id": "69d0d632fa",
+    "word": "できる",
+    "reading": "できる",
+    "romaji": "dekiru",
+    "meanings": [
+      "to be able to"
+    ],
+    "level": "N5",
+    "pos": "v1,vi",
+    "examples": [
+      {
+        "ja": "あの二人はどうもできているらしい。",
+        "en": "They seem to be in love with each other."
+      }
+    ]
+  },
+  {
+    "id": "151fd72164",
+    "word": "出口",
+    "reading": "でぐち",
+    "romaji": "deguchi",
+    "meanings": [
+      "exit"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "B2出口から地上に出てください。",
+        "en": "Go up to ground level at exit B2."
+      }
+    ]
+  },
+  {
+    "id": "90e9410bff",
+    "word": "テスト",
+    "reading": "テスト",
+    "romaji": "tesuto",
+    "meanings": [
+      "test"
+    ],
+    "level": "N5",
+    "pos": "n,vs,vt",
+    "examples": [
+      {
+        "ja": "そのテストはむずかしかった。",
+        "en": "I found the test difficult."
+      }
+    ]
+  },
+  {
+    "id": "d33540fe8e",
+    "word": "では",
+    "reading": "では",
+    "romaji": "dewa",
+    "meanings": [
+      "with that..."
+    ],
+    "level": "N5",
+    "pos": "exp",
+    "examples": [
+      {
+        "ja": "では今晩またね、さようなら。",
+        "en": "See you tonight, then. Cheers!"
+      }
+    ]
+  },
+  {
+    "id": "0144505953",
+    "word": "デパート",
+    "reading": "デパート",
+    "romaji": "depaato",
+    "meanings": [
+      "department store"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "あのデパートで新しいコートを買いたい。",
+        "en": "I would like to buy a new coat at that department store."
+      }
+    ]
+  },
+  {
+    "id": "3f71089c32",
+    "word": "でも",
+    "reading": "でも",
+    "romaji": "demo",
+    "meanings": [
+      "but"
+    ],
+    "level": "N5",
+    "pos": "conj",
+    "examples": [
+      {
+        "ja": "どんな人でもいないよりはましだ。",
+        "en": "Anybody would be better than nobody."
+      }
+    ]
+  },
+  {
+    "id": "5ef4f7dde9",
+    "word": "出る",
+    "reading": "でる",
+    "romaji": "deru",
+    "meanings": [
+      "to appear",
+      "to leave"
+    ],
+    "level": "N5",
+    "pos": "v1,vi",
+    "examples": [
+      {
+        "ja": "電話には出なかったからメールしておきました。",
+        "en": "He didn't answer the phone, so I left him an email."
+      }
+    ]
+  },
+  {
+    "id": "c7e14d8454",
+    "word": "テレビ",
+    "reading": "テレビ",
+    "romaji": "terebi",
+    "meanings": [
+      "television"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "あなたはどこでテレビを見ますか。",
+        "en": "Where do you watch television?"
+      }
+    ]
+  },
+  {
+    "id": "679e34031e",
+    "word": "天気",
+    "reading": "てんき",
+    "romaji": "tenki",
+    "meanings": [
+      "weather"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "今日が天気ならいいのに。",
+        "en": "I wish it were fine today."
+      }
+    ]
+  },
+  {
+    "id": "a7c36fdb70",
+    "word": "電気",
+    "reading": "でんき",
+    "romaji": "denki",
+    "meanings": [
+      "electricity",
+      "electric light"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "電気シェーバーから火が出ました。",
+        "en": "My electric razor is on fire."
+      }
+    ]
+  },
+  {
+    "id": "62b5c13164",
+    "word": "電車",
+    "reading": "でんしゃ",
+    "romaji": "densha",
+    "meanings": [
+      "electric train"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "電車の中ですりにやられちゃったんだ。",
+        "en": "I had my pocket picked on the train."
+      }
+    ]
+  },
+  {
+    "id": "3c039918ba",
+    "word": "電話",
+    "reading": "でんわ",
+    "romaji": "denwa",
+    "meanings": [
+      "telephone"
+    ],
+    "level": "N5",
+    "pos": "n,vs,vt,vi",
+    "examples": [
+      {
+        "ja": "ブラウンさんから電話のようです。",
+        "en": "It's a phone call from a Mr Brown."
+      }
+    ]
+  },
+  {
+    "id": "6f4691297f",
+    "word": "戸",
+    "reading": "と",
+    "romaji": "to",
+    "meanings": [
+      "Japanese style door"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "誰かが戸をやかましくノックしている。",
+        "en": "Someone is knocking loudly at the door."
+      }
+    ]
+  },
+  {
+    "id": "677d3c5fac",
+    "word": "ドア",
+    "reading": "ドア",
+    "romaji": "doa",
+    "meanings": [
+      "Western style door"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "入る前にドアをノックして下さい。",
+        "en": "Please knock on the door before you enter."
+      }
+    ]
+  },
+  {
+    "id": "e1e7c2d290",
+    "word": "トイレ",
+    "reading": "トイレ",
+    "romaji": "toire",
+    "meanings": [
+      "toilet"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "トイレの水が止まりません。",
+        "en": "The toilet won't stop running."
+      }
+    ]
+  },
+  {
+    "id": "d0fb41651f",
+    "word": "どう",
+    "reading": "どう",
+    "romaji": "dou",
+    "meanings": [
+      "how",
+      "in what way"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": []
+  },
+  {
+    "id": "a891b73f8b",
+    "word": "どうして",
+    "reading": "どうして",
+    "romaji": "doushite",
+    "meanings": [
+      "for what reason"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "どうしてあなたは一人になったの？",
+        "en": "How did you end up on your own?"
+      }
+    ]
+  },
+  {
+    "id": "a71cbc3ce4",
+    "word": "どうぞ",
+    "reading": "どうぞ",
+    "romaji": "douzo",
+    "meanings": [
+      "please"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "写真をどうぞ見せて下さい。",
+        "en": "Please show me your picture."
+      }
+    ]
+  },
+  {
+    "id": "93b9cec3d4",
+    "word": "どうぞよろしく",
+    "reading": "どうぞよろしく",
+    "romaji": "douzoyoroshiku",
+    "meanings": [
+      "pleased to meet you"
+    ],
+    "level": "N5",
+    "pos": "exp",
+    "examples": [
+      {
+        "ja": "どうぞよろしく。",
+        "en": "Nice to meet you."
+      }
+    ]
+  },
+  {
+    "id": "03d03cf25d",
+    "word": "動物",
+    "reading": "どうぶつ",
+    "romaji": "doubutsu",
+    "meanings": [
+      "animal"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "私はその動物の名前を知っている。",
+        "en": "I know the name of this animal."
+      }
+    ]
+  },
+  {
+    "id": "d2cb14f88a",
+    "word": "どうも",
+    "reading": "どうも",
+    "romaji": "doumo",
+    "meanings": [
+      "thanks"
+    ],
+    "level": "N5",
+    "pos": "int",
+    "examples": [
+      {
+        "ja": "あの二人はどうもできているらしい。",
+        "en": "They seem to be in love with each other."
+      }
+    ]
+  },
+  {
+    "id": "f840779b9e",
+    "word": "遠い",
+    "reading": "とおい",
+    "romaji": "tooi",
+    "meanings": [
+      "far"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "それはホテルから遠くありません。",
+        "en": "It is not far away from the hotel."
+      }
+    ]
+  },
+  {
+    "id": "e8579084ba",
+    "word": "十日",
+    "reading": "とおか",
+    "romaji": "tooka",
+    "meanings": [
+      "ten days",
+      "the tenth day"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ジャックは８月１０日に生まれた。",
+        "en": "Jack was born on August the tenth."
+      }
+    ]
+  },
+  {
+    "id": "978a2cefa5",
+    "word": "時々",
+    "reading": "ときどき",
+    "romaji": "tokidoki",
+    "meanings": [
+      "sometimes"
+    ],
+    "level": "N5",
+    "pos": "adv,adj-no",
+    "examples": [
+      {
+        "ja": "ジェーンはときどき学校まで走っていく。",
+        "en": "Jane sometimes runs to school."
+      }
+    ]
+  },
+  {
+    "id": "e3ad76810f",
+    "word": "時計",
+    "reading": "とけい",
+    "romaji": "tokei",
+    "meanings": [
+      "watch",
+      "clock"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "あなたの時計では何時ですか。",
+        "en": "What time is it by your watch?"
+      }
+    ]
+  },
+  {
+    "id": "ad884a3b70",
+    "word": "どこ",
+    "reading": "どこ",
+    "romaji": "doko",
+    "meanings": [
+      "where"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": [
+      {
+        "ja": "あなたはどこでテレビを見ますか。",
+        "en": "Where do you watch television?"
+      }
+    ]
+  },
+  {
+    "id": "ca332ac7b4",
+    "word": "所",
+    "reading": "ところ",
+    "romaji": "tokoro",
+    "meanings": [
+      "place"
+    ],
+    "level": "N5",
+    "pos": "n,adv,suf",
+    "examples": [
+      {
+        "ja": "どんな所でアルバイトできるの。",
+        "en": "Where can you get a part-time job?"
+      }
+    ]
+  },
+  {
+    "id": "358fc382cb",
+    "word": "年",
+    "reading": "とし",
+    "romaji": "toshi",
+    "meanings": [
+      "year"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "お年をお聞きしてよろしいでしょうか。",
+        "en": "Might I ask your age?"
+      }
+    ]
+  },
+  {
+    "id": "de5a452667",
+    "word": "図書館",
+    "reading": "としょかん",
+    "romaji": "toshokan",
+    "meanings": [
+      "library"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "図書館の中で話をしてはいけない。",
+        "en": "We must not speak in the library."
+      }
+    ]
+  },
+  {
+    "id": "5480c153dc",
+    "word": "どちら",
+    "reading": "どちら",
+    "romaji": "dochira",
+    "meanings": [
+      "which of two"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": [
+      {
+        "ja": "二つのうちでどちらが高いですか。",
+        "en": "Which is the more expensive of the two?"
+      }
+    ]
+  },
+  {
+    "id": "e8a4843059",
+    "word": "どっち",
+    "reading": "どっち",
+    "romaji": "dotchi",
+    "meanings": [
+      "which"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": [
+      {
+        "ja": "この本とあの本とどっちがやさしい？",
+        "en": "Which is easier to read, this book or that one?"
+      }
+    ]
+  },
+  {
+    "id": "a3679ee665",
+    "word": "とても",
+    "reading": "とても",
+    "romaji": "totemo",
+    "meanings": [
+      "very"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "この雨の中を外出することはとてもできないことです。",
+        "en": "Going out in this rain is out of the question."
+      }
+    ]
+  },
+  {
+    "id": "10fb2e55c0",
+    "word": "どなた",
+    "reading": "どなた",
+    "romaji": "donata",
+    "meanings": [
+      "who"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": [
+      {
+        "ja": "「どなたですか」「お母さんよ」",
+        "en": "\"Who is it?\" \"It's your mother.\""
+      }
+    ]
+  },
+  {
+    "id": "c597c353cb",
+    "word": "隣",
+    "reading": "となり",
+    "romaji": "tonari",
+    "meanings": [
+      "next door to"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no",
+    "examples": [
+      {
+        "ja": "あのビルのとなりです。",
+        "en": "It's next to that building."
+      }
+    ]
+  },
+  {
+    "id": "cd4b8c6381",
+    "word": "どの",
+    "reading": "どの",
+    "romaji": "dono",
+    "meanings": [
+      "which"
+    ],
+    "level": "N5",
+    "pos": "adj-pn",
+    "examples": [
+      {
+        "ja": "これはほかのどの木よりも高い。",
+        "en": "This is taller than any other tree."
+      }
+    ]
+  },
+  {
+    "id": "397b682fa7",
+    "word": "飛ぶ",
+    "reading": "とぶ",
+    "romaji": "tobu",
+    "meanings": [
+      "to fly",
+      "to hop"
+    ],
+    "level": "N5",
+    "pos": "v5b,vi",
+    "examples": [
+      {
+        "ja": "ヒューズが飛んだ。",
+        "en": "A fuse has blown."
+      }
+    ]
+  },
+  {
+    "id": "9d1aa046d6",
+    "word": "止まる",
+    "reading": "とまる",
+    "romaji": "tomaru",
+    "meanings": [
+      "to come to a halt"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "ちょうどその時バスが止まった。",
+        "en": "Just then, the bus stopped."
+      }
+    ]
+  },
+  {
+    "id": "72c525f37a",
+    "word": "友達",
+    "reading": "ともだち",
+    "romaji": "tomodachi",
+    "meanings": [
+      "friend"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "よい友達がたくさんいてうれしい。",
+        "en": "I am happy to have so many good friends."
+      }
+    ]
+  },
+  {
+    "id": "86e7fb81c6",
+    "word": "土曜日",
+    "reading": "どようび",
+    "romaji": "doyoubi",
+    "meanings": [
+      "Saturday"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "私は土曜日からここにいます。",
+        "en": "I've been here since Saturday."
+      }
+    ]
+  },
+  {
+    "id": "7e4fccba7f",
+    "word": "鳥",
+    "reading": "とり",
+    "romaji": "tori",
+    "meanings": [
+      "bird"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "なんてきれいな鳥なんだろう。",
+        "en": "What a beautiful bird it is!"
+      }
+    ]
+  },
+  {
+    "id": "3669c65744",
+    "word": "鶏肉",
+    "reading": "とりにく",
+    "romaji": "toriniku",
+    "meanings": [
+      "chicken meat"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "鶏肉を３ポンド分ください。",
+        "en": "I'd like three pounds of chicken."
+      }
+    ]
+  },
+  {
+    "id": "4cc27797ba",
+    "word": "撮る",
+    "reading": "とる",
+    "romaji": "toru",
+    "meanings": [
+      "to take a photo or record a film"
+    ],
+    "level": "N5",
+    "pos": "v5r,vt",
+    "examples": [
+      {
+        "ja": "外からなら撮ってもかまいません。",
+        "en": "It doesn't matter to us if you take a photo from the outside."
+      }
+    ]
+  },
+  {
+    "id": "1313ed47fb",
+    "word": "取る",
+    "reading": "とる",
+    "romaji": "toru",
+    "meanings": [
+      "to take something"
+    ],
+    "level": "N5",
+    "pos": "v5r,vt",
+    "examples": [
+      {
+        "ja": "そのお金はいざというときのために取っておくよ。",
+        "en": "I'm going to lay aside that money for emergencies."
+      }
+    ]
+  },
+  {
+    "id": "b21477c7db",
+    "word": "どれ",
+    "reading": "どれ",
+    "romaji": "dore",
+    "meanings": [
+      "which (of three or more)"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": []
+  },
+  {
+    "id": "3ae88c29c4",
+    "word": "ナイフ",
+    "reading": "ナイフ",
+    "romaji": "naifu",
+    "meanings": [
+      "knife"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "それはあなたのナイフではない。",
+        "en": "That is not your knife."
+      }
+    ]
+  },
+  {
+    "id": "5d32281da9",
+    "word": "中",
+    "reading": "なか",
+    "romaji": "naka",
+    "meanings": [
+      "middle"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "テントの中ではなくて外で食べよう。",
+        "en": "Let's eat outside instead of in our tents."
+      }
+    ]
+  },
+  {
+    "id": "fcea29f192",
+    "word": "長い",
+    "reading": "ながい",
+    "romaji": "nagai",
+    "meanings": [
+      "long"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "だんだん日が長くなっています。",
+        "en": "The days are getting longer and longer."
+      }
+    ]
+  },
+  {
+    "id": "07a4101167",
+    "word": "鳴く",
+    "reading": "なく",
+    "romaji": "naku",
+    "meanings": [
+      "to make a sound (of an animal)",
+      "to cry",
+      "to chirp",
+      "to sing (of birds)"
+    ],
+    "level": "N5",
+    "pos": "v5k,vi",
+    "examples": [
+      {
+        "ja": "カエルが鳴いたら帰ろう。",
+        "en": "Let's return when the frog croaks."
+      }
+    ]
+  },
+  {
+    "id": "04015c3825",
+    "word": "無くす",
+    "reading": "なくす",
+    "romaji": "nakusu",
+    "meanings": [
+      "to lose something"
+    ],
+    "level": "N5",
+    "pos": "v5s,vt",
+    "examples": [
+      {
+        "ja": "私は前日無くした本を見つけた。",
+        "en": "I found the book which I had lost the day before."
+      }
+    ]
+  },
+  {
+    "id": "ef9536b1ee",
+    "word": "なぜ",
+    "reading": "なぜ",
+    "romaji": "naze",
+    "meanings": [
+      "why"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "あなたはなぜ働いているの。",
+        "en": "How come you're still working?"
+      }
+    ]
+  },
+  {
+    "id": "641ddbf693",
+    "word": "夏",
+    "reading": "なつ",
+    "romaji": "natsu",
+    "meanings": [
+      "summer"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "アリは夏じゅうせっせとはたらく。",
+        "en": "Ants work away during summer."
+      }
+    ]
+  },
+  {
+    "id": "e09167a3d4",
+    "word": "夏休み",
+    "reading": "なつやすみ",
+    "romaji": "natsuyasumi",
+    "meanings": [
+      "summer holiday"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "この夏休みはどこかへ行くのですか。",
+        "en": "Are you going away this summer?"
+      }
+    ]
+  },
+  {
+    "id": "cf58476318",
+    "word": "など",
+    "reading": "など",
+    "romaji": "nado",
+    "meanings": [
+      "et cetera"
+    ],
+    "level": "N5",
+    "pos": "prt",
+    "examples": [
+      {
+        "ja": "ぬくもりなどどこにも見つからない。",
+        "en": "I can't find anything like warmth anywhere."
+      }
+    ]
+  },
+  {
+    "id": "e65bf7ad23",
+    "word": "七つ",
+    "reading": "ななつ",
+    "romaji": "nanatsu",
+    "meanings": [
+      "seven"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "７つの海って何ですか。",
+        "en": "What are the seven seas?"
+      }
+    ]
+  },
+  {
+    "id": "75ed3c3b2b",
+    "word": "七日",
+    "reading": "なのか",
+    "romaji": "nanoka",
+    "meanings": [
+      "seven days",
+      "the seventh day"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "一週間は七日です。",
+        "en": "There are seven days in a week."
+      }
+    ]
+  },
+  {
+    "id": "a812b1ac7f",
+    "word": "名前",
+    "reading": "なまえ",
+    "romaji": "namae",
+    "meanings": [
+      "name"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "あなたの名前はリストからはずされた。",
+        "en": "Your name was dropped from the list."
+      }
+    ]
+  },
+  {
+    "id": "a95b0a87ad",
+    "word": "習う",
+    "reading": "ならう",
+    "romaji": "narau",
+    "meanings": [
+      "to learn"
+    ],
+    "level": "N5",
+    "pos": "v5u,vt",
+    "examples": [
+      {
+        "ja": "車の運転を習っています。",
+        "en": "I've been learning to drive."
+      }
+    ]
+  },
+  {
+    "id": "1227b20370",
+    "word": "並ぶ",
+    "reading": "ならぶ",
+    "romaji": "narabu",
+    "meanings": [
+      "to line up",
+      "to stand in a line"
+    ],
+    "level": "N5",
+    "pos": "v5b,vi",
+    "examples": [
+      {
+        "ja": "あんた、なぜに並んでいるのだい。",
+        "en": "What are you lining up for?"
+      }
+    ]
+  },
+  {
+    "id": "1635de1a94",
+    "word": "並べる",
+    "reading": "ならべる",
+    "romaji": "naraberu",
+    "meanings": [
+      "to line up",
+      "to set up"
+    ],
+    "level": "N5",
+    "pos": "v1,vt",
+    "examples": [
+      {
+        "ja": "メイドはテーブルにナイフとフォークを並べた。",
+        "en": "The maid arranged the knives and forks on the table."
+      }
+    ]
+  },
+  {
+    "id": "e05de4981d",
+    "word": "なる",
+    "reading": "なる",
+    "romaji": "naru",
+    "meanings": [
+      "to become"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "ちまたではインターネットなるものがはやっています。",
+        "en": "People are talking about this Internet phenomenon."
+      }
+    ]
+  },
+  {
+    "id": "558866ef86",
+    "word": "何",
+    "reading": "なん",
+    "romaji": "nan",
+    "meanings": [
+      "what"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": [
+      {
+        "ja": "学校の前に何本か木が見えます。",
+        "en": "You see some trees in front of the school."
+      }
+    ]
+  },
+  {
+    "id": "34108268e1",
+    "word": "二",
+    "reading": "に",
+    "romaji": "ni",
+    "meanings": [
+      "two"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "このホールには人が二千人入れる。",
+        "en": "Two thousand people fit into this hall."
+      }
+    ]
+  },
+  {
+    "id": "c17f97fafc",
+    "word": "賑やか",
+    "reading": "にぎやか",
+    "romaji": "nigiyaka",
+    "meanings": [
+      "bustling",
+      "busy"
+    ],
+    "level": "N5",
+    "pos": "adj-na",
+    "examples": [
+      {
+        "ja": "この通りは賑やかだ。",
+        "en": "This street is lively."
+      }
+    ]
+  },
+  {
+    "id": "efac1fc502",
+    "word": "肉",
+    "reading": "にく",
+    "romaji": "niku",
+    "meanings": [
+      "meat"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "肉にはウジがわいていた。",
+        "en": "The meat was crawling with maggots."
+      }
+    ]
+  },
+  {
+    "id": "436f1c3c65",
+    "word": "西",
+    "reading": "にし",
+    "romaji": "nishi",
+    "meanings": [
+      "west"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "列車は西へ走っていた。",
+        "en": "The train was hurrying west."
+      }
+    ]
+  },
+  {
+    "id": "d8c3a3f0d0",
+    "word": "日曜日",
+    "reading": "にちようび",
+    "romaji": "nichiyoubi",
+    "meanings": [
+      "Sunday"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "ちょうど日曜日にぶつかりますね。",
+        "en": "It falls on Sunday."
+      }
+    ]
+  },
+  {
+    "id": "2e6c7d2d9d",
+    "word": "荷物",
+    "reading": "にもつ",
+    "romaji": "nimotsu",
+    "meanings": [
+      "luggage"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "これ荷物を上にあげてもよろしい。",
+        "en": "Can I put this up for you?"
+      }
+    ]
+  },
+  {
+    "id": "b824bec2c5",
+    "word": "ニュース",
+    "reading": "ニュース",
+    "romaji": "nyuusu",
+    "meanings": [
+      "news"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "そのニュースはラジオで聞いたよ。",
+        "en": "I heard the news on the radio."
+      }
+    ]
+  },
+  {
+    "id": "9ef6c9d703",
+    "word": "庭",
+    "reading": "にわ",
+    "romaji": "niwa",
+    "meanings": [
+      "garden"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "その庭にはバラがまったくなかった。",
+        "en": "There weren't any roses in the garden."
+      }
+    ]
+  },
+  {
+    "id": "3af80b5b2a",
+    "word": "脱ぐ",
+    "reading": "ぬぐ",
+    "romaji": "nugu",
+    "meanings": [
+      "to take off clothes"
+    ],
+    "level": "N5",
+    "pos": "v5g,vt",
+    "examples": [
+      {
+        "ja": "ここで靴を脱がなければなりませんか。",
+        "en": "Do I have to take off my shoes here?"
+      }
+    ]
+  },
+  {
+    "id": "2f01adebd7",
+    "word": "温い",
+    "reading": "ぬるい",
+    "romaji": "nurui",
+    "meanings": [
+      "luke warm"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "このコーヒーはぬるいです。",
+        "en": "This coffee is not hot enough."
+      }
+    ]
+  },
+  {
+    "id": "18046e46a1",
+    "word": "ネクタイ",
+    "reading": "ネクタイ",
+    "romaji": "nekutai",
+    "meanings": [
+      "tie",
+      "necktie"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "このネクタイはいくらですか。",
+        "en": "How much is this tie?"
+      }
+    ]
+  },
+  {
+    "id": "cbbfc8cad6",
+    "word": "猫",
+    "reading": "ねこ",
+    "romaji": "neko",
+    "meanings": [
+      "cat"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "猫はにゃーにゃーいいつづけた。",
+        "en": "The cat continued to mew."
+      }
+    ]
+  },
+  {
+    "id": "0c6e923ef9",
+    "word": "寝る",
+    "reading": "ねる",
+    "romaji": "neru",
+    "meanings": [
+      "to go to bed",
+      "to sleep"
+    ],
+    "level": "N5",
+    "pos": "v1,vi",
+    "examples": [
+      {
+        "ja": "本を読んでるうちに寝てしまった。",
+        "en": "While I was reading, I fell asleep."
+      }
+    ]
+  },
+  {
+    "id": "278c1e0e04",
+    "word": "ノート",
+    "reading": "ノート",
+    "romaji": "nooto",
+    "meanings": [
+      "notebook",
+      "exercise book"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "これらの語をノートに書きなさい。",
+        "en": "Write these words in your notebook."
+      }
+    ]
+  },
+  {
+    "id": "7817fc9d64",
+    "word": "登る",
+    "reading": "のぼる",
+    "romaji": "noboru",
+    "meanings": [
+      "to climb"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "木は高ければ高いほど登りにくい。",
+        "en": "The taller a tree is, the harder it is to climb."
+      }
+    ]
+  },
+  {
+    "id": "5e8fc8669c",
+    "word": "飲み物",
+    "reading": "のみもの",
+    "romaji": "nomimono",
+    "meanings": [
+      "a drink"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "何か飲み物をいただけますか。",
+        "en": "May I have something to drink?"
+      }
+    ]
+  },
+  {
+    "id": "e0bcec9bd9",
+    "word": "飲む",
+    "reading": "のむ",
+    "romaji": "nomu",
+    "meanings": [
+      "to drink"
+    ],
+    "level": "N5",
+    "pos": "v5m,vt",
+    "examples": [
+      {
+        "ja": "コーラはみんな飲んでしまったの。",
+        "en": "Has all the coke been drunk?"
+      }
+    ]
+  },
+  {
+    "id": "822c5e11a6",
+    "word": "乗る",
+    "reading": "のる",
+    "romaji": "noru",
+    "meanings": [
+      "to get on",
+      "to ride"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "ほら、あなたの乗る電車が来たわ。",
+        "en": "Look, here comes your train."
+      }
+    ]
+  },
+  {
+    "id": "390ac6443d",
+    "word": "歯",
+    "reading": "は",
+    "romaji": "ha",
+    "meanings": [
+      "tooth"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "その赤ちゃんは歯が生えはじめている。",
+        "en": "The baby is cutting his teeth."
+      }
+    ]
+  },
+  {
+    "id": "28111455cd",
+    "word": "パーティー",
+    "reading": "パーティー",
+    "romaji": "paatii",
+    "meanings": [
+      "party"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "パーティーはたのしかったですか。",
+        "en": "Did you enjoy yourself at the party?"
+      }
+    ]
+  },
+  {
+    "id": "542f39c93d",
+    "word": "はい",
+    "reading": "はい",
+    "romaji": "hai",
+    "meanings": [
+      "yes"
+    ],
+    "level": "N5",
+    "pos": "int",
+    "examples": [
+      {
+        "ja": "「もしもし、ブラウンさんですか」「はい、そうです」",
+        "en": "\"Hello, is this Mrs. Brown?\" \"Yes, this is Mrs. Brown.\""
+      }
+    ]
+  },
+  {
+    "id": "5cc1dad1e8",
+    "word": "灰皿",
+    "reading": "はいざら",
+    "romaji": "haizara",
+    "meanings": [
+      "ashtray"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "灰皿を下さい。",
+        "en": "I need an ashtray."
+      }
+    ]
+  },
+  {
+    "id": "c428d02d43",
+    "word": "入る",
+    "reading": "はいる",
+    "romaji": "hairu",
+    "meanings": [
+      "to enter",
+      "to contain"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "入る前にドアをノックして下さい。",
+        "en": "Please knock on the door before you enter."
+      }
+    ]
+  },
+  {
+    "id": "645e1e3b4d",
+    "word": "葉書",
+    "reading": "はがき",
+    "romaji": "hagaki",
+    "meanings": [
+      "postcard"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "この店に葉書がたくさんある。",
+        "en": "There are many postcards in this store."
+      }
+    ]
+  },
+  {
+    "id": "4729cc56f4",
+    "word": "はく",
+    "reading": "はく",
+    "romaji": "haku",
+    "meanings": [
+      "to wear",
+      "to put on trousers"
+    ],
+    "level": "N5",
+    "pos": "v5k,vt",
+    "examples": [
+      {
+        "ja": "この靴はきつすぎてはけない。",
+        "en": "These shoes are too tight to get into."
+      }
+    ]
+  },
+  {
+    "id": "658b912df8",
+    "word": "箱",
+    "reading": "はこ",
+    "romaji": "hako",
+    "meanings": [
+      "box"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "その箱はほとんどいっぱいでした。",
+        "en": "The box was almost full."
+      }
+    ]
+  },
+  {
+    "id": "7ce7f7d305",
+    "word": "はし",
+    "reading": "はし",
+    "romaji": "hashi",
+    "meanings": [
+      "chopsticks"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "パーカーさんは箸で食べてみました。",
+        "en": "Mr Parker tried eating with chopsticks."
+      }
+    ]
+  },
+  {
+    "id": "8f663254b0",
+    "word": "橋",
+    "reading": "はし",
+    "romaji": "hashi",
+    "meanings": [
+      "bridge"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "その橋はどれくらいの長さですか。",
+        "en": "How long is the bridge?"
+      }
+    ]
+  },
+  {
+    "id": "8fea1e3f3c",
+    "word": "始まる",
+    "reading": "はじまる",
+    "romaji": "hajimaru",
+    "meanings": [
+      "to begin"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "今コンサートが始まろうとしている。",
+        "en": "The concert is beginning now."
+      }
+    ]
+  },
+  {
+    "id": "e5b36d7b24",
+    "word": "初め",
+    "reading": "はじめ",
+    "romaji": "hajime",
+    "meanings": [
+      "beginning"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "旅行の初めの二日間は雨降りだった。",
+        "en": "The first two days of my trip were rainy."
+      }
+    ]
+  },
+  {
+    "id": "3f18999e09",
+    "word": "初めて",
+    "reading": "はじめて",
+    "romaji": "hajimete",
+    "meanings": [
+      "for the first time"
+    ],
+    "level": "N5",
+    "pos": "adv,adj-no",
+    "examples": [
+      {
+        "ja": "初めてドリアンを食べました。",
+        "en": "I ate durian for the first time."
+      }
+    ]
+  },
+  {
+    "id": "a2c1e54c17",
+    "word": "はじめまして",
+    "reading": "はじめまして",
+    "romaji": "hajimemashite",
+    "meanings": [
+      "How do you do?",
+      "I am glad to meet you"
+    ],
+    "level": "N5",
+    "pos": "exp",
+    "examples": [
+      {
+        "ja": "初めましてケン。",
+        "en": "Nice to meet you, Ken."
+      }
+    ]
+  },
+  {
+    "id": "244e138920",
+    "word": "走る",
+    "reading": "はしる",
+    "romaji": "hashiru",
+    "meanings": [
+      "to run"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "あの走ってる少年をごらんなさい。",
+        "en": "Look at that boy running."
+      }
+    ]
+  },
+  {
+    "id": "bd7df6c7a2",
+    "word": "バス",
+    "reading": "バス",
+    "romaji": "basu",
+    "meanings": [
+      "bus"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "バス通学と積極的差別是正措置などが論争の多い話題だった。",
+        "en": "School busing and taking a proactive stance against discrimination were hotly debated topics."
+      }
+    ]
+  },
+  {
+    "id": "4385616659",
+    "word": "バター",
+    "reading": "バター",
+    "romaji": "bataa",
+    "meanings": [
+      "butter"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "バターはミルクから出来る。",
+        "en": "Butter is made from milk."
+      }
+    ]
+  },
+  {
+    "id": "c65a346458",
+    "word": "二十歳",
+    "reading": "はたち",
+    "romaji": "hatachi",
+    "meanings": [
+      "20 years old",
+      "20th year"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ムーリエルは２０歳になりました。",
+        "en": "Muiriel is 20 now."
+      }
+    ]
+  },
+  {
+    "id": "9ea671262d",
+    "word": "働く",
+    "reading": "はたらく",
+    "romaji": "hataraku",
+    "meanings": [
+      "to work"
+    ],
+    "level": "N5",
+    "pos": "v5k,vi",
+    "examples": [
+      {
+        "ja": "スイッチは時間通りに働かなかった。",
+        "en": "The switch didn't work on time."
+      }
+    ]
+  },
+  {
+    "id": "6eeff514e0",
+    "word": "八",
+    "reading": "はち",
+    "romaji": "hachi",
+    "meanings": [
+      "eight"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "そのハイキングは八時間もかかるでしょう。",
+        "en": "The hike will take no less than eight hours."
+      }
+    ]
+  },
+  {
+    "id": "153de06669",
+    "word": "二十日",
+    "reading": "はつか",
+    "romaji": "hatsuka",
+    "meanings": [
+      "twenty days",
+      "twentieth"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "私は二十日までに帰るつもりです。",
+        "en": "I expect to be back by the 20th."
+      }
+    ]
+  },
+  {
+    "id": "6485c3c2a7",
+    "word": "花",
+    "reading": "はな",
+    "romaji": "hana",
+    "meanings": [
+      "flower"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "テーブルの上に花が一本あります。",
+        "en": "There is a flower on the table."
+      }
+    ]
+  },
+  {
+    "id": "8b5843f7fb",
+    "word": "鼻",
+    "reading": "はな",
+    "romaji": "hana",
+    "meanings": [
+      "nose"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "鼻が出ているよ。かみなさい。",
+        "en": "Your nose is running. Blow it."
+      }
+    ]
+  },
+  {
+    "id": "1ed0362cc3",
+    "word": "話",
+    "reading": "はなし",
+    "romaji": "hanashi",
+    "meanings": [
+      "talk",
+      "story"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "話を聞かせてくれ。",
+        "en": "I want a full report though."
+      }
+    ]
+  },
+  {
+    "id": "9d5bde24ec",
+    "word": "話す",
+    "reading": "はなす",
+    "romaji": "hanasu",
+    "meanings": [
+      "to speak"
+    ],
+    "level": "N5",
+    "pos": "v5s,vt",
+    "examples": [
+      {
+        "ja": "英語はカナダで話されている。",
+        "en": "English is spoken in Canada."
+      }
+    ]
+  },
+  {
+    "id": "4db42e0181",
+    "word": "早い",
+    "reading": "はやい",
+    "romaji": "hayai",
+    "meanings": [
+      "early"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "時のたつのは早いものだ。",
+        "en": "Time flies."
+      }
+    ]
+  },
+  {
+    "id": "406d15f6e9",
+    "word": "速い",
+    "reading": "はやい",
+    "romaji": "hayai",
+    "meanings": [
+      "quick"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "ショットはとても速いものもある。",
+        "en": "Some people have very fast serves."
+      }
+    ]
+  },
+  {
+    "id": "f16244c585",
+    "word": "春",
+    "reading": "はる",
+    "romaji": "haru",
+    "meanings": [
+      "spring"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "カッコウは春にここにやってくる。",
+        "en": "Cuckoos visit here in spring."
+      }
+    ]
+  },
+  {
+    "id": "f47c4aee42",
+    "word": "貼る",
+    "reading": "はる",
+    "romaji": "haru",
+    "meanings": [
+      "to stick"
+    ],
+    "level": "N5",
+    "pos": "v5r,vt",
+    "examples": [
+      {
+        "ja": "その写真はアルバムに貼ったほうがよい。",
+        "en": "You should stick those pictures in your album."
+      }
+    ]
+  },
+  {
+    "id": "9edf8548bb",
+    "word": "晴れ",
+    "reading": "はれ",
+    "romaji": "hare",
+    "meanings": [
+      "clear weather"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no",
+    "examples": [
+      {
+        "ja": "ロンドンの天気は晴れです。",
+        "en": "The weather is fine in London."
+      }
+    ]
+  },
+  {
+    "id": "3be88666ba",
+    "word": "晴れる",
+    "reading": "はれる",
+    "romaji": "hareru",
+    "meanings": [
+      "to be sunny"
+    ],
+    "level": "N5",
+    "pos": "v1,vi",
+    "examples": [
+      {
+        "ja": "あした晴れてくれるといいなあ。",
+        "en": "I hope the weather will clear up tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "9cd7c780c3",
+    "word": "半",
+    "reading": "はん",
+    "romaji": "han",
+    "meanings": [
+      "half"
+    ],
+    "level": "N5",
+    "pos": "n-pref,n",
+    "examples": [
+      {
+        "ja": "半時間したら彼はここに来るでしょう。",
+        "en": "He will be here in half an hour."
+      }
+    ]
+  },
+  {
+    "id": "532c73de5d",
+    "word": "晩",
+    "reading": "ばん",
+    "romaji": "ban",
+    "meanings": [
+      "evening"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "晩までにはおそらく雨になるだろう。",
+        "en": "It may well rain before tonight."
+      }
+    ]
+  },
+  {
+    "id": "098e9e7e67",
+    "word": "パン",
+    "reading": "パン",
+    "romaji": "pan",
+    "meanings": [
+      "bread"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": []
+  },
+  {
+    "id": "ee3206bb3f",
+    "word": "ハンカチ",
+    "reading": "ハンカチ",
+    "romaji": "hankachi",
+    "meanings": [
+      "handkerchief"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "このハンカチはいくらですか。",
+        "en": "How much is this handkerchief?"
+      }
+    ]
+  },
+  {
+    "id": "67775e3b25",
+    "word": "番号",
+    "reading": "ばんごう",
+    "romaji": "bangou",
+    "meanings": [
+      "number"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "番号をまちがえじゃありませんか。",
+        "en": "I'm afraid you have got the wrong number."
+      }
+    ]
+  },
+  {
+    "id": "246b5ae84d",
+    "word": "晩御飯",
+    "reading": "ばんごはん",
+    "romaji": "bangohan",
+    "meanings": [
+      "evening meal"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "晩ご飯ですよ、お父さん。",
+        "en": "Dinner is ready, Father."
+      }
+    ]
+  },
+  {
+    "id": "a1cda8cb11",
+    "word": "半分",
+    "reading": "はんぶん",
+    "romaji": "hanbun",
+    "meanings": [
+      "half minute"
+    ],
+    "level": "N5",
+    "pos": "adv,n",
+    "examples": [
+      {
+        "ja": "ケーキのどちらの半分でもとりなさい。",
+        "en": "You may take either half of the cake."
+      }
+    ]
+  },
+  {
+    "id": "0a38c65004",
+    "word": "東",
+    "reading": "ひがし",
+    "romaji": "higashi",
+    "meanings": [
+      "east"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "その市はロンドンの東にある。",
+        "en": "The city lies east of London."
+      }
+    ]
+  },
+  {
+    "id": "5b84039234",
+    "word": "引く",
+    "reading": "ひく",
+    "romaji": "hiku",
+    "meanings": [
+      "to pull"
+    ],
+    "level": "N5",
+    "pos": "v5k,vt",
+    "examples": [
+      {
+        "ja": "カーテンがゆっくり引かれた。",
+        "en": "The curtains were drawn slowly."
+      }
+    ]
+  },
+  {
+    "id": "23911a0718",
+    "word": "弾く",
+    "reading": "ひく",
+    "romaji": "hiku",
+    "meanings": [
+      "to play an instrument with strings",
+      "including piano"
+    ],
+    "level": "N5",
+    "pos": "v5k,vt",
+    "examples": [
+      {
+        "ja": "ギターをひくのはおもしろい。",
+        "en": "Playing the guitar is fun."
+      }
+    ]
+  },
+  {
+    "id": "e25cf6ed2f",
+    "word": "低い",
+    "reading": "ひくい",
+    "romaji": "hikui",
+    "meanings": [
+      "short",
+      "low"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "ラジオの音を低くして下さい。",
+        "en": "Please turn down the radio."
+      }
+    ]
+  },
+  {
+    "id": "a81612169c",
+    "word": "飛行機",
+    "reading": "ひこうき",
+    "romaji": "hikouki",
+    "meanings": [
+      "aeroplane"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "あなたは飛行機で旅行したことがありますか。",
+        "en": "Have you ever traveled by air?"
+      }
+    ]
+  },
+  {
+    "id": "ec5bd86b72",
+    "word": "左",
+    "reading": "ひだり",
+    "romaji": "hidari",
+    "meanings": [
+      "left hand side"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no",
+    "examples": [
+      {
+        "ja": "アラビア語は右から左へ書きます。",
+        "en": "Arabic is written from right to left."
+      }
+    ]
+  },
+  {
+    "id": "d91ee7a9ed",
+    "word": "人",
+    "reading": "ひと",
+    "romaji": "hito",
+    "meanings": [
+      "person"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "どんな人でもいないよりはましだ。",
+        "en": "Anybody would be better than nobody."
+      }
+    ]
+  },
+  {
+    "id": "537f8af3d6",
+    "word": "一つ",
+    "reading": "ひとつ",
+    "romaji": "hitotsu",
+    "meanings": [
+      "one"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "車にはハンドルが一つある。",
+        "en": "A car has one steering wheel."
+      }
+    ]
+  },
+  {
+    "id": "3554fb81b8",
+    "word": "一月",
+    "reading": "ひとつき",
+    "romaji": "hitotsuki",
+    "meanings": [
+      "one month"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "金がなくなる頃にはもうひと月ある。",
+        "en": "When the money runs out, there'll still be one month left."
+      }
+    ]
+  },
+  {
+    "id": "3fb1b70809",
+    "word": "一人",
+    "reading": "ひとり",
+    "romaji": "hitori",
+    "meanings": [
+      "one person"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "どうしてあなたは一人になったの？",
+        "en": "How did you end up on your own?"
+      }
+    ]
+  },
+  {
+    "id": "7a9ce8e2df",
+    "word": "暇",
+    "reading": "ひま",
+    "romaji": "hima",
+    "meanings": [
+      "free time"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ジョンはひどく急いでいたので話をする暇もなかった。",
+        "en": "John was in such a hurry that he had no time for talking."
+      }
+    ]
+  },
+  {
+    "id": "13696bc9b5",
+    "word": "百",
+    "reading": "ひゃく",
+    "romaji": "hyaku",
+    "meanings": [
+      "hundred"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "百年後にはみな同じになる。",
+        "en": "It will be all the same a hundred years hence."
+      }
+    ]
+  },
+  {
+    "id": "734d275fd9",
+    "word": "病院",
+    "reading": "びょういん",
+    "romaji": "byouin",
+    "meanings": [
+      "hospital"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "この近くに病院はありますか。",
+        "en": "Is there a hospital near here?"
+      }
+    ]
+  },
+  {
+    "id": "c551bc3f7c",
+    "word": "病気",
+    "reading": "びょうき",
+    "romaji": "byouki",
+    "meanings": [
+      "illness"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ボブはいったい病気なのだろうか。",
+        "en": "Can Bob be sick?"
+      }
+    ]
+  },
+  {
+    "id": "5d7a8d133b",
+    "word": "昼",
+    "reading": "ひる",
+    "romaji": "hiru",
+    "meanings": [
+      "noon",
+      "daytime"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "昼はホットドッグを食べたんだ。",
+        "en": "I ate a hot dog for lunch."
+      }
+    ]
+  },
+  {
+    "id": "0b492c3209",
+    "word": "昼御飯",
+    "reading": "ひるごはん",
+    "romaji": "hirugohan",
+    "meanings": [
+      "midday meal"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "昼ご飯を食べに外に出ませんか。",
+        "en": "How about going out for lunch?"
+      }
+    ]
+  },
+  {
+    "id": "230d5c7343",
+    "word": "広い",
+    "reading": "ひろい",
+    "romaji": "hiroi",
+    "meanings": [
+      "spacious",
+      "wide"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "この通りは広いが、あまり長くない。",
+        "en": "This avenue is wide but not very long."
+      }
+    ]
+  },
+  {
+    "id": "ef9babb012",
+    "word": "フィルム",
+    "reading": "フィルム",
+    "romaji": "firumu",
+    "meanings": [
+      "roll of film"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "カラーフィルムを一本ください。",
+        "en": "I want a roll of color film for prints."
+      }
+    ]
+  },
+  {
+    "id": "d156402900",
+    "word": "封筒",
+    "reading": "ふうとう",
+    "romaji": "fuutou",
+    "meanings": [
+      "envelope"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "だれがこの封筒を破って開けたのか。",
+        "en": "Who has torn the envelope open?"
+      }
+    ]
+  },
+  {
+    "id": "55c1439239",
+    "word": "プール",
+    "reading": "プール",
+    "romaji": "puuru",
+    "meanings": [
+      "swimming pool"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "サウナとプールがあります。",
+        "en": "There's a sauna and a pool."
+      }
+    ]
+  },
+  {
+    "id": "71e2aefb9d",
+    "word": "フォーク",
+    "reading": "フォーク",
+    "romaji": "fooku",
+    "meanings": [
+      "fork"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": []
+  },
+  {
+    "id": "15f4136421",
+    "word": "吹く",
+    "reading": "ふく",
+    "romaji": "fuku",
+    "meanings": [
+      "to blow"
+    ],
+    "level": "N5",
+    "pos": "v5k,vi",
+    "examples": [
+      {
+        "ja": "あの日は強い風が吹いていました。",
+        "en": "There was a strong wind that day."
+      }
+    ]
+  },
+  {
+    "id": "68571540e1",
+    "word": "服",
+    "reading": "ふく",
+    "romaji": "fuku",
+    "meanings": [
+      "clothes"
+    ],
+    "level": "N5",
+    "pos": "n,n-suf",
+    "examples": [
+      {
+        "ja": "この服はわたしにはもったいない。",
+        "en": "This suit is too good for me."
+      }
+    ]
+  },
+  {
+    "id": "0c1dbd4838",
+    "word": "二つ",
+    "reading": "ふたつ",
+    "romaji": "futatsu",
+    "meanings": [
+      "two"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "二つのうちでどちらが高いですか。",
+        "en": "Which is the more expensive of the two?"
+      }
+    ]
+  },
+  {
+    "id": "c518fb9116",
+    "word": "豚肉",
+    "reading": "ぶたにく",
+    "romaji": "butaniku",
+    "meanings": [
+      "pork"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "この豚肉は１キロいくらですか。",
+        "en": "How much is this pork a kilo?"
+      }
+    ]
+  },
+  {
+    "id": "94c2076821",
+    "word": "二人",
+    "reading": "ふたり",
+    "romaji": "futari",
+    "meanings": [
+      "two people"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "二人は何をしているところですか。",
+        "en": "What are you two doing?"
+      }
+    ]
+  },
+  {
+    "id": "750786cc55",
+    "word": "二日",
+    "reading": "ふつか",
+    "romaji": "futsuka",
+    "meanings": [
+      "two days",
+      "second day of the month"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "それは１週間前、すなわち４月２日に行われた。",
+        "en": "It was due a week ago, namely on April second."
+      }
+    ]
+  },
+  {
+    "id": "4162724f9a",
+    "word": "太い",
+    "reading": "ふとい",
+    "romaji": "futoi",
+    "meanings": [
+      "fat"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "彼は太い首をしている。",
+        "en": "He has a thick neck."
+      }
+    ]
+  },
+  {
+    "id": "eb9acca7ba",
+    "word": "冬",
+    "reading": "ふゆ",
+    "romaji": "fuyu",
+    "meanings": [
+      "winter"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "まもなく冬だ。",
+        "en": "It will be winter before long."
+      }
+    ]
+  },
+  {
+    "id": "5791e248f1",
+    "word": "降る",
+    "reading": "ふる",
+    "romaji": "furu",
+    "meanings": [
+      "to fall (e.g. rain or snow)"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "シカゴのあたりでは雨が降っていました。",
+        "en": "It was raining around Chicago."
+      }
+    ]
+  },
+  {
+    "id": "aa60dd4a11",
+    "word": "古い",
+    "reading": "ふるい",
+    "romaji": "furui",
+    "meanings": [
+      "old (not used for people)"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "時は金なりと古いことわざにもある。",
+        "en": "An old proverb says that time is money."
+      }
+    ]
+  },
+  {
+    "id": "34784ed6ca",
+    "word": "ふろ",
+    "reading": "ふろ",
+    "romaji": "furo",
+    "meanings": [
+      "bath"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "私は一日おきにふろに入ります。",
+        "en": "I have a bath every other day."
+      }
+    ]
+  },
+  {
+    "id": "79ddbb2b98",
+    "word": "文章",
+    "reading": "ぶんしょう",
+    "romaji": "bunshou",
+    "meanings": [
+      "sentence",
+      "text"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ヘミングウェイの文章は悪文だった。",
+        "en": "Hemingway had a poor writing style."
+      }
+    ]
+  },
+  {
+    "id": "f8fc73bd75",
+    "word": "ページ",
+    "reading": "ページ",
+    "romaji": "peeji",
+    "meanings": [
+      "page"
+    ],
+    "level": "N5",
+    "pos": "n,ctr",
+    "examples": [
+      {
+        "ja": "もう３ページ残っている。",
+        "en": "I have three more pages to go."
+      }
+    ]
+  },
+  {
+    "id": "619dae70e9",
+    "word": "下手",
+    "reading": "へた",
+    "romaji": "heta",
+    "meanings": [
+      "unskillful"
+    ],
+    "level": "N5",
+    "pos": "adj-na,n",
+    "examples": [
+      {
+        "ja": "いいわけをするのがとても下手。",
+        "en": "He is very bad at inventing excuses."
+      }
+    ]
+  },
+  {
+    "id": "91cf4ea2fd",
+    "word": "ベッド",
+    "reading": "ベッド",
+    "romaji": "beddo",
+    "meanings": [
+      "bed"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "どんなベッドでもないよりはよい。",
+        "en": "Any bed is better than no bed."
+      }
+    ]
+  },
+  {
+    "id": "db38ebd955",
+    "word": "ペット",
+    "reading": "ペット",
+    "romaji": "petto",
+    "meanings": [
+      "pet"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "あなたはペットの世話ができない。",
+        "en": "You can't care for pets."
+      }
+    ]
+  },
+  {
+    "id": "e78074927c",
+    "word": "部屋",
+    "reading": "へや",
+    "romaji": "heya",
+    "meanings": [
+      "room"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "マユコは部屋に入った。",
+        "en": "Mayuko entered the room."
+      }
+    ]
+  },
+  {
+    "id": "71c372d7b2",
+    "word": "辺",
+    "reading": "へん",
+    "romaji": "hen",
+    "meanings": [
+      "area"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "この辺にホテルはありますか。",
+        "en": "Is there a hotel around here?"
+      }
+    ]
+  },
+  {
+    "id": "dd1183b005",
+    "word": "ペン",
+    "reading": "ペン",
+    "romaji": "pen",
+    "meanings": [
+      "pen"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "リンゴと本の間にペンがあります。",
+        "en": "There is a pen between the apple and the book."
+      }
+    ]
+  },
+  {
+    "id": "65783b95dd",
+    "word": "勉強",
+    "reading": "べんきょう",
+    "romaji": "benkyou",
+    "meanings": [
+      "to study"
+    ],
+    "level": "N5",
+    "pos": "n,vs,vt",
+    "examples": [
+      {
+        "ja": "あなたは何時間勉強していますか。",
+        "en": "How many hours have you been studying?"
+      }
+    ]
+  },
+  {
+    "id": "84887dde48",
+    "word": "便利",
+    "reading": "べんり",
+    "romaji": "benri",
+    "meanings": [
+      "useful",
+      "convenient"
+    ],
+    "level": "N5",
+    "pos": "adj-na",
+    "examples": [
+      {
+        "ja": "電話は便利なものである。",
+        "en": "The telephone is a convenience."
+      }
+    ]
+  },
+  {
+    "id": "cfc75623ae",
+    "word": "帽子",
+    "reading": "ぼうし",
+    "romaji": "boushi",
+    "meanings": [
+      "hat"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "この帽子は１０００円なら安い。",
+        "en": "This hat is cheap at 1000 yen."
+      }
+    ]
+  },
+  {
+    "id": "785a997045",
+    "word": "ボールペン",
+    "reading": "ボールペン",
+    "romaji": "boorupen",
+    "meanings": [
+      "ball-point pen"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ボールペンのインクがなくなった。",
+        "en": "My ballpoint pen just ran out of ink."
+      }
+    ]
+  },
+  {
+    "id": "f71c69492e",
+    "word": "ほか",
+    "reading": "ほか",
+    "romaji": "hoka",
+    "meanings": [
+      "other",
+      "the rest"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no",
+    "examples": [
+      {
+        "ja": "ほかの女の子たちはどこにいるの。",
+        "en": "Where are the other girls?"
+      }
+    ]
+  },
+  {
+    "id": "ab9f2792c4",
+    "word": "ポケット",
+    "reading": "ポケット",
+    "romaji": "poketto",
+    "meanings": [
+      "pocket"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ポケットに何を持っていますか。",
+        "en": "What do you have in your pocket?"
+      }
+    ]
+  },
+  {
+    "id": "418493d941",
+    "word": "欲しい",
+    "reading": "ほしい",
+    "romaji": "hoshii",
+    "meanings": [
+      "want"
+    ],
+    "level": "N5",
+    "pos": "adj-i,aux-adj",
+    "examples": [
+      {
+        "ja": "友人はマイカーを欲しがっている。",
+        "en": "My friend wants a car of his own."
+      }
+    ]
+  },
+  {
+    "id": "2dbe65ee1d",
+    "word": "ポスト",
+    "reading": "ポスト",
+    "romaji": "posuto",
+    "meanings": [
+      "post"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ポストはどこにありますか。",
+        "en": "Where is the mailbox?"
+      }
+    ]
+  },
+  {
+    "id": "785adc4f9d",
+    "word": "細い",
+    "reading": "ほそい",
+    "romaji": "hosoi",
+    "meanings": [
+      "thin"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "彼は太っているくせに声は細い。",
+        "en": "His voice is thin even though he is fat."
+      }
+    ]
+  },
+  {
+    "id": "04ab635f4b",
+    "word": "ボタン",
+    "reading": "ボタン",
+    "romaji": "botan",
+    "meanings": [
+      "button"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "レーンコートのボタンがとれた。",
+        "en": "A button has come off my raincoat."
+      }
+    ]
+  },
+  {
+    "id": "23ec5a0b3d",
+    "word": "ホテル",
+    "reading": "ホテル",
+    "romaji": "hoteru",
+    "meanings": [
+      "hotel"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "あなたはこのホテルのお客ですか。",
+        "en": "Are you staying at this hotel?"
+      }
+    ]
+  },
+  {
+    "id": "0e8f798dbf",
+    "word": "本",
+    "reading": "ほん",
+    "romaji": "hon",
+    "meanings": [
+      "book"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ウイスキーを１本持っています。",
+        "en": "I have a bottle of whiskey."
+      }
+    ]
+  },
+  {
+    "id": "3839786bac",
+    "word": "本棚",
+    "reading": "ほんだな",
+    "romaji": "hondana",
+    "meanings": [
+      "bookshelves"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "私は本棚の本をすべて読んだわけではない。",
+        "en": "I haven't read all the books on the shelves."
+      }
+    ]
+  },
+  {
+    "id": "849baaf2c3",
+    "word": "ほんとう",
+    "reading": "ほんとう",
+    "romaji": "hontou",
+    "meanings": [
+      "truth"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no,adj-na",
+    "examples": [
+      {
+        "ja": "本当のマンションではありません。",
+        "en": "It isn't a real apartment."
+      }
+    ]
+  },
+  {
+    "id": "a59ba12bc5",
+    "word": "毎朝",
+    "reading": "まいあさ",
+    "romaji": "maiasa",
+    "meanings": [
+      "every morning"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "毎朝ジョギングすることにした。",
+        "en": "I've decided to jog every morning."
+      }
+    ]
+  },
+  {
+    "id": "771fbe6b4d",
+    "word": "毎月",
+    "reading": "まいげつ",
+    "romaji": "maigetsu",
+    "meanings": [
+      "every month"
+    ],
+    "level": "N5",
+    "pos": "adv,n",
+    "examples": [
+      {
+        "ja": "毎月のガス代はいくらですか。",
+        "en": "How much is your monthly gas bill?"
+      }
+    ]
+  },
+  {
+    "id": "fd1c93832f",
+    "word": "毎週",
+    "reading": "まいしゅう",
+    "romaji": "maishuu",
+    "meanings": [
+      "every week"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "父は毎週日曜日にゴルフをします。",
+        "en": "My father plays golf every Sunday."
+      }
+    ]
+  },
+  {
+    "id": "039a696225",
+    "word": "毎日",
+    "reading": "まいにち",
+    "romaji": "mainichi",
+    "meanings": [
+      "every day"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "毎日うっとうしくていやですね。",
+        "en": "Don't you just hate this weather?"
+      }
+    ]
+  },
+  {
+    "id": "83700909d4",
+    "word": "毎年",
+    "reading": "まいねん",
+    "romaji": "mainen",
+    "meanings": [
+      "every year"
+    ],
+    "level": "N5",
+    "pos": "adv,n",
+    "examples": [
+      {
+        "ja": "毎年ここに来なきゃ。",
+        "en": "I'll have to come here every year."
+      }
+    ]
+  },
+  {
+    "id": "2584943533",
+    "word": "毎晩",
+    "reading": "まいばん",
+    "romaji": "maiban",
+    "meanings": [
+      "every night"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "私は毎晩家にいます。",
+        "en": "I am at home every evening."
+      }
+    ]
+  },
+  {
+    "id": "319e218950",
+    "word": "前",
+    "reading": "まえ",
+    "romaji": "mae",
+    "meanings": [
+      "before"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "外へ出る前に靴を磨きなさい。",
+        "en": "Shine your shoes before going out."
+      }
+    ]
+  },
+  {
+    "id": "ae3e0a705f",
+    "word": "曲る",
+    "reading": "まがる",
+    "romaji": "magaru",
+    "meanings": [
+      "to turn",
+      "to bend"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "２ブロック先まで歩き、左へ曲がりなさい。",
+        "en": "Walk two blocks, and turn left."
+      }
+    ]
+  },
+  {
+    "id": "b19034ded1",
+    "word": "まずい",
+    "reading": "まずい",
+    "romaji": "mazui",
+    "meanings": [
+      "unpleasant"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "あ！まずい！ガソリンが切れてきた。",
+        "en": "Oh, no! We're running out of gas."
+      }
+    ]
+  },
+  {
+    "id": "162e00c6ef",
+    "word": "また",
+    "reading": "また",
+    "romaji": "mata",
+    "meanings": [
+      "again",
+      "and"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "ジムもまたパーティーに来ます。",
+        "en": "Jim is coming to the party, too."
+      }
+    ]
+  },
+  {
+    "id": "6a7163f5f7",
+    "word": "まだ",
+    "reading": "まだ",
+    "romaji": "mada",
+    "meanings": [
+      "yet",
+      "still"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "なすべきことがまだたくさんある。",
+        "en": "There still remains much to be done."
+      }
+    ]
+  },
+  {
+    "id": "4d76d06d84",
+    "word": "町",
+    "reading": "まち",
+    "romaji": "machi",
+    "meanings": [
+      "town",
+      "city"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "その町はロンドンのすぐ北にある。",
+        "en": "The town lies just above London."
+      }
+    ]
+  },
+  {
+    "id": "6a39701228",
+    "word": "待つ",
+    "reading": "まつ",
+    "romaji": "matsu",
+    "meanings": [
+      "to wait"
+    ],
+    "level": "N5",
+    "pos": "v5t,vt,vi",
+    "examples": [
+      {
+        "ja": "ちょっと待っていてもらえますか。",
+        "en": "Would you mind waiting a few minutes?"
+      }
+    ]
+  },
+  {
+    "id": "ede9ab2f7f",
+    "word": "まっすぐ",
+    "reading": "まっすぐ",
+    "romaji": "massugu",
+    "meanings": [
+      "straight ahead",
+      "direct"
+    ],
+    "level": "N5",
+    "pos": "adj-na,adv,n",
+    "examples": [
+      {
+        "ja": "まっすぐ前を見てください。",
+        "en": "Look forward, please."
+      }
+    ]
+  },
+  {
+    "id": "27f9d40392",
+    "word": "マッチ",
+    "reading": "マッチ",
+    "romaji": "matchi",
+    "meanings": [
+      "match"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "マッチありますか。",
+        "en": "Do you have a match?"
+      }
+    ]
+  },
+  {
+    "id": "7734194821",
+    "word": "窓",
+    "reading": "まど",
+    "romaji": "mado",
+    "meanings": [
+      "window"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "窓を開けっぱなしにしておいたの？",
+        "en": "Did you leave the window open?"
+      }
+    ]
+  },
+  {
+    "id": "ab36109960",
+    "word": "丸い",
+    "reading": "まるい",
+    "romaji": "marui",
+    "meanings": [
+      "round",
+      "circular"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "ボールは丸い。",
+        "en": "Balls are round."
+      }
+    ]
+  },
+  {
+    "id": "a0ff0f67c8",
+    "word": "万",
+    "reading": "まん",
+    "romaji": "man",
+    "meanings": [
+      "ten thousand"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "このテープレコーダーは４万円しました。",
+        "en": "I paid 40,000 yen for this tape recorder."
+      }
+    ]
+  },
+  {
+    "id": "6318b0423a",
+    "word": "万年筆",
+    "reading": "まんねんひつ",
+    "romaji": "mannenhitsu",
+    "meanings": [
+      "fountain pen"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "新しい万年筆をなくしてしまった。",
+        "en": "I have lost my new fountain pen."
+      }
+    ]
+  },
+  {
+    "id": "7309a238e8",
+    "word": "磨く",
+    "reading": "みがく",
+    "romaji": "migaku",
+    "meanings": [
+      "to brush teeth",
+      "to polish"
+    ],
+    "level": "N5",
+    "pos": "v5k,vt",
+    "examples": [
+      {
+        "ja": "そのなべを磨いていただけませんか。",
+        "en": "Would you scrape that rusty pan?"
+      }
+    ]
+  },
+  {
+    "id": "f1046f3190",
+    "word": "右",
+    "reading": "みぎ",
+    "romaji": "migi",
+    "meanings": [
+      "right side"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no",
+    "examples": [
+      {
+        "ja": "アラビア語は右から左へ書きます。",
+        "en": "Arabic is written from right to left."
+      }
+    ]
+  },
+  {
+    "id": "8568eded6e",
+    "word": "短い",
+    "reading": "みじかい",
+    "romaji": "mijikai",
+    "meanings": [
+      "short"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "日がだんだん短くなっている。",
+        "en": "The days are becoming shorter."
+      }
+    ]
+  },
+  {
+    "id": "69a792520f",
+    "word": "水",
+    "reading": "みず",
+    "romaji": "mizu",
+    "meanings": [
+      "water"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ひざに水がたまっているようです。",
+        "en": "I'm afraid I have water in my knee joint."
+      }
+    ]
+  },
+  {
+    "id": "0c8a588e53",
+    "word": "店",
+    "reading": "みせ",
+    "romaji": "mise",
+    "meanings": [
+      "shop"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "店はたたまれ、それっきりだった。",
+        "en": "The store closed down for good."
+      }
+    ]
+  },
+  {
+    "id": "db35a99e28",
+    "word": "見せる",
+    "reading": "みせる",
+    "romaji": "miseru",
+    "meanings": [
+      "to show"
+    ],
+    "level": "N5",
+    "pos": "v1,vt",
+    "examples": [
+      {
+        "ja": "パスポートを見せてくれませんか。",
+        "en": "Will you show me your passport, please?"
+      }
+    ]
+  },
+  {
+    "id": "dc29195f18",
+    "word": "道",
+    "reading": "みち",
+    "romaji": "michi",
+    "meanings": [
+      "street"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "二本の道はそこでクロスしている。",
+        "en": "The two roads cross there."
+      }
+    ]
+  },
+  {
+    "id": "1713d0bbe8",
+    "word": "三日",
+    "reading": "みっか",
+    "romaji": "mikka",
+    "meanings": [
+      "three days",
+      "third day of the month"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "１０月３日です。",
+        "en": "It's the third of October."
+      }
+    ]
+  },
+  {
+    "id": "b36b221d33",
+    "word": "三つ",
+    "reading": "みっつ",
+    "romaji": "mittsu",
+    "meanings": [
+      "three"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "コーヒー三つおねがいします。",
+        "en": "Three coffees, please."
+      }
+    ]
+  },
+  {
+    "id": "85e4ba2f28",
+    "word": "緑",
+    "reading": "みどり",
+    "romaji": "midori",
+    "meanings": [
+      "green"
+    ],
+    "level": "N5",
+    "pos": "n,adj-no",
+    "examples": [
+      {
+        "ja": "東京ミッドタウンは緑がいっぱい！",
+        "en": "There's a lot of greenery in Tokyo Midtown!"
+      }
+    ]
+  },
+  {
+    "id": "d2b9c47656",
+    "word": "皆さん",
+    "reading": "みなさん",
+    "romaji": "minasan",
+    "meanings": [
+      "everyone"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "皆さんじっとしていてください。",
+        "en": "Could you keep still, everyone?"
+      }
+    ]
+  },
+  {
+    "id": "84e465b526",
+    "word": "南",
+    "reading": "みなみ",
+    "romaji": "minami",
+    "meanings": [
+      "south"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "フランスは英国の南にある。",
+        "en": "France is to the south of England."
+      }
+    ]
+  },
+  {
+    "id": "e8cdf8b85a",
+    "word": "耳",
+    "reading": "みみ",
+    "romaji": "mimi",
+    "meanings": [
+      "ear"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "なぜ、あなたの耳はそんなに大きいの？",
+        "en": "Why are your ears so big?"
+      }
+    ]
+  },
+  {
+    "id": "85b37b6884",
+    "word": "見る",
+    "reading": "みる",
+    "romaji": "miru",
+    "meanings": [
+      "to see",
+      "to watch"
+    ],
+    "level": "N5",
+    "pos": "v1,vt",
+    "examples": [
+      {
+        "ja": "わたしはそれを見てぎょっとした。",
+        "en": "I was appalled at the sight."
+      }
+    ]
+  },
+  {
+    "id": "2676514561",
+    "word": "みんな",
+    "reading": "みんな",
+    "romaji": "minna",
+    "meanings": [
+      "everyone"
+    ],
+    "level": "N5",
+    "pos": "n,pn,adv",
+    "examples": [
+      {
+        "ja": "女の子はほとんどみんなやさしい。",
+        "en": "Almost all girls are kind."
+      }
+    ]
+  },
+  {
+    "id": "bf44ddad08",
+    "word": "六日",
+    "reading": "むいか",
+    "romaji": "muika",
+    "meanings": [
+      "six days",
+      "sixth day of the month"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "４月５日か６日に会っていただけませんか。",
+        "en": "Would it be possible to set up a meeting with us on April 5 or 6?"
+      }
+    ]
+  },
+  {
+    "id": "8e862f05f0",
+    "word": "向こう",
+    "reading": "むこう",
+    "romaji": "mukou",
+    "meanings": [
+      "over there"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "その男の子は向こうにいます。",
+        "en": "The boy is over there."
+      }
+    ]
+  },
+  {
+    "id": "0a3894175f",
+    "word": "難しい",
+    "reading": "むずかしい",
+    "romaji": "muzukashii",
+    "meanings": [
+      "difficult"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "外国人が日本語を学ぶのは難しい。",
+        "en": "It is difficult for a foreigner to study Japanese."
+      }
+    ]
+  },
+  {
+    "id": "7ecc2c4bfc",
+    "word": "六つ",
+    "reading": "むっつ",
+    "romaji": "muttsu",
+    "meanings": [
+      "six"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "彼は６行のうちに６つまちがいをした。",
+        "en": "He made six mistakes in as many lines."
+      }
+    ]
+  },
+  {
+    "id": "5028971b39",
+    "word": "村",
+    "reading": "むら",
+    "romaji": "mura",
+    "meanings": [
+      "village"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "町は村よりも大きい。",
+        "en": "Towns are larger than villages."
+      }
+    ]
+  },
+  {
+    "id": "ae534d4ca8",
+    "word": "目",
+    "reading": "め",
+    "romaji": "me",
+    "meanings": [
+      "eye"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "彼女はきれいな目をしている。",
+        "en": "She has beautiful eyes."
+      }
+    ]
+  },
+  {
+    "id": "eb5450490b",
+    "word": "メートル",
+    "reading": "メートル",
+    "romaji": "meetoru",
+    "meanings": [
+      "metre"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "前の人から1メートル離れて並んでください。",
+        "en": "Form a line, keeping one meter away from the person in front of you."
+      }
+    ]
+  },
+  {
+    "id": "72eb77e07a",
+    "word": "眼鏡",
+    "reading": "めがね",
+    "romaji": "megane",
+    "meanings": [
+      "glasses"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "私はメガネがなくては読めない。",
+        "en": "I cannot read without glasses."
+      }
+    ]
+  },
+  {
+    "id": "c5b7ad76fd",
+    "word": "もう",
+    "reading": "もう",
+    "romaji": "mou",
+    "meanings": [
+      "already"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "もう～、なにやってんだよ。",
+        "en": "Jeez, what're you up to?"
+      }
+    ]
+  },
+  {
+    "id": "3ae16ad93a",
+    "word": "もう一度",
+    "reading": "もういちど",
+    "romaji": "mouichido",
+    "meanings": [
+      "again"
+    ],
+    "level": "N5",
+    "pos": "exp,adv",
+    "examples": [
+      {
+        "ja": "もう一度ゆっくりお話しください。",
+        "en": "Could you please repeat it slowly?"
+      }
+    ]
+  },
+  {
+    "id": "d10bb92f3e",
+    "word": "木曜日",
+    "reading": "もくようび",
+    "romaji": "mokuyoubi",
+    "meanings": [
+      "Thursday"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "やあ、フレッド。木曜日にバドミントンはどう。",
+        "en": "Hi, Fred, how about badminton on Thursday?"
+      }
+    ]
+  },
+  {
+    "id": "16fda19d79",
+    "word": "持つ",
+    "reading": "もつ",
+    "romaji": "motsu",
+    "meanings": [
+      "to hold"
+    ],
+    "level": "N5",
+    "pos": "v5t,vt",
+    "examples": [
+      {
+        "ja": "コートを持ちましょうか。",
+        "en": "Shall I carry your coat?"
+      }
+    ]
+  },
+  {
+    "id": "a8f5f4c59e",
+    "word": "もっと",
+    "reading": "もっと",
+    "romaji": "motto",
+    "meanings": [
+      "more"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "父がもっと長生きしていたらなあ。",
+        "en": "I wish my father had lived longer."
+      }
+    ]
+  },
+  {
+    "id": "782272bfda",
+    "word": "物",
+    "reading": "もの",
+    "romaji": "mono",
+    "meanings": [
+      "thing"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "どちらのかばんがあなたの物ですか。",
+        "en": "Which bag is yours?"
+      }
+    ]
+  },
+  {
+    "id": "5b92758003",
+    "word": "門",
+    "reading": "もん",
+    "romaji": "mon",
+    "meanings": [
+      "gate"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ジョンは門のところまで出てきた。",
+        "en": "John moved forward to the gate."
+      }
+    ]
+  },
+  {
+    "id": "4f0f6b6ae7",
+    "word": "問題",
+    "reading": "もんだい",
+    "romaji": "mondai",
+    "meanings": [
+      "problem"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "問題はお金がないということです。",
+        "en": "The trouble is that we have no money."
+      }
+    ]
+  },
+  {
+    "id": "8d29f60b23",
+    "word": "八百屋",
+    "reading": "やおや",
+    "romaji": "yaoya",
+    "meanings": [
+      "greengrocer"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "その八百屋は客にとても親切だ。",
+        "en": "The greengrocer is very kind to his customers."
+      }
+    ]
+  },
+  {
+    "id": "936289666e",
+    "word": "野菜",
+    "reading": "やさい",
+    "romaji": "yasai",
+    "meanings": [
+      "vegetable"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "その店は野菜を売っている。",
+        "en": "The store deals in vegetables."
+      }
+    ]
+  },
+  {
+    "id": "ead1ae2736",
+    "word": "易しい",
+    "reading": "やさしい",
+    "romaji": "yasashii",
+    "meanings": [
+      "easy",
+      "simple"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "もっと易しい事を聞いて下さい。",
+        "en": "Ask me something easier."
+      }
+    ]
+  },
+  {
+    "id": "33b86212ca",
+    "word": "安い",
+    "reading": "やすい",
+    "romaji": "yasui",
+    "meanings": [
+      "cheap"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "もっと安いものを見せてください。",
+        "en": "Show me a cheaper one, please."
+      }
+    ]
+  },
+  {
+    "id": "d4a1d27d3b",
+    "word": "休み",
+    "reading": "やすみ",
+    "romaji": "yasumi",
+    "meanings": [
+      "rest",
+      "holiday"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "学校はクリスマスで休みになった。",
+        "en": "School has closed for the Christmas holidays."
+      }
+    ]
+  },
+  {
+    "id": "3e3efcb45f",
+    "word": "休む",
+    "reading": "やすむ",
+    "romaji": "yasumu",
+    "meanings": [
+      "to rest"
+    ],
+    "level": "N5",
+    "pos": "v5m,vi",
+    "examples": [
+      {
+        "ja": "父はまだ休んでいる。",
+        "en": "Father is still in bed."
+      }
+    ]
+  },
+  {
+    "id": "62c4216674",
+    "word": "八つ",
+    "reading": "やっつ",
+    "romaji": "yattsu",
+    "meanings": [
+      "eight"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "そこに八つの小石があった。",
+        "en": "There were eight pebbles there."
+      }
+    ]
+  },
+  {
+    "id": "e8a5cbdf0a",
+    "word": "山",
+    "reading": "やま",
+    "romaji": "yama",
+    "meanings": [
+      "mountain"
+    ],
+    "level": "N5",
+    "pos": "n,ctr",
+    "examples": [
+      {
+        "ja": "その山はどれくらいの高さですか。",
+        "en": "How high is the mountain?"
+      }
+    ]
+  },
+  {
+    "id": "f81d503d6f",
+    "word": "やる",
+    "reading": "やる",
+    "romaji": "yaru",
+    "meanings": [
+      "to do"
+    ],
+    "level": "N5",
+    "pos": "v5r,vt",
+    "examples": [
+      {
+        "ja": "５ドルをやる。",
+        "en": "Here's $5."
+      }
+    ]
+  },
+  {
+    "id": "285b008622",
+    "word": "夕方",
+    "reading": "ゆうがた",
+    "romaji": "yuugata",
+    "meanings": [
+      "evening"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "ひょっとすると夕方前に雨になるかもしれない。",
+        "en": "It might rain before evening."
+      }
+    ]
+  },
+  {
+    "id": "ae2b9f6d7e",
+    "word": "夕飯",
+    "reading": "ゆうはん",
+    "romaji": "yuuhan",
+    "meanings": [
+      "dinner"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "夕飯はもう食べましたか。",
+        "en": "Have you had dinner?"
+      }
+    ]
+  },
+  {
+    "id": "8b86921749",
+    "word": "郵便局",
+    "reading": "ゆうびんきょく",
+    "romaji": "yuubinkyoku",
+    "meanings": [
+      "post office"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "あの～郵便局はどちらでしょうか。",
+        "en": "Uh..., where's the post office?"
+      }
+    ]
+  },
+  {
+    "id": "39fff8fc4b",
+    "word": "昨夜",
+    "reading": "ゆうべ",
+    "romaji": "yuube",
+    "meanings": [
+      "last night"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "昨夜はよく眠れましたか。",
+        "en": "Did you have a good sleep last night?"
+      }
+    ]
+  },
+  {
+    "id": "50b217ed0b",
+    "word": "有名",
+    "reading": "ゆうめい",
+    "romaji": "yuumei",
+    "meanings": [
+      "famous"
+    ],
+    "level": "N5",
+    "pos": "adj-na",
+    "examples": [
+      {
+        "ja": "そのホテルは食事で有名である。",
+        "en": "The hotel is noted for its food."
+      }
+    ]
+  },
+  {
+    "id": "78c044b951",
+    "word": "雪",
+    "reading": "ゆき",
+    "romaji": "yuki",
+    "meanings": [
+      "snow"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ひどい雪のため外出できなかった。",
+        "en": "The heavy snow kept us from going out."
+      }
+    ]
+  },
+  {
+    "id": "d980cb1531",
+    "word": "ゆっくりと",
+    "reading": "ゆっくりと",
+    "romaji": "yukkurito",
+    "meanings": [
+      "slowly"
+    ],
+    "level": "N5",
+    "pos": "adv,adv-to,vs",
+    "examples": [
+      {
+        "ja": "おじいさんはとてもゆっくりと話す。",
+        "en": "Grandfather speaks very slowly."
+      }
+    ]
+  },
+  {
+    "id": "4f8e83945d",
+    "word": "八日",
+    "reading": "ようか",
+    "romaji": "youka",
+    "meanings": [
+      "eight days",
+      "eighth day of the month"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "学校は４月８日から始まります。",
+        "en": "School begins on April 8."
+      }
+    ]
+  },
+  {
+    "id": "1907b6fc38",
+    "word": "洋服",
+    "reading": "ようふく",
+    "romaji": "youfuku",
+    "meanings": [
+      "western-style clothes"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "お前に新しい洋服を作ってあげよう。",
+        "en": "I will make a new suit for you."
+      }
+    ]
+  },
+  {
+    "id": "19db29fbbb",
+    "word": "よく",
+    "reading": "よく",
+    "romaji": "yoku",
+    "meanings": [
+      "often",
+      "well"
+    ],
+    "level": "N5",
+    "pos": "adv",
+    "examples": [
+      {
+        "ja": "ジャック、よく来てくれたね。",
+        "en": "You are welcome, Jack!"
+      }
+    ]
+  },
+  {
+    "id": "4cb7c969c4",
+    "word": "横",
+    "reading": "よこ",
+    "romaji": "yoko",
+    "meanings": [
+      "beside",
+      "side",
+      "width"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "母親は赤ん坊をベッドに横にした。",
+        "en": "The mother laid her baby on the bed."
+      }
+    ]
+  },
+  {
+    "id": "222ae96df7",
+    "word": "四日",
+    "reading": "よっか",
+    "romaji": "yokka",
+    "meanings": [
+      "four days",
+      "fouth day of the month"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "長くても４日しか待てませんよ。",
+        "en": "I can wait four days at the longest."
+      }
+    ]
+  },
+  {
+    "id": "1000ee441a",
+    "word": "四つ",
+    "reading": "よっつ",
+    "romaji": "yottsu",
+    "meanings": [
+      "four"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "その紙を四つ折りにしなさい。",
+        "en": "Fold the paper in four."
+      }
+    ]
+  },
+  {
+    "id": "76f05a0739",
+    "word": "呼ぶ",
+    "reading": "よぶ",
+    "romaji": "yobu",
+    "meanings": [
+      "to call out",
+      "to invite"
+    ],
+    "level": "N5",
+    "pos": "v5b,vt",
+    "examples": [
+      {
+        "ja": "あなたをケパと呼ぶことにします。",
+        "en": "You will be called Cephas."
+      }
+    ]
+  },
+  {
+    "id": "eb7e675902",
+    "word": "読む",
+    "reading": "よむ",
+    "romaji": "yomu",
+    "meanings": [
+      "to read"
+    ],
+    "level": "N5",
+    "pos": "v5m,vt",
+    "examples": [
+      {
+        "ja": "本を読む時間がほとんどないんだ。",
+        "en": "I have little time to read."
+      }
+    ]
+  },
+  {
+    "id": "6c214111ea",
+    "word": "より",
+    "reading": "より",
+    "romaji": "yori",
+    "meanings": [
+      "than",
+      "(used for comparison)"
+    ],
+    "level": "N5",
+    "pos": "prt",
+    "examples": [
+      {
+        "ja": "もうこれよりほかに手はない。",
+        "en": "There's no other way than this now."
+      }
+    ]
+  },
+  {
+    "id": "1a0aec6793",
+    "word": "夜",
+    "reading": "よる",
+    "romaji": "yoru",
+    "meanings": [
+      "evening",
+      "night"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "あなたは夜よく寝れませんか。",
+        "en": "Don't you sleep well at night?"
+      }
+    ]
+  },
+  {
+    "id": "83da293775",
+    "word": "弱い",
+    "reading": "よわい",
+    "romaji": "yowai",
+    "meanings": [
+      "weak"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "それを言われると弱いなあ。",
+        "en": "That sure puts me on the spot."
+      }
+    ]
+  },
+  {
+    "id": "61fd50f12e",
+    "word": "来月",
+    "reading": "らいげつ",
+    "romaji": "raigetsu",
+    "meanings": [
+      "next month"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "来月タクシー料金があがります。",
+        "en": "Taxi fares will go up next month."
+      }
+    ]
+  },
+  {
+    "id": "7a4ef637be",
+    "word": "来週",
+    "reading": "らいしゅう",
+    "romaji": "raishuu",
+    "meanings": [
+      "next week"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "来週ヨーロッパへ行くつもりなんです。",
+        "en": "I'm going to Europe next week."
+      }
+    ]
+  },
+  {
+    "id": "c68f2caa2f",
+    "word": "来年",
+    "reading": "らいねん",
+    "romaji": "rainen",
+    "meanings": [
+      "next year"
+    ],
+    "level": "N5",
+    "pos": "n,adv",
+    "examples": [
+      {
+        "ja": "あなたは来年この本を読むことが出来るでしょう。",
+        "en": "You will be able to read this book next year."
+      }
+    ]
+  },
+  {
+    "id": "670f2dd0dc",
+    "word": "ラジオ",
+    "reading": "ラジオ",
+    "romaji": "rajio",
+    "meanings": [
+      "radio"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "そのニュースはラジオで聞いたよ。",
+        "en": "I heard the news on the radio."
+      }
+    ]
+  },
+  {
+    "id": "924572e50c",
+    "word": "ラジカセ",
+    "reading": "ラジカセ",
+    "romaji": "rajikase",
+    "meanings": [
+      "radio cassette player"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "確かに今の日本では、「ラジカセ」はもう古い言葉なのかもしれない。",
+        "en": "The word \"raji-kase\", meaning radio cassette in Japan, is probably more of an antiquated term by now."
+      }
+    ]
+  },
+  {
+    "id": "a45af4ed89",
+    "word": "りっぱ",
+    "reading": "りっぱ",
+    "romaji": "rippa",
+    "meanings": [
+      "splendid"
+    ],
+    "level": "N5",
+    "pos": "adj-na",
+    "examples": [
+      {
+        "ja": "どうもごりっぱな言いわけだよ。",
+        "en": "That is a fine excuse."
+      }
+    ]
+  },
+  {
+    "id": "dc7d39c7af",
+    "word": "留学生",
+    "reading": "りゅうがくせい",
+    "romaji": "ryuugakusei",
+    "meanings": [
+      "overseas student"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "留学生も入れるのかしら。",
+        "en": "Can foreign students be in the club?"
+      }
+    ]
+  },
+  {
+    "id": "0139a208fe",
+    "word": "両親",
+    "reading": "りょうしん",
+    "romaji": "ryoushin",
+    "meanings": [
+      "both parents"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "両親は二人ともまだ生きています。",
+        "en": "Both the parents are still living."
+      }
+    ]
+  },
+  {
+    "id": "ee85169acd",
+    "word": "料理",
+    "reading": "りょうり",
+    "romaji": "ryouri",
+    "meanings": [
+      "cuisine"
+    ],
+    "level": "N5",
+    "pos": "n,vs,vt",
+    "examples": [
+      {
+        "ja": "これらのりんごは料理用にもってこいだ。",
+        "en": "These apples are good cookers."
+      }
+    ]
+  },
+  {
+    "id": "2ba96bef9a",
+    "word": "旅行",
+    "reading": "りょこう",
+    "romaji": "ryokou",
+    "meanings": [
+      "travel"
+    ],
+    "level": "N5",
+    "pos": "n,vs,vi",
+    "examples": [
+      {
+        "ja": "いつ旅行においでになりますか。",
+        "en": "When will you go on a journey?"
+      }
+    ]
+  },
+  {
+    "id": "92b3bb727e",
+    "word": "零",
+    "reading": "れい",
+    "romaji": "rei",
+    "meanings": [
+      "zero"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": []
+  },
+  {
+    "id": "f7a15687a1",
+    "word": "冷蔵庫",
+    "reading": "れいぞうこ",
+    "romaji": "reizouko",
+    "meanings": [
+      "refrigerator"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "冷蔵庫の中にバターが２ポンドある。",
+        "en": "There are two pounds of butter in the icebox."
+      }
+    ]
+  },
+  {
+    "id": "0455201fe6",
+    "word": "レコード",
+    "reading": "レコード",
+    "romaji": "rekoodo",
+    "meanings": [
+      "record"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ステレオにレコードをかけてください。",
+        "en": "Put a record on the stereo."
+      }
+    ]
+  },
+  {
+    "id": "31893e4378",
+    "word": "レストラン",
+    "reading": "レストラン",
+    "romaji": "resutoran",
+    "meanings": [
+      "restaurant"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "あのレストランはサービスがよい。",
+        "en": "They give good service at that restaurant."
+      }
+    ]
+  },
+  {
+    "id": "d23f06249a",
+    "word": "練習",
+    "reading": "れんしゅう",
+    "romaji": "renshuu",
+    "meanings": [
+      "to practice"
+    ],
+    "level": "N5",
+    "pos": "n,vs,vt",
+    "examples": [
+      {
+        "ja": "あなたはいつピアノの練習をしますか。",
+        "en": "When do you practice the piano?"
+      }
+    ]
+  },
+  {
+    "id": "5fc0f979e6",
+    "word": "廊下",
+    "reading": "ろうか",
+    "romaji": "rouka",
+    "meanings": [
+      "corridor"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "廊下の突き当たりで火事が起きました。",
+        "en": "There's a fire down the hall."
+      }
+    ]
+  },
+  {
+    "id": "f9ccc7bfdf",
+    "word": "六",
+    "reading": "ろく",
+    "romaji": "roku",
+    "meanings": [
+      "six"
+    ],
+    "level": "N5",
+    "pos": "num",
+    "examples": [
+      {
+        "ja": "私は毎朝六時に起きます。",
+        "en": "I get up at six every morning."
+      }
+    ]
+  },
+  {
+    "id": "38249a2dd2",
+    "word": "ワイシャツ",
+    "reading": "ワイシャツ",
+    "romaji": "waishatsu",
+    "meanings": [
+      "business shirt"
+    ],
+    "level": "N5",
+    "pos": "n",
+    "examples": [
+      {
+        "ja": "ワイシャツにボタンをつけて。",
+        "en": "Would you sew a button on my shirt?"
+      }
+    ]
+  },
+  {
+    "id": "640761cb8b",
+    "word": "若い",
+    "reading": "わかい",
+    "romaji": "wakai",
+    "meanings": [
+      "young"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "「彼女は若いですか」「はい」",
+        "en": "\"Is she young?\" \"Yes, she is.\""
+      }
+    ]
+  },
+  {
+    "id": "ecee43eb04",
+    "word": "分かる",
+    "reading": "わかる",
+    "romaji": "wakaru",
+    "meanings": [
+      "to be understood"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "ボブがいつ来日したか分からない。",
+        "en": "I don't know when Bob came to Japan."
+      }
+    ]
+  },
+  {
+    "id": "0ca0de9dea",
+    "word": "忘れる",
+    "reading": "わすれる",
+    "romaji": "wasureru",
+    "meanings": [
+      "to forget"
+    ],
+    "level": "N5",
+    "pos": "v1,vt",
+    "examples": [
+      {
+        "ja": "電話するのを忘れてごめんなさい。",
+        "en": "Please forgive me for forgetting to call you."
+      }
+    ]
+  },
+  {
+    "id": "d5c2e69813",
+    "word": "私",
+    "reading": "わたくし",
+    "romaji": "watakushi",
+    "meanings": [
+      "(humble) I",
+      "myself"
+    ],
+    "level": "N5",
+    "pos": "pn",
+    "examples": [
+      {
+        "ja": "私は泳げません。",
+        "en": "I don't know how to swim."
+      }
+    ]
+  },
+  {
+    "id": "b1d440d4e1",
+    "word": "渡す",
+    "reading": "わたす",
+    "romaji": "watasu",
+    "meanings": [
+      "to hand over"
+    ],
+    "level": "N5",
+    "pos": "v5s,vt",
+    "examples": [
+      {
+        "ja": "わたしを川のむこうに渡してください。",
+        "en": "Please take me across the river."
+      }
+    ]
+  },
+  {
+    "id": "78255b9860",
+    "word": "渡る",
+    "reading": "わたる",
+    "romaji": "wataru",
+    "meanings": [
+      "to go across"
+    ],
+    "level": "N5",
+    "pos": "v5r,vi",
+    "examples": [
+      {
+        "ja": "一行はアメリカへ渡った。",
+        "en": "The party crossed over to America."
+      }
+    ]
+  },
+  {
+    "id": "13b6dbec03",
+    "word": "悪い",
+    "reading": "わるい",
+    "romaji": "warui",
+    "meanings": [
+      "bad"
+    ],
+    "level": "N5",
+    "pos": "adj-i",
+    "examples": [
+      {
+        "ja": "これは悪い話ではないでしょう？",
+        "en": "This isn't an unappealing proposition, is it?"
       }
     ]
   }

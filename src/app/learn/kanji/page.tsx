@@ -1,15 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { RequireAuth } from "@/components/RequireAuth";
-import n5 from "@/data/openjlpt-kanji-n5.json";
-import n4 from "@/data/openjlpt-kanji-n4.json";
-import n3 from "@/data/openjlpt-kanji-n3.json";
+import n1 from "@/data/openjlpt-kanji-n1.json";
 import n2 from "@/data/openjlpt-kanji-n2.json";
-import { speak, canSpeak } from "@/lib/speech";
+import n3 from "@/data/openjlpt-kanji-n3.json";
+import n4 from "@/data/openjlpt-kanji-n4.json";
+import n5 from "@/data/openjlpt-kanji-n5.json";
+import { canSpeak, speak } from "@/lib/speech";
 
 type Kanji = {
   character: string;
@@ -21,13 +23,16 @@ type Kanji = {
   words?: string[];
 };
 
-type Level = "N5" | "N4" | "N3" | "N2";
+type Level = "N5" | "N4" | "N3" | "N2" | "N1";
+
+const LEVELS: Level[] = ["N5", "N4", "N3", "N2", "N1"];
 
 const banks: Record<Level, Kanji[]> = {
   N5: n5 as Kanji[],
   N4: n4 as Kanji[],
   N3: n3 as Kanji[],
   N2: n2 as Kanji[],
+  N1: n1 as Kanji[],
 };
 
 export default function KanjiPage() {
@@ -35,16 +40,52 @@ export default function KanjiPage() {
     <RequireAuth>
       {(user) => (
         <AppShell userName={user.name}>
-          <KanjiContent />
+          <Suspense
+            fallback={
+              <div className="page">
+                <h1>Đang tải…</h1>
+              </div>
+            }
+          >
+            <KanjiContent />
+          </Suspense>
         </AppShell>
       )}
     </RequireAuth>
   );
 }
 
+function parseLevel(raw: string | null): Level {
+  if (raw === "N4" || raw === "N3" || raw === "N2" || raw === "N1" || raw === "N5") return raw;
+  return "N5";
+}
+
 function KanjiContent() {
-  const [level, setLevel] = useState<Level>("N5");
+  const params = useSearchParams();
+  const [level, setLevel] = useState<Level>(() => parseLevel(params.get("level")));
+  const [view, setView] = useState<"list" | "flash">(
+    params.get("view") === "list" ? "list" : "flash",
+  );
+  const [q, setQ] = useState("");
+
+  useEffect(() => {
+    setLevel(parseLevel(params.get("level")));
+    if (params.get("view") === "list") setView("list");
+  }, [params]);
+
   const bank = banks[level];
+  const list = useMemo(() => {
+    const s = q.trim().toLowerCase();
+    if (!s) return bank;
+    return bank.filter(
+      (k) =>
+        k.character.includes(s) ||
+        k.meanings.some((m) => m.toLowerCase().includes(s)) ||
+        k.onyomi.some((o) => o.includes(s)) ||
+        k.kunyomi.some((o) => o.includes(s)),
+    );
+  }, [bank, q]);
+
   const order = useMemo(() => {
     const keys = [...bank.keys()];
     for (let i = keys.length - 1; i > 0; i--) {
@@ -53,6 +94,7 @@ function KanjiContent() {
     }
     return keys;
   }, [bank, level]);
+
   const [pos, setPos] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [known, setKnown] = useState(0);
@@ -66,12 +108,68 @@ function KanjiContent() {
     setPos(0);
     setKnown(0);
     setFlipped(false);
+    setQ("");
   }
 
   function next(markKnown: boolean) {
     if (markKnown) setKnown((n) => n + 1);
     setFlipped(false);
     setPos((p) => p + 1);
+  }
+
+  if (view === "list") {
+    return (
+      <div className="page">
+        <Link href="/learn" className="back">
+          ← Về học
+        </Link>
+        <div className="page-head">
+          <div>
+            <p className="eyebrow">Danh sách học liệu</p>
+            <h1>Kanji OpenJLPT</h1>
+            <p>Lọc N5–N1 · chuyển sang flash khi muốn ôn.</p>
+          </div>
+          <Button variant="secondary" onClick={() => setView("flash")}>
+            Flashcards
+          </Button>
+        </div>
+        <div className="level-tabs">
+          {LEVELS.map((lv) => (
+            <button
+              key={lv}
+              type="button"
+              className={level === lv ? "chip map-chip active" : "chip map-chip"}
+              onClick={() => changeLevel(lv)}
+            >
+              {lv} · {banks[lv].length}
+            </button>
+          ))}
+        </div>
+        <label className="culture-search">
+          Tìm trong {level}
+          <input
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder="chữ, âm, nghĩa…"
+          />
+        </label>
+        <div className="kanji-grid">
+          {list.slice(0, 240).map((item) => (
+            <article key={item.character + item.level} className="kanji-tile">
+              <strong lang="ja">{item.character}</strong>
+              <p>{item.meanings.slice(0, 2).join(", ")}</p>
+              <small>
+                on {item.onyomi.slice(0, 2).join("·") || "—"} · kun{" "}
+                {item.kunyomi.slice(0, 2).join("·") || "—"}
+              </small>
+            </article>
+          ))}
+        </div>
+        {list.length > 240 ? (
+          <p className="empty-hint">Hiển thị 240/{list.length} — thu hẹp tìm kiếm.</p>
+        ) : null}
+      </div>
+    );
   }
 
   if (done) {
@@ -85,15 +183,20 @@ function KanjiContent() {
         <p style={{ color: "var(--muted)", margin: "12px 0 24px" }}>
           Đã biết {known}/{bank.length}. OpenJLPT (CC BY-SA 4.0).
         </p>
-        <Button
-          onClick={() => {
-            setPos(0);
-            setKnown(0);
-            setFlipped(false);
-          }}
-        >
-          Xáo lại
-        </Button>
+        <div className="actions">
+          <Button
+            onClick={() => {
+              setPos(0);
+              setKnown(0);
+              setFlipped(false);
+            }}
+          >
+            Xáo lại
+          </Button>
+          <Button variant="secondary" onClick={() => setView("list")}>
+            Danh sách
+          </Button>
+        </div>
       </div>
     );
   }
@@ -103,8 +206,13 @@ function KanjiContent() {
       <Link href="/learn" className="back">
         ← Về học
       </Link>
+      <div className="level-tabs" style={{ marginBottom: 12 }}>
+        <button type="button" className="chip map-chip" onClick={() => setView("list")}>
+          Danh sách
+        </button>
+      </div>
       <div className="segmented" style={{ marginBottom: 18 }}>
-        {(["N5", "N4", "N3", "N2"] as Level[]).map((lv) => (
+        {LEVELS.map((lv) => (
           <button
             key={lv}
             type="button"
@@ -127,6 +235,33 @@ function KanjiContent() {
       <div className="progress">
         <i style={{ width: `${((pos + 1) / bank.length) * 100}%` }} />
       </div>
+      <div className="review-nav">
+        <button
+          type="button"
+          className="text-button"
+          disabled={pos <= 0}
+          onClick={() => {
+            setFlipped(false);
+            setPos((p) => Math.max(0, p - 1));
+          }}
+        >
+          ← Trước
+        </button>
+        <span>
+          {pos + 1} / {bank.length}
+        </span>
+        <button
+          type="button"
+          className="text-button"
+          disabled={pos >= bank.length - 1}
+          onClick={() => {
+            setFlipped(false);
+            setPos((p) => Math.min(bank.length - 1, p + 1));
+          }}
+        >
+          Sau →
+        </button>
+      </div>
       <button
         type="button"
         className={`flashcard ${flipped ? "flipped" : ""}`}
@@ -136,12 +271,13 @@ function KanjiContent() {
         {flipped ? (
           <>
             <p className="eyebrow">Âm · nghĩa</p>
+            <div className="kanji prompt-word">{k.character}</div>
             <div className="reading">
               on: {k.onyomi.join(" · ") || "—"}
               <br />
               kun: {k.kunyomi.join(" · ") || "—"}
             </div>
-            <h2>{k.meanings.join("; ")}</h2>
+            <h2 className="meaning-line">{k.meanings.join("; ")}</h2>
             {k.words?.length ? <p className="example">Từ: {k.words.join(" · ")}</p> : null}
           </>
         ) : (
@@ -152,7 +288,7 @@ function KanjiContent() {
           </>
         )}
       </button>
-      {canSpeak() && (
+      {canSpeak() ? (
         <div className="speak-row">
           <Button
             variant="secondary"
@@ -161,13 +297,16 @@ function KanjiContent() {
             Nghe âm
           </Button>
         </div>
-      )}
-      <div className="ratings" style={{ gridTemplateColumns: "1fr 1fr" }}>
-        <button type="button" className="again" onClick={() => next(false)}>
+      ) : null}
+      <div className={`ratings two-col ${flipped ? "enabled" : "locked"}`}>
+        {!flipped ? (
+          <p className="ratings-lock-hint">Lật thẻ rồi chọn Chưa nhớ / Đã biết</p>
+        ) : null}
+        <button type="button" className="again" disabled={!flipped} onClick={() => next(false)}>
           <strong>Chưa nhớ</strong>
           <small>Again</small>
         </button>
-        <button type="button" onClick={() => next(true)}>
+        <button type="button" disabled={!flipped} onClick={() => next(true)}>
           <strong>Đã biết</strong>
           <small>Next</small>
         </button>
