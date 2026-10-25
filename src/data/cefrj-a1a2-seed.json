@@ -1,0 +1,1060 @@
+[
+  {
+    "id": "cefrj-2",
+    "word": "a.m./A.M./am/AM",
+    "pos": "adverb",
+    "level": "A1",
+    "meanings": [
+      "trạng từ · CEFR-J A1",
+      "Từ tiếng Anh trình độ A1: a.m./A.M./am/AM"
+    ]
+  },
+  {
+    "id": "cefrj-5",
+    "word": "ability",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "khả năng",
+      "danh từ · CEFR-J A2",
+      "EN: ability"
+    ]
+  },
+  {
+    "id": "cefrj-13",
+    "word": "about",
+    "pos": "adverb",
+    "level": "A1",
+    "meanings": [
+      "khoảng / về",
+      "trạng từ · CEFR-J A1",
+      "EN: about"
+    ]
+  },
+  {
+    "id": "cefrj-16",
+    "word": "above",
+    "pos": "adverb",
+    "level": "A1",
+    "meanings": [
+      "phía trên",
+      "trạng từ · CEFR-J A1",
+      "EN: above"
+    ]
+  },
+  {
+    "id": "cefrj-18",
+    "word": "abroad",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "ở nước ngoài",
+      "trạng từ · CEFR-J A2",
+      "EN: abroad"
+    ]
+  },
+  {
+    "id": "cefrj-34",
+    "word": "accept",
+    "pos": "verb",
+    "level": "A2",
+    "meanings": [
+      "chấp nhận",
+      "động từ · CEFR-J A2",
+      "EN: accept"
+    ]
+  },
+  {
+    "id": "cefrj-35",
+    "word": "acceptable",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "tính từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: acceptable"
+    ]
+  },
+  {
+    "id": "cefrj-42",
+    "word": "accident",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "tai nạn",
+      "danh từ · CEFR-J A2",
+      "EN: accident"
+    ]
+  },
+  {
+    "id": "cefrj-50",
+    "word": "account",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "tài khoản / giải thích",
+      "danh từ · CEFR-J A2",
+      "EN: account"
+    ]
+  },
+  {
+    "id": "cefrj-63",
+    "word": "achieve",
+    "pos": "verb",
+    "level": "A2",
+    "meanings": [
+      "động từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: achieve"
+    ]
+  },
+  {
+    "id": "cefrj-71",
+    "word": "across",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "băng qua",
+      "trạng từ · CEFR-J A2",
+      "EN: across"
+    ]
+  },
+  {
+    "id": "cefrj-73",
+    "word": "act",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "hành động",
+      "danh từ · CEFR-J A2",
+      "EN: act"
+    ]
+  },
+  {
+    "id": "cefrj-75",
+    "word": "action",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "hành động",
+      "danh từ · CEFR-J A1",
+      "EN: action"
+    ]
+  },
+  {
+    "id": "cefrj-78",
+    "word": "activity",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "hoạt động",
+      "danh từ · CEFR-J A1",
+      "EN: activity"
+    ]
+  },
+  {
+    "id": "cefrj-79",
+    "word": "actor",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "diễn viên",
+      "danh từ · CEFR-J A1",
+      "EN: actor"
+    ]
+  },
+  {
+    "id": "cefrj-82",
+    "word": "actually",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "trạng từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: actually"
+    ]
+  },
+  {
+    "id": "cefrj-87",
+    "word": "add",
+    "pos": "verb",
+    "level": "A1",
+    "meanings": [
+      "thêm",
+      "động từ · CEFR-J A1",
+      "EN: add"
+    ]
+  },
+  {
+    "id": "cefrj-91",
+    "word": "addition",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: addition"
+    ]
+  },
+  {
+    "id": "cefrj-92",
+    "word": "additional",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "tính từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: additional"
+    ]
+  },
+  {
+    "id": "cefrj-94",
+    "word": "address",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "địa chỉ",
+      "danh từ · CEFR-J A1",
+      "EN: address"
+    ]
+  },
+  {
+    "id": "cefrj-99",
+    "word": "adjective",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: adjective"
+    ]
+  },
+  {
+    "id": "cefrj-100",
+    "word": "adjust",
+    "pos": "verb",
+    "level": "A2",
+    "meanings": [
+      "động từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: adjust"
+    ]
+  },
+  {
+    "id": "cefrj-106",
+    "word": "admire",
+    "pos": "verb",
+    "level": "A2",
+    "meanings": [
+      "động từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: admire"
+    ]
+  },
+  {
+    "id": "cefrj-109",
+    "word": "admit",
+    "pos": "verb",
+    "level": "A2",
+    "meanings": [
+      "động từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: admit"
+    ]
+  },
+  {
+    "id": "cefrj-117",
+    "word": "adult",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "người lớn",
+      "tính từ · CEFR-J A2",
+      "EN: adult"
+    ]
+  },
+  {
+    "id": "cefrj-121",
+    "word": "advanced",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "tính từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: advanced"
+    ]
+  },
+  {
+    "id": "cefrj-123",
+    "word": "advantage",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "lợi thế",
+      "danh từ · CEFR-J A2",
+      "EN: advantage"
+    ]
+  },
+  {
+    "id": "cefrj-125",
+    "word": "adventure",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "cuộc phiêu lưu",
+      "danh từ · CEFR-J A2",
+      "EN: adventure"
+    ]
+  },
+  {
+    "id": "cefrj-134",
+    "word": "advertisement",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "quảng cáo",
+      "danh từ · CEFR-J A2",
+      "EN: advertisement"
+    ]
+  },
+  {
+    "id": "cefrj-135",
+    "word": "advertising",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: advertising"
+    ]
+  },
+  {
+    "id": "cefrj-136",
+    "word": "advice",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "lời khuyên",
+      "danh từ · CEFR-J A2",
+      "EN: advice"
+    ]
+  },
+  {
+    "id": "cefrj-137",
+    "word": "advise",
+    "pos": "verb",
+    "level": "A2",
+    "meanings": [
+      "động từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: advise"
+    ]
+  },
+  {
+    "id": "cefrj-140",
+    "word": "affair",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: affair"
+    ]
+  },
+  {
+    "id": "cefrj-147",
+    "word": "afraid",
+    "pos": "adjective",
+    "level": "A1",
+    "meanings": [
+      "sợ",
+      "tính từ · CEFR-J A1",
+      "EN: afraid"
+    ]
+  },
+  {
+    "id": "cefrj-148",
+    "word": "after",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "sau",
+      "trạng từ · CEFR-J A2",
+      "EN: after"
+    ]
+  },
+  {
+    "id": "cefrj-151",
+    "word": "afternoon",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "buổi chiều",
+      "danh từ · CEFR-J A1",
+      "EN: afternoon"
+    ]
+  },
+  {
+    "id": "cefrj-154",
+    "word": "again",
+    "pos": "adverb",
+    "level": "A1",
+    "meanings": [
+      "lại",
+      "trạng từ · CEFR-J A1",
+      "EN: again"
+    ]
+  },
+  {
+    "id": "cefrj-155",
+    "word": "against",
+    "pos": "preposition",
+    "level": "A2",
+    "meanings": [
+      "chống lại",
+      "giới từ · CEFR-J A2",
+      "EN: against"
+    ]
+  },
+  {
+    "id": "cefrj-156",
+    "word": "age",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "tuổi",
+      "danh từ · CEFR-J A1",
+      "EN: age"
+    ]
+  },
+  {
+    "id": "cefrj-157",
+    "word": "aged",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "tính từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: aged"
+    ]
+  },
+  {
+    "id": "cefrj-159",
+    "word": "agency",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: agency"
+    ]
+  },
+  {
+    "id": "cefrj-161",
+    "word": "agent",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: agent"
+    ]
+  },
+  {
+    "id": "cefrj-164",
+    "word": "ago",
+    "pos": "adverb",
+    "level": "A1",
+    "meanings": [
+      "trước đây",
+      "trạng từ · CEFR-J A1",
+      "EN: ago"
+    ]
+  },
+  {
+    "id": "cefrj-167",
+    "word": "agree",
+    "pos": "verb",
+    "level": "A1",
+    "meanings": [
+      "đồng ý",
+      "động từ · CEFR-J A1",
+      "EN: agree"
+    ]
+  },
+  {
+    "id": "cefrj-171",
+    "word": "ahead",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "phía trước",
+      "trạng từ · CEFR-J A2",
+      "EN: ahead"
+    ]
+  },
+  {
+    "id": "cefrj-176",
+    "word": "air",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "không khí",
+      "danh từ · CEFR-J A2",
+      "EN: air"
+    ]
+  },
+  {
+    "id": "cefrj-182",
+    "word": "airplane/aeroplane",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "danh từ · CEFR-J A1",
+      "Từ tiếng Anh trình độ A1: airplane/aeroplane"
+    ]
+  },
+  {
+    "id": "cefrj-183",
+    "word": "airport",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "sân bay",
+      "danh từ · CEFR-J A1",
+      "EN: airport"
+    ]
+  },
+  {
+    "id": "cefrj-184",
+    "word": "aisle",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: aisle"
+    ]
+  },
+  {
+    "id": "cefrj-185",
+    "word": "alarm",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "báo động",
+      "danh từ · CEFR-J A2",
+      "EN: alarm"
+    ]
+  },
+  {
+    "id": "cefrj-187",
+    "word": "alarm clock",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: alarm clock"
+    ]
+  },
+  {
+    "id": "cefrj-188",
+    "word": "album",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "album",
+      "danh từ · CEFR-J A1",
+      "EN: album"
+    ]
+  },
+  {
+    "id": "cefrj-196",
+    "word": "alive",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "còn sống",
+      "tính từ · CEFR-J A2",
+      "EN: alive"
+    ]
+  },
+  {
+    "id": "cefrj-197",
+    "word": "all",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "tất cả",
+      "trạng từ · CEFR-J A2",
+      "EN: all"
+    ]
+  },
+  {
+    "id": "cefrj-200",
+    "word": "all right",
+    "pos": "adjective",
+    "level": "A1",
+    "meanings": [
+      "tính từ · CEFR-J A1",
+      "Từ tiếng Anh trình độ A1: all right"
+    ]
+  },
+  {
+    "id": "cefrj-205",
+    "word": "allow",
+    "pos": "verb",
+    "level": "A2",
+    "meanings": [
+      "cho phép",
+      "động từ · CEFR-J A2",
+      "EN: allow"
+    ]
+  },
+  {
+    "id": "cefrj-208",
+    "word": "almost",
+    "pos": "adverb",
+    "level": "A1",
+    "meanings": [
+      "hầu như",
+      "trạng từ · CEFR-J A1",
+      "EN: almost"
+    ]
+  },
+  {
+    "id": "cefrj-209",
+    "word": "alone",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "một mình",
+      "tính từ · CEFR-J A2",
+      "EN: alone"
+    ]
+  },
+  {
+    "id": "cefrj-211",
+    "word": "along",
+    "pos": "adverb",
+    "level": "A1",
+    "meanings": [
+      "dọc theo",
+      "trạng từ · CEFR-J A1",
+      "EN: along"
+    ]
+  },
+  {
+    "id": "cefrj-217",
+    "word": "already",
+    "pos": "adverb",
+    "level": "A1",
+    "meanings": [
+      "đã rồi",
+      "trạng từ · CEFR-J A1",
+      "EN: already"
+    ]
+  },
+  {
+    "id": "cefrj-218",
+    "word": "alright",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "tính từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: alright"
+    ]
+  },
+  {
+    "id": "cefrj-220",
+    "word": "also",
+    "pos": "adverb",
+    "level": "A1",
+    "meanings": [
+      "cũng",
+      "trạng từ · CEFR-J A1",
+      "EN: also"
+    ]
+  },
+  {
+    "id": "cefrj-227",
+    "word": "although",
+    "pos": "conjunction",
+    "level": "A2",
+    "meanings": [
+      "liên từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: although"
+    ]
+  },
+  {
+    "id": "cefrj-231",
+    "word": "always",
+    "pos": "adverb",
+    "level": "A1",
+    "meanings": [
+      "luôn luôn",
+      "trạng từ · CEFR-J A1",
+      "EN: always"
+    ]
+  },
+  {
+    "id": "cefrj-232",
+    "word": "am",
+    "pos": "be-verb",
+    "level": "A1",
+    "meanings": [
+      "be-verb · CEFR-J A1",
+      "Từ tiếng Anh trình độ A1: am"
+    ]
+  },
+  {
+    "id": "cefrj-241",
+    "word": "ambition",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: ambition"
+    ]
+  },
+  {
+    "id": "cefrj-245",
+    "word": "among",
+    "pos": "preposition",
+    "level": "A2",
+    "meanings": [
+      "trong số",
+      "giới từ · CEFR-J A2",
+      "EN: among"
+    ]
+  },
+  {
+    "id": "cefrj-252",
+    "word": "amused",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "tính từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: amused"
+    ]
+  },
+  {
+    "id": "cefrj-253",
+    "word": "amusement",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: amusement"
+    ]
+  },
+  {
+    "id": "cefrj-255",
+    "word": "an",
+    "pos": "determiner",
+    "level": "A1",
+    "meanings": [
+      "hạn định từ · CEFR-J A1",
+      "Từ tiếng Anh trình độ A1: an"
+    ]
+  },
+  {
+    "id": "cefrj-260",
+    "word": "ancestor",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: ancestor"
+    ]
+  },
+  {
+    "id": "cefrj-265",
+    "word": "ancient",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "cổ xưa",
+      "tính từ · CEFR-J A2",
+      "EN: ancient"
+    ]
+  },
+  {
+    "id": "cefrj-266",
+    "word": "and",
+    "pos": "conjunction",
+    "level": "A1",
+    "meanings": [
+      "và",
+      "liên từ · CEFR-J A1",
+      "EN: and"
+    ]
+  },
+  {
+    "id": "cefrj-267",
+    "word": "angel",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: angel"
+    ]
+  },
+  {
+    "id": "cefrj-270",
+    "word": "angrily",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "trạng từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: angrily"
+    ]
+  },
+  {
+    "id": "cefrj-271",
+    "word": "angry",
+    "pos": "adjective",
+    "level": "A1",
+    "meanings": [
+      "tức giận",
+      "tính từ · CEFR-J A1",
+      "EN: angry"
+    ]
+  },
+  {
+    "id": "cefrj-273",
+    "word": "animal",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "động vật",
+      "danh từ · CEFR-J A1",
+      "EN: animal"
+    ]
+  },
+  {
+    "id": "cefrj-277",
+    "word": "ankle",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: ankle"
+    ]
+  },
+  {
+    "id": "cefrj-278",
+    "word": "anniversary",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: anniversary"
+    ]
+  },
+  {
+    "id": "cefrj-281",
+    "word": "annoy",
+    "pos": "verb",
+    "level": "A2",
+    "meanings": [
+      "động từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: annoy"
+    ]
+  },
+  {
+    "id": "cefrj-284",
+    "word": "annoying",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "tính từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: annoying"
+    ]
+  },
+  {
+    "id": "cefrj-288",
+    "word": "another",
+    "pos": "determiner",
+    "level": "A1",
+    "meanings": [
+      "một cái khác",
+      "hạn định từ · CEFR-J A1",
+      "EN: another"
+    ]
+  },
+  {
+    "id": "cefrj-290",
+    "word": "answer",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "câu trả lời",
+      "danh từ · CEFR-J A1",
+      "EN: answer"
+    ]
+  },
+  {
+    "id": "cefrj-306",
+    "word": "anxious",
+    "pos": "adjective",
+    "level": "A2",
+    "meanings": [
+      "tính từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: anxious"
+    ]
+  },
+  {
+    "id": "cefrj-308",
+    "word": "any",
+    "pos": "determiner",
+    "level": "A1",
+    "meanings": [
+      "bất kỳ",
+      "hạn định từ · CEFR-J A1",
+      "EN: any"
+    ]
+  },
+  {
+    "id": "cefrj-310",
+    "word": "anybody",
+    "pos": "pronoun",
+    "level": "A1",
+    "meanings": [
+      "đại từ · CEFR-J A1",
+      "Từ tiếng Anh trình độ A1: anybody"
+    ]
+  },
+  {
+    "id": "cefrj-312",
+    "word": "anymore",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "trạng từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: anymore"
+    ]
+  },
+  {
+    "id": "cefrj-313",
+    "word": "anyone",
+    "pos": "pronoun",
+    "level": "A1",
+    "meanings": [
+      "bất kỳ ai",
+      "đại từ · CEFR-J A1",
+      "EN: anyone"
+    ]
+  },
+  {
+    "id": "cefrj-314",
+    "word": "anything",
+    "pos": "pronoun",
+    "level": "A1",
+    "meanings": [
+      "bất cứ điều gì",
+      "đại từ · CEFR-J A1",
+      "EN: anything"
+    ]
+  },
+  {
+    "id": "cefrj-315",
+    "word": "anyway",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "dù sao",
+      "trạng từ · CEFR-J A2",
+      "EN: anyway"
+    ]
+  },
+  {
+    "id": "cefrj-316",
+    "word": "anywhere",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "bất cứ đâu",
+      "trạng từ · CEFR-J A2",
+      "EN: anywhere"
+    ]
+  },
+  {
+    "id": "cefrj-317",
+    "word": "apart",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "trạng từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: apart"
+    ]
+  },
+  {
+    "id": "cefrj-318",
+    "word": "apartment",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "căn hộ",
+      "danh từ · CEFR-J A2",
+      "EN: apartment"
+    ]
+  },
+  {
+    "id": "cefrj-320",
+    "word": "apologize/apologise",
+    "pos": "verb",
+    "level": "A2",
+    "meanings": [
+      "động từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: apologize/apologise"
+    ]
+  },
+  {
+    "id": "cefrj-324",
+    "word": "apparently",
+    "pos": "adverb",
+    "level": "A2",
+    "meanings": [
+      "trạng từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: apparently"
+    ]
+  },
+  {
+    "id": "cefrj-327",
+    "word": "appear",
+    "pos": "verb",
+    "level": "A2",
+    "meanings": [
+      "xuất hiện",
+      "động từ · CEFR-J A2",
+      "EN: appear"
+    ]
+  },
+  {
+    "id": "cefrj-328",
+    "word": "appearance",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "danh từ · CEFR-J A2",
+      "Từ tiếng Anh trình độ A2: appearance"
+    ]
+  },
+  {
+    "id": "cefrj-332",
+    "word": "apple",
+    "pos": "noun",
+    "level": "A1",
+    "meanings": [
+      "quả táo",
+      "danh từ · CEFR-J A1",
+      "EN: apple"
+    ]
+  },
+  {
+    "id": "cefrj-335",
+    "word": "apply",
+    "pos": "verb",
+    "level": "A2",
+    "meanings": [
+      "nộp / áp dụng",
+      "động từ · CEFR-J A2",
+      "EN: apply"
+    ]
+  },
+  {
+    "id": "cefrj-337",
+    "word": "appointment",
+    "pos": "noun",
+    "level": "A2",
+    "meanings": [
+      "cuộc hẹn",
+      "danh từ · CEFR-J A2",
+      "EN: appointment"
+    ]
+  }
+]

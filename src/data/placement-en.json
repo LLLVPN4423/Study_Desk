@@ -1,0 +1,182 @@
+[
+  {
+    "id": "e1",
+    "bandHint": "A2",
+    "label": "Question 01 · Vocabulary",
+    "prompt": "She ___ to school every day.",
+    "hint": "Choose the correct verb form.",
+    "choices": ["go", "goes", "going", "gone"],
+    "answer": 1
+  },
+  {
+    "id": "e2",
+    "bandHint": "A2",
+    "label": "Question 02 · Vocabulary",
+    "prompt": "I need a ___ of water.",
+    "hint": "Everyday noun.",
+    "choices": ["glass", "glasses", "glassing", "glassed"],
+    "answer": 0
+  },
+  {
+    "id": "e3",
+    "bandHint": "A2",
+    "label": "Question 03 · Grammar",
+    "prompt": "There ___ many books on the table.",
+    "hint": "Agreement.",
+    "choices": ["is", "are", "be", "was"],
+    "answer": 1
+  },
+  {
+    "id": "e4",
+    "bandHint": "B1",
+    "label": "Question 04 · Grammar",
+    "prompt": "If it rains, we ___ stay inside.",
+    "hint": "First conditional.",
+    "choices": ["will", "would", "have", "are"],
+    "answer": 0
+  },
+  {
+    "id": "e5",
+    "bandHint": "B1",
+    "label": "Question 05 · Vocabulary",
+    "prompt": "He gave a clear ___ of the problem.",
+    "hint": "Academic-ish noun.",
+    "choices": ["explain", "explanation", "explanatory", "explained"],
+    "answer": 1
+  },
+  {
+    "id": "e6",
+    "bandHint": "B1",
+    "label": "Question 06 · Grammar",
+    "prompt": "I have ___ finished my homework.",
+    "hint": "Present perfect adverb.",
+    "choices": ["yet", "already", "still", "ever"],
+    "answer": 1
+  },
+  {
+    "id": "e7",
+    "bandHint": "B2",
+    "label": "Question 07 · Grammar",
+    "prompt": "The report ___ by the team yesterday.",
+    "hint": "Passive voice.",
+    "choices": ["wrote", "was written", "has writing", "written"],
+    "answer": 1
+  },
+  {
+    "id": "e8",
+    "bandHint": "B2",
+    "label": "Question 08 · Vocabulary",
+    "prompt": "Her argument was ___ and hard to challenge.",
+    "hint": "Adjective for strong reasoning.",
+    "choices": ["convincing", "convinced", "convince", "conviction"],
+    "answer": 0
+  },
+  {
+    "id": "e9",
+    "bandHint": "B2",
+    "label": "Question 09 · Grammar",
+    "prompt": "Not only did he arrive late, ___ he forgot the files.",
+    "hint": "Correlative conjunction.",
+    "choices": ["and", "but", "also", "so"],
+    "answer": 1
+  },
+  {
+    "id": "e10",
+    "bandHint": "C1",
+    "label": "Question 10 · Vocabulary",
+    "prompt": "The findings ___ previous assumptions.",
+    "hint": "Academic verb.",
+    "choices": ["undermine", "underline", "undergo", "undertake"],
+    "answer": 0
+  },
+  {
+    "id": "e11",
+    "bandHint": "A2",
+    "label": "Question 11 · Reading",
+    "prompt": "Synonym of \"happy\":",
+    "hint": "Basic synonym.",
+    "choices": ["sad", "glad", "angry", "tired"],
+    "answer": 1
+  },
+  {
+    "id": "e12",
+    "bandHint": "B1",
+    "label": "Question 12 · Grammar",
+    "prompt": "She suggested ___ earlier.",
+    "hint": "Verb pattern.",
+    "choices": ["to leave", "leaving", "leave", "left"],
+    "answer": 1
+  },
+  {
+    "id": "e13",
+    "bandHint": "B2",
+    "label": "Question 13 · Grammar",
+    "prompt": "Had I known, I ___ helped.",
+    "hint": "Third conditional inverted.",
+    "choices": ["will have", "would have", "would", "had"],
+    "answer": 1
+  },
+  {
+    "id": "e14",
+    "bandHint": "C1",
+    "label": "Question 14 · Vocabulary",
+    "prompt": "A ___ analysis considers multiple factors.",
+    "hint": "Academic adjective.",
+    "choices": ["nuance", "nuanced", "nuancing", "nuances"],
+    "answer": 1
+  },
+  {
+    "id": "e15",
+    "bandHint": "A2",
+    "label": "Question 15 · Grammar",
+    "prompt": "___ you like tea or coffee?",
+    "hint": "Polite question.",
+    "choices": ["Do", "Does", "Would", "Are"],
+    "answer": 2
+  },
+  {
+    "id": "e16",
+    "bandHint": "B1",
+    "label": "Question 16 · Vocabulary",
+    "prompt": "Please ___ the form carefully.",
+    "hint": "Instruction verb.",
+    "choices": ["fill in", "fill up", "fill out of", "fill on"],
+    "answer": 0
+  },
+  {
+    "id": "e17",
+    "bandHint": "B2",
+    "label": "Question 17 · Reading",
+    "prompt": "The author implies that change is ___.",
+    "hint": "Inference vocabulary.",
+    "choices": ["inevitable", "invisible", "invalid", "inviting"],
+    "answer": 0
+  },
+  {
+    "id": "e18",
+    "bandHint": "C1",
+    "label": "Question 18 · Grammar",
+    "prompt": "Scarce ___ resources, the project continued.",
+    "hint": "Formal inversion-like phrasing.",
+    "choices": ["though", "as", "were", "despite"],
+    "answer": 0
+  },
+  {
+    "id": "e19",
+    "bandHint": "B1",
+    "label": "Question 19 · Vocabulary",
+    "prompt": "They reached a ___ after long talks.",
+    "hint": "Agreement noun.",
+    "choices": ["compromise", "comprised", "compress", "compass"],
+    "answer": 0
+  },
+  {
+    "id": "e20",
+    "bandHint": "C1",
+    "label": "Question 20 · Vocabulary",
+    "prompt": "Her critique was ___ but fair.",
+    "hint": "Formal adjective.",
+    "choices": ["trenchant", "trench", "transient", "tranquil"],
+    "answer": 0
+  }
+]

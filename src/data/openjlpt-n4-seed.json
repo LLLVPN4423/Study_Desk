@@ -1,0 +1,3217 @@
+[
+  {
+    "id": "4fff6d0441",
+    "word": "あ",
+    "reading": "あ",
+    "romaji": "a",
+    "meanings": [
+      "Ah"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あ！まずい！ガソリン���切れてきた。",
+        "en": "Oh, no! We're running out of gas."
+      }
+    ]
+  },
+  {
+    "id": "6a4011f27f",
+    "word": "ああ",
+    "reading": "ああ",
+    "romaji": "aa",
+    "meanings": [
+      "like that"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ある人はこうだと言い、またある人はああだと言う。",
+        "en": "One man says this, another that."
+      }
+    ]
+  },
+  {
+    "id": "c3c3ac9f48",
+    "word": "あいさつする",
+    "reading": "あいさつする",
+    "romaji": "aisatsusuru",
+    "meanings": [
+      "to greet"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私にあいさつするような人はいない。",
+        "en": "There is no one to greet me."
+      }
+    ]
+  },
+  {
+    "id": "d1a343e501",
+    "word": "間",
+    "reading": "あいだ",
+    "romaji": "aida",
+    "meanings": [
+      "a space"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "二人の間がしっくり行かない。",
+        "en": "They don't get along together."
+      }
+    ]
+  },
+  {
+    "id": "54e1f7a772",
+    "word": "合う",
+    "reading": "あう",
+    "romaji": "au",
+    "meanings": [
+      "to match"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "このチョッキは前が合わない。",
+        "en": "This waistcoat won't meet at the front."
+      }
+    ]
+  },
+  {
+    "id": "2a6a55be8d",
+    "word": "あかちゃん",
+    "reading": "あかちゃん",
+    "romaji": "akachan",
+    "meanings": [
+      "infant"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "その赤ちゃんは歯が生えはじめている。",
+        "en": "The baby is cutting his teeth."
+      }
+    ]
+  },
+  {
+    "id": "4a3152836b",
+    "word": "上がる",
+    "reading": "あがる",
+    "romaji": "agaru",
+    "meanings": [
+      "to rise"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "車のバッテリーが上がってるよ。",
+        "en": "The car battery is dead."
+      }
+    ]
+  },
+  {
+    "id": "e877021bf4",
+    "word": "赤ん坊",
+    "reading": "あかんぼう",
+    "romaji": "akanbou",
+    "meanings": [
+      "baby"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "うちの赤ん坊は口をきくようになってきました。",
+        "en": "Our baby is learning to speak."
+      }
+    ]
+  },
+  {
+    "id": "91f0d5ac9e",
+    "word": "空く",
+    "reading": "あく",
+    "romaji": "aku",
+    "meanings": [
+      "to open",
+      "to become empty"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "放課後は空いてますか？",
+        "en": "Are you free after school?"
+      }
+    ]
+  },
+  {
+    "id": "628b6b8e9d",
+    "word": "アクセサリー",
+    "reading": "アクセサリー",
+    "romaji": "akusesarii",
+    "meanings": [
+      "accessory"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この服にはどんなアクセサリーを付けるの？",
+        "en": "What sort of jewelry are you going to wear with this dress?"
+      }
+    ]
+  },
+  {
+    "id": "f935952fed",
+    "word": "浅い",
+    "reading": "あさい",
+    "romaji": "asai",
+    "meanings": [
+      "shallow",
+      "superficial"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この川はあそこで浅くなっている。",
+        "en": "This river becomes shallow at that point."
+      }
+    ]
+  },
+  {
+    "id": "590fa58ca9",
+    "word": "味",
+    "reading": "あじ",
+    "romaji": "aji",
+    "meanings": [
+      "flavour"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "このチーズはピリッとした味がする。",
+        "en": "This cheese has a sharp taste."
+      }
+    ]
+  },
+  {
+    "id": "97bdb63259",
+    "word": "アジア",
+    "reading": "アジア",
+    "romaji": "ajia",
+    "meanings": [
+      "Asia"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ヨーロッパはアジアより人口が少ない。",
+        "en": "Europe has a smaller population than Asia."
+      }
+    ]
+  },
+  {
+    "id": "4c3461199c",
+    "word": "明日",
+    "reading": "あす",
+    "romaji": "asu",
+    "meanings": [
+      "tomorrow"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あしたは一日中ひまです。",
+        "en": "I'll be free all day tomorrow."
+      }
+    ]
+  },
+  {
+    "id": "7fe5e36942",
+    "word": "遊び",
+    "reading": "あそび",
+    "romaji": "asobi",
+    "meanings": [
+      "play"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "今度の旅行は仕事じゃなくて遊びです。",
+        "en": "Our next trip is for pleasure, not for work."
+      }
+    ]
+  },
+  {
+    "id": "8c98c01eff",
+    "word": "集まる",
+    "reading": "あつまる",
+    "romaji": "atsumaru",
+    "meanings": [
+      "to gather"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "通りに人がたくさん集まっている。",
+        "en": "There is a crowd of people on the street."
+      }
+    ]
+  },
+  {
+    "id": "b00801af22",
+    "word": "集める",
+    "reading": "あつめる",
+    "romaji": "atsumeru",
+    "meanings": [
+      "to collect something"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "毎週月曜日にゴミを集めにきます。",
+        "en": "They collect our garbage every Monday."
+      }
+    ]
+  },
+  {
+    "id": "c1fb180c70",
+    "word": "アナウンサー",
+    "reading": "アナウンサー",
+    "romaji": "anaunsaa",
+    "meanings": [
+      "announcer"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "アナウンサーは早口が出来る。",
+        "en": "The announcer can talk rapidly."
+      }
+    ]
+  },
+  {
+    "id": "0fa879c73d",
+    "word": "アフリカ",
+    "reading": "アフリカ",
+    "romaji": "afurika",
+    "meanings": [
+      "Africa"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "アフリカにはたくさんの自然���ある。",
+        "en": "Africa has a lot of nature."
+      }
+    ]
+  },
+  {
+    "id": "b921645383",
+    "word": "アメリカ",
+    "reading": "アメリカ",
+    "romaji": "amerika",
+    "meanings": [
+      "America"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私は去年の秋にアメリカにいった。",
+        "en": "I went to America last fall."
+      }
+    ]
+  },
+  {
+    "id": "1056f23586",
+    "word": "謝る",
+    "reading": "あやまる",
+    "romaji": "ayamaru",
+    "meanings": [
+      "to apologize"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私は彼女に謝らなければならない。",
+        "en": "I must make an apology to her."
+      }
+    ]
+  },
+  {
+    "id": "ab0767b2f7",
+    "word": "アルコール",
+    "reading": "アルコール",
+    "romaji": "arukooru",
+    "meanings": [
+      "alcohol"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "このビールはアルコール分が５％だ。",
+        "en": "This beer contains 5% alcohol."
+      }
+    ]
+  },
+  {
+    "id": "88d4196563",
+    "word": "アルバイト",
+    "reading": "アルバイト",
+    "romaji": "arubaito",
+    "meanings": [
+      "part-time job"
+    ],
+    "level": "N4",
+    "examples": []
+  },
+  {
+    "id": "d06643e4e1",
+    "word": "安心",
+    "reading": "あんしん",
+    "romaji": "anshin",
+    "meanings": [
+      "relief"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あいつに仕事を任せておけば安心だ。",
+        "en": "You can trust him with any job."
+      }
+    ]
+  },
+  {
+    "id": "160a8399af",
+    "word": "安全",
+    "reading": "あんぜん",
+    "romaji": "anzen",
+    "meanings": [
+      "safety"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私たちは思っているほど安全ではない。",
+        "en": "We are not all that safe."
+      }
+    ]
+  },
+  {
+    "id": "367da027cb",
+    "word": "あんな",
+    "reading": "あんな",
+    "romaji": "anna",
+    "meanings": [
+      "such"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あんないい男そうそういないぞ！！",
+        "en": "There aren't many blokes that nice!"
+      }
+    ]
+  },
+  {
+    "id": "52a79a5d69",
+    "word": "案内",
+    "reading": "あんない",
+    "romaji": "annai",
+    "meanings": [
+      "to guide"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私をあちこちに案内してください。",
+        "en": "Please show me around."
+      }
+    ]
+  },
+  {
+    "id": "629362dbfc",
+    "word": "以下",
+    "reading": "いか",
+    "romaji": "ika",
+    "meanings": [
+      "less than"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "それは千円以下では買えません。",
+        "en": "You can't buy it under 1,000 yen."
+      }
+    ]
+  },
+  {
+    "id": "da4198f39c",
+    "word": "以外",
+    "reading": "いがい",
+    "romaji": "igai",
+    "meanings": [
+      "with the exception of"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "その仕事以外ならなんでもやる。",
+        "en": "I'll do anything but that job."
+      }
+    ]
+  },
+  {
+    "id": "20044dd689",
+    "word": "医学",
+    "reading": "いがく",
+    "romaji": "igaku",
+    "meanings": [
+      "medical science"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "二人の医者が医学の話をしていた。",
+        "en": "Two doctors were talking shop."
+      }
+    ]
+  },
+  {
+    "id": "db01fd59d7",
+    "word": "生きる",
+    "reading": "いきる",
+    "romaji": "ikiru",
+    "meanings": [
+      "to live"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "生きるものはすべていつかは死ぬ。",
+        "en": "All living things die some day."
+      }
+    ]
+  },
+  {
+    "id": "ba5a03baf1",
+    "word": "意見",
+    "reading": "いけん",
+    "romaji": "iken",
+    "meanings": [
+      "opinion"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ここではどんどん意見をおっしゃってかまいません。",
+        "en": "You can speak out freely here."
+      }
+    ]
+  },
+  {
+    "id": "372ce69caf",
+    "word": "石",
+    "reading": "いし",
+    "romaji": "ishi",
+    "meanings": [
+      "stone"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私にはこの石は持ち上がらない。",
+        "en": "I cannot lift this stone."
+      }
+    ]
+  },
+  {
+    "id": "770aa71095",
+    "word": "いじめる",
+    "reading": "いじめる",
+    "romaji": "ijimeru",
+    "meanings": [
+      "to tease"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "彼はよく友人をいじめたものだ。",
+        "en": "He used to bully his friends."
+      }
+    ]
+  },
+  {
+    "id": "13ab63d79a",
+    "word": "以上",
+    "reading": "いじょう",
+    "romaji": "ijou",
+    "meanings": [
+      "more than",
+      "this is all"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "以上ですか？",
+        "en": "Is that all?"
+      }
+    ]
+  },
+  {
+    "id": "05b5de61ab",
+    "word": "急ぐ",
+    "reading": "いそぐ",
+    "romaji": "isogu",
+    "meanings": [
+      "to hurry"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ニックはバスに間に合うように急いだ。",
+        "en": "Nick hurried to catch the bus."
+      }
+    ]
+  },
+  {
+    "id": "6dbf756da1",
+    "word": "致す",
+    "reading": "いたす",
+    "romaji": "itasu",
+    "meanings": [
+      "(humble) to do"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "お取り寄せいたしましょうか。",
+        "en": "Would you like me to order it?"
+      }
+    ]
+  },
+  {
+    "id": "47cc7185d5",
+    "word": "いただく",
+    "reading": "いただく",
+    "romaji": "itadaku",
+    "meanings": [
+      "(humble) to receive"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "九時に来ていただきたいのですが。",
+        "en": "I'd like you to come at nine."
+      }
+    ]
+  },
+  {
+    "id": "bf82bb12d2",
+    "word": "一度",
+    "reading": "いちど",
+    "romaji": "ichido",
+    "meanings": [
+      "once"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "人間はこの世に一度しか生きない。",
+        "en": "One lives but once in the world."
+      }
+    ]
+  },
+  {
+    "id": "cf69ef2274",
+    "word": "一生懸命",
+    "reading": "いっしょうけんめい",
+    "romaji": "isshoukenmei",
+    "meanings": [
+      "with utmost effort"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "もっと一生懸命勉強すべきだったのに。",
+        "en": "You should have worked harder."
+      }
+    ]
+  },
+  {
+    "id": "95f7288e1b",
+    "word": "いっぱい",
+    "reading": "いっぱい",
+    "romaji": "ippai",
+    "meanings": [
+      "full"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "このボトルに水をいっぱい入れてください。",
+        "en": "Please fill this bottle with water."
+      }
+    ]
+  },
+  {
+    "id": "3de1fe452d",
+    "word": "糸",
+    "reading": "いと",
+    "romaji": "ito",
+    "meanings": [
+      "thread"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "長い糸はからまりやすい。",
+        "en": "A long thread is easily entangled."
+      }
+    ]
+  },
+  {
+    "id": "556e3e0d99",
+    "word": "以内",
+    "reading": "いない",
+    "romaji": "inai",
+    "meanings": [
+      "within"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "１週間以内に電話します。",
+        "en": "I'll call you within a week."
+      }
+    ]
+  },
+  {
+    "id": "11d4a3118b",
+    "word": "田舎",
+    "reading": "いなか",
+    "romaji": "inaka",
+    "meanings": [
+      "countryside"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "去年の夏、父の田舎に行きました。",
+        "en": "I visited my father's hometown last summer."
+      }
+    ]
+  },
+  {
+    "id": "877a39a99f",
+    "word": "祈る",
+    "reading": "いのる",
+    "romaji": "inoru",
+    "meanings": [
+      "to pray"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "早くよくなられるように祈っています。",
+        "en": "I hope you'll get well soon."
+      }
+    ]
+  },
+  {
+    "id": "bc25dff617",
+    "word": "いらっしゃる",
+    "reading": "いらっしゃる",
+    "romaji": "irassharu",
+    "meanings": [
+      "(respectful) to be",
+      "to come or to go"
+    ],
+    "level": "N4",
+    "examples": []
+  },
+  {
+    "id": "833af5347e",
+    "word": "植える",
+    "reading": "うえる",
+    "romaji": "ueru",
+    "meanings": [
+      "to plant",
+      "to grow"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私は庭にバラを植えた。",
+        "en": "I planted roses in the garden."
+      }
+    ]
+  },
+  {
+    "id": "bf69a1d9f2",
+    "word": "うかがう",
+    "reading": "うかがう",
+    "romaji": "ukagau",
+    "meanings": [
+      "to visit"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "体重をおうかがいしてもよろしいですか。",
+        "en": "May I ask you what your weight is?"
+      }
+    ]
+  },
+  {
+    "id": "4bdd43130b",
+    "word": "受付",
+    "reading": "うけつけ",
+    "romaji": "uketsuke",
+    "meanings": [
+      "receipt"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "受付で入院の手続きをしてください。",
+        "en": "You have to fill out an application for admission to the hospital at the front desk."
+      }
+    ]
+  },
+  {
+    "id": "20989c0cb5",
+    "word": "受ける",
+    "reading": "うける",
+    "romaji": "ukeru",
+    "meanings": [
+      "to take a lesson or test"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "病気なので試験が受けられません。",
+        "en": "I can't sit for the examination because I am ill."
+      }
+    ]
+  },
+  {
+    "id": "e54d4fef93",
+    "word": "動く",
+    "reading": "うごく",
+    "romaji": "ugoku",
+    "meanings": [
+      "to move"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "まだ動くうちに売ってしまわなきゃ。",
+        "en": "I should sell it while it still runs."
+      }
+    ]
+  },
+  {
+    "id": "da1a2f9721",
+    "word": "うそ",
+    "reading": "うそ",
+    "romaji": "uso",
+    "meanings": [
+      "a lie"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "えっ嘘でしょ。",
+        "en": "Oh my God, I can't believe this."
+      }
+    ]
+  },
+  {
+    "id": "76d4bcd098",
+    "word": "うち",
+    "reading": "うち",
+    "romaji": "uchi",
+    "meanings": [
+      "within"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "教会は私の家とあなたの家の中��あります。",
+        "en": "The church is between my house and yours."
+      }
+    ]
+  },
+  {
+    "id": "e6f3a7d91a",
+    "word": "打つ",
+    "reading": "うつ",
+    "romaji": "utsu",
+    "meanings": [
+      "to hit"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "８時をちょうど打ちましたね。",
+        "en": "It has just struck eight, hasn't it?"
+      }
+    ]
+  },
+  {
+    "id": "0dd54894db",
+    "word": "美しい",
+    "reading": "うつくしい",
+    "romaji": "utsukushii",
+    "meanings": [
+      "beautiful"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私たちは美しい入り日に見とれた。",
+        "en": "We admired the beautiful sunset."
+      }
+    ]
+  },
+  {
+    "id": "69589e0288",
+    "word": "写す",
+    "reading": "うつす",
+    "romaji": "utsusu",
+    "meanings": [
+      "to copy or photograph"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "その写真は空から写されたものである。",
+        "en": "The picture was taken from the air."
+      }
+    ]
+  },
+  {
+    "id": "c7362b5e02",
+    "word": "移る",
+    "reading": "うつる",
+    "romaji": "utsuru",
+    "meanings": [
+      "to move house or transfer"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "もっとお金があれば大きな家に移れるのにな。",
+        "en": "If I had more money, I could move to a bigger house."
+      }
+    ]
+  },
+  {
+    "id": "78d94c404b",
+    "word": "腕",
+    "reading": "うで",
+    "romaji": "ude",
+    "meanings": [
+      "arm"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "けがをした腕を見せて下さい。",
+        "en": "Please show me your injured arm."
+      }
+    ]
+  },
+  {
+    "id": "6d3b3fe0a4",
+    "word": "うまい",
+    "reading": "うまい",
+    "romaji": "umai",
+    "meanings": [
+      "delicious"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "それはあまりにもうますぎる話だ。",
+        "en": "That's too good a story to be true."
+      }
+    ]
+  },
+  {
+    "id": "1b5a6286d6",
+    "word": "裏",
+    "reading": "うら",
+    "romaji": "ura",
+    "meanings": [
+      "reverse side"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "靴の裏にガムがこびりついちゃった。",
+        "en": "There's gum stuck to the bottom of my shoe."
+      }
+    ]
+  },
+  {
+    "id": "11222e25b5",
+    "word": "売り場",
+    "reading": "うりば",
+    "romaji": "uriba",
+    "meanings": [
+      "place where things are sold"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "スナック売り場は、どこですか。",
+        "en": "Where can I buy snacks?"
+      }
+    ]
+  },
+  {
+    "id": "c67a9658b1",
+    "word": "うれしい",
+    "reading": "うれしい",
+    "romaji": "ureshii",
+    "meanings": [
+      "glad"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あなたに再会できてうれしい。",
+        "en": "I am pleased to see you again."
+      }
+    ]
+  },
+  {
+    "id": "533b248802",
+    "word": "うん",
+    "reading": "うん",
+    "romaji": "un",
+    "meanings": [
+      "(informal) yes"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "うん、休みが終わるまででいいの。",
+        "en": "Oh, just over the holidays."
+      }
+    ]
+  },
+  {
+    "id": "44f33984fb",
+    "word": "運転",
+    "reading": "うんてん",
+    "romaji": "unten",
+    "meanings": [
+      "to drive"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "キャロルはレンタカーを運転しています。",
+        "en": "Carol is driving a rent-a-car."
+      }
+    ]
+  },
+  {
+    "id": "9f6e25d5e2",
+    "word": "運転手",
+    "reading": "うんてんしゅ",
+    "romaji": "untenshu",
+    "meanings": [
+      "driver"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "運転手は車のスピードを上げた。",
+        "en": "The driver accelerated his car."
+      }
+    ]
+  },
+  {
+    "id": "47487b1e85",
+    "word": "運動",
+    "reading": "うんどう",
+    "romaji": "undou",
+    "meanings": [
+      "to exercise"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "週に一度でいいから運動しなさい。",
+        "en": "Try to exercise at least once a week."
+      }
+    ]
+  },
+  {
+    "id": "3139c14254",
+    "word": "エスカレーター",
+    "reading": "エスカレーター",
+    "romaji": "esukareetaa",
+    "meanings": [
+      "escalator"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "上りのエスカレーターはどこですか？",
+        "en": "Where's the up-escalator?"
+      }
+    ]
+  },
+  {
+    "id": "bb01cb559f",
+    "word": "枝",
+    "reading": "えだ",
+    "romaji": "eda",
+    "meanings": [
+      "branch",
+      "twig"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "たくさんの鳥が枝にとまっている。",
+        "en": "Many birds are on the branch."
+      }
+    ]
+  },
+  {
+    "id": "60c9784974",
+    "word": "選ぶ",
+    "reading": "えらぶ",
+    "romaji": "erabu",
+    "meanings": [
+      "to choose"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "これとあれの中から選んで下さい。",
+        "en": "Choose between this and that."
+      }
+    ]
+  },
+  {
+    "id": "5ceed9165d",
+    "word": "遠慮",
+    "reading": "えんりょ",
+    "romaji": "enryo",
+    "meanings": [
+      "to be reserved",
+      "to be restrained"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ここでのおタバコはご遠慮願います。",
+        "en": "Please refrain from smoking here."
+      }
+    ]
+  },
+  {
+    "id": "53c76e5c6e",
+    "word": "おいでになる",
+    "reading": "おいでになる",
+    "romaji": "oideninaru",
+    "meanings": [
+      "(respectful) to be"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "いつ旅行においでになりますか。",
+        "en": "When will you go on a journey?"
+      }
+    ]
+  },
+  {
+    "id": "12e7bd036b",
+    "word": "お祝い",
+    "reading": "おいわい",
+    "romaji": "oiwai",
+    "meanings": [
+      "congratulation"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "心からお祝いを申し上げます。",
+        "en": "I offer you my hearty congratulations."
+      }
+    ]
+  },
+  {
+    "id": "5c63f36f44",
+    "word": "オートバイ",
+    "reading": "オートバイ",
+    "romaji": "ootobai",
+    "meanings": [
+      "motorcycle"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "オートバイに乗るのは楽しい。",
+        "en": "It's fun to ride a motorcycle."
+      }
+    ]
+  },
+  {
+    "id": "e5e5899ce2",
+    "word": "おかげ",
+    "reading": "おかげ",
+    "romaji": "okage",
+    "meanings": [
+      "owing to"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私が今日あるのは両親のおかげである。",
+        "en": "I owe what I am to my parents."
+      }
+    ]
+  },
+  {
+    "id": "4d2128cddd",
+    "word": "おかしい",
+    "reading": "おかしい",
+    "romaji": "okashii",
+    "meanings": [
+      "strange or funny"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "君のジョークは何度聞いてもおかしい。",
+        "en": "Your joke is funny no matter how many times I hear it."
+      }
+    ]
+  },
+  {
+    "id": "a58874b751",
+    "word": "お金持ち",
+    "reading": "おかねもち",
+    "romaji": "okanemochi",
+    "meanings": [
+      "rich man"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "どうしたらお金持ちになれるのかしら？",
+        "en": "How can I become rich?"
+      }
+    ]
+  },
+  {
+    "id": "4cfa8f43e2",
+    "word": "億",
+    "reading": "おく",
+    "romaji": "oku",
+    "meanings": [
+      "one hundred million"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "１０億人の人たちが英語を話しています。",
+        "en": "One billion people speak English."
+      }
+    ]
+  },
+  {
+    "id": "1065d7145c",
+    "word": "屋上",
+    "reading": "おくじょう",
+    "romaji": "okujou",
+    "meanings": [
+      "rooftop"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "デパートの屋上にアドバルーンが上がっている。",
+        "en": "There is an advertising balloon flying above the department store."
+      }
+    ]
+  },
+  {
+    "id": "ba001e2f36",
+    "word": "贈り物",
+    "reading": "おくりもの",
+    "romaji": "okurimono",
+    "meanings": [
+      "gift"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ジェニーは贈り物をありがとうと言った。",
+        "en": "Jenny thanked me for the gift."
+      }
+    ]
+  },
+  {
+    "id": "af1dae5588",
+    "word": "送る",
+    "reading": "おくる",
+    "romaji": "okuru",
+    "meanings": [
+      "to send"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この手紙を日本に送ってくれませんか。",
+        "en": "Could you send this letter to Japan?"
+      }
+    ]
+  },
+  {
+    "id": "ae8ce3986c",
+    "word": "遅れる",
+    "reading": "おくれる",
+    "romaji": "okureru",
+    "meanings": [
+      "to be late"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "電車はほとんど一時間遅れだった。",
+        "en": "The train was almost an hour behind time."
+      }
+    ]
+  },
+  {
+    "id": "99de4451f7",
+    "word": "起す",
+    "reading": "おこす",
+    "romaji": "okosu",
+    "meanings": [
+      "to wake"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "病気の子供はベッドの上で体を起こした。",
+        "en": "The sick child sat up in bed."
+      }
+    ]
+  },
+  {
+    "id": "2139fab218",
+    "word": "行う",
+    "reading": "おこなう",
+    "romaji": "okonau",
+    "meanings": [
+      "to do"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "いう事と行う事はまったく別だ。",
+        "en": "To say is one thing, and to do quite another."
+      }
+    ]
+  },
+  {
+    "id": "2e0f32c097",
+    "word": "怒る",
+    "reading": "おこる",
+    "romaji": "okoru",
+    "meanings": [
+      "to get angry",
+      "to be angry"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "それをそのままにしておきなさい。そうしないと怒られますよ。",
+        "en": "Leave it as it is, or you will be scolded."
+      }
+    ]
+  },
+  {
+    "id": "3787755f33",
+    "word": "押し入れ",
+    "reading": "おしいれ",
+    "romaji": "oshiire",
+    "meanings": [
+      "closet"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "強盗はその子供を押し入れに閉じ込めた。",
+        "en": "The burglar shut the child in the closet."
+      }
+    ]
+  },
+  {
+    "id": "1f5a7d8e07",
+    "word": "お嬢さん",
+    "reading": "おじょうさん",
+    "romaji": "ojousan",
+    "meanings": [
+      "young lady"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "お嬢さんは試験に合格なさったそうですね。",
+        "en": "Your daughter passed the examination, I hear."
+      }
+    ]
+  },
+  {
+    "id": "6693b4e9f7",
+    "word": "お宅",
+    "reading": "おたく",
+    "romaji": "otaku",
+    "meanings": [
+      "(polite) your house"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "近いうちにお宅にうかがいます。",
+        "en": "We'll visit you one of these days."
+      }
+    ]
+  },
+  {
+    "id": "981ee66f59",
+    "word": "落ちる",
+    "reading": "おちる",
+    "romaji": "ochiru",
+    "meanings": [
+      "to fall or drop"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "勉強しないと試験に落ちるよ。",
+        "en": "If you don't study, you will fail the exam."
+      }
+    ]
+  },
+  {
+    "id": "050024e2d9",
+    "word": "おっしゃる",
+    "reading": "おっしゃる",
+    "romaji": "ossharu",
+    "meanings": [
+      "(respectful) to say"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "全くおっしゃる通りです。",
+        "en": "You are absolutely right."
+      }
+    ]
+  },
+  {
+    "id": "b8630e0875",
+    "word": "夫",
+    "reading": "おっと",
+    "romaji": "otto",
+    "meanings": [
+      "husband"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "妻は夫より長生きするものだ。",
+        "en": "Wives usually outlive husbands."
+      }
+    ]
+  },
+  {
+    "id": "f2c38f9517",
+    "word": "おつり",
+    "reading": "おつり",
+    "romaji": "otsuri",
+    "meanings": [
+      "change from purchase",
+      "balance"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "１ドルでおつりがありますか。",
+        "en": "Have you got change for a dollar?"
+      }
+    ]
+  },
+  {
+    "id": "c6815e7618",
+    "word": "音",
+    "reading": "おと",
+    "romaji": "oto",
+    "meanings": [
+      "sound",
+      "note"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ここから海の音が聞こえる。",
+        "en": "We can hear the ocean from here."
+      }
+    ]
+  },
+  {
+    "id": "f786333cf9",
+    "word": "落す",
+    "reading": "おとす",
+    "romaji": "otosu",
+    "meanings": [
+      "to drop"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "リストから私の名を落とさないで下さい。",
+        "en": "Don't take my name off your list."
+      }
+    ]
+  },
+  {
+    "id": "8c636a46f4",
+    "word": "踊り",
+    "reading": "おどり",
+    "romaji": "odori",
+    "meanings": [
+      "a dance"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私のガールフレンドは踊りがうまい。",
+        "en": "My girlfriend is a good dancer."
+      }
+    ]
+  },
+  {
+    "id": "3280103eb8",
+    "word": "踊る",
+    "reading": "おどる",
+    "romaji": "odoru",
+    "meanings": [
+      "to dance"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "なぜ彼と踊らなかったの？",
+        "en": "Why didn't you dance with him?"
+      }
+    ]
+  },
+  {
+    "id": "6d69734463",
+    "word": "驚く",
+    "reading": "おどろく",
+    "romaji": "odoroku",
+    "meanings": [
+      "to be surprised"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "母はそのニュースを聞いて驚いた。",
+        "en": "Mother was surprised at the news."
+      }
+    ]
+  },
+  {
+    "id": "68ff489ea4",
+    "word": "お祭り",
+    "reading": "おまつり",
+    "romaji": "omatsuri",
+    "meanings": [
+      "festival"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "お祭りでロブスターを食べました。",
+        "en": "I ate lobster at the festival."
+      }
+    ]
+  },
+  {
+    "id": "eb615955c8",
+    "word": "お見舞い",
+    "reading": "おみまい",
+    "romaji": "omimai",
+    "meanings": [
+      "calling on someone who is ill",
+      "enquiry"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "彼女のお見舞いに行こうよ。",
+        "en": "Why don't we go and see her in the hospital?"
+      }
+    ]
+  },
+  {
+    "id": "f586632207",
+    "word": "お土産",
+    "reading": "おみやげ",
+    "romaji": "omiyage",
+    "meanings": [
+      "souvenir"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "これは北海道からのお土産です。",
+        "en": "This is a souvenir from Hokkaido."
+      }
+    ]
+  },
+  {
+    "id": "3e4c1468c7",
+    "word": "思い出す",
+    "reading": "おもいだす",
+    "romaji": "omoidasu",
+    "meanings": [
+      "to remember"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あなたを見るとお兄さんを思い出します。",
+        "en": "You remind me of your brother."
+      }
+    ]
+  },
+  {
+    "id": "bad913ed8f",
+    "word": "思う",
+    "reading": "おもう",
+    "romaji": "omou",
+    "meanings": [
+      "to think",
+      "to feel"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "晴れだと思うよ。",
+        "en": "I think it will be sunny."
+      }
+    ]
+  },
+  {
+    "id": "1579d0db1b",
+    "word": "おもちゃ",
+    "reading": "おもちゃ",
+    "romaji": "omocha",
+    "meanings": [
+      "toy"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あのおもちゃは木で作られている。",
+        "en": "That toy is made of wood."
+      }
+    ]
+  },
+  {
+    "id": "721424863e",
+    "word": "表",
+    "reading": "おもて",
+    "romaji": "omote",
+    "meanings": [
+      "the front"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この紙はどちらが表だか見分けがつかない。",
+        "en": "I cannot tell which is the right side of this paper."
+      }
+    ]
+  },
+  {
+    "id": "9099d4615b",
+    "word": "親",
+    "reading": "おや",
+    "romaji": "oya",
+    "meanings": [
+      "parents"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私たちは親をあてにしてはいけない。",
+        "en": "We should not depend on your parents."
+      }
+    ]
+  },
+  {
+    "id": "d9cf4f541d",
+    "word": "泳ぎ方",
+    "reading": "およぎかた",
+    "romaji": "oyogikata",
+    "meanings": [
+      "way of swimming"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "君に泳ぎ方を教えよう。",
+        "en": "I'll tell you how to swim."
+      }
+    ]
+  },
+  {
+    "id": "4806278f5b",
+    "word": "下りる",
+    "reading": "おりる",
+    "romaji": "oriru",
+    "meanings": [
+      "to get off"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "一行は、歩いてその山を下りた。",
+        "en": "The party walked down the mountain."
+      }
+    ]
+  },
+  {
+    "id": "ac3d1de39a",
+    "word": "折る",
+    "reading": "おる",
+    "romaji": "oru",
+    "meanings": [
+      "to break or to fold"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "その紙を四つ折りにしなさい。",
+        "en": "Fold the paper in four."
+      }
+    ]
+  },
+  {
+    "id": "12db3e5f4e",
+    "word": "お礼",
+    "reading": "おれい",
+    "romaji": "orei",
+    "meanings": [
+      "expression of gratitude"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "息子に成り代わってお礼を申し上げます。",
+        "en": "I thank you on behalf of my son."
+      }
+    ]
+  },
+  {
+    "id": "d517e5d931",
+    "word": "折れる",
+    "reading": "おれる",
+    "romaji": "oreru",
+    "meanings": [
+      "to break or be folded"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "医者は彼の折れた足をついだ。",
+        "en": "The doctor set his broken leg."
+      }
+    ]
+  },
+  {
+    "id": "19cb869e4d",
+    "word": "終わり",
+    "reading": "おわり",
+    "romaji": "owari",
+    "meanings": [
+      "the end"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "さぁ、一日を終わりとしましょう。",
+        "en": "Let's call it a day."
+      }
+    ]
+  },
+  {
+    "id": "cbbc4c3524",
+    "word": "カーテン",
+    "reading": "カーテン",
+    "romaji": "kaaten",
+    "meanings": [
+      "curtain"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "カーテンが風になびいた。",
+        "en": "The curtains blew in the wind."
+      }
+    ]
+  },
+  {
+    "id": "6f4ad2115e",
+    "word": "海岸",
+    "reading": "かいがん",
+    "romaji": "kaigan",
+    "meanings": [
+      "coast"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "このバスは、海岸に行きますか。",
+        "en": "Does this bus go to the beach?"
+      }
+    ]
+  },
+  {
+    "id": "83af91b7eb",
+    "word": "会議",
+    "reading": "かいぎ",
+    "romaji": "kaigi",
+    "meanings": [
+      "meeting"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "会議は終わりに近づきつつあった。",
+        "en": "The conference was drawing to an end."
+      }
+    ]
+  },
+  {
+    "id": "93ff1a80c2",
+    "word": "会議室",
+    "reading": "かいぎしつ",
+    "romaji": "kaigishitsu",
+    "meanings": [
+      "meeting room"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "クラブの会員は会議室に集まった。",
+        "en": "The club members assembled in the meeting room."
+      }
+    ]
+  },
+  {
+    "id": "7508a7d366",
+    "word": "会場",
+    "reading": "かいじょう",
+    "romaji": "kaijou",
+    "meanings": [
+      "assembly hall or meeting place"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私たちは会場の後ろに座った。",
+        "en": "We sat at the back of the hall."
+      }
+    ]
+  },
+  {
+    "id": "81b9c23c14",
+    "word": "会話",
+    "reading": "かいわ",
+    "romaji": "kaiwa",
+    "meanings": [
+      "conversation"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "その作家は会話を書くのがうまい。",
+        "en": "The writer is very good at a dialog."
+      }
+    ]
+  },
+  {
+    "id": "6365c5ac47",
+    "word": "帰り",
+    "reading": "かえり",
+    "romaji": "kaeri",
+    "meanings": [
+      "return"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "どうして帰りがこんなに遅くなったの。",
+        "en": "Why did you come home so late?"
+      }
+    ]
+  },
+  {
+    "id": "64e3e16740",
+    "word": "変える",
+    "reading": "かえる",
+    "romaji": "kaeru",
+    "meanings": [
+      "to change"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "なんで彼は考えを変えたのか。",
+        "en": "What made him change his mind?"
+      }
+    ]
+  },
+  {
+    "id": "ea150f3d48",
+    "word": "科学",
+    "reading": "かがく",
+    "romaji": "kagaku",
+    "meanings": [
+      "science"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私は、ずっと科学を習っている。",
+        "en": "I have been learning a science."
+      }
+    ]
+  },
+  {
+    "id": "2c7db27d62",
+    "word": "鏡",
+    "reading": "かがみ",
+    "romaji": "kagami",
+    "meanings": [
+      "mirror"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "少女は立って鏡をのぞきこんだ。",
+        "en": "The girl stood looking into the mirror."
+      }
+    ]
+  },
+  {
+    "id": "2d6f99582c",
+    "word": "飾る",
+    "reading": "かざる",
+    "romaji": "kazaru",
+    "meanings": [
+      "to decorate"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "その広間は日本画で飾られていた。",
+        "en": "The hall was decorated with Japanese paintings."
+      }
+    ]
+  },
+  {
+    "id": "b64af0c4f7",
+    "word": "火事",
+    "reading": "かじ",
+    "romaji": "kaji",
+    "meanings": [
+      "fire"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "その火事はおととい発生した。",
+        "en": "A fire broke out the day before yesterday."
+      }
+    ]
+  },
+  {
+    "id": "376ccb94c4",
+    "word": "ガス",
+    "reading": "ガス",
+    "romaji": "gasu",
+    "meanings": [
+      "petrol"
+    ],
+    "level": "N4",
+    "examples": []
+  },
+  {
+    "id": "b3c360789e",
+    "word": "ガソリン",
+    "reading": "ガソリン",
+    "romaji": "gasorin",
+    "meanings": [
+      "petrol"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この車はあまりガソリンを食わない。",
+        "en": "This car is very economical on gas."
+      }
+    ]
+  },
+  {
+    "id": "57c68573b7",
+    "word": "ガソリンスタンド",
+    "reading": "ガソリンスタンド",
+    "romaji": "gasorinsutando",
+    "meanings": [
+      "petrol station"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この辺にガソリンスタンドはありますか。",
+        "en": "Is there a gas station around here?"
+      }
+    ]
+  },
+  {
+    "id": "d0e700807a",
+    "word": "堅い",
+    "reading": "かたい",
+    "romaji": "katai",
+    "meanings": [
+      "hard"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ダイヤモンドは本来堅いものだ。",
+        "en": "Diamond is essentially hard."
+      }
+    ]
+  },
+  {
+    "id": "26f2ddd0a2",
+    "word": "形",
+    "reading": "かたち",
+    "romaji": "katachi",
+    "meanings": [
+      "shape"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "物質は温度によって形を変える。",
+        "en": "Matter changes its form according to temperature."
+      }
+    ]
+  },
+  {
+    "id": "119fdf575e",
+    "word": "片付ける",
+    "reading": "かたづける",
+    "romaji": "katazukeru",
+    "meanings": [
+      "to tidy up"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あすの朝まっさきにそれを片付けます。",
+        "en": "I'll do that first thing in the morning."
+      }
+    ]
+  },
+  {
+    "id": "26a19196b7",
+    "word": "課長",
+    "reading": "かちょう",
+    "romaji": "kachou",
+    "meanings": [
+      "section manager"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私は課長に任命された。",
+        "en": "I was appointed to section chief."
+      }
+    ]
+  },
+  {
+    "id": "021c00423f",
+    "word": "勝つ",
+    "reading": "かつ",
+    "romaji": "katsu",
+    "meanings": [
+      "to win"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この病気に勝てる人は少ない。",
+        "en": "Not many survive this disease."
+      }
+    ]
+  },
+  {
+    "id": "876713fb67",
+    "word": "かっこう",
+    "reading": "かっこう",
+    "romaji": "kakkou",
+    "meanings": [
+      "appearance"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "とても見られたかっこうじゃないよ。",
+        "en": "You're not fit to be seen."
+      }
+    ]
+  },
+  {
+    "id": "89927b8fa1",
+    "word": "家内",
+    "reading": "かない",
+    "romaji": "kanai",
+    "meanings": [
+      "housewife"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "家内は海外旅行中で、よく電話をかけてくる。",
+        "en": "My wife often rings me up, while she travels abroad."
+      }
+    ]
+  },
+  {
+    "id": "3153705f1f",
+    "word": "悲しい",
+    "reading": "かなしい",
+    "romaji": "kanashii",
+    "meanings": [
+      "sad"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "そんな悲しい目で見ないで。",
+        "en": "Don't give me such a sad look."
+      }
+    ]
+  },
+  {
+    "id": "5a76ee84b9",
+    "word": "必ず",
+    "reading": "かならず",
+    "romaji": "kanarazu",
+    "meanings": [
+      "certainly",
+      "necessarily"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あの歌は必ずヒットするよ。",
+        "en": "That song's bound to be a hit."
+      }
+    ]
+  },
+  {
+    "id": "be3dacfc93",
+    "word": "彼女",
+    "reading": "かのじょ",
+    "romaji": "kanojo",
+    "meanings": [
+      "she",
+      "girlfriend"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "問題は彼女が来るかどうかである。",
+        "en": "The point is whether she will come or not."
+      }
+    ]
+  },
+  {
+    "id": "0752484ec5",
+    "word": "壁",
+    "reading": "かべ",
+    "romaji": "kabe",
+    "meanings": [
+      "wall"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "壁はぬりかえなければなりませんか。",
+        "en": "Must I repaint the wall?"
+      }
+    ]
+  },
+  {
+    "id": "e7dca3ae5a",
+    "word": "かまう",
+    "reading": "かまう",
+    "romaji": "kamau",
+    "meanings": [
+      "to mind"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "どうか私にかまわないでください。",
+        "en": "Please don't mind me."
+      }
+    ]
+  },
+  {
+    "id": "ec0fe6786a",
+    "word": "髪",
+    "reading": "かみ",
+    "romaji": "kami",
+    "meanings": [
+      "hair"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "長い髪をした女の子に会いました。",
+        "en": "I saw a girl with long hair."
+      }
+    ]
+  },
+  {
+    "id": "6b240c6105",
+    "word": "噛む",
+    "reading": "かむ",
+    "romaji": "kamu",
+    "meanings": [
+      "to bite",
+      "to chew"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "噛むと痛いですか。",
+        "en": "Does it hurt when you chew?"
+      }
+    ]
+  },
+  {
+    "id": "d1cd028481",
+    "word": "通う",
+    "reading": "かよう",
+    "romaji": "kayou",
+    "meanings": [
+      "to commute"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "マイクはバスで学校に通っている。",
+        "en": "Mike goes to school by bus."
+      }
+    ]
+  },
+  {
+    "id": "4c9297421b",
+    "word": "ガラス",
+    "reading": "ガラス",
+    "romaji": "garasu",
+    "meanings": [
+      "a glass pane"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ビールびんはガラスでできている。",
+        "en": "Beer bottles are made of glass."
+      }
+    ]
+  },
+  {
+    "id": "0963c50b58",
+    "word": "彼",
+    "reading": "かれ",
+    "romaji": "kare",
+    "meanings": [
+      "he",
+      "boyfriend"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "彼のスイングは実に見事だ。",
+        "en": "He has a perfect swing."
+      }
+    ]
+  },
+  {
+    "id": "6345553664",
+    "word": "彼ら",
+    "reading": "かれら",
+    "romaji": "karera",
+    "meanings": [
+      "they"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "彼らは二度と会うことはなかった。",
+        "en": "They would never meet again."
+      }
+    ]
+  },
+  {
+    "id": "84c24fbab6",
+    "word": "乾く",
+    "reading": "かわく",
+    "romaji": "kawaku",
+    "meanings": [
+      "to get dry"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "そのぬれたシャツはすぐに乾くだろう。",
+        "en": "The wet shirt will soon dry up."
+      }
+    ]
+  },
+  {
+    "id": "34071d7901",
+    "word": "代わり",
+    "reading": "かわり",
+    "romaji": "kawari",
+    "meanings": [
+      "substitute",
+      "alternate"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "その代わりにトランプをしようよ。",
+        "en": "Let's play cards instead."
+      }
+    ]
+  },
+  {
+    "id": "ec1bdccf03",
+    "word": "変わる",
+    "reading": "かわる",
+    "romaji": "kawaru",
+    "meanings": [
+      "to change"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "私のE-mailアドレスが変わりました。",
+        "en": "My e-mail address has been changed."
+      }
+    ]
+  },
+  {
+    "id": "cc34f28850",
+    "word": "考える",
+    "reading": "かんがえる",
+    "romaji": "kangaeru",
+    "meanings": [
+      "to consider"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あなたは家族の事を考えるべきです。",
+        "en": "You must think of your family."
+      }
+    ]
+  },
+  {
+    "id": "f960d43119",
+    "word": "関係",
+    "reading": "かんけい",
+    "romaji": "kankei",
+    "meanings": [
+      "relationship"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "これとあれはどういう関係があるの。",
+        "en": "How is this connected to that?"
+      }
+    ]
+  },
+  {
+    "id": "374a0aa749",
+    "word": "看護婦",
+    "reading": "かんごふ",
+    "romaji": "kangofu",
+    "meanings": [
+      "female nurse"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "なぜ看護婦になりたいのですか。",
+        "en": "Why do you want to be a nurse?"
+      }
+    ]
+  },
+  {
+    "id": "ac20bba998",
+    "word": "簡単",
+    "reading": "かんたん",
+    "romaji": "kantan",
+    "meanings": [
+      "simple"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "テニスをすることは私には簡単だ。",
+        "en": "Playing tennis is easy for me."
+      }
+    ]
+  },
+  {
+    "id": "ab366b6c9d",
+    "word": "気",
+    "reading": "き",
+    "romaji": "ki",
+    "meanings": [
+      "spirit",
+      "mood"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "彼は親切というよりむしろ気がやさしい。",
+        "en": "He is more gentle than kind."
+      }
+    ]
+  },
+  {
+    "id": "3f4f3a3b9d",
+    "word": "機会",
+    "reading": "きかい",
+    "romaji": "kikai",
+    "meanings": [
+      "opportunity"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "またの機会にしましょう。",
+        "en": "Let's make it some other time."
+      }
+    ]
+  },
+  {
+    "id": "8bbbe3a9e8",
+    "word": "危険",
+    "reading": "きけん",
+    "romaji": "kiken",
+    "meanings": [
+      "danger"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "危険は見くびるとすぐやってくる。",
+        "en": "Danger comes soonest when it is despised."
+      }
+    ]
+  },
+  {
+    "id": "7225b79db5",
+    "word": "聞こえる",
+    "reading": "きこえる",
+    "romaji": "kikoeru",
+    "meanings": [
+      "to be heard"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "車が家の前に止まる音が聞こえた。",
+        "en": "I heard a car stop in front of the house."
+      }
+    ]
+  },
+  {
+    "id": "a0c815188f",
+    "word": "汽車",
+    "reading": "きしゃ",
+    "romaji": "kisha",
+    "meanings": [
+      "steam train"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "汽車はまだ着きません。",
+        "en": "The train has not arrived yet."
+      }
+    ]
+  },
+  {
+    "id": "bbf69b64f8",
+    "word": "技術",
+    "reading": "ぎじゅつ",
+    "romaji": "gijutsu",
+    "meanings": [
+      "art",
+      "technology",
+      "skill"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "近代技術は多くの物を与えてくれる。",
+        "en": "Modern technology gives us many things."
+      }
+    ]
+  },
+  {
+    "id": "a1afb31e7b",
+    "word": "季節",
+    "reading": "きせつ",
+    "romaji": "kisetsu",
+    "meanings": [
+      "season"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "秋は読書にもってこいの季節だ。",
+        "en": "Fall is a good season for reading."
+      }
+    ]
+  },
+  {
+    "id": "fcca18b129",
+    "word": "規則",
+    "reading": "きそく",
+    "romaji": "kisoku",
+    "meanings": [
+      "regulations"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この規則はあなたにも当てはまる。",
+        "en": "This rule applies to you, too."
+      }
+    ]
+  },
+  {
+    "id": "b284605582",
+    "word": "きっと",
+    "reading": "きっと",
+    "romaji": "kitto",
+    "meanings": [
+      "surely"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "でもよー、オラのおとうさんは良い気しねーよ、きっと。",
+        "en": "But I don't think Dad would like me to."
+      }
+    ]
+  },
+  {
+    "id": "4d5b12c74c",
+    "word": "絹",
+    "reading": "きぬ",
+    "romaji": "kinu",
+    "meanings": [
+      "silk"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この美しいドレスは絹で出来ている。",
+        "en": "This beautiful dress is made of silk."
+      }
+    ]
+  },
+  {
+    "id": "d90ee2957c",
+    "word": "厳しい",
+    "reading": "きびしい",
+    "romaji": "kibishii",
+    "meanings": [
+      "strict"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "厳しい冬になるという話です。",
+        "en": "They say we are going to have a severe winter."
+      }
+    ]
+  },
+  {
+    "id": "42f05076b3",
+    "word": "気分",
+    "reading": "きぶん",
+    "romaji": "kibun",
+    "meanings": [
+      "mood"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "とても気分がリフレッシュされる。",
+        "en": "I feel like a brand new person."
+      }
+    ]
+  },
+  {
+    "id": "e4e7e09df0",
+    "word": "決まる",
+    "reading": "きまる",
+    "romaji": "kimaru",
+    "meanings": [
+      "to be decided"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "いつ始めるのかはまだ決まっていない。",
+        "en": "It is still undecided when we will begin."
+      }
+    ]
+  },
+  {
+    "id": "ed36e1d3a7",
+    "word": "君",
+    "reading": "きみ",
+    "romaji": "kimi",
+    "meanings": [
+      "(informal) You (used by men towards women)"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "宿題を忘れるなんて君は不注意だった。",
+        "en": "It was careless of you to forget your homework."
+      }
+    ]
+  },
+  {
+    "id": "6a98f898ab",
+    "word": "決める",
+    "reading": "きめる",
+    "romaji": "kimeru",
+    "meanings": [
+      "to decide"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "そこに行くことに決めた。",
+        "en": "I made up my mind to go there."
+      }
+    ]
+  },
+  {
+    "id": "af80712b7b",
+    "word": "気持ち",
+    "reading": "きもち",
+    "romaji": "kimochi",
+    "meanings": [
+      "feeling",
+      "mood"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "気持ちのいい朝ではありませんか。",
+        "en": "Isn't it a lovely morning?"
+      }
+    ]
+  },
+  {
+    "id": "a2a012c05f",
+    "word": "着物",
+    "reading": "きもの",
+    "romaji": "kimono",
+    "meanings": [
+      "kimono"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "彼女はその着物を着ると変に見える。",
+        "en": "She looks odd in those clothes."
+      }
+    ]
+  },
+  {
+    "id": "cb029e617e",
+    "word": "客",
+    "reading": "きゃく",
+    "romaji": "kyaku",
+    "meanings": [
+      "guest",
+      "customer"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "春先だから客もあまりいませんでした。",
+        "en": "It was early spring, so there weren't many customers."
+      }
+    ]
+  },
+  {
+    "id": "a02c2a6790",
+    "word": "急",
+    "reading": "きゅう",
+    "romaji": "kyuu",
+    "meanings": [
+      "urgent",
+      "steep"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この川の流れは急だ。",
+        "en": "The current of this river is rapid."
+      }
+    ]
+  },
+  {
+    "id": "b6027b4099",
+    "word": "急行",
+    "reading": "きゅうこう",
+    "romaji": "kyuukou",
+    "meanings": [
+      "speedy",
+      "express"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "急行の料金は幾らですか。",
+        "en": "How much is the express?"
+      }
+    ]
+  },
+  {
+    "id": "319186af72",
+    "word": "教育",
+    "reading": "きょういく",
+    "romaji": "kyouiku",
+    "meanings": [
+      "education"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この世界の教育にはがっかりしてしまう。",
+        "en": "Education in this world disappoints me."
+      }
+    ]
+  },
+  {
+    "id": "7a7b79370f",
+    "word": "教会",
+    "reading": "きょうかい",
+    "romaji": "kyoukai",
+    "meanings": [
+      "church"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "その教会は１１７３年までさかのぼる。",
+        "en": "The church dates back to 1173."
+      }
+    ]
+  },
+  {
+    "id": "a9dcbea815",
+    "word": "競争",
+    "reading": "きょうそう",
+    "romaji": "kyousou",
+    "meanings": [
+      "competition"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "みんなでカブトムシを競争させた。",
+        "en": "We raced our beetles."
+      }
+    ]
+  },
+  {
+    "id": "23ea485338",
+    "word": "興味",
+    "reading": "きょうみ",
+    "romaji": "kyoumi",
+    "meanings": [
+      "an interest"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あなたは花に興味がありますか。",
+        "en": "Are you interested in flowers?"
+      }
+    ]
+  },
+  {
+    "id": "a6d55823a0",
+    "word": "近所",
+    "reading": "きんじょ",
+    "romaji": "kinjo",
+    "meanings": [
+      "neighbourhood"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "彼が近所に越してきた。",
+        "en": "He moved into my neighborhood."
+      }
+    ]
+  },
+  {
+    "id": "f36e445797",
+    "word": "具合",
+    "reading": "ぐあい",
+    "romaji": "guai",
+    "meanings": [
+      "condition",
+      "health"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "時計の具合が悪い。",
+        "en": "Something is the matter with my watch."
+      }
+    ]
+  },
+  {
+    "id": "a70d257a61",
+    "word": "空気",
+    "reading": "くうき",
+    "romaji": "kuuki",
+    "meanings": [
+      "air",
+      "atmosphere"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "山の中では空気がとてもきれいだ。",
+        "en": "The air is very pure in the mountains."
+      }
+    ]
+  },
+  {
+    "id": "0f74a8f3a4",
+    "word": "空港",
+    "reading": "くうこう",
+    "romaji": "kuukou",
+    "meanings": [
+      "airport"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "どの空港から出発しますか。",
+        "en": "Which airport do I leave from?"
+      }
+    ]
+  },
+  {
+    "id": "b5b90cb965",
+    "word": "草",
+    "reading": "くさ",
+    "romaji": "kusa",
+    "meanings": [
+      "grass"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "月には草が生えて無い。",
+        "en": "There is no grass on the moon."
+      }
+    ]
+  },
+  {
+    "id": "b8da4537a2",
+    "word": "くださる",
+    "reading": "くださる",
+    "romaji": "kudasaru",
+    "meanings": [
+      "(respectful) to give"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "もう一度言ってくださいますか。",
+        "en": "Could you repeat that, please?"
+      }
+    ]
+  },
+  {
+    "id": "78c6412e35",
+    "word": "首",
+    "reading": "くび",
+    "romaji": "kubi",
+    "meanings": [
+      "neck"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あなたの首は風前のともし火だ。",
+        "en": "Your job hangs by a thread."
+      }
+    ]
+  },
+  {
+    "id": "7db3da6e1b",
+    "word": "雲",
+    "reading": "くも",
+    "romaji": "kumo",
+    "meanings": [
+      "cloud"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "雲がだんだん黒くなっています。",
+        "en": "The clouds are getting darker."
+      }
+    ]
+  },
+  {
+    "id": "5bfe1d2c25",
+    "word": "比べる",
+    "reading": "くらべる",
+    "romaji": "kuraberu",
+    "meanings": [
+      "to compare"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ロンドンはパリに比べると大きい。",
+        "en": "London is large, compared with Paris."
+      }
+    ]
+  },
+  {
+    "id": "7d2f81c2a3",
+    "word": "くれる",
+    "reading": "くれる",
+    "romaji": "kureru",
+    "meanings": [
+      "to give"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "友達がはがきをくれるように私に頼んだ。",
+        "en": "A friend of mine asked me to send her a postcard."
+      }
+    ]
+  },
+  {
+    "id": "17279b1beb",
+    "word": "暮れる",
+    "reading": "くれる",
+    "romaji": "kureru",
+    "meanings": [
+      "to get dark",
+      "to come to an end"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "知らぬ間に日はとっぷりと暮れていた。",
+        "en": "Night had completely fallen before we knew."
+      }
+    ]
+  },
+  {
+    "id": "e9bab5c151",
+    "word": "毛",
+    "reading": "け",
+    "romaji": "ke",
+    "meanings": [
+      "hair or fur"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "犬の毛はいわばセーターだ。",
+        "en": "The dog's hair is, as it were, a sweater."
+      }
+    ]
+  },
+  {
+    "id": "836311c7d4",
+    "word": "計画",
+    "reading": "けいかく",
+    "romaji": "keikaku",
+    "meanings": [
+      "to plan"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "その計画では彼に同調できました。",
+        "en": "We went with him on that plan."
+      }
+    ]
+  },
+  {
+    "id": "9746b57413",
+    "word": "経験",
+    "reading": "けいけん",
+    "romaji": "keiken",
+    "meanings": [
+      "to experience"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "この仕事では経験がものを言う。",
+        "en": "Experience counts in this job."
+      }
+    ]
+  },
+  {
+    "id": "5079fc5daf",
+    "word": "経済",
+    "reading": "けいざい",
+    "romaji": "keizai",
+    "meanings": [
+      "finance",
+      "economy"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "アメリカはサービス経済の国だ。",
+        "en": "The U.S. is a service economy."
+      }
+    ]
+  },
+  {
+    "id": "25550955b0",
+    "word": "警察",
+    "reading": "けいさつ",
+    "romaji": "keisatsu",
+    "meanings": [
+      "police"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "その場合には警察を呼びなさい。",
+        "en": "In that case, call the police."
+      }
+    ]
+  },
+  {
+    "id": "8426193f36",
+    "word": "ケーキ",
+    "reading": "ケーキ",
+    "romaji": "keeki",
+    "meanings": [
+      "cake"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ケイトはケーキの作り方を知っています。",
+        "en": "Kate knows how to make a cake."
+      }
+    ]
+  },
+  {
+    "id": "8fb005254a",
+    "word": "けがする",
+    "reading": "けがする",
+    "romaji": "kegasuru",
+    "meanings": [
+      "to injure"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "特定の食べ物を食べた後に、胸やけがするのですか？",
+        "en": "Do you get heartburn after eating certain foods?"
+      }
+    ]
+  },
+  {
+    "id": "a200494cec",
+    "word": "景色",
+    "reading": "けしき",
+    "romaji": "keshiki",
+    "meanings": [
+      "scene",
+      "landscape"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "それは私が見たことのない景色だ。",
+        "en": "The landscape is unfamiliar to me."
+      }
+    ]
+  },
+  {
+    "id": "ba1b3c0d13",
+    "word": "消しゴム",
+    "reading": "けしゴム",
+    "romaji": "keshigomu",
+    "meanings": [
+      "eraser"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ちょっと消しゴムをかしてくれませんか。",
+        "en": "Can I borrow your eraser for a moment?"
+      }
+    ]
+  },
+  {
+    "id": "c3da539389",
+    "word": "下宿",
+    "reading": "げしゅく",
+    "romaji": "geshuku",
+    "meanings": [
+      "lodging"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "彼女は学生を下宿させている。",
+        "en": "She boards students."
+      }
+    ]
+  },
+  {
+    "id": "511cbf9eee",
+    "word": "決して",
+    "reading": "けっして",
+    "romaji": "kesshite",
+    "meanings": [
+      "never"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "これは決して小さなことではない。",
+        "en": "It's no small matter."
+      }
+    ]
+  },
+  {
+    "id": "0435dab637",
+    "word": "けれど",
+    "reading": "けれど",
+    "romaji": "keredo",
+    "meanings": [
+      "however"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ちょっと会いたいのだけれど。",
+        "en": "I want to see you for a moment."
+      }
+    ]
+  },
+  {
+    "id": "43f91bcf9d",
+    "word": "原因",
+    "reading": "げんいん",
+    "romaji": "gen'in",
+    "meanings": [
+      "cause",
+      "source"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "火事の原因はだいたいわかっている。",
+        "en": "There is not much doubt about the cause of the fire."
+      }
+    ]
+  },
+  {
+    "id": "063c94089d",
+    "word": "けんかする",
+    "reading": "けんかする",
+    "romaji": "kenkasuru",
+    "meanings": [
+      "to quarrel"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "ケンとけんかしたのか。",
+        "en": "Did you have a fight with Ken?"
+      }
+    ]
+  },
+  {
+    "id": "607f3c4430",
+    "word": "研究",
+    "reading": "けんきゅう",
+    "romaji": "kenkyuu",
+    "meanings": [
+      "research"
+    ],
+    "level": "N4",
+    "examples": [
+      {
+        "ja": "あなたのご研究は、いかがですか。",
+        "en": "How are your studies going?"
+      }
+    ]
+  }
+]

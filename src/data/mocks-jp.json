@@ -1,0 +1,57 @@
+{
+  "id": "mock-jp-vocab",
+  "title": "JP Vocab section mock",
+  "track": "jp",
+  "minutes": 8,
+  "disclaimer": "Unofficial practice — not a JLPT exam section.",
+  "questions": [
+    {
+      "id": "m1",
+      "prompt": "「食べる」に近い意味は？",
+      "choices": ["to drink", "to eat", "to sleep", "to run"],
+      "answer": 1
+    },
+    {
+      "id": "m2",
+      "prompt": "「大きい」の反対に近い語は？",
+      "choices": ["高い", "小さい", "新しい", "早い"],
+      "answer": 1
+    },
+    {
+      "id": "m3",
+      "prompt": "学校で勉強する。 「勉強」の読みは？",
+      "choices": ["べんきょう", "べんきょ", "べんぎょう", "べんこ"],
+      "answer": 0
+    },
+    {
+      "id": "m4",
+      "prompt": "Fill: 水を____ください。",
+      "choices": ["食べて", "飲んで", "見て", "走って"],
+      "answer": 1
+    },
+    {
+      "id": "m5",
+      "prompt": "「明日」 means:",
+      "choices": ["yesterday", "today", "tomorrow", "tonight"],
+      "answer": 2
+    },
+    {
+      "id": "m6",
+      "prompt": "Choose polite past of 行きます:",
+      "choices": ["行きました", "行きません", "行って", "行く"],
+      "answer": 0
+    },
+    {
+      "id": "m7",
+      "prompt": "「友だち」 closest meaning:",
+      "choices": ["teacher", "friend", "family", "store"],
+      "answer": 1
+    },
+    {
+      "id": "m8",
+      "prompt": "Fill: これは本____。",
+      "choices": ["ます", "です", "た", "て"],
+      "answer": 1
+    }
+  ]
+}

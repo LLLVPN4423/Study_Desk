@@ -1,0 +1,52 @@
+{
+  "id": "mock-jp-listen",
+  "title": "JP Listening mini-mock (TTS)",
+  "track": "jp",
+  "minutes": 6,
+  "mode": "listening",
+  "disclaimer": "Unofficial practice — audio via free browser TTS, not JLPT audio.",
+  "questions": [
+    {
+      "id": "jl1",
+      "speak": "明日、学校に行きます。",
+      "prompt": "Người nói sẽ làm gì ngày mai?",
+      "choices": ["Đi làm", "Đi học", "Ở nhà", "Đi du lịch"],
+      "answer": 1
+    },
+    {
+      "id": "jl2",
+      "speak": "水をください。",
+      "prompt": "Họ muốn gì?",
+      "choices": ["Cơm", "Nước", "Trà", "Bánh"],
+      "answer": 1
+    },
+    {
+      "id": "jl3",
+      "speak": "この本は面白いです。",
+      "prompt": "Họ nghĩ gì về cuốn sách?",
+      "choices": ["Buồn", "Khó", "Thú vị", "Đắt"],
+      "answer": 2
+    },
+    {
+      "id": "jl4",
+      "speak": "駅はどこですか。",
+      "prompt": "Họ đang hỏi về gì?",
+      "choices": ["Nhà ga", "Bệnh viện", "Trường", "Công viên"],
+      "answer": 0
+    },
+    {
+      "id": "jl5",
+      "speak": "今日は雨です。",
+      "prompt": "Thời tiết hôm nay thế nào?",
+      "choices": ["Nắng", "Mưa", "Tuyết", "Gió"],
+      "answer": 1
+    },
+    {
+      "id": "jl6",
+      "speak": "友達と映画を見ました。",
+      "prompt": "Họ đã làm gì?",
+      "choices": ["Ăn cơm", "Xem phim với bạn", "Nghe nhạc", "Chạy bộ"],
+      "answer": 1
+    }
+  ]
+}

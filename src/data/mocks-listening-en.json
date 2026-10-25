@@ -1,0 +1,52 @@
+{
+  "id": "mock-en-listen",
+  "title": "EN Listening mini-mock (TTS)",
+  "track": "en",
+  "minutes": 6,
+  "mode": "listening",
+  "disclaimer": "Unofficial practice — audio via free browser TTS, not IELTS audio.",
+  "questions": [
+    {
+      "id": "el1",
+      "speak": "She goes to school every day by bus.",
+      "prompt": "How does she go to school?",
+      "choices": ["By car", "By bus", "On foot", "By train"],
+      "answer": 1
+    },
+    {
+      "id": "el2",
+      "speak": "Please open the window. It is hot in here.",
+      "prompt": "What does the speaker want?",
+      "choices": ["Close the door", "Open the window", "Turn on the light", "Sit down"],
+      "answer": 1
+    },
+    {
+      "id": "el3",
+      "speak": "I have already finished my homework.",
+      "prompt": "What is true?",
+      "choices": ["Homework is not done", "Homework is finished", "No homework today", "Homework starts now"],
+      "answer": 1
+    },
+    {
+      "id": "el4",
+      "speak": "The meeting will start at three o'clock.",
+      "prompt": "When does the meeting start?",
+      "choices": ["2:00", "3:00", "4:00", "5:00"],
+      "answer": 1
+    },
+    {
+      "id": "el5",
+      "speak": "Could you pass me the salt, please?",
+      "prompt": "What is the request?",
+      "choices": ["Pass the salt", "Buy salt", "Cook dinner", "Open a book"],
+      "answer": 0
+    },
+    {
+      "id": "el6",
+      "speak": "It looks like it will rain this afternoon.",
+      "prompt": "What is expected?",
+      "choices": ["Snow", "Rain", "Sun only", "Wind only"],
+      "answer": 1
+    }
+  ]
+}

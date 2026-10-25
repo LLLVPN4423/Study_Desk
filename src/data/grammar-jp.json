@@ -1,0 +1,152 @@
+[
+  {
+    "id": "g-jp-1",
+    "level": "N5",
+    "pattern": "〜は〜です",
+    "prompt": "これは本____。",
+    "meaning": "A is B (copula)",
+    "choices": ["です", "ます", "た", "ない"],
+    "answer": 0,
+    "note": "Unofficial practice pattern."
+  },
+  {
+    "id": "g-jp-2",
+    "level": "N5",
+    "pattern": "〜をください",
+    "prompt": "水____ください。",
+    "meaning": "Please give me ~",
+    "choices": ["が", "を", "に", "で"],
+    "answer": 1,
+    "note": "Object particle を."
+  },
+  {
+    "id": "g-jp-3",
+    "level": "N5",
+    "pattern": "Past affirmative",
+    "prompt": "きのう映画を見____。",
+    "meaning": "I watched a movie yesterday.",
+    "choices": ["ます", "ました", "ません", "て"],
+    "answer": 1,
+    "note": "Polite past ました."
+  },
+  {
+    "id": "g-jp-4",
+    "level": "N4",
+    "pattern": "〜すぎる",
+    "prompt": "この本は難し____。",
+    "meaning": "too difficult",
+    "choices": ["すぎます", "やすい", "にくい", "そう"],
+    "answer": 0,
+    "note": "Adjective stem + すぎる."
+  },
+  {
+    "id": "g-jp-5",
+    "level": "N4",
+    "pattern": "〜たことがある",
+    "prompt": "日本へ行っ____ことがあります。",
+    "meaning": "have the experience of ~",
+    "choices": ["た", "て", "る", "ない"],
+    "answer": 0,
+    "note": "V-ta + ことがある."
+  },
+  {
+    "id": "g-jp-6",
+    "level": "N4",
+    "pattern": "〜そうだ (appearance)",
+    "prompt": "雨が降り____。",
+    "meaning": "It looks like it will rain.",
+    "choices": ["そうです", "らしいです", "ようです", "みたい"],
+    "answer": 0,
+    "note": "Stem + そう."
+  },
+  {
+    "id": "g-jp-7",
+    "level": "N3",
+    "pattern": "〜のに",
+    "prompt": "忙しい____、手伝ってくれた。",
+    "meaning": "even though / despite",
+    "choices": ["ので", "のに", "から", "ため"],
+    "answer": 1,
+    "note": "Contrastive のに."
+  },
+  {
+    "id": "g-jp-8",
+    "level": "N3",
+    "pattern": "〜うえで",
+    "prompt": "説明を読んだ____組み立ててください。",
+    "meaning": "after / upon doing",
+    "choices": ["うえで", "うちに", "たびに", "とおりに"],
+    "answer": 0,
+    "note": "V-ta + うえで."
+  },
+  {
+    "id": "g-jp-9",
+    "level": "N2",
+    "pattern": "〜に応じて",
+    "prompt": "結果____対応を変える。",
+    "meaning": "according to / depending on",
+    "choices": ["に対して", "に応じて", "について", "に関して"],
+    "answer": 1,
+    "note": "Unofficial N2-style pattern."
+  },
+  {
+    "id": "g-jp-10",
+    "level": "N2",
+    "pattern": "〜のみならず",
+    "prompt": "医者である____、作家でもある。",
+    "meaning": "not only ~ but also",
+    "choices": ["とともに", "ばかりか", "のみならず", "だけに"],
+    "answer": 2,
+    "note": "Formal contrastive addition."
+  },
+  {
+    "id": "g-jp-11",
+    "level": "N5",
+    "pattern": "〜たい",
+    "prompt": "水が飲み____。",
+    "meaning": "want to do",
+    "choices": ["たい", "ます", "た", "ないで"],
+    "answer": 0,
+    "note": "V-stem + たい."
+  },
+  {
+    "id": "g-jp-12",
+    "level": "N4",
+    "pattern": "〜なければならない",
+    "prompt": "薬を飲ま____なりません。",
+    "meaning": "must / have to",
+    "choices": ["なければ", "なくても", "ないと", "ないで"],
+    "answer": 0,
+    "note": "Obligation pattern."
+  },
+  {
+    "id": "g-jp-13",
+    "level": "N4",
+    "pattern": "〜てあげる / もらう",
+    "prompt": "友だち____手伝ってもらいました。",
+    "meaning": "receive a favor from",
+    "choices": ["が", "を", "に", "で"],
+    "answer": 2,
+    "note": "Source of favor with に."
+  },
+  {
+    "id": "g-jp-14",
+    "level": "N3",
+    "pattern": "〜ばかりだ",
+    "prompt": "食べた____なのに、もうおなかがすいた。",
+    "meaning": "just did ~ / only",
+    "choices": ["ばかり", "ところ", "まま", "きり"],
+    "answer": 0,
+    "note": "V-ta + ばかり."
+  },
+  {
+    "id": "g-jp-15",
+    "level": "N3",
+    "pattern": "〜わけではない",
+    "prompt": "行きたくない____ではない。",
+    "meaning": "it is not that…",
+    "choices": ["わけ", "はず", "よう", "そう"],
+    "answer": 0,
+    "note": "Partial negation."
+  }
+]

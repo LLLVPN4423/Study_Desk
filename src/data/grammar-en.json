@@ -1,0 +1,82 @@
+[
+  {
+    "id": "g-en-1",
+    "level": "A2",
+    "pattern": "Present simple",
+    "prompt": "She ___ coffee every morning.",
+    "meaning": "Habitual present",
+    "choices": ["drink", "drinks", "drinking", "drank"],
+    "answer": 1,
+    "note": "Unofficial CEFR-style practice."
+  },
+  {
+    "id": "g-en-2",
+    "level": "A2",
+    "pattern": "There is / are",
+    "prompt": "There ___ two chairs in the room.",
+    "meaning": "Existence",
+    "choices": ["is", "are", "be", "was"],
+    "answer": 1,
+    "note": "Plural agreement."
+  },
+  {
+    "id": "g-en-3",
+    "level": "B1",
+    "pattern": "Present perfect",
+    "prompt": "I have ___ seen that film.",
+    "meaning": "Experience / completed with present relevance",
+    "choices": ["never", "yet", "still", "ago"],
+    "answer": 0,
+    "note": "never + present perfect."
+  },
+  {
+    "id": "g-en-4",
+    "level": "B1",
+    "pattern": "First conditional",
+    "prompt": "If you study, you ___ pass.",
+    "meaning": "Real future condition",
+    "choices": ["will", "would", "would have", "are"],
+    "answer": 0,
+    "note": "if + present, will + base."
+  },
+  {
+    "id": "g-en-5",
+    "level": "B2",
+    "pattern": "Passive",
+    "prompt": "The email ___ yesterday.",
+    "meaning": "Passive past",
+    "choices": ["sent", "was sent", "has sent", "sending"],
+    "answer": 1,
+    "note": "be + past participle."
+  },
+  {
+    "id": "g-en-6",
+    "level": "B2",
+    "pattern": "Relative clause",
+    "prompt": "The book ___ I borrowed was excellent.",
+    "meaning": "Defining relative",
+    "choices": ["who", "which", "where", "whose"],
+    "answer": 1,
+    "note": "which for things."
+  },
+  {
+    "id": "g-en-7",
+    "level": "B2",
+    "pattern": "Reported speech",
+    "prompt": "She said she ___ busy.",
+    "meaning": "Backshift",
+    "choices": ["is", "was", "be", "been"],
+    "answer": 1,
+    "note": "Present → past in reporting."
+  },
+  {
+    "id": "g-en-8",
+    "level": "C1",
+    "pattern": "Inversion",
+    "prompt": "Rarely ___ such dedication.",
+    "meaning": "Negative adverb inversion",
+    "choices": ["I have seen", "have I seen", "I saw", "did I saw"],
+    "answer": 1,
+    "note": "Unofficial advanced practice."
+  }
+]

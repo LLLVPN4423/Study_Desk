@@ -1,0 +1,57 @@
+{
+  "id": "mock-en-vocab",
+  "title": "EN Vocab section mock",
+  "track": "en",
+  "minutes": 8,
+  "disclaimer": "Unofficial practice — not an IELTS exam section.",
+  "questions": [
+    {
+      "id": "me1",
+      "prompt": "Choose the best word: a ___ of water",
+      "choices": ["glass", "glasses", "glassing", "glassy"],
+      "answer": 0
+    },
+    {
+      "id": "me2",
+      "prompt": "Synonym of \"begin\":",
+      "choices": ["finish", "start", "stop", "delay"],
+      "answer": 1
+    },
+    {
+      "id": "me3",
+      "prompt": "She ___ to work by bus.",
+      "choices": ["go", "goes", "going", "gone"],
+      "answer": 1
+    },
+    {
+      "id": "me4",
+      "prompt": "Opposite of \"expensive\":",
+      "choices": ["cheap", "large", "heavy", "early"],
+      "answer": 0
+    },
+    {
+      "id": "me5",
+      "prompt": "I have ___ finished.",
+      "choices": ["yet", "already", "ago", "still not"],
+      "answer": 1
+    },
+    {
+      "id": "me6",
+      "prompt": "A written ___ of events",
+      "choices": ["describe", "description", "descriptive", "describing"],
+      "answer": 1
+    },
+    {
+      "id": "me7",
+      "prompt": "The letter was ___ yesterday.",
+      "choices": ["send", "sent", "sending", "sends"],
+      "answer": 1
+    },
+    {
+      "id": "me8",
+      "prompt": "Best formal verb: findings ___ the theory",
+      "choices": ["undermine", "under", "undo", "undergo"],
+      "answer": 0
+    }
+  ]
+}

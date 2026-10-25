@@ -1,0 +1,182 @@
+[
+  {
+    "id": "q1",
+    "bandHint": "N5",
+    "label": "Question 01 · Vocabulary",
+    "prompt": "これは＿＿です。",
+    "translation": "This is a ____.",
+    "choices": ["本", "高い", "走る", "ゆっくり"],
+    "answer": 0
+  },
+  {
+    "id": "q2",
+    "bandHint": "N5",
+    "label": "Question 02 · Vocabulary",
+    "prompt": "水を＿＿ください。",
+    "translation": "Please ____ water.",
+    "choices": ["食べて", "飲んで", "見て", "聞いて"],
+    "answer": 1
+  },
+  {
+    "id": "q3",
+    "bandHint": "N5",
+    "label": "Question 03 · Grammar",
+    "prompt": "きのう、友だちと映画を＿＿。",
+    "translation": "Yesterday, I ___ a movie with my friend.",
+    "choices": ["見ます", "見ました", "見ません", "見て"],
+    "answer": 1
+  },
+  {
+    "id": "q4",
+    "bandHint": "N5",
+    "label": "Question 04 · Grammar",
+    "prompt": "毎日、日本語を＿＿。",
+    "translation": "I study Japanese every day.",
+    "choices": ["勉強します", "勉強しました", "勉強して", "勉強"],
+    "answer": 0
+  },
+  {
+    "id": "q5",
+    "bandHint": "N4",
+    "label": "Question 05 · Grammar",
+    "prompt": "この本は＿＿すぎます。",
+    "translation": "This book is too ____.",
+    "choices": ["難しい", "難し", "難しく", "難しさ"],
+    "answer": 1
+  },
+  {
+    "id": "q6",
+    "bandHint": "N4",
+    "label": "Question 06 · Vocabulary",
+    "prompt": "約束を＿＿。",
+    "translation": "I broke a promise / appointment.",
+    "choices": ["守りました", "破りました", "作りました", "始めました"],
+    "answer": 1
+  },
+  {
+    "id": "q7",
+    "bandHint": "N4",
+    "label": "Question 07 · Grammar",
+    "prompt": "日本へ＿＿ことがあります。",
+    "translation": "I have been to Japan.",
+    "choices": ["行く", "行った", "行って", "行き"],
+    "answer": 1
+  },
+  {
+    "id": "q8",
+    "bandHint": "N4",
+    "label": "Question 08 · Grammar",
+    "prompt": "雨が＿＿そうです。",
+    "translation": "It looks like it will rain.",
+    "choices": ["降る", "降り", "降って", "降った"],
+    "answer": 1
+  },
+  {
+    "id": "q9",
+    "bandHint": "N3",
+    "label": "Question 09 · Grammar",
+    "prompt": "彼は忙しい＿＿、手伝ってくれた。",
+    "translation": "Even though he was busy, he helped me.",
+    "choices": ["なので", "のに", "だから", "ために"],
+    "answer": 1
+  },
+  {
+    "id": "q10",
+    "bandHint": "N3",
+    "label": "Question 10 · Vocabulary",
+    "prompt": "計画を＿＿する。",
+    "translation": "to postpone a plan",
+    "choices": ["延期", "遠慮", "延長", "遠足"],
+    "answer": 0
+  },
+  {
+    "id": "q11",
+    "bandHint": "N3",
+    "label": "Question 11 · Grammar",
+    "prompt": "説明書を読んだ＿＿、組み立ててください。",
+    "translation": "Please assemble it after reading the manual.",
+    "choices": ["うえで", "うちに", "とおりに", "たびに"],
+    "answer": 0
+  },
+  {
+    "id": "q12",
+    "bandHint": "N3",
+    "label": "Question 12 · Grammar",
+    "prompt": "彼の話は信じ＿＿。",
+    "translation": "His story is hard to believe.",
+    "choices": ["やすい", "にくい", "がたい", "つよい"],
+    "answer": 2
+  },
+  {
+    "id": "q13",
+    "bandHint": "N2",
+    "label": "Question 13 · Grammar",
+    "prompt": "結果に＿＿、対応を変える。",
+    "translation": "Change the response depending on the result.",
+    "choices": ["対して", "応じて", "関して", "ついて"],
+    "answer": 1
+  },
+  {
+    "id": "q14",
+    "bandHint": "N2",
+    "label": "Question 14 · Vocabulary",
+    "prompt": "議論が＿＿した。",
+    "translation": "The discussion heated up / intensified.",
+    "choices": ["過熱", "加熱", "情熱", "熱意"],
+    "answer": 0
+  },
+  {
+    "id": "q15",
+    "bandHint": "N2",
+    "label": "Question 15 · Grammar",
+    "prompt": "彼は医者である＿＿、作家でもある。",
+    "translation": "He is a doctor and also a writer.",
+    "choices": ["とともに", "ばかりか", "のみならず", "だけに"],
+    "answer": 2
+  },
+  {
+    "id": "q16",
+    "bandHint": "N5",
+    "label": "Question 16 · Reading",
+    "prompt": "「先生」の読みは？",
+    "translation": "How do you read 先生?",
+    "choices": ["せんせい", "せんせえ", "せいせん", "せんせいん"],
+    "answer": 0
+  },
+  {
+    "id": "q17",
+    "bandHint": "N4",
+    "label": "Question 17 · Reading",
+    "prompt": "「経験」の読みは？",
+    "translation": "How do you read 経験?",
+    "choices": ["けいけん", "けいげん", "きょうけん", "けいけい"],
+    "answer": 0
+  },
+  {
+    "id": "q18",
+    "bandHint": "N3",
+    "label": "Question 18 · Vocabulary",
+    "prompt": "意見を＿＿する。",
+    "translation": "to exchange opinions",
+    "choices": ["交換", "交替", "交際", "交通"],
+    "answer": 0
+  },
+  {
+    "id": "q19",
+    "bandHint": "N2",
+    "label": "Question 19 · Grammar",
+    "prompt": "努力した＿＿、合格できなかった。",
+    "translation": "Despite effort, I couldn't pass.",
+    "choices": ["あげく", "すえに", "ついでに", "とおり"],
+    "answer": 0
+  },
+  {
+    "id": "q20",
+    "bandHint": "N2",
+    "label": "Question 20 · Vocabulary",
+    "prompt": "方針を＿＿する。",
+    "translation": "to revise a policy",
+    "choices": ["改定", "改善", "改正", "改訂"],
+    "answer": 2
+  }
+]
