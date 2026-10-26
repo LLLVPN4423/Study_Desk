@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { RequireAuth } from "@/components/RequireAuth";
@@ -11,6 +11,11 @@ import n2 from "@/data/openjlpt-kanji-n2.json";
 import n3 from "@/data/openjlpt-kanji-n3.json";
 import n4 from "@/data/openjlpt-kanji-n4.json";
 import n5 from "@/data/openjlpt-kanji-n5.json";
+import {
+  pathOverallProgress,
+  recordKanjiEvidence,
+  recordStudyMinutes,
+} from "@/lib/learn-store";
 import { canSpeak, speak } from "@/lib/speech";
 
 type Kanji = {
@@ -98,10 +103,25 @@ function KanjiContent() {
   const [pos, setPos] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [known, setKnown] = useState(0);
+  const flashStart = useRef(Date.now());
+  const loggedDone = useRef(false);
 
   const idx = order[pos] ?? 0;
   const k = bank[idx];
   const done = pos >= bank.length;
+
+  const [pathMsg, setPathMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!done || view !== "flash" || loggedDone.current || !bank.length) return;
+    loggedDone.current = true;
+    recordStudyMinutes((Date.now() - flashStart.current) / 60000);
+    setPathMsg(
+      known > 0
+        ? `Vòng flash xong · ${known} chữ đã biết · lộ trình sẽ cập nhật tự động.`
+        : "Vòng flash xong — bấm «Biết» khi học thật để tiến độ kanji tăng.",
+    );
+  }, [done, view, known, bank.length]);
 
   function changeLevel(lv: Level) {
     setLevel(lv);
@@ -112,7 +132,11 @@ function KanjiContent() {
   }
 
   function next(markKnown: boolean) {
-    if (markKnown) setKnown((n) => n + 1);
+    if (markKnown && k) {
+      setKnown((n) => n + 1);
+      const st = recordKanjiEvidence("jp", k.character, true);
+      setPathMsg(`Kanji đã biết · lộ trình ${pathOverallProgress("jp", st)}%`);
+    }
     setFlipped(false);
     setPos((p) => p + 1);
   }
@@ -175,26 +199,31 @@ function KanjiContent() {
   if (done) {
     return (
       <div className="page narrow">
-        <Link href="/learn" className="back">
-          ← Về học
+        <Link href="/learn?track=jp" className="back">
+          ← Về lộ trình
         </Link>
         <p className="eyebrow">Kanji · {level}</p>
         <h1>Xong một vòng</h1>
-        <p style={{ color: "var(--muted)", margin: "12px 0 24px" }}>
+        <p style={{ color: "var(--muted)", margin: "12px 0 12px" }}>
           Đã biết {known}/{bank.length}. OpenJLPT (CC BY-SA 4.0).
         </p>
-        <div className="actions">
+        {pathMsg ? <p className="empty-hint">{pathMsg}</p> : null}
+        <div className="actions" style={{ marginTop: 16 }}>
+          <Link href="/learn?track=jp">
+            <Button>Về lộ trình</Button>
+          </Link>
           <Button
+            variant="secondary"
             onClick={() => {
+              loggedDone.current = false;
+              flashStart.current = Date.now();
+              setPathMsg(null);
               setPos(0);
               setKnown(0);
               setFlipped(false);
             }}
           >
             Xáo lại
-          </Button>
-          <Button variant="secondary" onClick={() => setView("list")}>
-            Danh sách
           </Button>
         </div>
       </div>

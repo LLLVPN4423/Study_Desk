@@ -178,5 +178,89 @@
     "translation": "to revise a policy",
     "choices": ["改定", "改善", "改正", "改訂"],
     "answer": 2
+  },
+  {
+    "id": "q21",
+    "bandHint": "N1",
+    "label": "Question 21 · Grammar",
+    "prompt": "いかなる困難＿＿、諦めない。",
+    "translation": "No matter what difficulty, I will not give up.",
+    "choices": ["であれ", "ならば", "ながら", "につけ"],
+    "answer": 0
+  },
+  {
+    "id": "q22",
+    "bandHint": "N1",
+    "label": "Question 22 · Vocabulary",
+    "prompt": "問題を＿＿する。",
+    "translation": "to exacerbate / aggravate a problem",
+    "choices": ["助長", "促進", "奨励", "推奨"],
+    "answer": 0
+  },
+  {
+    "id": "q23",
+    "bandHint": "N1",
+    "label": "Question 23 · Grammar",
+    "prompt": "彼の成功は努力＿＿ものだ。",
+    "translation": "His success is nothing other than the result of effort.",
+    "choices": ["にほかならない", "にすぎない", "に限る", "に相違ない"],
+    "answer": 0
+  },
+  {
+    "id": "q24",
+    "bandHint": "N1",
+    "label": "Question 24 · Vocabulary",
+    "prompt": "議論が＿＿に陥った。",
+    "translation": "The discussion fell into a deadlock / stalemate.",
+    "choices": ["膠着", "混迷", "停滞", "行き詰まり"],
+    "answer": 0
+  },
+  {
+    "id": "q25",
+    "bandHint": "N1",
+    "label": "Question 25 · Grammar",
+    "prompt": "成功しよう＿＿、努力を惜しまない。",
+    "translation": "In order to succeed, I spare no effort.",
+    "choices": ["がため", "がゆえ", "をもって", "ならでは"],
+    "answer": 0
+  },
+  {
+    "id": "q26",
+    "bandHint": "N1",
+    "label": "Question 26 · Vocabulary",
+    "prompt": "彼の主張は＿＿に欠けている。",
+    "translation": "His claim lacks consistency / coherence.",
+    "choices": ["一貫性", "一般性", "一過性", "一体性"],
+    "answer": 0
+  },
+  {
+    "id": "ql1",
+    "bandHint": "N5",
+    "label": "Question L1 · Listening",
+    "speak": "明日、学校に行きます。",
+    "prompt": "Người nói sẽ làm gì ngày mai?",
+    "translation": "Listen, then choose.",
+    "choices": ["Đi làm", "Đi học", "Ở nhà", "Ngủ"],
+    "answer": 1
+  },
+  {
+    "id": "ql2",
+    "bandHint": "N3",
+    "label": "Question L2 · Listening",
+    "speak": "計画を延期することにしました。",
+    "prompt": "Họ quyết định gì?",
+    "translation": "Listen, then choose.",
+    "choices": ["Hủy kế hoạch", "Hoãn kế hoạch", "Đẩy nhanh", "Giữ nguyên"],
+    "answer": 1
+  },
+  {
+    "id": "ql3",
+    "bandHint": "N1",
+    "label": "Question L3 · Listening",
+    "speak": "いかなる困難であれ、諦めません。",
+    "prompt": "Thái độ của người nói?",
+    "translation": "Listen, then choose.",
+    "choices": ["Bỏ cuộc khi khó", "Không bỏ cuộc dù khó", "Chờ may mắn", "Nhờ người khác"],
+    "answer": 1
   }
 ]

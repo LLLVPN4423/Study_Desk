@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Suspense, useMemo, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { RequireAuth } from "@/components/RequireAuth";
+import { displayMeanings, getVocabGlossVi } from "@/lib/gloss-vi";
 import { getEnSeed, getJpSeed, type TrackId, type VocabSeed } from "@/lib/learn-store";
 import {
   POS_BUCKETS,
@@ -86,14 +87,17 @@ function VocabListContent() {
     }
     const s = q.trim().toLowerCase();
     if (s) {
-      base = base.filter(
-        (w) =>
+      base = base.filter((w) => {
+        const vi = getVocabGlossVi(track, w.id)?.vi?.toLowerCase() || "";
+        return (
           w.word.toLowerCase().includes(s) ||
           (w.reading || "").includes(s) ||
           (w.romaji || "").toLowerCase().includes(s) ||
           (w.pos || "").toLowerCase().includes(s) ||
-          w.meanings.some((m) => m.toLowerCase().includes(s)),
-      );
+          w.meanings.some((m) => m.toLowerCase().includes(s)) ||
+          vi.includes(s)
+        );
+      });
     }
     const sorted = [...base];
     if (sort === "az") sorted.sort((a, b) => a.word.localeCompare(b.word, track === "jp" ? "ja" : "en"));
@@ -212,7 +216,14 @@ function VocabListContent() {
               <strong lang={track === "jp" ? "ja" : "en"}>{w.word}</strong>
               {w.reading ? <span className="reading-inline">{w.reading}</span> : null}
             </div>
-            <p>{w.meanings.slice(0, 2).join(" · ")}</p>
+            <p>
+              {displayMeanings(track, w.id, w.meanings || [], {
+                word: w.word,
+                pos: w.pos,
+              })
+                .slice(0, 2)
+                .join(" · ")}
+            </p>
             <small>
               {w.level}
               {w.pos ? ` · ${formatPosDisplay(w.pos)}` : ` · ${posBucketLabel(bucketFromPos(w.pos))}`}

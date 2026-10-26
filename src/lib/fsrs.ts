@@ -63,24 +63,64 @@ export function deserializeCard(raw: CardSnapshot): Card {
   };
 }
 
-/** Migrate old fsrs-lite snapshots (missing elapsed_days / learning_steps). */
+/**
+ * Migrate old snapshots. New cards must be { stability: 0, difficulty: 0 }.
+ * Older coerce used difficulty: 5 + stability: 0 → ts-fsrs 5.x throws FSRSValidationError.
+ */
 export function coerceSnapshot(raw: Partial<CardSnapshot> & { due: string }): CardSnapshot {
+  const stability = Number(raw.stability);
+  const difficulty = Number(raw.difficulty);
+  const state = (raw.state as State) ?? State.New;
+  const safeStability = Number.isFinite(stability) ? stability : 0;
+  let safeDifficulty = Number.isFinite(difficulty) ? difficulty : 0;
+
+  // New / never-reviewed: difficulty must be 0 when stability is 0
+  if (safeStability <= 0 && safeDifficulty !== 0) {
+    safeDifficulty = 0;
+  }
+
   return {
     due: raw.due,
-    stability: raw.stability ?? 0,
-    difficulty: raw.difficulty ?? 5,
+    stability: Math.max(0, safeStability),
+    difficulty: Math.max(0, safeDifficulty),
     elapsed_days: raw.elapsed_days ?? 0,
     scheduled_days: raw.scheduled_days ?? 0,
     learning_steps: raw.learning_steps ?? 0,
     reps: raw.reps ?? 0,
     lapses: raw.lapses ?? 0,
-    state: (raw.state as State) ?? State.New,
+    state,
     last_review: raw.last_review,
   };
 }
 
+/** Repair cards that would crash scheduler.next (e.g. legacy difficulty:5 + stability:0). */
+export function sanitizeCard(card: Card, now = new Date()): Card {
+  const stability = Number(card.stability) || 0;
+  const difficulty = Number(card.difficulty) || 0;
+  if (stability <= 0 && difficulty !== 0) {
+    const fresh = createEmptyCard(now);
+    return {
+      ...fresh,
+      due: card.due instanceof Date ? card.due : new Date(card.due),
+      reps: card.reps || 0,
+      lapses: card.lapses || 0,
+    };
+  }
+  if (!Number.isFinite(card.stability) || !Number.isFinite(card.difficulty)) {
+    return createEmptyCard(now);
+  }
+  return card;
+}
+
 export function schedule(card: Card, now: Date, grade: Grade): Card {
-  return scheduler.next(card, now, grade).card;
+  const safe = sanitizeCard(card, now);
+  try {
+    return scheduler.next(safe, now, grade).card;
+  } catch {
+    // Last resort: re-seed as new card and apply grade once
+    const fresh = createEmptyCard(now);
+    return scheduler.next(fresh, now, grade).card;
+  }
 }
 
 export function newCard(now = new Date()): Card {

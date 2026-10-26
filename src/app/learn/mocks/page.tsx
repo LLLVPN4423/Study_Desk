@@ -2,35 +2,24 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { Icon } from "@/components/Icon";
 import { RequireAuth } from "@/components/RequireAuth";
-import mockJp from "@/data/mocks-jp.json";
-import mockEn from "@/data/mocks-en.json";
-import listenJp from "@/data/mocks-listening-jp.json";
-import listenEn from "@/data/mocks-listening-en.json";
 import { FREE_LIMITS } from "@/lib/freemium";
-import { canTakeMock, loadLearn, recordMockTaken, type TrackId } from "@/lib/learn-store";
+import {
+  canTakeMock,
+  getTrack,
+  loadLearn,
+  pathOverallProgress,
+  recordMockEvidence,
+  recordMockTaken,
+  recordStudyMinutes,
+  type TrackId,
+} from "@/lib/learn-store";
+import { bandsForTrack, resolveMockPack, type MockPack } from "@/lib/mocks-band";
 import { speak } from "@/lib/speech";
-
-type MockQ = {
-  id: string;
-  prompt: string;
-  choices: string[];
-  answer: number;
-  speak?: string;
-};
-type Mock = {
-  id: string;
-  title: string;
-  track: string;
-  minutes: number;
-  disclaimer: string;
-  mode?: string;
-  questions: MockQ[];
-};
 
 export default function MocksPage() {
   return (
@@ -56,19 +45,28 @@ function MocksContent({ plan }: { plan: "free" | "pro" }) {
   const params = useSearchParams();
   const track = (params.get("track") === "en" ? "en" : "jp") as TrackId;
   const modeParam = params.get("mode") === "listening" ? "listening" : "vocab";
+  const bandParam = params.get("band");
   const [mode, setMode] = useState<"vocab" | "listening">(modeParam);
+  const [band, setBand] = useState<string>(() => {
+    if (bandParam) return bandParam;
+    const t = getTrack(loadLearn(), track);
+    return t.band || (track === "jp" ? "N5" : "A2");
+  });
   useEffect(() => {
     setMode(modeParam);
   }, [modeParam]);
-  const mock = (
-    mode === "listening"
-      ? track === "jp"
-        ? listenJp
-        : listenEn
-      : track === "jp"
-        ? mockJp
-        : mockEn
-  ) as Mock;
+  useEffect(() => {
+    if (bandParam) {
+      setBand(bandParam);
+      return;
+    }
+    const t = getTrack(loadLearn(), track);
+    if (t.band) setBand(t.band);
+  }, [bandParam, track]);
+  const mock = useMemo(
+    () => resolveMockPack(track, mode, band) as MockPack,
+    [track, mode, band],
+  );
 
   const [started, setStarted] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(mock.minutes * 60);
@@ -78,6 +76,8 @@ function MocksContent({ plan }: { plan: "free" | "pro" }) {
   const [finished, setFinished] = useState(false);
   const [blocked, setBlocked] = useState(false);
   const [used, setUsed] = useState(0);
+  const mockStart = useRef(Date.now());
+  const loggedFinish = useRef(false);
 
   useEffect(() => {
     const s = loadLearn();
@@ -92,7 +92,29 @@ function MocksContent({ plan }: { plan: "free" | "pro" }) {
     setSelected(undefined);
     setCorrect(0);
     setSecondsLeft(mock.minutes * 60);
-  }, [mode, track, mock.minutes]);
+    loggedFinish.current = false;
+  }, [mode, track, band, mock.id, mock.minutes]);
+
+  const [pathMsg, setPathMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!finished || loggedFinish.current) return;
+    loggedFinish.current = true;
+    const score = mock.questions.length
+      ? Math.round((correct / mock.questions.length) * 100)
+      : 0;
+    const st = recordMockEvidence(
+      track,
+      mode === "listening" ? "listening" : "vocab",
+      score,
+    );
+    recordStudyMinutes((Date.now() - mockStart.current) / 60000);
+    setPathMsg(
+      score >= 40
+        ? `Mock ${score}% · lộ trình ${pathOverallProgress(track, st)}%.`
+        : `Mock ${score}% — cần ≥40% để hoàn thành việc mock trên lộ trình.`,
+    );
+  }, [finished, correct, mock.questions.length, mode, track]);
 
   useEffect(() => {
     if (!started || finished) return;
@@ -116,6 +138,8 @@ function MocksContent({ plan }: { plan: "free" | "pro" }) {
     if (blocked) return;
     recordMockTaken();
     setUsed((u) => u + 1);
+    mockStart.current = Date.now();
+    loggedFinish.current = false;
     setStarted(true);
     const first = mock.questions[0];
     if (mode === "listening" && first?.speak) {
@@ -166,11 +190,27 @@ function MocksContent({ plan }: { plan: "free" | "pro" }) {
             Nghe (TTS)
           </button>
         </div>
-        <p style={{ color: "var(--muted)", margin: "12px 0 20px" }}>
-          {mock.disclaimer} · {mock.minutes} phút · {mock.questions.length} câu.
+        <p style={{ color: "var(--muted)", margin: "12px 0 12px" }}>
+          {mock.disclaimer} · {mock.minutes} phút · {mock.questions.length} câu · band{" "}
+          <strong>{band}</strong>
+          {mock.band ? "" : " (fallback)"}.
         </p>
+        <label className="field" style={{ display: "block", marginBottom: 16, maxWidth: 220 }}>
+          <span style={{ fontSize: 13, color: "var(--muted)" }}>Cấp mock</span>
+          <select
+            value={band}
+            onChange={(e) => setBand(e.target.value)}
+            style={{ display: "block", width: "100%", marginTop: 6 }}
+          >
+            {bandsForTrack(track).map((b) => (
+              <option key={b} value={b}>
+                {b}
+              </option>
+            ))}
+          </select>
+        </label>
         <p style={{ fontSize: 13, marginBottom: 24 }}>
-          Free: {used}/{FREE_LIMITS.mocksPerMonth} mock ngắn / tháng
+          Mock tháng: {used}/{FREE_LIMITS.mocksPerMonth}
           {plan === "pro" ? " · Pro không giới hạn" : ""}.
         </p>
         {blocked ? (
@@ -189,8 +229,8 @@ function MocksContent({ plan }: { plan: "free" | "pro" }) {
   if (finished) {
     return (
       <div className="page narrow">
-        <Link href="/learn" className="back">
-          ← Về học
+        <Link href={`/learn?track=${track}`} className="back">
+          ← Về lộ trình
         </Link>
         <p className="eyebrow">Xong mock</p>
         <h1>
@@ -199,6 +239,12 @@ function MocksContent({ plan }: { plan: "free" | "pro" }) {
         <p style={{ color: "var(--muted)", marginTop: 12 }}>
           Còn {timerLabel}. Kết quả luyện không chính thức.
         </p>
+        {pathMsg ? <p className="empty-hint">{pathMsg}</p> : null}
+        <div className="actions" style={{ marginTop: 16 }}>
+          <Link href={`/learn?track=${track}`}>
+            <Button>Về lộ trình</Button>
+          </Link>
+        </div>
       </div>
     );
   }

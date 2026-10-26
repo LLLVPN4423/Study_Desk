@@ -2,14 +2,20 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { Icon } from "@/components/Icon";
 import { RequireAuth } from "@/components/RequireAuth";
 import grammarEn from "@/data/grammar-en.json";
 import grammarJp from "@/data/grammar-jp.json";
-import type { TrackId } from "@/lib/learn-store";
+import { displayGrammarMeaning, displayGrammarNote } from "@/lib/gloss-vi";
+import {
+  pathOverallProgress,
+  recordGrammarEvidence,
+  recordStudyMinutes,
+  type TrackId,
+} from "@/lib/learn-store";
 
 type G = {
   id: string;
@@ -24,7 +30,7 @@ type G = {
 };
 
 const JP_LEVELS = ["N5", "N4", "N3", "N2", "N1"] as const;
-const EN_LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
+const EN_LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"] as const;
 
 const TAG_VI: Record<string, string> = {
   particle: "Trợ từ",
@@ -119,8 +125,26 @@ function GrammarContent() {
   const [correct, setCorrect] = useState(0);
   const [done, setDone] = useState(false);
   const [revealed, setRevealed] = useState(false);
+  const drillStart = useRef(Date.now());
+  const loggedDone = useRef(false);
+
+  const [pathMsg, setPathMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!done || loggedDone.current) return;
+    loggedDone.current = true;
+    recordStudyMinutes((Date.now() - drillStart.current) / 60000);
+    const pct = pathOverallProgress(track);
+    setPathMsg(
+      correct > 0
+        ? `Drill xong · ${correct} câu đúng · lộ trình ${pct}%.`
+        : "Drill xong nhưng chưa trả lời đúng — tiến độ grammar chưa tăng.",
+    );
+  }, [done, correct, track]);
 
   function resetDrill() {
+    loggedDone.current = false;
+    drillStart.current = Date.now();
     setIndex(0);
     setSelected(undefined);
     setCorrect(0);
@@ -249,7 +273,7 @@ function GrammarContent() {
                 <strong>{g.pattern}</strong>
                 <span className="reading-inline">{g.level}</span>
               </div>
-              <p>{g.meaning}</p>
+              <p>{displayGrammarMeaning(track, g.id, g.meaning)}</p>
               <small>
                 {(g.tags || []).slice(0, 3).map((t) => TAG_VI[t] || t).join(" · ") || g.prompt}
               </small>
@@ -281,13 +305,16 @@ function GrammarContent() {
         </Link>
         <p className="eyebrow">Grammar · {track.toUpperCase()}</p>
         <h1>Xong drills</h1>
-        <p style={{ color: "var(--muted)", margin: "12px 0 24px" }}>
+        <p style={{ color: "var(--muted)", margin: "12px 0 12px" }}>
           {correct}/{bank.length} đúng · luyện không chính thức.
         </p>
-        <div className="actions">
-          <Button onClick={resetDrill}>Làm lại</Button>
-          <Button variant="secondary" onClick={() => setView("list")}>
-            Danh sách
+        {pathMsg ? <p className="empty-hint">{pathMsg}</p> : null}
+        <div className="actions" style={{ marginTop: 16 }}>
+          <Link href={`/learn?track=${track}`}>
+            <Button>Về lộ trình</Button>
+          </Link>
+          <Button variant="secondary" onClick={resetDrill}>
+            Làm lại
           </Button>
         </div>
       </div>
@@ -296,7 +323,11 @@ function GrammarContent() {
 
   function submit() {
     if (selected === undefined) return;
-    if (selected === q.answer) setCorrect((c) => c + 1);
+    const ok = selected === q.answer;
+    if (ok) {
+      setCorrect((c) => c + 1);
+      recordGrammarEvidence(track, q.id, true);
+    }
     setRevealed(true);
   }
 
@@ -352,9 +383,13 @@ function GrammarContent() {
         <i style={{ width: `${((index + 1) / bank.length) * 100}%` }} />
       </div>
       <section className="question">
-        <span className="question-label">{q.meaning}</span>
+        <span className="question-label">
+          {displayGrammarMeaning(track, q.id, q.meaning)}
+        </span>
         <p className="jp large">{q.prompt}</p>
-        <p className="translation">{q.note}</p>
+        <p className="translation">
+          {displayGrammarNote(track, q.id, q.note) || q.note}
+        </p>
         <div className="choices">
           {q.choices.map((a, i) => (
             <button

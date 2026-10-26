@@ -1,0 +1,2249 @@
+{
+  "version": 1,
+  "packs": [
+    {
+      "id": "mock-jp-N5-vocab",
+      "title": "JP N5 vocab mock",
+      "track": "jp",
+      "band": "N5",
+      "mode": "vocab",
+      "minutes": 8,
+      "disclaimer": "Unofficial practice — not an official exam section.",
+      "questions": [
+        {
+          "id": "jp-N5-v1",
+          "prompt": "「住む」（すむ） means:",
+          "choices": [
+            "every year",
+            "to live in",
+            "light",
+            "this"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N5-v2",
+          "prompt": "「奥さん」（おくさん） means:",
+          "choices": [
+            "bag",
+            "test",
+            "(honorable) wife",
+            "to need"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N5-v3",
+          "prompt": "「マッチ」（マッチ） means:",
+          "choices": [
+            "marriage",
+            "How do you do?",
+            "instantly",
+            "match"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "jp-N5-v4",
+          "prompt": "「ちょうど」（ちょうど） means:",
+          "choices": [
+            "exactly",
+            "dinner",
+            "problem",
+            "half minute"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N5-v5",
+          "prompt": "「六日」（むいか） means:",
+          "choices": [
+            "half minute",
+            "late",
+            "six days",
+            "bath"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N5-g1",
+          "prompt": "一週間____二回、プールで泳ぎます。",
+          "choices": [
+            "まだていない",
+            "の方がより",
+            "よ",
+            "に"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "jp-N5-g2",
+          "prompt": "机の上____辞書があります。",
+          "choices": [
+            "ました",
+            "に",
+            "ない",
+            "どこか"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N5-g3",
+          "prompt": "私____学生です。",
+          "choices": [
+            "も",
+            "ながら",
+            "ませんか",
+            "です"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N5-v6",
+          "prompt": "「万」（まん） means:",
+          "choices": [
+            "to go across",
+            "ten thousand",
+            "health",
+            "near"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N5-v7",
+          "prompt": "「一つ」（ひとつ） means:",
+          "choices": [
+            "over there",
+            "one",
+            "to wash",
+            "pupil"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "mock-jp-N5-listen",
+      "title": "JP N5 listening mini-mock (TTS)",
+      "track": "jp",
+      "band": "N5",
+      "mode": "listening",
+      "minutes": 6,
+      "disclaimer": "Unofficial practice — browser TTS, not official exam audio.",
+      "questions": [
+        {
+          "id": "jp-N5-l1",
+          "speak": "明日、学校に行きます。",
+          "prompt": "Họ sẽ làm gì ngày mai?",
+          "choices": [
+            "Đi làm",
+            "Đi học",
+            "Ở nhà",
+            "Đi du lịch"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N5-l2",
+          "speak": "水をください。",
+          "prompt": "Họ muốn gì?",
+          "choices": [
+            "Cơm",
+            "Nước",
+            "Trà",
+            "Bánh"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N5-l3",
+          "speak": "この本は面白いです。",
+          "prompt": "Họ nghĩ gì về cuốn sách?",
+          "choices": [
+            "Buồn",
+            "Khó",
+            "Thú vị",
+            "Đắt"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N5-l4",
+          "speak": "駅はどこですか。",
+          "prompt": "Họ hỏi về gì?",
+          "choices": [
+            "Nhà ga",
+            "Bệnh viện",
+            "Trường",
+            "Công viên"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N5-l5",
+          "speak": "今日は雨です。",
+          "prompt": "Thời tiết thế nào?",
+          "choices": [
+            "Nắng",
+            "Tuyết",
+            "Mưa",
+            "Gió"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N5-l6",
+          "speak": "すみません、トイレはどこですか。",
+          "prompt": "Họ tìm gì?",
+          "choices": [
+            "Nhà vệ sinh",
+            "Cửa hàng",
+            "Thư viện",
+            "Bến xe"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mock-jp-N4-vocab",
+      "title": "JP N4 vocab mock",
+      "track": "jp",
+      "band": "N4",
+      "mode": "vocab",
+      "minutes": 8,
+      "disclaimer": "Unofficial practice — not an official exam section.",
+      "questions": [
+        {
+          "id": "jp-N4-v1",
+          "prompt": "「台風」（たいふう） means:",
+          "choices": [
+            "typhoon",
+            "to rise",
+            "branch",
+            "hindrance"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N4-v2",
+          "prompt": "「滑る」（すべる） means:",
+          "choices": [
+            "to slide",
+            "return",
+            "the manufacturing industry",
+            "finally"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N4-v3",
+          "prompt": "「寂しい」（さびしい） means:",
+          "choices": [
+            "owing to",
+            "telegram",
+            "feeling",
+            "lonely"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "jp-N4-v4",
+          "prompt": "「ガラス」（ガラス） means:",
+          "choices": [
+            "to get dirty",
+            "finger",
+            "to disappear",
+            "a glass pane"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "jp-N4-v5",
+          "prompt": "「御主人」（ごしゅじん） means:",
+          "choices": [
+            "(honorable) your husband",
+            "escalator",
+            "era",
+            "suitability"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N4-g1",
+          "prompt": "テレビの音を小さくしてください。\n→ điền dạng: ____",
+          "choices": [
+            "ようになる",
+            "のに",
+            "くする",
+            "てあげる"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N4-g2",
+          "prompt": "冷蔵庫に卵____牛乳とかが入っています。",
+          "choices": [
+            "とかとか",
+            "みたい",
+            "られる",
+            "てしまう"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N4-g3",
+          "prompt": "友達が引っ越しを手伝ってくれた。\n→ điền dạng: ____",
+          "choices": [
+            "てくれる",
+            "あげる",
+            "ていく",
+            "ことができる"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N4-v6",
+          "prompt": "「以下」（いか） means:",
+          "choices": [
+            "never",
+            "circumstances",
+            "less than",
+            "really"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N4-v7",
+          "prompt": "「あかちゃん」（あかちゃん） means:",
+          "choices": [
+            "infant",
+            "a smell",
+            "utilization",
+            "a dance"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mock-jp-N4-listen",
+      "title": "JP N4 listening mini-mock (TTS)",
+      "track": "jp",
+      "band": "N4",
+      "mode": "listening",
+      "minutes": 6,
+      "disclaimer": "Unofficial practice — browser TTS, not official exam audio.",
+      "questions": [
+        {
+          "id": "jp-N4-l1",
+          "speak": "約束を忘れないでください。",
+          "prompt": "Họ nhắc gì?",
+          "choices": [
+            "Đừng quên hẹn",
+            "Đến sớm",
+            "Mang tiền",
+            "Gọi điện"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N4-l2",
+          "speak": "この料理は辛すぎます。",
+          "prompt": "Món ăn như thế nào?",
+          "choices": [
+            "Ngọt quá",
+            "Cay quá",
+            "Mặn quá",
+            "Đắng"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N4-l3",
+          "speak": "電車が遅れています。",
+          "prompt": "Tình trạng gì?",
+          "choices": [
+            "Tàu đến sớm",
+            "Tàu trễ",
+            "Tàu hủy",
+            "Tàu đầy"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N4-l4",
+          "speak": "宿題を出してください。",
+          "prompt": "Yêu cầu gì?",
+          "choices": [
+            "Nộp bài tập",
+            "Mở sách",
+            "Ngồi xuống",
+            "Im lặng"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N4-l5",
+          "speak": "風邪をひいたので休みます。",
+          "prompt": "Lý do nghỉ?",
+          "choices": [
+            "Bận việc",
+            "Cảm lạnh",
+            "Du lịch",
+            "Thi"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N4-l6",
+          "speak": "図書館で本を借りました。",
+          "prompt": "Họ đã làm gì?",
+          "choices": [
+            "Mua sách",
+            "Mượn sách",
+            "Trả sách",
+            "Đọc báo"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "mock-jp-N3-vocab",
+      "title": "JP N3 vocab mock",
+      "track": "jp",
+      "band": "N3",
+      "mode": "vocab",
+      "minutes": 8,
+      "disclaimer": "Unofficial practice — not an official exam section.",
+      "questions": [
+        {
+          "id": "jp-N3-v1",
+          "prompt": "「よい」（よい） means:",
+          "choices": [
+            "to give up",
+            "good",
+            "large",
+            "intolerable"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N3-v2",
+          "prompt": "「大家」（おおや） means:",
+          "choices": [
+            "talent",
+            "landlord",
+            "time",
+            "coincidence"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N3-v3",
+          "prompt": "「失う」（うしなう） means:",
+          "choices": [
+            "method",
+            "departure of a vehicle",
+            "proceeding to the capital (Tokyo)",
+            "to lose"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "jp-N3-v4",
+          "prompt": "「税金」（ぜいきん） means:",
+          "choices": [
+            "captain",
+            "record",
+            "tax",
+            "to invite"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N3-v5",
+          "prompt": "「あんまり」（あんまり） means:",
+          "choices": [
+            "not very",
+            "frost",
+            "processing",
+            "recommendation"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N3-g1",
+          "prompt": "昨日は、立っていられない____疲れていた。",
+          "choices": [
+            "ほどはない",
+            "わけだ",
+            "ほど",
+            "ものだ"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N3-g2",
+          "prompt": "エアコンをつけた____寝てしまい、風邪をひいた。",
+          "choices": [
+            "まま",
+            "に従って",
+            "まるでようだ",
+            "ものではない"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N3-g3",
+          "prompt": "この店は料理がおいしい____、値段も安い。",
+          "choices": [
+            "ついでに",
+            "というのは",
+            "だけでなく",
+            "にしても"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N3-v6",
+          "prompt": "「意志」（いし） means:",
+          "choices": [
+            "to overtake",
+            "occasional",
+            "classic(s)",
+            "will"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "jp-N3-v7",
+          "prompt": "「母親」（ははおや） means:",
+          "choices": [
+            "event",
+            "sequel",
+            "mother",
+            "pride"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "mock-jp-N3-listen",
+      "title": "JP N3 listening mini-mock (TTS)",
+      "track": "jp",
+      "band": "N3",
+      "mode": "listening",
+      "minutes": 6,
+      "disclaimer": "Unofficial practice — browser TTS, not official exam audio.",
+      "questions": [
+        {
+          "id": "jp-N3-l1",
+          "speak": "計画を延期することにしました。",
+          "prompt": "Quyết định gì?",
+          "choices": [
+            "Hủy kế hoạch",
+            "Hoãn kế hoạch",
+            "Đẩy nhanh",
+            "Giữ nguyên"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N3-l2",
+          "speak": "彼の話は信じがたいです。",
+          "prompt": "Họ nghĩ sao về câu chuyện?",
+          "choices": [
+            "Dễ tin",
+            "Khó tin",
+            "Buồn cười",
+            "Thú vị"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N3-l3",
+          "speak": "説明書を読んだうえで組み立ててください。",
+          "prompt": "Làm gì trước?",
+          "choices": [
+            "Đọc hướng dẫn",
+            "Gọi hỗ trợ",
+            "Tháo máy",
+            "Bỏ qua"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N3-l4",
+          "speak": "意見を交換しましょう。",
+          "prompt": "Đề xuất gì?",
+          "choices": [
+            "Im lặng",
+            "Trao đổi ý kiến",
+            "Bỏ phiếu",
+            "Kết thúc"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N3-l5",
+          "speak": "交通が混雑しています。",
+          "prompt": "Tình hình giao thông?",
+          "choices": [
+            "Thông thoáng",
+            "Đông đúc",
+            "Tai nạn",
+            "Cấm đường"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N3-l6",
+          "speak": "経験を積むことが大切です。",
+          "prompt": "Điều quan trọng?",
+          "choices": [
+            "Tiền bạc",
+            "Tích lũy kinh nghiệm",
+            "May mắn",
+            "Ngoại hình"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "mock-jp-N2-vocab",
+      "title": "JP N2 vocab mock",
+      "track": "jp",
+      "band": "N2",
+      "mode": "vocab",
+      "minutes": 8,
+      "disclaimer": "Unofficial practice — not an official exam section.",
+      "questions": [
+        {
+          "id": "jp-N2-v1",
+          "prompt": "「くどい」（くどい） means:",
+          "choices": [
+            "to branch off",
+            "science",
+            "basin (e.g. between mountains)",
+            "verbose"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "jp-N2-v2",
+          "prompt": "「鉢」（はち） means:",
+          "choices": [
+            "place name",
+            "concrete",
+            "a bowl",
+            "to swear"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N2-v3",
+          "prompt": "「省略」（しょうりゃく） means:",
+          "choices": [
+            "immediately following",
+            "evening paper",
+            "gloss",
+            "omission"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "jp-N2-v4",
+          "prompt": "「往復」（おうふく） means:",
+          "choices": [
+            "shop",
+            "side dish",
+            "(colloquial) round trip",
+            "to get"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N2-v5",
+          "prompt": "「瀬戸物」（せともの） means:",
+          "choices": [
+            "horizon",
+            "to argue",
+            "earthenware",
+            "vitamin"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N2-g1",
+          "prompt": "冗談____、そろそろ本題に入りましょう。",
+          "choices": [
+            "からこそ",
+            "をめぐって",
+            "あげく",
+            "はさておき"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "jp-N2-g2",
+          "prompt": "台風の影響で、今夜から大雨にな____おそれがあります。",
+          "choices": [
+            "ようがない",
+            "もかまわず",
+            "をこめて",
+            "おそれがある"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "jp-N2-g3",
+          "prompt": "駅前の商店街は、客が減る____。",
+          "choices": [
+            "ばかりだ",
+            "からこそ",
+            "かと思ったら",
+            "ずにはいられない"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N2-v6",
+          "prompt": "「経度」（けいど） means:",
+          "choices": [
+            "after this",
+            "to hold (position)",
+            "longitude",
+            "to be amazed"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N2-v7",
+          "prompt": "「満員」（まんいん） means:",
+          "choices": [
+            "to collect",
+            "full house",
+            "seminar",
+            "long ago"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "mock-jp-N2-listen",
+      "title": "JP N2 listening mini-mock (TTS)",
+      "track": "jp",
+      "band": "N2",
+      "mode": "listening",
+      "minutes": 6,
+      "disclaimer": "Unofficial practice — browser TTS, not official exam audio.",
+      "questions": [
+        {
+          "id": "jp-N2-l1",
+          "speak": "結果に応じて対応を変えます。",
+          "prompt": "Họ sẽ làm gì?",
+          "choices": [
+            "Bỏ qua kết quả",
+            "Đổi cách xử lý theo kết quả",
+            "Giữ nguyên",
+            "Từ chối"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N2-l2",
+          "speak": "議論が過熱してきました。",
+          "prompt": "Cuộc thảo luận?",
+          "choices": [
+            "Lạnh nhạt",
+            "Nóng lên",
+            "Kết thúc",
+            "Bắt đầu"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N2-l3",
+          "speak": "努力したあげく、合格できませんでした。",
+          "prompt": "Kết cục?",
+          "choices": [
+            "Đậu",
+            "Không đậu dù đã cố",
+            "Bỏ cuộc sớm",
+            "Thi lại ngay"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N2-l4",
+          "speak": "方針を改正する必要があります。",
+          "prompt": "Cần gì?",
+          "choices": [
+            "Sửa đổi chính sách",
+            "Giữ nguyên",
+            "Công bố",
+            "Bỏ phiếu"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N2-l5",
+          "speak": "彼は医者であるのみならず、作家でもあります。",
+          "prompt": "Anh ấy là gì?",
+          "choices": [
+            "Chỉ là bác sĩ",
+            "Bác sĩ và cả nhà văn",
+            "Chỉ nhà văn",
+            "Sinh viên"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N2-l6",
+          "speak": "この問題は複雑で一筋縄ではいきません。",
+          "prompt": "Vấn đề thế nào?",
+          "choices": [
+            "Đơn giản",
+            "Phức tạp, khó xử lý nhanh",
+            "Đã giải xong",
+            "Không quan trọng"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "mock-jp-N1-vocab",
+      "title": "JP N1 vocab mock",
+      "track": "jp",
+      "band": "N1",
+      "mode": "vocab",
+      "minutes": 8,
+      "disclaimer": "Unofficial practice — not an official exam section.",
+      "questions": [
+        {
+          "id": "jp-N1-v1",
+          "prompt": "「付き」（つき） means:",
+          "choices": [
+            "misunderstanding",
+            "to force",
+            "attached to",
+            "remuneration"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N1-v2",
+          "prompt": "「時折」（ときおり） means:",
+          "choices": [
+            "sometimes",
+            "signature",
+            "breeding",
+            "regular"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N1-v3",
+          "prompt": "「色彩」（しきさい） means:",
+          "choices": [
+            "jailer",
+            "colour",
+            "to enquire",
+            "solidly built"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N1-v4",
+          "prompt": "「粉末」（ふんまつ） means:",
+          "choices": [
+            "indispensable",
+            "lady",
+            "fine powder",
+            "noted product"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N1-v5",
+          "prompt": "「資金」（しきん） means:",
+          "choices": [
+            "hint",
+            "to yearn for",
+            "heaven and earth",
+            "funds"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "jp-N1-g1",
+          "prompt": "決勝戦で一点差で負けたときの悔しさと____ったらなかった。",
+          "choices": [
+            "といったらない",
+            "てからというもの",
+            "にもまして",
+            "ずとも"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N1-g2",
+          "prompt": "プロの演奏と私の演奏とでは、比べる____。",
+          "choices": [
+            "べくもない",
+            "ないものでもない",
+            "ならいざしらず",
+            "んがため"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N1-g3",
+          "prompt": "お客様____商売ですから、どんな小さな声にも耳を傾けなければならない。",
+          "choices": [
+            "を余儀なくされる",
+            "をものともせず",
+            "あっての",
+            "を限りに"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "jp-N1-v6",
+          "prompt": "「中立」（ちゅうりつ） means:",
+          "choices": [
+            "neutrality",
+            "check",
+            "government office",
+            "Ah!"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "jp-N1-v7",
+          "prompt": "「懐く」（なつく） means:",
+          "choices": [
+            "pottery",
+            "search (esp. for someone or something missing)",
+            "to become emotionally attached",
+            "to explain"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "mock-jp-N1-listen",
+      "title": "JP N1 listening mini-mock (TTS)",
+      "track": "jp",
+      "band": "N1",
+      "mode": "listening",
+      "minutes": 6,
+      "disclaimer": "Unofficial practice — browser TTS, not official exam audio.",
+      "questions": [
+        {
+          "id": "jp-N1-l1",
+          "speak": "いかなる困難であれ、諦めません。",
+          "prompt": "Thái độ?",
+          "choices": [
+            "Bỏ cuộc khi khó",
+            "Không bỏ cuộc dù khó",
+            "Chờ may mắn",
+            "Nhờ người khác"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N1-l2",
+          "speak": "成功は努力にほかなりません。",
+          "prompt": "Ý chính?",
+          "choices": [
+            "May mắn thôi",
+            "Chính là nhờ nỗ lực",
+            "Không liên quan",
+            "Do người khác"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N1-l3",
+          "speak": "議論が膠着状態に陥りました。",
+          "prompt": "Thảo luận?",
+          "choices": [
+            "Suôn sẻ",
+            "Bế tắc",
+            "Vui vẻ",
+            "Kết thúc sớm"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N1-l4",
+          "speak": "彼の提案は斬新で示唆に富んでいます。",
+          "prompt": "Đề xuất?",
+          "choices": [
+            "Cũ rích",
+            "Mới mẻ, nhiều gợi ý",
+            "Không rõ",
+            "Phản đối"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N1-l5",
+          "speak": "問題を助長するような発言は避けてください。",
+          "prompt": "Lời khuyên?",
+          "choices": [
+            "Nói nhiều hơn",
+            "Tránh lời làm trầm trọng vấn đề",
+            "Im lặng tuyệt đối",
+            "Đổi chủ đề vui"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "jp-N1-l6",
+          "speak": "この解釈は穿ちすぎかもしれません。",
+          "prompt": "Họ nghi ngờ gì?",
+          "choices": [
+            "Diễn giải quá sâu/gượng",
+            "Thiếu dữ liệu",
+            "Sai chính tả",
+            "Quá ngắn"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mock-en-A1-vocab",
+      "title": "EN A1 vocab mock",
+      "track": "en",
+      "band": "A1",
+      "mode": "vocab",
+      "minutes": 8,
+      "disclaimer": "Unofficial practice — not an official exam section.",
+      "questions": [
+        {
+          "id": "en-A1-v1",
+          "prompt": "Choose the A1 word for: động từ",
+          "choices": [
+            "each other",
+            "true",
+            "do",
+            "show"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "en-A1-v2",
+          "prompt": "Choose the A1 word for: danh từ",
+          "choices": [
+            "dog",
+            "run",
+            "drive",
+            "field"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "en-A1-v3",
+          "prompt": "Choose the A1 word for: danh từ",
+          "choices": [
+            "fever",
+            "culture",
+            "with",
+            "birthday"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A1-v4",
+          "prompt": "Choose the A1 word for: danh từ",
+          "choices": [
+            "math/maths",
+            "type",
+            "hungry",
+            "music"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-A1-v5",
+          "prompt": "Choose the A1 word for: động từ",
+          "choices": [
+            "paper",
+            "watch",
+            "prince",
+            "she"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A1-g1",
+          "prompt": "Is this ___ book (you)?",
+          "choices": [
+            "you",
+            "your",
+            "yours",
+            "you're"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A1-g2",
+          "prompt": "It's half ___ six.",
+          "choices": [
+            "to",
+            "past",
+            "at",
+            "of"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A1-g3",
+          "prompt": "I ___ like coffee.",
+          "choices": [
+            "don't",
+            "doesn't",
+            "not",
+            "no"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-A1-v6",
+          "prompt": "Choose the A1 word for: danh từ",
+          "choices": [
+            "bottom",
+            "living room",
+            "hobby",
+            "excuse"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "en-A1-v7",
+          "prompt": "Choose the A1 word for: danh từ",
+          "choices": [
+            "jet",
+            "Mrs./Mrs",
+            "his",
+            "hotel"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mock-en-A1-listen",
+      "title": "EN A1 listening mini-mock (TTS)",
+      "track": "en",
+      "band": "A1",
+      "mode": "listening",
+      "minutes": 6,
+      "disclaimer": "Unofficial practice — browser TTS, not official exam audio.",
+      "questions": [
+        {
+          "id": "en-A1-l1",
+          "speak": "I am a student.",
+          "prompt": "Who is speaking?",
+          "choices": [
+            "A teacher",
+            "A student",
+            "A doctor",
+            "A driver"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A1-l2",
+          "speak": "This is an apple.",
+          "prompt": "What is it?",
+          "choices": [
+            "An orange",
+            "An apple",
+            "A book",
+            "A pen"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A1-l3",
+          "speak": "She goes to school every day.",
+          "prompt": "Where does she go?",
+          "choices": [
+            "Work",
+            "School",
+            "Home",
+            "Park"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A1-l4",
+          "speak": "Can you help me?",
+          "prompt": "What do they want?",
+          "choices": [
+            "Food",
+            "Help",
+            "Money",
+            "Time"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A1-l5",
+          "speak": "I like tea.",
+          "prompt": "What do they like?",
+          "choices": [
+            "Coffee",
+            "Tea",
+            "Water",
+            "Juice"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A1-l6",
+          "speak": "The book is on the table.",
+          "prompt": "Where is the book?",
+          "choices": [
+            "Under the chair",
+            "On the table",
+            "In the bag",
+            "Outside"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "mock-en-A2-vocab",
+      "title": "EN A2 vocab mock",
+      "track": "en",
+      "band": "A2",
+      "mode": "vocab",
+      "minutes": 8,
+      "disclaimer": "Unofficial practice — not an official exam section.",
+      "questions": [
+        {
+          "id": "en-A2-v1",
+          "prompt": "Choose the A2 word for: danh từ",
+          "choices": [
+            "journey",
+            "orphan",
+            "hand",
+            "pressure"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-A2-v2",
+          "prompt": "Choose the A2 word for: đại từ",
+          "choices": [
+            "bookcase",
+            "shop assistant",
+            "sunlight",
+            "one"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "en-A2-v3",
+          "prompt": "Choose the A2 word for: danh từ",
+          "choices": [
+            "entrance",
+            "end",
+            "throw",
+            "skate"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "en-A2-v4",
+          "prompt": "Choose the A2 word for: giới từ",
+          "choices": [
+            "during",
+            "beyond",
+            "part",
+            "worse"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-A2-v5",
+          "prompt": "Choose the A2 word for: hạn định từ",
+          "choices": [
+            "badly",
+            "dust",
+            "function",
+            "next"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "en-A2-g1",
+          "prompt": "See you ___ Monday.",
+          "choices": [
+            "in",
+            "on",
+            "at",
+            "to"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A2-g2",
+          "prompt": "I went to the shop ___ milk.",
+          "choices": [
+            "buy",
+            "to buy",
+            "buying",
+            "bought"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A2-g3",
+          "prompt": "She ___ coffee now.",
+          "choices": [
+            "drink",
+            "drinks",
+            "is drinking",
+            "drank"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "en-A2-v6",
+          "prompt": "Choose the A2 word for: động từ",
+          "choices": [
+            "pollute",
+            "expect",
+            "long",
+            "fall"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-A2-v7",
+          "prompt": "Choose the A2 word for: tính từ",
+          "choices": [
+            "national",
+            "make-up",
+            "pea",
+            "elderly"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mock-en-A2-listen",
+      "title": "EN A2 listening mini-mock (TTS)",
+      "track": "en",
+      "band": "A2",
+      "mode": "listening",
+      "minutes": 6,
+      "disclaimer": "Unofficial practice — browser TTS, not official exam audio.",
+      "questions": [
+        {
+          "id": "en-A2-l1",
+          "speak": "I was tired yesterday.",
+          "prompt": "When were they tired?",
+          "choices": [
+            "Today",
+            "Yesterday",
+            "Tomorrow",
+            "Now"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A2-l2",
+          "speak": "We played football yesterday.",
+          "prompt": "What did they do?",
+          "choices": [
+            "Studied",
+            "Played football",
+            "Cooked",
+            "Slept"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A2-l3",
+          "speak": "I am going to visit my aunt tomorrow.",
+          "prompt": "Plan?",
+          "choices": [
+            "Stay home",
+            "Visit aunt",
+            "Go to work",
+            "Travel abroad"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A2-l4",
+          "speak": "This bag is bigger than that one.",
+          "prompt": "Comparison?",
+          "choices": [
+            "Same size",
+            "This bag is bigger",
+            "That bag is bigger",
+            "No bags"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A2-l5",
+          "speak": "You should sleep more.",
+          "prompt": "Advice?",
+          "choices": [
+            "Eat more",
+            "Sleep more",
+            "Work more",
+            "Talk less"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-A2-l6",
+          "speak": "Have you ever been to Japan?",
+          "prompt": "Question about?",
+          "choices": [
+            "Food",
+            "Travel experience",
+            "Money",
+            "Weather"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "mock-en-B1-vocab",
+      "title": "EN B1 vocab mock",
+      "track": "en",
+      "band": "B1",
+      "mode": "vocab",
+      "minutes": 8,
+      "disclaimer": "Unofficial practice — not an official exam section.",
+      "questions": [
+        {
+          "id": "en-B1-v1",
+          "prompt": "Choose the B1 word for: động từ",
+          "choices": [
+            "motivate",
+            "obvious",
+            "protection",
+            "misunderstanding"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-B1-v2",
+          "prompt": "Choose the B1 word for: danh từ",
+          "choices": [
+            "nod",
+            "upload",
+            "plain",
+            "advance"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-B1-v3",
+          "prompt": "Choose the B1 word for: danh từ",
+          "choices": [
+            "previous",
+            "frequency",
+            "witness",
+            "anyhow"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B1-v4",
+          "prompt": "Choose the B1 word for: đại từ",
+          "choices": [
+            "few",
+            "slow",
+            "part-time",
+            "interviewee"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-B1-v5",
+          "prompt": "Choose the B1 word for: động từ",
+          "choices": [
+            "environmental",
+            "decrease",
+            "fuel",
+            "curly"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B1-g1",
+          "prompt": "I decided ___ early.",
+          "choices": [
+            "leave",
+            "to leave",
+            "leaving",
+            "left"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B1-g2",
+          "prompt": "There isn't ___ time.",
+          "choices": [
+            "enough",
+            "too",
+            "too many",
+            "enough of"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-B1-g3",
+          "prompt": "If she studied more, she ___ pass.",
+          "choices": [
+            "will",
+            "would",
+            "would have",
+            "can"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B1-v6",
+          "prompt": "Choose the B1 word for: danh từ",
+          "choices": [
+            "steam",
+            "vice",
+            "monument",
+            "first-floor"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "en-B1-v7",
+          "prompt": "Choose the B1 word for: danh từ",
+          "choices": [
+            "next door",
+            "extent",
+            "ivory",
+            "ingredient"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "mock-en-B1-listen",
+      "title": "EN B1 listening mini-mock (TTS)",
+      "track": "en",
+      "band": "B1",
+      "mode": "listening",
+      "minutes": 6,
+      "disclaimer": "Unofficial practice — browser TTS, not official exam audio.",
+      "questions": [
+        {
+          "id": "en-B1-l1",
+          "speak": "I have been studying for two hours.",
+          "prompt": "Duration?",
+          "choices": [
+            "Just started",
+            "Two hours so far",
+            "Finished yesterday",
+            "Not studying"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B1-l2",
+          "speak": "If I were rich, I would travel.",
+          "prompt": "Condition type?",
+          "choices": [
+            "Real present",
+            "Unreal present",
+            "Past fact",
+            "Order"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B1-l3",
+          "speak": "English is spoken around the world.",
+          "prompt": "Voice?",
+          "choices": [
+            "Active only",
+            "Passive",
+            "Future",
+            "Question"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B1-l4",
+          "speak": "The man who lives next door is a doctor.",
+          "prompt": "Relative clause refers to?",
+          "choices": [
+            "The door",
+            "The man",
+            "A doctor only",
+            "Next week"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B1-l5",
+          "speak": "I wish I had more time.",
+          "prompt": "Feeling?",
+          "choices": [
+            "Happy with time",
+            "Want more time",
+            "No wishes",
+            "Busy tomorrow"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B1-l6",
+          "speak": "You're tired, aren't you?",
+          "prompt": "Tag question expects?",
+          "choices": [
+            "Confirmation",
+            "New topic",
+            "Apology",
+            "Order"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mock-en-B2-vocab",
+      "title": "EN B2 vocab mock",
+      "track": "en",
+      "band": "B2",
+      "mode": "vocab",
+      "minutes": 8,
+      "disclaimer": "Unofficial practice — not an official exam section.",
+      "questions": [
+        {
+          "id": "en-B2-v1",
+          "prompt": "Choose the B2 word for: tính từ",
+          "choices": [
+            "gaudy",
+            "indulge",
+            "reluctant",
+            "misconception"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-B2-v2",
+          "prompt": "Choose the B2 word for: trạng từ",
+          "choices": [
+            "bustling",
+            "crossly",
+            "pint",
+            "scent"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B2-v3",
+          "prompt": "Choose the B2 word for: danh từ",
+          "choices": [
+            "leak",
+            "pH",
+            "outing",
+            "preferably"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B2-v4",
+          "prompt": "Choose the B2 word for: động từ",
+          "choices": [
+            "tanned",
+            "surrender",
+            "polo",
+            "digest"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B2-v5",
+          "prompt": "Choose the B2 word for: tính từ",
+          "choices": [
+            "state",
+            "uncharacteristic",
+            "upright",
+            "neither"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-B2-g1",
+          "prompt": "___ the rain, we went hiking.",
+          "choices": [
+            "Despite",
+            "Although",
+            "Because",
+            "However"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-B2-g2",
+          "prompt": "___ the news, she smiled.",
+          "choices": [
+            "Hearing",
+            "Heard",
+            "To hear",
+            "Hears"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-B2-g3",
+          "prompt": "The man ___ by the door is my uncle.",
+          "choices": [
+            "standing",
+            "stood",
+            "stands",
+            "to stand"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-B2-v6",
+          "prompt": "Choose the B2 word for: danh từ",
+          "choices": [
+            "citywide",
+            "privately",
+            "paperwork",
+            "cornet"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "en-B2-v7",
+          "prompt": "Choose the B2 word for: động từ",
+          "choices": [
+            "crack",
+            "stress",
+            "decoration",
+            "alert"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "mock-en-B2-listen",
+      "title": "EN B2 listening mini-mock (TTS)",
+      "track": "en",
+      "band": "B2",
+      "mode": "listening",
+      "minutes": 6,
+      "disclaimer": "Unofficial practice — browser TTS, not official exam audio.",
+      "questions": [
+        {
+          "id": "en-B2-l1",
+          "speak": "The report was written by the team yesterday.",
+          "prompt": "Who wrote it?",
+          "choices": [
+            "One person",
+            "The team",
+            "Nobody",
+            "A machine"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B2-l2",
+          "speak": "Not only did he arrive late, but he forgot the files.",
+          "prompt": "Problems?",
+          "choices": [
+            "Only late",
+            "Late and forgot files",
+            "Only forgot",
+            "On time"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B2-l3",
+          "speak": "Had I known, I would have helped.",
+          "prompt": "Meaning?",
+          "choices": [
+            "Will help now",
+            "Would have helped if known",
+            "Did help",
+            "Refused"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B2-l4",
+          "speak": "Her argument was convincing and hard to challenge.",
+          "prompt": "Argument quality?",
+          "choices": [
+            "Weak",
+            "Convincing",
+            "Funny",
+            "Short"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B2-l5",
+          "speak": "The author implies that change is inevitable.",
+          "prompt": "Implication?",
+          "choices": [
+            "Optional",
+            "Inevitable",
+            "Impossible",
+            "Delayed"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-B2-l6",
+          "speak": "Despite scarce resources, the project continued.",
+          "prompt": "Outcome?",
+          "choices": [
+            "Stopped",
+            "Continued",
+            "Never started",
+            "Succeeded easily"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "mock-en-C1-vocab",
+      "title": "EN C1 vocab mock",
+      "track": "en",
+      "band": "C1",
+      "mode": "vocab",
+      "minutes": 8,
+      "disclaimer": "Unofficial practice — not an official exam section.",
+      "questions": [
+        {
+          "id": "en-C1-v1",
+          "prompt": "Choose the C1 word for: động từ",
+          "choices": [
+            "lethargically",
+            "retrace",
+            "tread",
+            "stray"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C1-v2",
+          "prompt": "Choose the C1 word for: trạng từ",
+          "choices": [
+            "irately",
+            "otter",
+            "brainwash",
+            "chill"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-C1-v3",
+          "prompt": "Choose the C1 word for: danh từ",
+          "choices": [
+            "harassment",
+            "synthetic",
+            "demographic",
+            "itinerary"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "en-C1-v4",
+          "prompt": "Choose the C1 word for: tính từ",
+          "choices": [
+            "sustainable",
+            "altruism",
+            "magnetic",
+            "degradation"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "en-C1-v5",
+          "prompt": "Choose the C1 word for: tính từ",
+          "choices": [
+            "impoverished",
+            "buffer",
+            "inexcusably",
+            "occupational"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "en-C1-g1",
+          "prompt": "___ the proposal, the committee approved it.",
+          "choices": [
+            "Impressed by",
+            "Impressing",
+            "To impress",
+            "Impressed"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-C1-g2",
+          "prompt": "The ___ you practice, the better you get.",
+          "choices": [
+            "more",
+            "most",
+            "much",
+            "many"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-C1-g3",
+          "prompt": "The issue ___ which we disagreed remains open.",
+          "choices": [
+            "on",
+            "about",
+            "for",
+            "to"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-C1-v6",
+          "prompt": "Choose the C1 word for: động từ",
+          "choices": [
+            "physicality",
+            "invoice",
+            "sentimental",
+            "exhilarate"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "en-C1-v7",
+          "prompt": "Choose the C1 word for: tính từ",
+          "choices": [
+            "exotic",
+            "mechanism",
+            "smug",
+            "placid"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mock-en-C1-listen",
+      "title": "EN C1 listening mini-mock (TTS)",
+      "track": "en",
+      "band": "C1",
+      "mode": "listening",
+      "minutes": 6,
+      "disclaimer": "Unofficial practice — browser TTS, not official exam audio.",
+      "questions": [
+        {
+          "id": "en-C1-l1",
+          "speak": "The findings undermine previous assumptions.",
+          "prompt": "Effect on assumptions?",
+          "choices": [
+            "Support",
+            "Undermine",
+            "Ignore",
+            "Repeat"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C1-l2",
+          "speak": "A nuanced analysis considers multiple factors.",
+          "prompt": "Analysis type?",
+          "choices": [
+            "Simple",
+            "Nuanced",
+            "Random",
+            "Brief"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C1-l3",
+          "speak": "Her critique was trenchant but fair.",
+          "prompt": "Critique style?",
+          "choices": [
+            "Soft",
+            "Sharp but fair",
+            "Unfair",
+            "Silent"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C1-l4",
+          "speak": "Scarce though resources were, work went on.",
+          "prompt": "Tone?",
+          "choices": [
+            "Casual chat",
+            "Formal concessive",
+            "Joke",
+            "Question"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C1-l5",
+          "speak": "Customers are requested to wait outside.",
+          "prompt": "Register?",
+          "choices": [
+            "Slang",
+            "Formal request",
+            "Angry shout",
+            "Song"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C1-l6",
+          "speak": "She said she would call later.",
+          "prompt": "Reported speech?",
+          "choices": [
+            "Will call",
+            "Would call",
+            "Called already",
+            "Never call"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "mock-en-C2-vocab",
+      "title": "EN C2 vocab mock",
+      "track": "en",
+      "band": "C2",
+      "mode": "vocab",
+      "minutes": 8,
+      "disclaimer": "Unofficial practice — not an official exam section.",
+      "questions": [
+        {
+          "id": "en-C2-v1",
+          "prompt": "Choose the C2 word for: tính từ",
+          "choices": [
+            "additive",
+            "interrogatively",
+            "synthesis",
+            "artifact"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-C2-v2",
+          "prompt": "Choose the C2 word for: danh từ",
+          "choices": [
+            "sandwiched",
+            "contractual",
+            "mediation",
+            "confection"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "en-C2-v3",
+          "prompt": "Choose the C2 word for: động từ",
+          "choices": [
+            "commission",
+            "crystallize/crystallise",
+            "consignment",
+            "outmoded"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C2-v4",
+          "prompt": "Choose the C2 word for: trạng từ",
+          "choices": [
+            "gravitational",
+            "acrobatically",
+            "angularity",
+            "methodology"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C2-v5",
+          "prompt": "Choose the C2 word for: danh từ",
+          "choices": [
+            "spontaneity",
+            "banishment",
+            "cascade",
+            "euphoria"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-C2-g1",
+          "prompt": "___ that negotiations failed.",
+          "choices": [
+            "Suffice it to say",
+            "Suffice saying",
+            "It suffices say",
+            "Sufficient it say"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-C2-g2",
+          "prompt": "A ___ reader spotted the inconsistency.",
+          "choices": [
+            "perspicacious",
+            "persuasive",
+            "pervasive",
+            "perfunctory"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-C2-g3",
+          "prompt": "A system ___ users share keys was proposed.",
+          "choices": [
+            "whereby",
+            "wherein",
+            "whereas",
+            "whereof"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-C2-v6",
+          "prompt": "Choose the C2 word for: danh từ",
+          "choices": [
+            "virtuoso",
+            "austere",
+            "nonchalantly",
+            "laud "
+          ],
+          "answer": 0
+        },
+        {
+          "id": "en-C2-v7",
+          "prompt": "Choose the C2 word for: động từ",
+          "choices": [
+            "posture",
+            "bereftly",
+            "cognitive",
+            "denunciation"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mock-en-C2-listen",
+      "title": "EN C2 listening mini-mock (TTS)",
+      "track": "en",
+      "band": "C2",
+      "mode": "listening",
+      "minutes": 6,
+      "disclaimer": "Unofficial practice — browser TTS, not official exam audio.",
+      "questions": [
+        {
+          "id": "en-C2-l1",
+          "speak": "The speech was full of empty rhetoric.",
+          "prompt": "Speech content?",
+          "choices": [
+            "Solid facts",
+            "Empty rhetoric",
+            "Silence",
+            "Poetry only"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C2-l2",
+          "speak": "Much as it may seem paradoxical, both claims can hold.",
+          "prompt": "Stance?",
+          "choices": [
+            "Reject both",
+            "Accept paradox possibility",
+            "Change topic",
+            "Joke"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C2-l3",
+          "speak": "A perspicacious observer noticed the subtle shift.",
+          "prompt": "Observer quality?",
+          "choices": [
+            "Careless",
+            "Keen",
+            "Absent",
+            "Noisy"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C2-l4",
+          "speak": "The committee's decision was irrevocable.",
+          "prompt": "Decision?",
+          "choices": [
+            "Temporary",
+            "Cannot be reversed",
+            "Funny",
+            "Secret only"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C2-l5",
+          "speak": "His remarks were somewhat opaque to newcomers.",
+          "prompt": "Remarks?",
+          "choices": [
+            "Crystal clear",
+            "Hard to understand",
+            "Too short",
+            "Loud"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "en-C2-l6",
+          "speak": "They tried to circumvent the regulation.",
+          "prompt": "Action?",
+          "choices": [
+            "Follow strictly",
+            "Find a way around",
+            "Write a new law",
+            "Celebrate"
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

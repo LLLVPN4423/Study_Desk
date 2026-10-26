@@ -23,9 +23,11 @@ const DeskStudio = dynamic(
     ),
   },
 );
+import { BgColorPicker } from "@/components/BgColorPicker";
+import { WallpaperPicker } from "@/components/WallpaperPicker";
 import {
   FOCUS_PRESETS_MIN,
-  applyTheme,
+  applyBgAppearance,
   canAddFolder,
   canUpload,
   createNoteFile,
@@ -33,9 +35,11 @@ import {
   deleteFile,
   deleteFolder,
   formatBytes,
+  hydrateBgAppearance,
   hydrateDeskBlobs,
   loadDesk,
   patchFile,
+  saveCustomWallpaper,
   saveDesk,
   usedStorageBytes,
   type DeskFile,
@@ -54,7 +58,8 @@ import {
 } from "@/lib/desk-formats";
 import { FREE_LIMITS } from "@/lib/freemium";
 import { useI18n, type Lang } from "@/lib/i18n";
-import type { ThemeId } from "@/lib/storage-keys";
+import type { WallpaperId } from "@/lib/storage-keys";
+import { THEME_SOLID } from "@/lib/storage-keys";
 
 function greeting(lang: Lang) {
   const h = new Date().getHours();
@@ -109,7 +114,7 @@ function DeskContent({ userName }: { userName: string }) {
     setDesk(state);
     deskRef.current = state;
     setSeconds(state.focusSeconds);
-    applyTheme(state.theme);
+    void hydrateBgAppearance(state);
     const openId = search.get("open") || search.get("file");
     if (openId && state.files.some((f) => f.id === openId)) {
       setActiveFileId(openId);
@@ -499,10 +504,27 @@ function DeskContent({ userName }: { userName: string }) {
     if (folderFilter === id) setFolderFilter("all");
   }
 
-  function setTheme(theme: ThemeId) {
+  function setBgAppearance(
+    patch: Partial<Pick<DeskState, "bgMode" | "bgSolid" | "bgGradient" | "wallpaper" | "theme">>,
+  ) {
     if (!desk) return;
-    applyTheme(theme);
-    update({ ...desk, theme });
+    const next: DeskState = { ...desk, ...patch };
+    if (patch.bgSolid && !patch.theme) {
+      const h = patch.bgSolid.toLowerCase();
+      next.theme =
+        h === THEME_SOLID.moss ? "moss" : h === THEME_SOLID.night ? "night" : "paper";
+    }
+    applyBgAppearance(next);
+    update(next);
+  }
+
+  async function setWallpaper(id: WallpaperId) {
+    if (!desk) return;
+    const next = { ...desk, wallpaper: id };
+    // Apply immediately so UI updates even before IDB hydrate finishes
+    applyBgAppearance(next);
+    await hydrateBgAppearance(next);
+    update(next);
   }
 
   if (!desk) {
@@ -829,23 +851,30 @@ function DeskContent({ userName }: { userName: string }) {
               <h2>Desk theme</h2>
             </div>
             <div className="themes">
-              {(
-                [
-                  ["paper", "Paper", ""],
-                  ["moss", "Moss", "moss"],
-                  ["night", "Midnight-light", "night"],
-                ] as const
-              ).map(([id, label, cls]) => (
-                <button
-                  key={id}
-                  type="button"
-                  className={`theme ${cls} ${desk.theme === id ? "active" : ""}`}
-                  onClick={() => setTheme(id)}
-                >
-                  <i />
-                  {label}
-                </button>
-              ))}
+              <div className="desk-theme-block">
+                <p>Màu nền</p>
+                <BgColorPicker
+                  mode={desk.bgMode}
+                  solid={desk.bgSolid}
+                  gradient={desk.bgGradient}
+                  onChange={({ mode, solid, gradient }) =>
+                    setBgAppearance({ bgMode: mode, bgSolid: solid, bgGradient: gradient })
+                  }
+                />
+              </div>
+              <div className="desk-theme-block">
+                <p>Hình nền</p>
+                <WallpaperPicker
+                  wallpaper={desk.wallpaper}
+                  onSelect={(id) => void setWallpaper(id)}
+                  onUploadCustom={async (dataUrl) => {
+                    await saveCustomWallpaper(dataUrl);
+                    const next = { ...desk, wallpaper: "custom" as const };
+                    applyBgAppearance(next, dataUrl);
+                    update(next);
+                  }}
+                />
+              </div>
             </div>
           </section>
         </div>

@@ -41,6 +41,7 @@ yarn-error.log*
 
 # raw curriculum downloads (re-fetch via scripts/import-curriculum.mjs)
 /scripts/_raw/
+/scripts/.cache/
 
 # vercel
 .vercel

@@ -119,6 +119,10 @@ export function DeskStudio({
   const [imgRotate, setImgRotate] = useState(0);
   const [sideTab, setSideTab] = useState<SideTab>("learn");
   const [sourceFilter, setSourceFilter] = useState<SourceFilter>("all");
+  const [sourceQuery, setSourceQuery] = useState("");
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [filterMenuOpen, setFilterMenuOpen] = useState(false);
+  const sourceToolbarRef = useRef<HTMLDivElement>(null);
   const replaceRef = useRef<HTMLInputElement>(null);
   const pdfRef = useRef<StudioPdfHandle | null>(null);
   const richRef = useRef<StudioRichHandle | null>(null);
@@ -596,9 +600,61 @@ export function DeskStudio({
   }, []);
 
   const visibleSources = useMemo(() => {
-    if (sourceFilter === "all") return desk.files;
-    return desk.files.filter((f) => f.kind === sourceFilter);
-  }, [desk.files, sourceFilter]);
+    const q = sourceQuery.trim().toLowerCase();
+    return desk.files.filter((f) => {
+      if (sourceFilter !== "all" && f.kind !== sourceFilter) return false;
+      if (q && !f.name.toLowerCase().includes(q)) return false;
+      return true;
+    });
+  }, [desk.files, sourceFilter, sourceQuery]);
+
+  useEffect(() => {
+    if (!filterMenuOpen) return;
+    function onDoc(e: MouseEvent) {
+      if (!sourceToolbarRef.current?.contains(e.target as Node)) {
+        setFilterMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, [filterMenuOpen]);
+
+  const sourceFilterLabel =
+    (
+      {
+        all: "All",
+        pdf: "PDF",
+        doc: "DOC",
+        note: "Text",
+        audio: "Audio",
+        image: "Ảnh",
+      } as const
+    )[sourceFilter];
+
+  function addStudioTask() {
+    const title = window.prompt("Việc cần làm");
+    if (!title?.trim()) return;
+    const task: DeskTask = {
+      id: crypto.randomUUID(),
+      title: title.trim(),
+      due: "Hôm nay",
+      done: false,
+    };
+    onUpdate({ ...desk, tasks: [task, ...desk.tasks] });
+  }
+
+  function removeStudioTask(id: string) {
+    onUpdate({ ...desk, tasks: desk.tasks.filter((t) => t.id !== id) });
+  }
+
+  function editStudioTask(id: string, current: string) {
+    const title = window.prompt("Sửa việc cần làm", current);
+    if (!title?.trim()) return;
+    onUpdate({
+      ...desk,
+      tasks: desk.tasks.map((t) => (t.id === id ? { ...t, title: title.trim() } : t)),
+    });
+  }
 
   function commitNotesToOutput() {
     const body = notes.trim();
@@ -756,26 +812,74 @@ export function DeskStudio({
               </button>
             </div>
           </div>
-          <div className="studio-source-filters">
-            {(
-              [
-                ["all", "All"],
-                ["pdf", "PDF"],
-                ["doc", "DOC"],
-                ["note", "Text"],
-                ["audio", "Audio"],
-                ["image", "Ảnh"],
-              ] as const
-            ).map(([id, label]) => (
-              <button
-                key={id}
-                type="button"
-                className={sourceFilter === id ? "chip map-chip active" : "chip map-chip"}
-                onClick={() => setSourceFilter(id)}
-              >
-                {label}
-              </button>
-            ))}
+          <div className="studio-source-toolbar" ref={sourceToolbarRef}>
+            <button
+              type="button"
+              className="studio-search-toggle"
+              title="Tìm theo tên"
+              aria-expanded={searchOpen}
+              onClick={() => {
+                setSearchOpen((v) => {
+                  if (v) setSourceQuery("");
+                  return !v;
+                });
+              }}
+            >
+              <Icon name="search" size={14} />
+            </button>
+            {searchOpen ? (
+              <div className="studio-source-search">
+                <input
+                  autoFocus
+                  type="search"
+                  placeholder="Tìm file…"
+                  value={sourceQuery}
+                  onChange={(e) => setSourceQuery(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") {
+                      setSourceQuery("");
+                      setSearchOpen(false);
+                    }
+                  }}
+                />
+              </div>
+            ) : null}
+            <button
+              type="button"
+              className="studio-filter-btn"
+              aria-expanded={filterMenuOpen}
+              onClick={() => setFilterMenuOpen((v) => !v)}
+            >
+              {sourceFilterLabel}
+              <Icon name="arrow" size={12} />
+            </button>
+            {filterMenuOpen ? (
+              <div className="studio-filter-menu" role="menu">
+                {(
+                  [
+                    ["all", "All"],
+                    ["pdf", "PDF"],
+                    ["doc", "DOC"],
+                    ["note", "Text"],
+                    ["audio", "Audio"],
+                    ["image", "Ảnh"],
+                  ] as const
+                ).map(([id, label]) => (
+                  <button
+                    key={id}
+                    type="button"
+                    role="menuitem"
+                    className={sourceFilter === id ? "active" : ""}
+                    onClick={() => {
+                      setSourceFilter(id);
+                      setFilterMenuOpen(false);
+                    }}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            ) : null}
           </div>
           <div className="studio-source-list">
             {visibleSources.length === 0 ? (
@@ -1301,29 +1405,50 @@ export function DeskStudio({
               <div className="tasks-mini" style={{ marginTop: 14 }}>
                 <div className="section-head">
                   <h3>Tasks</h3>
-                  <span>{desk.tasks.filter((t) => !t.done).length}</span>
+                  <button type="button" className="text-button" onClick={addStudioTask}>
+                    + Thêm
+                  </button>
                 </div>
-                {desk.tasks.slice(0, 5).map((t: DeskTask) => (
-                  <label key={t.id} className="task-row">
-                    <input
-                      type="checkbox"
-                      checked={t.done}
-                      onChange={() =>
-                        onUpdate({
-                          ...desk,
-                          tasks: desk.tasks.map((x) =>
-                            x.id === t.id ? { ...x, done: !x.done } : x,
-                          ),
-                        })
-                      }
-                    />
-                    <span>
-                      <strong style={{ textDecoration: t.done ? "line-through" : "none" }}>
-                        {t.title}
-                      </strong>
-                    </span>
-                  </label>
-                ))}
+                {desk.tasks.length === 0 ? (
+                  <p className="empty-hint">Chưa có việc · bấm + Thêm</p>
+                ) : (
+                  desk.tasks.map((t: DeskTask) => (
+                    <div className="task-row-wrap" key={t.id}>
+                      <label className="task-row">
+                        <input
+                          type="checkbox"
+                          checked={t.done}
+                          onChange={() =>
+                            onUpdate({
+                              ...desk,
+                              tasks: desk.tasks.map((x) =>
+                                x.id === t.id ? { ...x, done: !x.done } : x,
+                              ),
+                            })
+                          }
+                        />
+                        <span>
+                          <strong
+                            style={{ textDecoration: t.done ? "line-through" : "none" }}
+                            onDoubleClick={() => editStudioTask(t.id, t.title)}
+                            title="Double-click để sửa"
+                          >
+                            {t.title}
+                          </strong>
+                          <small>{t.due}</small>
+                        </span>
+                      </label>
+                      <button
+                        type="button"
+                        className="icon-ghost"
+                        title="Xóa task"
+                        onClick={() => removeStudioTask(t.id)}
+                      >
+                        <Icon name="trash" size={14} />
+                      </button>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           ) : null}

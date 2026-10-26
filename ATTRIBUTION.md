@@ -8,23 +8,27 @@ Japanese vocabulary, kanji, and grammar used in Study Desk lists, reviews, and d
 - License: **CC BY-SA 4.0**
 - Vocab: full N5–N1 (`openjlpt-n5-seed.json` … `openjlpt-n1-seed.json`) — ~7,811 words
 - Grammar: full N5–N1 (`grammar-jp.json`) — ~526 points, adapted into fill-in drills
-- Kanji: N5–N2 (`openjlpt-kanji-n5` … `openjlpt-kanji-n2`)
+- Kanji: N5–N1 (`openjlpt-kanji-n5` … `openjlpt-kanji-n1`)
 - Upstream NOTICE / sources (JMdict, KANJIDIC2, Waller lists, Tatoeba) must be respected when redistributing or modifying (ShareAlike).
 
 > Vocabulary, kanji and grammar data from OpenJLPT (CC BY-SA 4.0).
 
-## CEFR-J
+## CEFR-J + Octanove (EN vocab)
 
 English vocabulary seed for the EN learning path.
 
 - Dataset mirror: [olp-en-cefrj](https://github.com/openlanguageprofiles/olp-en-cefrj)
 - Source: CEFR-J Wordlist Version 1.5, compiled by Yukio Tono, Tokyo University of Foreign Studies (TUFS)
-- Seed file: `src/data/cefrj-a1a2-seed.json` — full A1 + A2 profile (~2,575 headword·POS entries)
+- Advanced C1/C2 profile: Octanove / Open Language Profiles CEFR-J-style lists (see import script)
+- Seed file: `src/data/cefrj-vocab-seed.json` — A1–C2 (~9.9k headword·POS entries)
 - Official downloads / terms: [cefr-j.org](https://www.cefr-j.org/download.html) — research and commercial use with proper citation; copyright belongs to Tono Laboratory at TUFS
 
-> English vocabulary levels from the CEFR-J Wordlist (TUFS / Open Language Profiles).
+> English vocabulary levels from the CEFR-J Wordlist (TUFS / Open Language Profiles) plus Octanove C1/C2.
 
-EN grammar drills in `grammar-en.json` are original CEFR-style practice items (not from CEFR-J).
+EN grammar drills in `grammar-en.json` are original unofficial CEFR-style items (A1–C2), not from CEFR-J.  
+Band mocks in `mocks-by-band.json` are generated unofficial practice (not JLPT/IELTS exams).
+
+Study Desk also tracks **primary-level vocab cover %**, supports **load-full-level** SRS fill, and **band promote** when path progress + mocks pass thresholds — still unofficial practice.
 
 ## Japan Heritage
 

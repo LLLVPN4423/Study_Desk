@@ -7,6 +7,8 @@ import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { RequireAuth } from "@/components/RequireAuth";
 import { FREE_LIMITS } from "@/lib/freemium";
+import { displayMeanings } from "@/lib/gloss-vi";
+import { useI18n } from "@/lib/i18n";
 import {
   canLookup,
   loadLearn,
@@ -21,7 +23,13 @@ export default function DictionaryPage() {
     <RequireAuth>
       {(user) => (
         <AppShell userName={user.name}>
-          <Suspense fallback={<div className="page"><h1>Loading…</h1></div>}>
+          <Suspense
+            fallback={
+              <div className="page">
+                <h1>Đang tải…</h1>
+              </div>
+            }
+          >
             <DictionaryContent />
           </Suspense>
         </AppShell>
@@ -31,6 +39,7 @@ export default function DictionaryPage() {
 }
 
 function DictionaryContent() {
+  const { t } = useI18n();
   const params = useSearchParams();
   const track = (params.get("track") === "en" ? "en" : "jp") as TrackId;
   const [q, setQ] = useState("");
@@ -42,53 +51,65 @@ function DictionaryContent() {
     e.preventDefault();
     setError(null);
     if (!canLookup()) {
-      setError(`Daily Free lookup cap reached (${FREE_LIMITS.dailyLookups}).`);
+      setError(`Đã hết hạn mức tra cứu ngày (${FREE_LIMITS.dailyLookups}).`);
       return;
     }
-    const state = recordLookup();
+    const hits = searchVocab(q, track);
+    const state = recordLookup(track, q, hits.length);
     setUsed(state.lookupsToday);
-    setResults(searchVocab(q, track));
+    setResults(hits);
+    if (!hits.length) {
+      setError("Không có kết quả — chỉ tra cứu ra từ mới tính vào lộ trình.");
+    }
   }
 
   return (
     <div className="page narrow">
-      <Link href="/learn" className="back">
-        ← Back to learn
+      <Link href={`/learn?track=${track}`} className="back">
+        {t("dictBack")}
       </Link>
-      <p className="eyebrow">Dictionary · {track.toUpperCase()}</p>
-      <h1>{track === "jp" ? "OpenJLPT lookup" : "CEFR-J lookup"}</h1>
+      <p className="eyebrow">
+        {t("dictTitle")} · {track.toUpperCase()}
+      </p>
+      <h1>{track === "jp" ? "OpenJLPT" : "CEFR-J"}</h1>
       <p style={{ color: "var(--muted)", marginTop: 8 }}>
-        Local seed search · Free cap {used}/{FREE_LIMITS.dailyLookups} today
+        {t("dictLocal")} · {used} {t("dictLookupsToday")}
       </p>
       <form className="dict-panel" onSubmit={onSearch}>
         <label>
-          Search
+          {t("dictSearch")}
           <input
             value={q}
             onChange={(e) => setQ(e.target.value)}
             placeholder={
-              track === "jp" ? "kanji, kana, romaji, or English" : "English headword"
+              track === "jp" ? t("dictPlaceholderJp") : t("dictPlaceholderEn")
             }
           />
         </label>
-        <Button type="submit">Search</Button>
+        <Button type="submit">{t("dictSearch")}</Button>
       </form>
       {error && <p style={{ color: "var(--danger)", marginTop: 12 }}>{error}</p>}
       <div className="dict-results">
-        {results.map((w) => (
-          <div key={w.id} className="dict-row">
-            <strong>
-              {w.word}
-              {w.reading ? ` · ${w.reading}` : ""}
-            </strong>
-            <small>
-              {w.meanings.join("; ")} · {w.level}
-            </small>
-          </div>
-        ))}
+        {results.map((w) => {
+          const meanings = displayMeanings(track, w.id, w.meanings || [], {
+            word: w.word,
+            pos: w.pos,
+          });
+          return (
+            <div key={w.id} className="dict-row">
+              <strong>
+                {w.word}
+                {w.reading ? ` · ${w.reading}` : ""}
+              </strong>
+              <small>
+                {meanings.join("; ")} · {w.level}
+              </small>
+            </div>
+          );
+        })}
       </div>
       <p style={{ marginTop: 24, fontSize: 11, color: "var(--muted)" }}>
-        See ATTRIBUTION.md for OpenJLPT / CEFR-J credits.
+        Xem ATTRIBUTION.md cho OpenJLPT / CEFR-J.
       </p>
     </div>
   );

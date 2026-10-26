@@ -2,7 +2,15 @@
 
 import { deleteDeskBlob, getDeskBlob, putDeskBlob } from "./desk-blobs";
 import { FREE_LIMITS } from "./freemium";
-import { STORAGE_KEYS, type ThemeId } from "./storage-keys";
+import {
+  STORAGE_KEYS,
+  THEME_SOLID,
+  WALLPAP_CUSTOM_KEY,
+  type BgGradient,
+  type BgMode,
+  type ThemeId,
+  type WallpaperId,
+} from "./storage-keys";
 
 export type DeskFileKind = "pdf" | "note" | "audio" | "image" | "doc";
 
@@ -66,7 +74,12 @@ export type DeskState = {
   files: DeskFile[];
   folders: DeskFolder[];
   tasks: DeskTask[];
+  /** Legacy; kept for migrate — prefer bgSolid / bgMode. */
   theme: ThemeId;
+  bgMode: BgMode;
+  bgSolid: string;
+  bgGradient: BgGradient;
+  wallpaper: WallpaperId;
   studyRoomUrl: string;
   /** Focus length in total seconds (user-tuned digital clock). */
   focusSeconds: number;
@@ -77,7 +90,12 @@ export type DeskState = {
 export const FOCUS_PRESETS_MIN = [15, 25, 45, 60] as const;
 /** @deprecated use FOCUS_PRESETS_MIN */
 export const FOCUS_PRESETS = FOCUS_PRESETS_MIN;
-export const DESK_VERSION = 5;
+export const DESK_VERSION = 6;
+export const DEFAULT_BG_GRADIENT: BgGradient = {
+  a: "#e9eef1",
+  b: "#d5e3e8",
+  angle: 180,
+};
 export const MAX_SCHEDULE_EVENTS = 5;
 
 const DEMO_TASK_IDS = new Set(["t1", "t2", "t3"]);
@@ -88,12 +106,30 @@ const DEMO_TASK_TITLES = new Set([
 ]);
 const DEMO_FOLDER_IDS = new Set(["f-jp", "f-en"]);
 
+function normalizeHex(raw: string | undefined, fallback: string): string {
+  const s = (raw || "").trim();
+  if (/^#[0-9a-fA-F]{6}$/.test(s)) return s.toLowerCase();
+  if (/^[0-9a-fA-F]{6}$/.test(s)) return `#${s.toLowerCase()}`;
+  return fallback;
+}
+
+function themeFromSolid(hex: string): ThemeId {
+  const h = hex.toLowerCase();
+  if (h === THEME_SOLID.moss) return "moss";
+  if (h === THEME_SOLID.night) return "night";
+  return "paper";
+}
+
 const defaultDesk = (): DeskState => ({
   version: DESK_VERSION,
   files: [],
   folders: [],
   tasks: [],
   theme: "paper",
+  bgMode: "solid",
+  bgSolid: THEME_SOLID.paper,
+  bgGradient: { ...DEFAULT_BG_GRADIENT },
+  wallpaper: "none",
   studyRoomUrl: "",
   focusSeconds: 25 * 60,
   scheduleTitle: "Lịch trình môn học",
@@ -124,12 +160,41 @@ function scrubDesignSeeds(state: DeskState): DeskState {
   }
   focusSeconds = Math.min(99 * 60 + 59, Math.max(60, Math.round(focusSeconds)));
 
+  const theme: ThemeId =
+    state.theme === "moss" || state.theme === "night" || state.theme === "paper"
+      ? state.theme
+      : "paper";
+  const bgMode: BgMode = state.bgMode === "gradient" ? "gradient" : "solid";
+  const bgSolid = normalizeHex(state.bgSolid, THEME_SOLID[theme]);
+  const g = state.bgGradient;
+  const bgGradient: BgGradient = {
+    a: normalizeHex(g?.a, DEFAULT_BG_GRADIENT.a),
+    b: normalizeHex(g?.b, DEFAULT_BG_GRADIENT.b),
+    angle:
+      typeof g?.angle === "number" && Number.isFinite(g.angle)
+        ? Math.min(360, Math.max(0, Math.round(g.angle)))
+        : DEFAULT_BG_GRADIENT.angle,
+  };
+  const wallpaper: WallpaperId =
+    state.wallpaper === "mist" ||
+    state.wallpaper === "grove" ||
+    state.wallpaper === "dusk" ||
+    state.wallpaper === "ocean" ||
+    state.wallpaper === "custom"
+      ? state.wallpaper
+      : "none";
+
   return {
     ...state,
     version: DESK_VERSION,
     tasks,
     folders,
     focusSeconds,
+    theme,
+    bgMode,
+    bgSolid: state.bgSolid ? bgSolid : THEME_SOLID[theme],
+    bgGradient,
+    wallpaper,
   };
 }
 
@@ -188,6 +253,13 @@ export function loadDesk(): DeskState {
     if (parsed.studyRoomUrl === undefined) parsed.studyRoomUrl = "";
     if (!parsed.scheduleTitle) parsed.scheduleTitle = "Lịch trình môn học";
     if (!Array.isArray(parsed.schedule)) parsed.schedule = [];
+    if (!parsed.bgSolid && parsed.theme) {
+      parsed.bgSolid = THEME_SOLID[parsed.theme] || THEME_SOLID.paper;
+      parsed.bgMode = "solid";
+    }
+    if (!parsed.bgGradient) parsed.bgGradient = { ...DEFAULT_BG_GRADIENT };
+    if (!parsed.wallpaper) parsed.wallpaper = "none";
+    if (!parsed.bgMode) parsed.bgMode = "solid";
 
     const scrubbed = scrubDesignSeeds({ ...parsed, version: storedVersion });
     const dirty =
@@ -240,15 +312,11 @@ export function saveDesk(state: DeskState): { ok: boolean; reason?: string } {
       };
       localStorage.setItem(STORAGE_KEYS.desk, JSON.stringify(slim));
     } catch {
-      document.documentElement.dataset.theme =
-        clean.theme === "paper" ? "" : clean.theme;
-      localStorage.setItem(STORAGE_KEYS.theme, clean.theme);
+      applyBgAppearance(clean);
       return { ok: false, reason: "Không ghi được localStorage (quota)." };
     }
   }
-  document.documentElement.dataset.theme =
-    clean.theme === "paper" ? "" : clean.theme;
-  localStorage.setItem(STORAGE_KEYS.theme, clean.theme);
+  applyBgAppearance(clean);
   return { ok: true };
 }
 
@@ -299,7 +367,103 @@ export async function hydrateDeskBlobs(state: DeskState): Promise<DeskState> {
 }
 
 export function applyTheme(theme: ThemeId) {
-  document.documentElement.dataset.theme = theme === "paper" ? "" : theme;
+  const hex = THEME_SOLID[theme] || THEME_SOLID.paper;
+  applyBgAppearance({
+    ...defaultDesk(),
+    theme,
+    bgMode: "solid",
+    bgSolid: hex,
+    wallpaper: "none",
+  });
+}
+
+function luminance(hex: string): number {
+  const h = normalizeHex(hex, "#e9eef1").slice(1);
+  const r = parseInt(h.slice(0, 2), 16) / 255;
+  const g = parseInt(h.slice(2, 4), 16) / 255;
+  const b = parseInt(h.slice(4, 6), 16) / 255;
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+}
+
+/** Apply solid/gradient/wallpaper CSS vars on <html>. */
+export function applyBgAppearance(
+  state: Pick<DeskState, "theme" | "bgMode" | "bgSolid" | "bgGradient" | "wallpaper">,
+  customUrl?: string | null,
+) {
+  if (typeof document === "undefined") return;
+  const root = document.documentElement;
+  const solid = normalizeHex(state.bgSolid, THEME_SOLID.paper);
+  const ga = normalizeHex(state.bgGradient?.a, DEFAULT_BG_GRADIENT.a);
+  const gb = normalizeHex(state.bgGradient?.b, DEFAULT_BG_GRADIENT.b);
+  const angle =
+    typeof state.bgGradient?.angle === "number" ? state.bgGradient.angle : 180;
+
+  root.style.setProperty("--bg-solid", solid);
+  root.style.setProperty("--bg-grad-a", ga);
+  root.style.setProperty("--bg-grad-b", gb);
+  root.style.setProperty("--bg-grad-angle", `${angle}deg`);
+
+  if (state.bgMode === "gradient") {
+    root.style.setProperty("--bg", ga);
+    root.style.setProperty("--bg-accent", gb);
+    root.style.setProperty("--bg-layer", `linear-gradient(${angle}deg, ${ga}, ${gb})`);
+    root.style.setProperty(
+      "--bg-layer-image",
+      `linear-gradient(${angle}deg, ${ga}, ${gb})`,
+    );
+  } else {
+    root.style.setProperty("--bg", solid);
+    root.style.setProperty("--bg-accent", solid);
+    root.style.setProperty("--bg-layer", solid);
+    root.style.setProperty("--bg-layer-image", "none");
+  }
+
+  const wall: WallpaperId = state.wallpaper || "none";
+  if (wall === "none") {
+    root.removeAttribute("data-wallpaper");
+  } else {
+    root.dataset.wallpaper = wall;
+  }
+  if (wall === "custom" && customUrl) {
+    // Escape quotes in data URLs for CSS url()
+    const safe = customUrl.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+    root.style.setProperty("--wallpaper-image", `url("${safe}")`);
+  } else if (wall !== "custom") {
+    root.style.setProperty("--wallpaper-image", "none");
+  }
+
+  const baseLum = state.bgMode === "gradient" ? (luminance(ga) + luminance(gb)) / 2 : luminance(solid);
+  root.dataset.bgTone = baseLum < 0.45 ? "dark" : "light";
+
+  const theme = themeFromSolid(solid);
+  root.dataset.theme = theme === "paper" ? "" : theme;
+  try {
+    localStorage.setItem(STORAGE_KEYS.theme, theme);
+    localStorage.setItem(STORAGE_KEYS.wallpaper, wall);
+  } catch {
+    /* ignore */
+  }
+}
+
+export async function loadCustomWallpaperUrl(): Promise<string | undefined> {
+  return getDeskBlob(WALLPAP_CUSTOM_KEY);
+}
+
+export async function saveCustomWallpaper(dataUrl: string): Promise<void> {
+  await putDeskBlob(WALLPAP_CUSTOM_KEY, dataUrl);
+}
+
+export async function clearCustomWallpaper(): Promise<void> {
+  await deleteDeskBlob(WALLPAP_CUSTOM_KEY);
+}
+
+/** Hydrate appearance including custom wallpaper from IDB. */
+export async function hydrateBgAppearance(state: DeskState): Promise<void> {
+  let custom: string | undefined;
+  if (state.wallpaper === "custom") {
+    custom = await getDeskBlob(WALLPAP_CUSTOM_KEY);
+  }
+  applyBgAppearance(state, custom || null);
 }
 
 export function usedStorageBytes(files: DeskFile[]) {

@@ -1,5 +1,32 @@
 [
   {
+    "id": "e0a",
+    "bandHint": "A1",
+    "label": "Question 00 · Vocabulary",
+    "prompt": "I ___ a student.",
+    "hint": "Basic be-verb.",
+    "choices": ["am", "is", "are", "be"],
+    "answer": 0
+  },
+  {
+    "id": "e0b",
+    "bandHint": "A1",
+    "label": "Question 00b · Grammar",
+    "prompt": "This is ___ apple.",
+    "hint": "Article before vowel sound.",
+    "choices": ["a", "an", "the", "-"],
+    "answer": 1
+  },
+  {
+    "id": "e0c",
+    "bandHint": "A1",
+    "label": "Question 00c · Vocabulary",
+    "prompt": "Synonym of \"big\":",
+    "hint": "Basic adjective.",
+    "choices": ["small", "large", "short", "cold"],
+    "answer": 1
+  },
+  {
     "id": "e1",
     "bandHint": "A2",
     "label": "Question 01 · Vocabulary",
@@ -178,5 +205,80 @@
     "hint": "Formal adjective.",
     "choices": ["trenchant", "trench", "transient", "tranquil"],
     "answer": 0
+  },
+  {
+    "id": "e21",
+    "bandHint": "C2",
+    "label": "Question 21 · Vocabulary",
+    "prompt": "The speech was full of empty ___.",
+    "hint": "Advanced noun for pretentious language.",
+    "choices": ["rhetoric", "rhythm", "routine", "residue"],
+    "answer": 0
+  },
+  {
+    "id": "e22",
+    "bandHint": "C2",
+    "label": "Question 22 · Grammar",
+    "prompt": "___ it may seem paradoxical, both claims can hold.",
+    "hint": "Formal concessive.",
+    "choices": ["Much as", "Much than", "As much", "So much"],
+    "answer": 0
+  },
+  {
+    "id": "e23",
+    "bandHint": "C2",
+    "label": "Question 23 · Vocabulary",
+    "prompt": "A ___ observer noticed the subtle shift in tone.",
+    "hint": "Keen / penetrating.",
+    "choices": ["perspicacious", "persuasive", "pervasive", "perfunctory"],
+    "answer": 0
+  },
+  {
+    "id": "e24",
+    "bandHint": "C2",
+    "label": "Question 24 · Grammar",
+    "prompt": "___ her help, we would have failed.",
+    "hint": "Inverted conditional.",
+    "choices": ["Were it not for", "Was it not for", "If it were", "Had not"],
+    "answer": 0
+  },
+  {
+    "id": "e25",
+    "bandHint": "C2",
+    "label": "Question 25 · Vocabulary",
+    "prompt": "They tried to ___ the regulation.",
+    "hint": "Find a way around.",
+    "choices": ["circumvent", "circulate", "circumstance", "circuit"],
+    "answer": 0
+  },
+  {
+    "id": "el1",
+    "bandHint": "A1",
+    "label": "Question L1 · Listening",
+    "speak": "I am a student.",
+    "prompt": "Who is speaking?",
+    "hint": "Listen, then choose.",
+    "choices": ["A teacher", "A student", "A doctor", "A driver"],
+    "answer": 1
+  },
+  {
+    "id": "el2",
+    "bandHint": "B1",
+    "label": "Question L2 · Listening",
+    "speak": "I have been studying for two hours.",
+    "prompt": "What do they say about studying?",
+    "hint": "Listen, then choose.",
+    "choices": ["Just started", "For two hours so far", "Finished yesterday", "Not studying"],
+    "answer": 1
+  },
+  {
+    "id": "el3",
+    "bandHint": "C2",
+    "label": "Question L3 · Listening",
+    "speak": "The speech was full of empty rhetoric.",
+    "prompt": "How was the speech described?",
+    "hint": "Listen, then choose.",
+    "choices": ["Full of solid facts", "Full of empty rhetoric", "Very short", "Silent"],
+    "answer": 1
   }
 ]

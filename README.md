@@ -62,7 +62,7 @@ See [ATTRIBUTION.md](ATTRIBUTION.md). OpenJLPT is CC BY-SA 4.0.
 ## Phase status
 
 - **P1 done:** desk basics + JP path MVP  
-- **Shipped:** JP OpenJLPT full vocab (~7.8k) + grammar (~526) N5–N1, kanji N5–N2, EN CEFR-J A1/A2 full (~2.5k) + grammar drills, mocks (TTS), `ts-fsrs`, culture map, rooms, backup  
+- **Shipped:** JP OpenJLPT vocab/grammar/kanji N5–N1; EN CEFR-J+Octanove A1–C2 (~9.9k) + grammar A1–C2; placement + mocks theo band; FSRS; culture; rooms; backup; `/help` + tour  
 - **$0 default:** `npm run dev` trên máy — không cần host/cloud  
 
 ## Hosting hợp lý (khi muốn share link — vẫn free)

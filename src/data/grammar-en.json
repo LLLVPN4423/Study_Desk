@@ -2383,5 +2383,755 @@
     ],
     "answer": 0,
     "note": "Unofficial CEFR-style · past participle = passive sense"
+  },
+  {
+    "id": "g-en-160",
+    "level": "C2",
+    "pattern": "Much as / Much though",
+    "prompt": "___ it may seem odd, the rule stands.",
+    "meaning": "formal concessive",
+    "choices": [
+      "Much as",
+      "Much than",
+      "As much",
+      "So much"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Much as = although"
+  },
+  {
+    "id": "g-en-161",
+    "level": "C2",
+    "pattern": "Irrevocable / formal lexis",
+    "prompt": "The board's decision was ___.",
+    "meaning": "advanced adjective",
+    "choices": [
+      "irrevocable",
+      "irrelevant",
+      "irregular",
+      "irritable"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · cannot be reversed"
+  },
+  {
+    "id": "g-en-162",
+    "level": "C2",
+    "pattern": "Circumvent",
+    "prompt": "They tried to ___ the regulation.",
+    "meaning": "advanced verb",
+    "choices": [
+      "circumvent",
+      "circulate",
+      "circumstance",
+      "circuit"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · find a way around"
+  },
+  {
+    "id": "g-en-163",
+    "level": "C2",
+    "pattern": "Opaque",
+    "prompt": "His remarks were somewhat ___ to newcomers.",
+    "meaning": "advanced adjective",
+    "choices": [
+      "opaque",
+      "open",
+      "obvious",
+      "oral"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · hard to understand"
+  },
+  {
+    "id": "g-en-164",
+    "level": "C2",
+    "pattern": "Perspicacious",
+    "prompt": "A ___ reader spotted the inconsistency.",
+    "meaning": "advanced adjective",
+    "choices": [
+      "perspicacious",
+      "persuasive",
+      "pervasive",
+      "perfunctory"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · keen insight"
+  },
+  {
+    "id": "g-en-165",
+    "level": "C2",
+    "pattern": "Empty rhetoric",
+    "prompt": "The speech was full of empty ___.",
+    "meaning": "advanced noun",
+    "choices": [
+      "rhetoric",
+      "rhythm",
+      "routine",
+      "residue"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · pretentious language"
+  },
+  {
+    "id": "g-en-166",
+    "level": "C2",
+    "pattern": "Lest",
+    "prompt": "Speak softly ___ you wake the baby.",
+    "meaning": "formal conjunction",
+    "choices": [
+      "lest",
+      "unless",
+      "until",
+      "whilst"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · lest = for fear that"
+  },
+  {
+    "id": "g-en-167",
+    "level": "C2",
+    "pattern": "Were it not for",
+    "prompt": "___ her help, we would have failed.",
+    "meaning": "inverted conditional",
+    "choices": [
+      "Were it not for",
+      "Was it not for",
+      "If it were not",
+      "Had it not"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Were it not for + noun"
+  },
+  {
+    "id": "g-en-168",
+    "level": "C2",
+    "pattern": "Insofar as",
+    "prompt": "The plan works ___ funding continues.",
+    "meaning": "formal linker",
+    "choices": [
+      "insofar as",
+      "in as far",
+      "as so far",
+      "so insofar"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · to the extent that"
+  },
+  {
+    "id": "g-en-169",
+    "level": "C2",
+    "pattern": "Be that as it may",
+    "prompt": "___, we must still decide today.",
+    "meaning": "discourse marker",
+    "choices": [
+      "Be that as it may",
+      "Be it may",
+      "That be may",
+      "May that be"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · nevertheless"
+  },
+  {
+    "id": "g-en-170",
+    "level": "C2",
+    "pattern": "Qua",
+    "prompt": "She spoke ___ expert, not as a friend.",
+    "meaning": "formal as",
+    "choices": [
+      "qua",
+      "quasi",
+      "quit",
+      "quite"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · qua = in the capacity of"
+  },
+  {
+    "id": "g-en-171",
+    "level": "C2",
+    "pattern": "Suffice it to say",
+    "prompt": "___, the meeting did not go well.",
+    "meaning": "formal hedge",
+    "choices": [
+      "Suffice it to say",
+      "Suffice to saying",
+      "Sufficient say",
+      "It suffices saying"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · enough to say that"
+  },
+  {
+    "id": "g-en-172",
+    "level": "C2",
+    "pattern": "Notwithstanding",
+    "prompt": "___ the risks, they proceeded.",
+    "meaning": "formal preposition",
+    "choices": [
+      "Notwithstanding",
+      "Nevertheless the",
+      "Although of",
+      "Despite of"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · despite"
+  },
+  {
+    "id": "g-en-173",
+    "level": "C2",
+    "pattern": "Whereby",
+    "prompt": "A system ___ users share keys was proposed.",
+    "meaning": "relative",
+    "choices": [
+      "whereby",
+      "wherein",
+      "whereas",
+      "whereof"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · by which"
+  },
+  {
+    "id": "g-en-174",
+    "level": "C2",
+    "pattern": "Albeit",
+    "prompt": "The result was positive, ___ modest.",
+    "meaning": "concessive",
+    "choices": [
+      "albeit",
+      "although it",
+      "all be it",
+      "howbeit that"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · albeit = although"
+  },
+  {
+    "id": "g-en-175",
+    "level": "B2",
+    "pattern": "Would rather + past perfect",
+    "prompt": "I'd rather you ___ told me earlier.",
+    "meaning": "preference past",
+    "choices": [
+      "have",
+      "had",
+      "has",
+      "did"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · I'd rather + past perfect"
+  },
+  {
+    "id": "g-en-176",
+    "level": "B2",
+    "pattern": "As if / as though + past",
+    "prompt": "He talks as if he ___ the boss.",
+    "meaning": "unreal comparison",
+    "choices": [
+      "is",
+      "were",
+      "be",
+      "was being"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · as if + past"
+  },
+  {
+    "id": "g-en-177",
+    "level": "B2",
+    "pattern": "By the time + past perfect",
+    "prompt": "By the time we arrived, the film ___.",
+    "meaning": "earlier past",
+    "choices": [
+      "started",
+      "had started",
+      "has started",
+      "starts"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · by the time + past perfect"
+  },
+  {
+    "id": "g-en-178",
+    "level": "B2",
+    "pattern": "In case vs if",
+    "prompt": "Take an umbrella ___ it rains.",
+    "meaning": "precaution",
+    "choices": [
+      "in case",
+      "if only",
+      "unless",
+      "whether"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · in case = precaution"
+  },
+  {
+    "id": "g-en-179",
+    "level": "B2",
+    "pattern": "Used to vs be used to",
+    "prompt": "I'm ___ getting up early now.",
+    "meaning": "habit now",
+    "choices": [
+      "used to",
+      "use to",
+      "used",
+      "being used"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · be used to + -ing"
+  },
+  {
+    "id": "g-en-180",
+    "level": "B2",
+    "pattern": "Have something done",
+    "prompt": "I ___ my car repaired yesterday.",
+    "meaning": "causative",
+    "choices": [
+      "had",
+      "have",
+      "made",
+      "let"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · have/get + object + PP"
+  },
+  {
+    "id": "g-en-181",
+    "level": "B2",
+    "pattern": "Wish + would",
+    "prompt": "I wish you ___ stop smoking.",
+    "meaning": "annoyance",
+    "choices": [
+      "will",
+      "would",
+      "can",
+      "may"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · wish + would"
+  },
+  {
+    "id": "g-en-182",
+    "level": "B2",
+    "pattern": "Prefer … to …",
+    "prompt": "I prefer tea ___ coffee.",
+    "meaning": "preference",
+    "choices": [
+      "to",
+      "than",
+      "from",
+      "over than"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · prefer X to Y"
+  },
+  {
+    "id": "g-en-183",
+    "level": "B2",
+    "pattern": "So / such that",
+    "prompt": "It was ___ a difficult exam that many failed.",
+    "meaning": "result",
+    "choices": [
+      "so",
+      "such",
+      "too",
+      "very"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · such a + adj + noun"
+  },
+  {
+    "id": "g-en-184",
+    "level": "B2",
+    "pattern": "Neither … nor",
+    "prompt": "Neither the manager ___ the staff knew.",
+    "meaning": "correlative",
+    "choices": [
+      "or",
+      "nor",
+      "and",
+      "but"
+    ],
+    "answer": 1,
+    "note": "Unofficial CEFR-style · neither … nor"
+  },
+  {
+    "id": "g-en-185",
+    "level": "B2",
+    "pattern": "No sooner … than",
+    "prompt": "No sooner ___ we left than it rained.",
+    "meaning": "inversion",
+    "choices": [
+      "had",
+      "have",
+      "did",
+      "were"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · No sooner had … than"
+  },
+  {
+    "id": "g-en-186",
+    "level": "B2",
+    "pattern": "Participle clauses",
+    "prompt": "___ the news, she smiled.",
+    "meaning": "time participle",
+    "choices": [
+      "Hearing",
+      "Heard",
+      "To hear",
+      "Hears"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · -ing clause"
+  },
+  {
+    "id": "g-en-187",
+    "level": "C1",
+    "pattern": "Inversion: Little did",
+    "prompt": "Little ___ we know what would happen.",
+    "meaning": "formal inversion",
+    "choices": [
+      "did",
+      "do",
+      "had",
+      "have"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Little did + subject"
+  },
+  {
+    "id": "g-en-188",
+    "level": "C1",
+    "pattern": "What cleft",
+    "prompt": "___ I need is more time.",
+    "meaning": "cleft",
+    "choices": [
+      "What",
+      "That",
+      "Which",
+      "How"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · What … is …"
+  },
+  {
+    "id": "g-en-189",
+    "level": "C1",
+    "pattern": "Should you …",
+    "prompt": "___ you need help, call me.",
+    "meaning": "formal conditional",
+    "choices": [
+      "Should",
+      "Would",
+      "Might",
+      "Could you"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Should you = if you"
+  },
+  {
+    "id": "g-en-190",
+    "level": "C1",
+    "pattern": "Be + to-infinitive",
+    "prompt": "You ___ to report by Friday.",
+    "meaning": "formal obligation",
+    "choices": [
+      "are",
+      "is",
+      "be",
+      "were"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · be to + infinitive"
+  },
+  {
+    "id": "g-en-191",
+    "level": "C1",
+    "pattern": "Given that",
+    "prompt": "___ that budgets are tight, we delayed hiring.",
+    "meaning": "formal reason",
+    "choices": [
+      "Given",
+      "Giving",
+      "Gave",
+      "Give"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Given that"
+  },
+  {
+    "id": "g-en-192",
+    "level": "C1",
+    "pattern": "Insofar / inasmuch",
+    "prompt": "The claim holds ___ as the data are accurate.",
+    "meaning": "extent",
+    "choices": [
+      "insofar",
+      "insomuch",
+      "in so",
+      "as far so"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · insofar as"
+  },
+  {
+    "id": "g-en-193",
+    "level": "C1",
+    "pattern": "Participle: having + PP",
+    "prompt": "___ finished, she left.",
+    "meaning": "perfect participle",
+    "choices": [
+      "Having",
+      "Have",
+      "Had",
+      "To have"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Having + PP"
+  },
+  {
+    "id": "g-en-194",
+    "level": "C1",
+    "pattern": "Rather than + bare/ -ing",
+    "prompt": "Rather than ___, we waited.",
+    "meaning": "preference",
+    "choices": [
+      "complain",
+      "complaining",
+      "to complain",
+      "complained"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · rather than + bare verb"
+  },
+  {
+    "id": "g-en-195",
+    "level": "C1",
+    "pattern": "Were to",
+    "prompt": "If she ___ to resign, who would replace her?",
+    "meaning": "hypothetical",
+    "choices": [
+      "were",
+      "was",
+      "is",
+      "be"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · if … were to"
+  },
+  {
+    "id": "g-en-196",
+    "level": "C1",
+    "pattern": "Double comparative",
+    "prompt": "The ___ you practice, the better you get.",
+    "meaning": "correlation",
+    "choices": [
+      "more",
+      "most",
+      "much",
+      "many"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · The more … the …"
+  },
+  {
+    "id": "g-en-197",
+    "level": "C2",
+    "pattern": "Come what may",
+    "prompt": "___, we will finish on time.",
+    "meaning": "formal resolve",
+    "choices": [
+      "Come what may",
+      "Come may what",
+      "What come may",
+      "May come what"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · come what may"
+  },
+  {
+    "id": "g-en-198",
+    "level": "C2",
+    "pattern": "Suffice to say (variant)",
+    "prompt": "___ that negotiations failed.",
+    "meaning": "hedge",
+    "choices": [
+      "Suffice it to say",
+      "Suffice saying",
+      "It suffices say",
+      "Sufficient it say"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · suffice it to say"
+  },
+  {
+    "id": "g-en-199",
+    "level": "C2",
+    "pattern": "Be that as it may (use)",
+    "prompt": "The plan is risky; ___, we proceed.",
+    "meaning": "discourse",
+    "choices": [
+      "be that as it may",
+      "be it may",
+      "that be as may",
+      "may that be"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · nevertheless"
+  },
+  {
+    "id": "g-en-200",
+    "level": "C2",
+    "pattern": "To wit",
+    "prompt": "One issue, ___ funding, blocked progress.",
+    "meaning": "formal namely",
+    "choices": [
+      "to wit",
+      "to wet",
+      "to with",
+      "twit"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · to wit = namely"
+  },
+  {
+    "id": "g-en-201",
+    "level": "C2",
+    "pattern": "Per se",
+    "prompt": "The idea isn't bad ___.",
+    "meaning": "in itself",
+    "choices": [
+      "per se",
+      "per say",
+      "as se",
+      "pro se"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · per se"
+  },
+  {
+    "id": "g-en-202",
+    "level": "C2",
+    "pattern": "Vis-à-vis",
+    "prompt": "Our position ___ competitors is strong.",
+    "meaning": "formal relative to",
+    "choices": [
+      "vis-à-vis",
+      "vice versa",
+      "versus to",
+      "via"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · vis-à-vis"
+  },
+  {
+    "id": "g-en-203",
+    "level": "C2",
+    "pattern": "Ipso facto",
+    "prompt": "He signed; ___, he agreed.",
+    "meaning": "formal thus",
+    "choices": [
+      "ipso facto",
+      "ipso fact",
+      "facto ipso",
+      "de facto only"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · ipso facto"
+  },
+  {
+    "id": "g-en-204",
+    "level": "C2",
+    "pattern": "Notwithstanding (clause)",
+    "prompt": "___ objections, the motion passed.",
+    "meaning": "formal despite",
+    "choices": [
+      "Notwithstanding",
+      "Nevertheless of",
+      "Although of",
+      "Despite of"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · notwithstanding + noun"
+  },
+  {
+    "id": "g-en-205",
+    "level": "C2",
+    "pattern": "Whereby (system)",
+    "prompt": "A protocol ___ keys rotate weekly was adopted.",
+    "meaning": "relative",
+    "choices": [
+      "whereby",
+      "wherein",
+      "whereas",
+      "whereof"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · whereby"
+  },
+  {
+    "id": "g-en-206",
+    "level": "C2",
+    "pattern": "In as much as",
+    "prompt": "Liable ___ as they ignored warnings.",
+    "meaning": "formal extent",
+    "choices": [
+      "inasmuch",
+      "in as much",
+      "insomuch only",
+      "as much in"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · inasmuch as"
+  },
+  {
+    "id": "g-en-207",
+    "level": "C2",
+    "pattern": "Were it not (clause)",
+    "prompt": "___ for the delay, we would have won.",
+    "meaning": "inversion",
+    "choices": [
+      "Were it not",
+      "Was it not",
+      "Had it not been only",
+      "If not were"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · Were it not for"
+  },
+  {
+    "id": "g-en-208",
+    "level": "C2",
+    "pattern": "Lest anyone",
+    "prompt": "Lock the door ___ anyone enter.",
+    "meaning": "formal fear",
+    "choices": [
+      "lest",
+      "unless",
+      "until",
+      "so that not"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · lest + subjunctive"
+  },
+  {
+    "id": "g-en-209",
+    "level": "C2",
+    "pattern": "Far be it from me",
+    "prompt": "___ to criticize, but…",
+    "meaning": "formal hedge",
+    "choices": [
+      "Far be it from me",
+      "Far it be from me",
+      "Be far from me",
+      "Far from be it"
+    ],
+    "answer": 0,
+    "note": "Unofficial CEFR-style · far be it from me"
   }
 ]
