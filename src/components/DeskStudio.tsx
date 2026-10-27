@@ -576,11 +576,6 @@ export function DeskStudio({
       const result = await writeBlobToDisk(latest.id, latest.name, latest.kind, blob, {
         forcePicker: !linkedToDisk,
       });
-      if (result.reason === "cancelled") {
-        setSaveState("dirty");
-        setMsg("Đã hủy — chọn lại nơi lưu hoặc «Chỉ bàn» / Ở lại.");
-        return;
-      }
       if (result.ok) {
         setLinkedToDisk(true);
         clearEdited();
@@ -590,6 +585,11 @@ export function DeskStudio({
             : "Đã lưu ra máy — lần sau Ctrl+S ghi đè thẳng.",
         );
         executeLeave(action);
+        return;
+      }
+      if (result.reason === "cancelled") {
+        setSaveState("dirty");
+        setMsg("Đã hủy — chọn lại nơi lưu hoặc «Chỉ bàn» / Ở lại.");
         return;
       }
       if (result.reason === "unsupported") {
