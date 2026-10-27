@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { FormEvent, Suspense, useState } from "react";
+import { FormEvent, Suspense, useEffect, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { RequireAuth } from "@/components/RequireAuth";
 import { FREE_LIMITS } from "@/lib/freemium";
 import { displayMeanings } from "@/lib/gloss-vi";
 import { useI18n } from "@/lib/i18n";
+import { bootstrapLearn } from "@/lib/learn-bootstrap";
 import {
   canLookup,
   loadLearn,
@@ -46,10 +47,25 @@ function DictionaryContent() {
   const [results, setResults] = useState<VocabSeed[]>([]);
   const [used, setUsed] = useState(() => loadLearn().lookupsToday);
   const [error, setError] = useState<string | null>(null);
+  const [catalogReady, setCatalogReady] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    bootstrapLearn("catalog", { track }).then(() => {
+      if (!cancelled) setCatalogReady(true);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [track]);
 
   function onSearch(e: FormEvent) {
     e.preventDefault();
     setError(null);
+    if (!catalogReady) {
+      setError("Đang tải từ điển… thử lại sau giây lát.");
+      return;
+    }
     if (!canLookup()) {
       setError(`Đã hết hạn mức tra cứu ngày (${FREE_LIMITS.dailyLookups}).`);
       return;

@@ -7,9 +7,12 @@ import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { Icon } from "@/components/Icon";
 import { RequireAuth } from "@/components/RequireAuth";
-import grammarEn from "@/data/grammar-en.json";
-import grammarJp from "@/data/grammar-jp.json";
-import { displayGrammarMeaning, displayGrammarNote } from "@/lib/gloss-vi";
+import { displayGrammarMeaning, displayGrammarNote, ensureGlossTrack } from "@/lib/gloss-vi";
+import {
+  ensureGrammarTrack,
+  getGrammarTrack,
+  type GrammarItem,
+} from "@/lib/curriculum-lazy";
 import {
   pathOverallProgress,
   recordGrammarEvidence,
@@ -17,17 +20,7 @@ import {
   type TrackId,
 } from "@/lib/learn-store";
 
-type G = {
-  id: string;
-  level: string;
-  pattern: string;
-  prompt: string;
-  meaning: string;
-  choices: string[];
-  answer: number;
-  note: string;
-  tags?: string[];
-};
+type G = GrammarItem;
 
 const JP_LEVELS = ["N5", "N4", "N3", "N2", "N1"] as const;
 const EN_LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"] as const;
@@ -88,10 +81,23 @@ function GrammarContent() {
   const [view, setView] = useState<"list" | "drill">(viewList ? "list" : "drill");
   const [qText, setQText] = useState("");
   const [tag, setTag] = useState<string | "all">("all");
+  const [bankTick, setBankTick] = useState(0);
+
+  useEffect(() => {
+    let cancelled = false;
+    Promise.all([ensureGrammarTrack(track), ensureGlossTrack(track)]).then(() => {
+      if (!cancelled) setBankTick((n) => n + 1);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [track]);
 
   const all = useMemo(
-    () => (track === "jp" ? grammarJp : grammarEn) as G[],
-    [track],
+    () => getGrammarTrack(track) as G[],
+    // bankTick: refresh after lazy grammar load
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [track, bankTick],
   );
 
   const tagOptions = useMemo(() => {

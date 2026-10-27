@@ -6,13 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "analyze": "next analyze",
     "lint": "eslint",
     "postinstall": "node scripts/copy-pdfjs.mjs",
     "copy-pdfjs": "node scripts/copy-pdfjs.mjs",
     "build:gloss-vi": "node scripts/build-gloss-vi.mjs",
     "build:gloss-vi:next": "node scripts/build-gloss-vi.mjs --jp N4 --en A2",
     "build:gloss-vi:remaining": "node scripts/build-gloss-vi.mjs --all-remaining",
-    "smoke:gloss-vi": "node scripts/smoke-gloss-vi.mjs"
+    "fix:gloss-vi": "node scripts/fix-gloss-vi.mjs --all",
+    "smoke:gloss-vi": "node scripts/smoke-gloss-vi.mjs --all"
   },
   "dependencies": {
     "@inkbar/core": "^0.8.0",
@@ -47,6 +49,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.3",
+    "google-translate-api-x": "^10.7.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

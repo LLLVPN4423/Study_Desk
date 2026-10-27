@@ -6,11 +6,13 @@ import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { RequireAuth } from "@/components/RequireAuth";
-import n1 from "@/data/openjlpt-kanji-n1.json";
-import n2 from "@/data/openjlpt-kanji-n2.json";
-import n3 from "@/data/openjlpt-kanji-n3.json";
-import n4 from "@/data/openjlpt-kanji-n4.json";
-import n5 from "@/data/openjlpt-kanji-n5.json";
+import { displayKanjiMeanings, ensureKanjiGloss } from "@/lib/gloss-vi";
+import {
+  ensureKanjiLevel,
+  getKanjiLevel,
+  type KanjiItem,
+  type KanjiLevel,
+} from "@/lib/curriculum-lazy";
 import {
   pathOverallProgress,
   recordKanjiEvidence,
@@ -18,27 +20,10 @@ import {
 } from "@/lib/learn-store";
 import { canSpeak, speak } from "@/lib/speech";
 
-type Kanji = {
-  character: string;
-  level: string;
-  meanings: string[];
-  onyomi: string[];
-  kunyomi: string[];
-  strokes?: number;
-  words?: string[];
-};
-
-type Level = "N5" | "N4" | "N3" | "N2" | "N1";
+type Kanji = KanjiItem;
+type Level = KanjiLevel;
 
 const LEVELS: Level[] = ["N5", "N4", "N3", "N2", "N1"];
-
-const banks: Record<Level, Kanji[]> = {
-  N5: n5 as Kanji[],
-  N4: n4 as Kanji[],
-  N3: n3 as Kanji[],
-  N2: n2 as Kanji[],
-  N1: n1 as Kanji[],
-};
 
 export default function KanjiPage() {
   return (
@@ -72,13 +57,45 @@ function KanjiContent() {
     params.get("view") === "list" ? "list" : "flash",
   );
   const [q, setQ] = useState("");
+  const [bankTick, setBankTick] = useState(0);
+  const [levelCounts, setLevelCounts] = useState<Partial<Record<Level, number>>>({});
 
   useEffect(() => {
     setLevel(parseLevel(params.get("level")));
     if (params.get("view") === "list") setView("list");
   }, [params]);
 
-  const bank = banks[level];
+  useEffect(() => {
+    let cancelled = false;
+    Promise.all([ensureKanjiLevel(level), ensureKanjiGloss()]).then(() => {
+      if (!cancelled) setBankTick((n) => n + 1);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [level]);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const counts: Partial<Record<Level, number>> = {};
+      for (const lv of LEVELS) {
+        const rows = await ensureKanjiLevel(lv);
+        counts[lv] = rows.length;
+      }
+      if (!cancelled) setLevelCounts(counts);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const bank = useMemo(
+    () => getKanjiLevel(level),
+    // bankTick: refresh after lazy kanji load
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [level, bankTick],
+  );
   const list = useMemo(() => {
     const s = q.trim().toLowerCase();
     if (!s) return bank;
@@ -165,7 +182,7 @@ function KanjiContent() {
               className={level === lv ? "chip map-chip active" : "chip map-chip"}
               onClick={() => changeLevel(lv)}
             >
-              {lv} · {banks[lv].length}
+              {lv} · {levelCounts[lv] ?? "…"}
             </button>
           ))}
         </div>
@@ -181,7 +198,11 @@ function KanjiContent() {
           {list.slice(0, 240).map((item) => (
             <article key={item.character + item.level} className="kanji-tile">
               <strong lang="ja">{item.character}</strong>
-              <p>{item.meanings.slice(0, 2).join(", ")}</p>
+              <p>
+                {displayKanjiMeanings(item.level, item.character, item.meanings)
+                  .slice(0, 2)
+                  .join(", ")}
+              </p>
               <small>
                 on {item.onyomi.slice(0, 2).join("·") || "—"} · kun{" "}
                 {item.kunyomi.slice(0, 2).join("·") || "—"}
@@ -248,7 +269,7 @@ function KanjiContent() {
             className={level === lv ? "active" : ""}
             onClick={() => changeLevel(lv)}
           >
-            {lv} ({banks[lv].length})
+            {lv} ({levelCounts[lv] ?? "…"})
           </button>
         ))}
       </div>
@@ -306,7 +327,9 @@ function KanjiContent() {
               <br />
               kun: {k.kunyomi.join(" · ") || "—"}
             </div>
-            <h2 className="meaning-line">{k.meanings.join("; ")}</h2>
+            <h2 className="meaning-line">
+              {displayKanjiMeanings(k.level, k.character, k.meanings).join("; ")}
+            </h2>
             {k.words?.length ? <p className="example">Từ: {k.words.join(" · ")}</p> : null}
           </>
         ) : (

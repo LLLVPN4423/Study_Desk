@@ -13,7 +13,7 @@ import kanjiN2 from "@/data/openjlpt-kanji-n2.json";
 import kanjiN3 from "@/data/openjlpt-kanji-n3.json";
 import kanjiN4 from "@/data/openjlpt-kanji-n4.json";
 import kanjiN5 from "@/data/openjlpt-kanji-n5.json";
-import { displayGrammarMeaning } from "@/lib/gloss-vi";
+import { displayGrammarMeaning, displayKanjiMeanings } from "@/lib/gloss-vi";
 import { getLesson, lessonVocabIds } from "@/lib/lessons";
 import {
   addLessonsToPath,
@@ -41,6 +41,7 @@ type G = {
 
 type Kanji = {
   character: string;
+  level?: string;
   meanings: string[];
   onyomi: string[];
   kunyomi: string[];
@@ -424,7 +425,7 @@ function KanjiDrill({
       </p>
       {flipped ? (
         <p className="translation" style={{ textAlign: "center" }}>
-          {k.meanings.join(", ")}
+          {displayKanjiMeanings(k.level || "N5", k.character, k.meanings).join(", ")}
           <br />
           <small>
             on: {k.onyomi.join(" · ") || "—"} · kun: {k.kunyomi.join(" · ") || "—"}

@@ -6,9 +6,24 @@ import { Suspense, useEffect, useMemo, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { Icon, type IconName } from "@/components/Icon";
-import { LearnStats } from "@/components/LearnStats";
-import { PathTimeline } from "@/components/PathTimeline";
+import dynamic from "next/dynamic";
 import { RequireAuth } from "@/components/RequireAuth";
+
+const LearnStats = dynamic(
+  () => import("@/components/LearnStats").then((m) => m.LearnStats),
+  { ssr: false, loading: () => null },
+);
+const PathTimeline = dynamic(
+  () => import("@/components/PathTimeline").then((m) => m.PathTimeline),
+  {
+    ssr: false,
+    loading: () => (
+      <p className="muted" style={{ marginTop: 12 }}>
+        Đang tải lộ trình…
+      </p>
+    ),
+  },
+);
 import {
   actionCredit,
   activityLast7Days,

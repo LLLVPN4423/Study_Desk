@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { RequireAuth } from "@/components/RequireAuth";
 import { displayMeanings, getVocabGlossVi } from "@/lib/gloss-vi";
@@ -14,6 +14,7 @@ import {
   posBucketLabel,
   type PosBucket,
 } from "@/lib/pos-labels";
+import { ensureVocabBand } from "@/lib/vocab-seeds";
 
 const JP_LEVELS = ["N5", "N4", "N3", "N2", "N1"] as const;
 const EN_LEVELS = ["A1", "A2", "B1", "B2", "C1", "C2"] as const;
@@ -51,10 +52,23 @@ function VocabListContent() {
   const [script, setScript] = useState<"all" | "kanji" | "kana">("all");
   const [starts, setStarts] = useState("");
   const [sort, setSort] = useState<SortKey>("az");
+  const [bandReady, setBandReady] = useState(0);
+
+  useEffect(() => {
+    let cancelled = false;
+    ensureVocabBand(track, level).then(() => {
+      if (!cancelled) setBandReady((n) => n + 1);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [track, level]);
 
   const all = useMemo(
     () => (track === "jp" ? getJpSeed() : getEnSeed()) as VocabSeed[],
-    [track],
+    // bandReady: refresh after lazy band load
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [track, bandReady],
   );
 
   const posCounts = useMemo(() => {

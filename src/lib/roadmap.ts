@@ -1,4 +1,3 @@
-import cefrj from "@/data/cefrj-vocab-seed.json";
 import grammarEn from "@/data/grammar-en.json";
 import grammarJp from "@/data/grammar-jp.json";
 import kanjiN1 from "@/data/openjlpt-kanji-n1.json";
@@ -10,11 +9,6 @@ import mocksEn from "@/data/mocks-en.json";
 import mocksListeningEn from "@/data/mocks-listening-en.json";
 import mocksListeningJp from "@/data/mocks-listening-jp.json";
 import mocksJp from "@/data/mocks-jp.json";
-import jpSeedN1 from "@/data/openjlpt-n1-seed.json";
-import jpSeedN2 from "@/data/openjlpt-n2-seed.json";
-import jpSeedN3 from "@/data/openjlpt-n3-seed.json";
-import jpSeedN4 from "@/data/openjlpt-n4-seed.json";
-import jpSeedN5 from "@/data/openjlpt-n5-seed.json";
 import {
   DEFAULT_PATH_GOALS,
   estimatePathSchedule,
@@ -24,6 +18,11 @@ import {
   type PathIntensity,
   type PathScheduleEstimate,
 } from "./path-goals";
+import {
+  getEnSeedRaw,
+  getJpSeed,
+  getVocabBand,
+} from "./vocab-seeds";
 
 export type { PathGoals, PathIntensity, PathScheduleEstimate };
 export { estimatePathSchedule, newCardsPerDay };
@@ -158,17 +157,11 @@ const KANJI: Record<string, KanjiItem[]> = {
 };
 
 function allJp(): VocabSeed[] {
-  return [
-    ...(jpSeedN5 as VocabSeed[]),
-    ...(jpSeedN4 as VocabSeed[]),
-    ...(jpSeedN3 as VocabSeed[]),
-    ...(jpSeedN2 as VocabSeed[]),
-    ...(jpSeedN1 as VocabSeed[]),
-  ];
+  return getJpSeed() as VocabSeed[];
 }
 
 function allEn(): VocabSeed[] {
-  return cefrj as VocabSeed[];
+  return getEnSeedRaw() as VocabSeed[];
 }
 
 export function jpVocabLevels(band: string): { primary: string; bridge?: string } {
@@ -187,13 +180,17 @@ export function enPrimaryLevel(band: string): string {
   return "A2";
 }
 
-/** Full vocab pool for the primary level of a band. */
+/** Full vocab pool for the primary level of a band (band must be ensureVocabBand'd). */
 export function primaryLevelPool(track: TrackId, band: string): VocabSeed[] {
   if (track === "jp") {
     const { primary } = jpVocabLevels(band);
+    const bandRows = getVocabBand("jp", primary) as VocabSeed[];
+    if (bandRows.length) return bandRows;
     return allJp().filter((w) => w.level === primary);
   }
   const primary = enPrimaryLevel(band);
+  const bandRows = getVocabBand("en", primary) as VocabSeed[];
+  if (bandRows.length) return bandRows;
   return allEn().filter((w) => w.level === primary);
 }
 

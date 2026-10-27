@@ -1,24 +1,61 @@
 /**
  * Vietnamese gloss overlay for JP/EN learning content.
- * Seed files stay EN; display prefers VI when present.
+ * Maps load on demand per track (Desk / unused track stay out of the chunk).
  */
-import glossEn from "@/data/gloss-vi-en.json";
-import glossJp from "@/data/gloss-vi-jp.json";
-import glossGrammarEn from "@/data/gloss-vi-grammar-en.json";
-import glossGrammarJp from "@/data/gloss-vi-grammar-jp.json";
-
 export type VocabGlossVi = { vi: string; exampleVi?: string };
 export type GrammarGlossVi = { vi: string; noteVi?: string };
 
 type GlossMap = Record<string, VocabGlossVi>;
 type GrammarMap = Record<string, GrammarGlossVi>;
 
-const JP = glossJp as GlossMap;
-const EN = glossEn as GlossMap;
-const G_JP = glossGrammarJp as GrammarMap;
-const G_EN = glossGrammarEn as GrammarMap;
+let JP: GlossMap = {};
+let EN: GlossMap = {};
+let G_JP: GrammarMap = {};
+let G_EN: GrammarMap = {};
+let KANJI: GlossMap = {};
 
-/** POS / grammar labels EN → VI (short). */
+let jpReady = false;
+let enReady = false;
+let kanjiReady = false;
+let jpPending: Promise<void> | null = null;
+let enPending: Promise<void> | null = null;
+let kanjiPending: Promise<void> | null = null;
+
+const VI_DIACRITIC =
+  /[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđĐ]/;
+
+/** POS labels mistaken for definitions (bad seed / MT leftovers). */
+const POS_LABEL_ONLY =
+  /^(danh từ|động từ|tính từ|trạng từ|đại từ|giới từ|liên từ|thán từ|mạo từ|hạn định từ|trợ động từ|động từ khuyết thiếu|số từ|trợ từ|động từ to be|be-verb|noun|verb|adjective|adverb|pronoun|preposition|conjunction)$/i;
+
+export function isPosLabelOnly(text: string | undefined | null): boolean {
+  return POS_LABEL_ONLY.test(String(text || "").trim());
+}
+
+/** Reject MT fallback leftovers so UI does not show English-in-parens as "VI". */
+function isUsableViGloss(vi: string, opts?: { word?: string }): boolean {
+  const t = vi.trim();
+  if (!t) return false;
+  if (/MYMEMORY WARNING|&#x|&#\d/i.test(t)) return false;
+  if (isPosLabelOnly(t)) return false;
+  const w = (opts?.word || "").trim().toLowerCase();
+  if (w && t.toLowerCase() === w) return false;
+  // "abandon (động từ)" is NOT a real gloss — only allow loanword tags
+  const m = t.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
+  if (w && m && m[1].trim().toLowerCase() === w) {
+    const note = (m[2] || "").trim();
+    if (/^(từ quốc tế|từ mượn)$/i.test(note)) {
+      /* keep */
+    } else {
+      return false;
+    }
+  }
+  if (/^[(（][^)）]+[)）]$/.test(t) && !VI_DIACRITIC.test(t) && /[A-Za-z]{3}/.test(t)) {
+    return false;
+  }
+  return true;
+}
+
 const POS_VI: Record<string, string> = {
   "be-verb": "động từ to be",
   noun: "danh từ",
@@ -41,7 +78,6 @@ const POS_VI: Record<string, string> = {
   particle: "trợ từ",
 };
 
-/** High-frequency EN contractions / function forms for A1. */
 const EN_WORD_VI: Record<string, string> = {
   "'m": "dạng rút của am (I am) — thì / là",
   "'re": "dạng rút của are (we/you/they are) — thì / là",
@@ -91,11 +127,65 @@ const EN_WORD_VI: Record<string, string> = {
   their: "của họ",
 };
 
+export function isGlossTrackReady(track: "jp" | "en"): boolean {
+  return track === "jp" ? jpReady : enReady;
+}
+
+export function isKanjiGlossReady(): boolean {
+  return kanjiReady;
+}
+
+export async function ensureGlossTrack(track: "jp" | "en"): Promise<void> {
+  if (track === "jp") {
+    if (jpReady) return;
+    if (!jpPending) {
+      jpPending = (async () => {
+        const [vocab, grammar] = await Promise.all([
+          import("@/data/gloss-vi-jp.json"),
+          import("@/data/gloss-vi-grammar-jp.json"),
+        ]);
+        JP = vocab.default as GlossMap;
+        G_JP = grammar.default as GrammarMap;
+        jpReady = true;
+        jpPending = null;
+      })();
+    }
+    await jpPending;
+    return;
+  }
+  if (enReady) return;
+  if (!enPending) {
+    enPending = (async () => {
+      const [vocab, grammar] = await Promise.all([
+        import("@/data/gloss-vi-en.json"),
+        import("@/data/gloss-vi-grammar-en.json"),
+      ]);
+      EN = vocab.default as GlossMap;
+      G_EN = grammar.default as GrammarMap;
+      enReady = true;
+      enPending = null;
+    })();
+  }
+  await enPending;
+}
+
+export async function ensureKanjiGloss(): Promise<void> {
+  if (kanjiReady) return;
+  if (!kanjiPending) {
+    kanjiPending = (async () => {
+      const mod = await import("@/data/gloss-vi-kanji.json");
+      KANJI = mod.default as GlossMap;
+      kanjiReady = true;
+      kanjiPending = null;
+    })();
+  }
+  await kanjiPending;
+}
+
 export function posToVi(pos: string | undefined | null): string | null {
   if (!pos) return null;
   const key = pos.trim().toLowerCase();
   if (POS_VI[key]) return POS_VI[key];
-  // OpenJLPT-style "v5u,vi"
   const first = key.split(/[,/]/)[0]?.trim();
   if (first && POS_VI[first]) return POS_VI[first];
   if (/^v\d/.test(first || "") || first?.startsWith("vs")) return "động từ";
@@ -107,9 +197,11 @@ export function posToVi(pos: string | undefined | null): string | null {
 export function getVocabGlossVi(
   track: "jp" | "en",
   sourceId: string,
+  opts?: { word?: string },
 ): VocabGlossVi | null {
   const hit = (track === "jp" ? JP : EN)[sourceId];
   if (!hit?.vi?.trim()) return null;
+  if (!isUsableViGloss(hit.vi, opts)) return null;
   return hit;
 }
 
@@ -119,7 +211,32 @@ export function getGrammarGlossVi(
 ): GrammarGlossVi | null {
   const hit = (track === "jp" ? G_JP : G_EN)[id];
   if (!hit?.vi?.trim()) return null;
+  if (!VI_DIACRITIC.test(hit.vi) && /[A-Za-z]{4}/.test(hit.vi)) return null;
   return hit;
+}
+
+export function kanjiGlossId(level: string, character: string): string {
+  return `kanji-${level}-${character}`;
+}
+
+export function getKanjiGlossVi(
+  level: string,
+  character: string,
+): VocabGlossVi | null {
+  const hit = KANJI[kanjiGlossId(level, character)];
+  if (!hit?.vi?.trim()) return null;
+  if (!isUsableViGloss(hit.vi)) return null;
+  return hit;
+}
+
+export function displayKanjiMeanings(
+  level: string,
+  character: string,
+  fallbackEn: string[],
+): string[] {
+  const gloss = getKanjiGlossVi(level, character);
+  if (gloss?.vi) return [gloss.vi];
+  return fallbackEn?.length ? fallbackEn : ["(chưa có nghĩa tiếng Việt)"];
 }
 
 /**
@@ -131,7 +248,7 @@ export function displayMeanings(
   fallbackEn: string[],
   opts?: { word?: string; pos?: string },
 ): string[] {
-  const gloss = getVocabGlossVi(track, sourceId);
+  const gloss = getVocabGlossVi(track, sourceId, { word: opts?.word });
   if (gloss?.vi) {
     const out = [gloss.vi];
     const posVi = posToVi(opts?.pos);
@@ -149,7 +266,6 @@ export function displayMeanings(
     }
   }
 
-  // Fallback: clean EN meanings; never show word repeated as sole "meaning"
   const word = (opts?.word || "").trim().toLowerCase();
   const cleaned = (fallbackEn || []).filter(
     (m) =>
@@ -157,16 +273,21 @@ export function displayMeanings(
       m.trim() &&
       m.trim().toLowerCase() !== word &&
       !/^EN ·/i.test(m) &&
-      !/^CEFR /i.test(m),
+      !/^CEFR /i.test(m) &&
+      !isPosLabelOnly(m),
   );
+  const posVi = posToVi(opts?.pos);
   if (cleaned.length) {
-    const posVi = posToVi(opts?.pos);
-    return posVi ? [cleaned[0], posVi] : [cleaned[0]];
+    if (posVi && cleaned[0] !== posVi) return [cleaned[0], posVi];
+    return [cleaned[0]];
   }
 
-  const posVi = posToVi(opts?.pos);
+  if (track === "en") {
+    return posVi
+      ? ["(chưa có nghĩa tiếng Việt)", posVi]
+      : ["(chưa có nghĩa tiếng Việt)"];
+  }
   if (posVi) return [posVi];
-  if (track === "en") return ["(chưa có nghĩa tiếng Việt)"];
   return fallbackEn?.length ? fallbackEn : ["(chưa có nghĩa)"];
 }
 

@@ -42,7 +42,7 @@ import {
   hasFileHandle,
   writeBlobToDisk,
 } from "@/lib/file-handles";
-import { addManualCard, loadLearn, type TrackId } from "@/lib/learn-store";
+import { addManualCard, readLearn, type TrackId } from "@/lib/learn-store-core";
 import { canListen, listenOnce } from "@/lib/speech";
 
 const StudioRichEditor = dynamic(
@@ -137,9 +137,11 @@ export function DeskStudio({
   const savedFlashTimer = useRef<number | null>(null);
   /** Đã sửa sau lần ghi ra máy gần nhất (hoặc sau khi mở) — hỏi lưu khi đổi file. */
   const editDirtyRef = useRef(false);
-  const [leavePrompt, setLeavePrompt] = useState<null | { kind: "close" } | { kind: "select"; id: string }>(
-    null,
-  );
+  type LeaveAction =
+    | { kind: "close" }
+    | { kind: "select"; id: string }
+    | { kind: "create-note" };
+  const [leavePrompt, setLeavePrompt] = useState<LeaveAction | null>(null);
   /** Tăng sau bake PDF → remount viewer với bytes đã ghi (thấy sửa ngay, không cần tải về). */
   const [pdfEpoch, setPdfEpoch] = useState(0);
 
@@ -343,11 +345,12 @@ export function DeskStudio({
     return deskLive.current.files.find((f) => f.id === file.id) || file;
   }
 
-  /** Ctrl+S: luôn lưu bàn; chỉ ghi máy nếu đã «Mở từ máy» (không hỏi Save As). */
+  /** Ctrl+S: luôn lưu bàn; chỉ ghi máy nếu đã gắn handle (không hỏi Save As). */
   async function syncDiskIfLinked(latest: DeskFile) {
     const blob = blobFromEditedDeskFile(latest);
     if (!blob) {
-      clearEdited();
+      // Không có bytes để ghi máy — bàn đã lưu; vẫn giữ dirty nếu chưa gắn máy
+      if (linkedToDisk) clearEdited();
       setMsg("Đã lưu trên bàn học.");
       return;
     }
@@ -358,16 +361,14 @@ export function DeskStudio({
       setMsg("Đã lưu trên bàn và ghi đè file trên máy.");
     } else if (result.reason === "no-handle") {
       setLinkedToDisk(false);
-      clearEdited();
-      setMsg("Đã lưu trên bàn học.");
+      // Giữ dirty → đổi file vẫn hỏi lưu ra máy (ghi chú .md mới, chưa «Mở từ máy»)
+      setMsg("Đã lưu trên bàn. Dùng «Ghi ra máy» để chọn nơi lưu và Ctrl+S cập nhật sau.");
     } else if (result.reason === "denied") {
       setMsg("Đã lưu trên bàn. Trình duyệt từ chối ghi file — thử «Ghi ra máy».");
-    } else if (result.reason !== "cancelled") {
-      clearEdited();
-      setMsg(`Đã lưu trên bàn học. (${result.reason})`);
-    } else {
-      clearEdited();
+    } else if (result.reason === "cancelled") {
       setMsg("Đã lưu trên bàn học.");
+    } else {
+      setMsg(`Đã lưu trên bàn học. (${result.reason})`);
     }
   }
 
@@ -461,13 +462,14 @@ export function DeskStudio({
     downloadDeskFile(latest);
   }
 
-  function executeLeave(action: { kind: "close" } | { kind: "select"; id: string }) {
+  function executeLeave(action: LeaveAction) {
     setLeavePrompt(null);
     if (action.kind === "close") onClose();
-    else onSelect(action.id);
+    else if (action.kind === "select") onSelect(action.id);
+    else onCreateNote();
   }
 
-  function requestLeave(action: { kind: "close" } | { kind: "select"; id: string }) {
+  function requestLeave(action: LeaveAction) {
     if (!file) {
       executeLeave(action);
       return;
@@ -509,7 +511,7 @@ export function DeskStudio({
       draft.notes = notes;
     }
 
-    // Đã sửa trong phiên (autosave bàn có thể xong rồi) → vẫn hỏi, để Lưu ghi máy / xác nhận
+    // Đã sửa trong phiên (autosave bàn có thể xong rồi) → vẫn hỏi lưu / ghi máy
     const sessionDirty = editDirtyRef.current;
     const dirty =
       liveDirty ||
@@ -528,7 +530,81 @@ export function DeskStudio({
     setLeavePrompt(action);
   }
 
-  function confirmSaveAndLeave() {
+  const needsDiskLinkOnLeave =
+    Boolean(file) &&
+    !linkedToDisk &&
+    (file?.kind === "note" || file?.kind === "doc" || file?.kind === "pdf");
+
+  /** Lưu bàn + ghi máy (Save As nếu chưa gắn), rồi mới rời. */
+  function confirmSaveToDiskAndLeave() {
+    if (!leavePrompt) return;
+    const action = leavePrompt;
+    void (async () => {
+      setSaveState("saving");
+      let latest: DeskFile | null = null;
+      if (file?.kind === "pdf" || file?.kind === "doc") {
+        latest = await commitBinaryEdits();
+      } else if (file) {
+        const liveContent = liveEditorContent();
+        setContent(liveContent);
+        if (saveTimer.current) {
+          window.clearTimeout(saveTimer.current);
+          saveTimer.current = null;
+        }
+        pending.current = null;
+        const next = patchFile(deskLive.current, file.id, {
+          content: liveContent,
+          notes,
+          size: byteLengthOfText(liveContent),
+        });
+        latest = next.files.find((f) => f.id === file.id) || null;
+        if (latest) {
+          persist(next);
+          await persistFileBlobs(latest);
+        }
+      }
+      if (!latest) {
+        setSaveState("dirty");
+        return;
+      }
+      const blob = blobFromEditedDeskFile(latest);
+      if (!blob) {
+        clearEdited();
+        executeLeave(action);
+        return;
+      }
+      const result = await writeBlobToDisk(latest.id, latest.name, latest.kind, blob, {
+        forcePicker: !linkedToDisk,
+      });
+      if (result.reason === "cancelled") {
+        setSaveState("dirty");
+        setMsg("Đã hủy — chọn lại nơi lưu hoặc «Chỉ bàn» / Ở lại.");
+        return;
+      }
+      if (result.ok) {
+        setLinkedToDisk(true);
+        clearEdited();
+        setMsg(
+          result.mode === "overwrite"
+            ? "Đã ghi đè file trên máy."
+            : "Đã lưu ra máy — lần sau Ctrl+S ghi đè thẳng.",
+        );
+        executeLeave(action);
+        return;
+      }
+      if (result.reason === "unsupported") {
+        clearEdited();
+        setMsg("Trình duyệt không hỗ trợ chọn nơi lưu — đã giữ trên bàn. Dùng Chrome/Edge hoặc Tải sửa.");
+        executeLeave(action);
+        return;
+      }
+      setSaveState("dirty");
+      setMsg(`Ghi ra máy lỗi: ${result.reason}`);
+    })();
+  }
+
+  /** Chỉ commit bàn học rồi rời (không mở Save As). */
+  function confirmSaveBrowserAndLeave() {
     if (!leavePrompt) return;
     const action = leavePrompt;
     void (async () => {
@@ -560,7 +636,7 @@ export function DeskStudio({
     clearEdited();
     setImgZoom(100);
     setImgRotate(0);
-    setTrack(loadLearn().preferredTrack);
+    setTrack(readLearn().preferredTrack);
     setLinkedToDisk(false);
     if (file?.id) {
       void hasFileHandle(file.id).then(setLinkedToDisk);
@@ -799,7 +875,12 @@ export function DeskStudio({
           <div className="studio-pane-head">
             <h2>Nguồn</h2>
             <div className="file-toolbar">
-              <button type="button" className="icon-ghost" title="Ghi chú mới" onClick={onCreateNote}>
+              <button
+                type="button"
+                className="icon-ghost"
+                title="Ghi chú mới"
+                onClick={() => requestLeave({ kind: "create-note" })}
+              >
                 <Icon name="plus" size={16} />
               </button>
               <button
@@ -1458,7 +1539,9 @@ export function DeskStudio({
       <SaveLeaveDialog
         open={Boolean(leavePrompt)}
         fileName={file?.name}
-        onSave={confirmSaveAndLeave}
+        needsDiskLink={needsDiskLinkOnLeave}
+        onSaveToDisk={confirmSaveToDiskAndLeave}
+        onSaveBrowserOnly={confirmSaveBrowserAndLeave}
         onDiscard={confirmDiscardAndLeave}
         onCancel={() => setLeavePrompt(null)}
       />

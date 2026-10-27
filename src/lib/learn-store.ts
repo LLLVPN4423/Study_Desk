@@ -13,12 +13,6 @@ import {
 } from "./fsrs";
 import { STORAGE_KEYS } from "./storage-keys";
 import { loadSession } from "./session";
-import jpSeedN5 from "@/data/openjlpt-n5-seed.json";
-import jpSeedN4 from "@/data/openjlpt-n4-seed.json";
-import jpSeedN3 from "@/data/openjlpt-n3-seed.json";
-import jpSeedN2 from "@/data/openjlpt-n2-seed.json";
-import jpSeedN1 from "@/data/openjlpt-n1-seed.json";
-import enSeed from "@/data/cefrj-vocab-seed.json";
 import {
   DEFAULT_PATH_GOALS,
   estimatePathSchedule,
@@ -47,6 +41,7 @@ import {
 import {
   buildRoadmap,
   buildWeeksFromLessons,
+  jpVocabLevels,
   levelCoverStats,
   moreCurriculumVocab,
   primaryLevelPool,
@@ -60,66 +55,52 @@ import {
 } from "./roadmap";
 import { shiftBand } from "./placement";
 import { displayMeanings, getVocabGlossVi } from "./gloss-vi";
+import {
+  defaultLearn,
+  emptyTrack,
+  getTrack,
+  LEARN_PATHS_EPOCH,
+  normalize,
+  readLearn,
+  saveLearn,
+  type DayActivity,
+  type LearnState,
+  type SerializedCard,
+  type TrackId,
+  type TrackState,
+} from "./learn-store-core";
+import {
+  getEnSeedRaw,
+  getJpSeed as getJpSeedLoaded,
+  getSeedGeneration,
+  type EnBand,
+  type JpBand,
+} from "./vocab-seeds";
 
-export type TrackId = "jp" | "en";
-export type JpBand = "N5" | "N4" | "N3" | "N2" | "N1";
-export type EnBand = "A1" | "A2" | "B1" | "B2" | "C1" | "C2";
+export type { TrackId, JpBand, EnBand };
 export type { VocabSeed, RoadmapPlan, PathGoals, PathEvidence, PathAdvice };
+export type {
+  DayActivity,
+  LearnState,
+  SerializedCard,
+  TrackState,
+} from "./learn-store-core";
+export {
+  addManualCard,
+  getTrack,
+  LEARN_PATHS_EPOCH,
+  saveLearn,
+} from "./learn-store-core";
 export { EVIDENCE } from "./path-evidence";
 export { newCardsPerDay, estimatePathSchedule };
 
 /** Min share of Good/Easy in a vocab lesson before the day can pass. */
 export const LESSON_PASS_GOOD_RATIO = 0.7;
 
-/** Persisted: sourceId + FSRS. word/meanings optional (legacy) — hydrate from seed. */
-export type SerializedCard = {
-  sourceId: string;
-  track: TrackId;
-  word?: string;
-  reading?: string;
-  meanings?: string[];
-  exampleJa?: string;
-  exampleEn?: string;
-  card: CardSnapshot;
-  /** Last SRS grade (1 Again … 4 Easy) — used for lesson pass quality. */
-  lastGrade?: number;
-};
-
 export type HydratedCard = SerializedCard & {
   word: string;
   meanings: string[];
 };
-
-export type ActionProgressEntry = {
-  doneAt: string;
-  score?: number;
-};
-
-export type DayActivity = {
-  day: string;
-  minutes: number;
-  reviews: number;
-  actions: number;
-};
-
-export type TrackState = {
-  band: string | null;
-  placementDone: boolean;
-  pathActive: boolean;
-  cards: SerializedCard[];
-  roadmap: RoadmapPlan | null;
-  actionProgress: Record<string, ActionProgressEntry>;
-  pathGoals: PathGoals | null;
-  /** Real study signals — used to gate progress (anti-skip). */
-  evidence: PathEvidence;
-  /** ISO date when current path band was activated (pace vs ETA). */
-  pathStartedAt?: string | null;
-  /** Lesson library completion (browse or path). */
-  lessonProgress?: Record<string, { doneAt: string }>;
-};
-
-/** Bump to wipe JP/EN path progress once (user-requested fresh start). */
-export const LEARN_PATHS_EPOCH = 8;
 
 /** Beginner goals: zero → N5 / A1. */
 export const BEGINNER_JP_GOALS: PathGoals = {
@@ -133,152 +114,12 @@ export const BEGINNER_EN_GOALS: PathGoals = {
   intensity: "standard",
 };
 
-export type LearnState = {
-  preferredTrack: TrackId;
-  jp: TrackState;
-  en: TrackState;
-  reviewsToday: number;
-  /** New cards (reps 0→1) introduced today — separate from due reviews. */
-  newCardsToday: number;
-  lookupsToday: number;
-  dayKey: string;
-  mocksThisMonth: number;
-  mockMonthKey: string;
-  activityLog: DayActivity[];
-  /** When !== LEARN_PATHS_EPOCH, JP/EN tracks are cleared on load. */
-  pathsEpoch?: number;
-};
-
 function todayKey() {
   return new Date().toISOString().slice(0, 10);
 }
 
 function monthKey() {
   return new Date().toISOString().slice(0, 7);
-}
-
-function emptyTrack(): TrackState {
-  return {
-    band: null,
-    placementDone: false,
-    pathActive: false,
-    cards: [],
-    roadmap: null,
-    actionProgress: {},
-    pathGoals: null,
-    evidence: emptyEvidence(),
-    pathStartedAt: null,
-    lessonProgress: {},
-  };
-}
-
-function defaultLearn(): LearnState {
-  return {
-    preferredTrack: "jp",
-    jp: emptyTrack(),
-    en: emptyTrack(),
-    reviewsToday: 0,
-    newCardsToday: 0,
-    lookupsToday: 0,
-    dayKey: todayKey(),
-    mocksThisMonth: 0,
-    mockMonthKey: monthKey(),
-    activityLog: [],
-    pathsEpoch: LEARN_PATHS_EPOCH,
-  };
-}
-
-function ensureTrackFields(t: TrackState): TrackState {
-  return {
-    ...t,
-    actionProgress: t.actionProgress && typeof t.actionProgress === "object" ? t.actionProgress : {},
-    pathGoals: t.pathGoals ? normalizePathGoals(t.pathGoals) : null,
-    evidence: normalizeEvidence(t.evidence),
-    pathStartedAt: t.pathStartedAt || t.roadmap?.startedAt || null,
-    lessonProgress:
-      t.lessonProgress && typeof t.lessonProgress === "object" ? t.lessonProgress : {},
-  };
-}
-
-function migrate(raw: Record<string, unknown>): LearnState {
-  const base = defaultLearn();
-  if (raw.jp || raw.en) {
-    const state = normalize({ ...base, ...(raw as unknown as LearnState) });
-    state.jp.cards = state.jp.cards.map((c) => ({
-      ...c,
-      card: coerceSnapshot(c.card as CardSnapshot),
-    }));
-    state.en.cards = state.en.cards.map((c) => ({
-      ...c,
-      card: coerceSnapshot(c.card as CardSnapshot),
-    }));
-    return state;
-  }
-  const cards = Array.isArray(raw.cards) ? (raw.cards as SerializedCard[]) : [];
-  return normalize({
-    ...base,
-    preferredTrack: "jp",
-    jp: {
-      band: (raw.placementBand as string) || null,
-      placementDone: Boolean(raw.placementDone),
-      pathActive: Boolean(raw.pathActive),
-      cards: cards.map((c) => ({
-        ...c,
-        track: "jp" as const,
-        card: coerceSnapshot(c.card as CardSnapshot),
-      })),
-      roadmap: null,
-      actionProgress: {},
-      pathGoals: null,
-      evidence: emptyEvidence(),
-    },
-    activityLog: [],
-    reviewsToday: Number(raw.reviewsToday) || 0,
-    lookupsToday: Number(raw.lookupsToday) || 0,
-    dayKey: String(raw.dayKey || todayKey()),
-  });
-}
-
-function normalize(state: LearnState): LearnState {
-  let next = { ...state };
-  if (!next.jp) next.jp = emptyTrack();
-  if (!next.en) next.en = emptyTrack();
-  next.jp = ensureTrackFields({
-    ...next.jp,
-    roadmap: next.jp.roadmap === undefined ? null : next.jp.roadmap,
-  });
-  next.en = ensureTrackFields({
-    ...next.en,
-    roadmap: next.en.roadmap === undefined ? null : next.en.roadmap,
-  });
-  if (!Array.isArray(next.activityLog)) next.activityLog = [];
-  if (typeof next.newCardsToday !== "number") next.newCardsToday = 0;
-  if (next.dayKey !== todayKey()) {
-    next = {
-      ...next,
-      dayKey: todayKey(),
-      reviewsToday: 0,
-      newCardsToday: 0,
-      lookupsToday: 0,
-    };
-  }
-  // One-shot path wipe (epoch bump) — keeps desk; clears JP/EN learn progress.
-  if (next.pathsEpoch !== LEARN_PATHS_EPOCH) {
-    next = {
-      ...next,
-      jp: emptyTrack(),
-      en: emptyTrack(),
-      reviewsToday: 0,
-      newCardsToday: 0,
-      lookupsToday: 0,
-      activityLog: [],
-      pathsEpoch: LEARN_PATHS_EPOCH,
-    };
-  }
-  if (next.mockMonthKey !== monthKey()) {
-    next = { ...next, mockMonthKey: monthKey(), mocksThisMonth: 0 };
-  }
-  return next;
 }
 
 function bumpActivity(
@@ -327,7 +168,7 @@ export function loadLearn(): LearnState {
       saveLearn(wiped);
       return seedBeginnerZeroPaths({ preferredTrack: wiped.preferredTrack });
     }
-    return migrate(parsed);
+    return readLearn();
   } catch {
     return seedBeginnerZeroPaths();
   }
@@ -400,14 +241,6 @@ export function resetLanguagePaths(): LearnState {
   return seedBeginnerZeroPaths({ preferredTrack: preferred });
 }
 
-export function saveLearn(state: LearnState) {
-  localStorage.setItem(STORAGE_KEYS.learn, JSON.stringify(state));
-}
-
-export function getTrack(state: LearnState, track: TrackId): TrackState {
-  return track === "jp" ? state.jp : state.en;
-}
-
 export function setPreferredTrack(track: TrackId) {
   const state = loadLearn();
   state.preferredTrack = track;
@@ -415,18 +248,16 @@ export function setPreferredTrack(track: TrackId) {
   return state;
 }
 
+/** Loaded JP bands only — call ensureVocabBand / ensureAllVocab first. */
 export function getJpSeed(): VocabSeed[] {
-  return [
-    ...(jpSeedN5 as VocabSeed[]),
-    ...(jpSeedN4 as VocabSeed[]),
-    ...(jpSeedN3 as VocabSeed[]),
-    ...(jpSeedN2 as VocabSeed[]),
-    ...(jpSeedN1 as VocabSeed[]),
-  ];
+  return getJpSeedLoaded() as VocabSeed[];
 }
 
+/** Loaded EN vocab (cleaned) — call ensureVocabBand("en", …) first. */
 export function getEnSeed(): VocabSeed[] {
-  return (enSeed as VocabSeed[]).map((w) => {
+  const posLabel =
+    /^(danh từ|động từ|tính từ|trạng từ|đại từ|giới từ|liên từ|thán từ|mạo từ|hạn định từ|trợ động từ|động từ khuyết thiếu|số từ|trợ từ|động từ to be|be-verb|noun|verb|adjective|adverb|pronoun|preposition|conjunction)$/i;
+  return getEnSeedRaw().map((w) => {
     const pos = (w.pos || "").trim();
     const raw = w.meanings || [];
     const cleaned = raw.filter(
@@ -435,14 +266,15 @@ export function getEnSeed(): VocabSeed[] {
         m !== w.word &&
         !/^EN ·/i.test(m) &&
         !/^CEFR /i.test(m) &&
-        m.toLowerCase() !== pos.toLowerCase(),
+        m.toLowerCase() !== pos.toLowerCase() &&
+        !posLabel.test(m.trim()),
     );
-    // Keep seed lean; Vietnamese display comes from gloss-vi overlay
+    // Prefer real defs; empty → displayMeanings shows "(chưa có nghĩa…)"
     return {
       ...w,
-      meanings: cleaned.length ? cleaned : pos ? [pos] : [w.word],
+      meanings: cleaned,
     };
-  });
+  }) as VocabSeed[];
 }
 
 export function searchVocab(query: string, track: TrackId = "jp", limit = 8): VocabSeed[] {
@@ -465,8 +297,15 @@ export function searchVocab(query: string, track: TrackId = "jp", limit = 8): Vo
 
 let seedIndexJp: Map<string, VocabSeed> | null = null;
 let seedIndexEn: Map<string, VocabSeed> | null = null;
+let seedIndexGen = -1;
 
 function seedIndex(track: TrackId): Map<string, VocabSeed> {
+  const gen = getSeedGeneration();
+  if (gen !== seedIndexGen) {
+    seedIndexJp = null;
+    seedIndexEn = null;
+    seedIndexGen = gen;
+  }
   if (track === "jp") {
     if (!seedIndexJp) {
       seedIndexJp = new Map(getJpSeed().map((w) => [w.id, w]));
@@ -2008,31 +1847,6 @@ export function tryManualMarkAction(track: TrackId, actionId: string) {
     };
   }
   return { ok: true as const, state: markActionDone(track, actionId) };
-}
-
-export function addManualCard(input: {
-  track: TrackId;
-  word: string;
-  meanings: string[];
-  reading?: string;
-}) {
-  const state = loadLearn();
-  const t = getTrack(state, input.track);
-  if (!t.pathActive) {
-    return { ok: false as const, reason: "Hãy kích hoạt một lộ trình học trước.", state };
-  }
-  const card: SerializedCard = {
-    sourceId: `manual-${crypto.randomUUID()}`,
-    track: input.track,
-    word: input.word,
-    reading: input.reading,
-    meanings: input.meanings,
-    card: serializeCard(newCard(new Date())),
-  };
-  // Manual cards keep word/meanings embedded (no seed id).
-  t.cards.unshift(card);
-  saveLearn(state);
-  return { ok: true as const, state };
 }
 
 export { Rating };

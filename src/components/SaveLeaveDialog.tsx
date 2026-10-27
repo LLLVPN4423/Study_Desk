@@ -7,13 +7,24 @@ import { Button } from "@/components/Button";
 type Props = {
   open: boolean;
   fileName?: string;
-  onSave: () => void;
+  /** Chưa gắn file trên máy — cần hỏi lưu ra đâu. */
+  needsDiskLink?: boolean;
+  onSaveToDisk: () => void;
+  onSaveBrowserOnly: () => void;
   onDiscard: () => void;
   onCancel: () => void;
 };
 
 /** Popup giữa viewport (portal → body) khi rời file đang dirty. */
-export function SaveLeaveDialog({ open, fileName, onSave, onDiscard, onCancel }: Props) {
+export function SaveLeaveDialog({
+  open,
+  fileName,
+  needsDiskLink = false,
+  onSaveToDisk,
+  onSaveBrowserOnly,
+  onDiscard,
+  onCancel,
+}: Props) {
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -51,14 +62,22 @@ export function SaveLeaveDialog({ open, fileName, onSave, onDiscard, onCancel }:
         <p>
           {fileName ? (
             <>
-              “<strong>{fileName}</strong>” có chỉnh sửa chưa lưu.
+              “<strong>{fileName}</strong>” có chỉnh sửa chưa lưu
+              {needsDiskLink ? " ra máy" : ""}.
             </>
           ) : (
             <>Có chỉnh sửa chưa lưu trên bàn học.</>
           )}
         </p>
         <p className="save-leave-note">
-          Lưu trên bàn (trình duyệt) và ghi ra máy nếu được — không upload đám mây.
+          {needsDiskLink ? (
+            <>
+              Ghi ra máy (chọn thư mục/tên) để lần sau Ctrl+S cập nhật như file mở từ
+              máy. Hoặc chỉ giữ trên bàn (trình duyệt).
+            </>
+          ) : (
+            <>Lưu trên bàn và ghi đè file trên máy nếu đã gắn — không upload đám mây.</>
+          )}
         </p>
         <div className="save-leave-actions">
           <Button variant="ghost" onClick={onCancel}>
@@ -67,7 +86,16 @@ export function SaveLeaveDialog({ open, fileName, onSave, onDiscard, onCancel }:
           <Button variant="secondary" onClick={onDiscard}>
             Không lưu
           </Button>
-          <Button onClick={onSave}>Lưu rồi tiếp</Button>
+          {needsDiskLink ? (
+            <>
+              <Button variant="secondary" onClick={onSaveBrowserOnly}>
+                Chỉ bàn
+              </Button>
+              <Button onClick={onSaveToDisk}>Lưu ra máy…</Button>
+            </>
+          ) : (
+            <Button onClick={onSaveToDisk}>Lưu rồi tiếp</Button>
+          )}
         </div>
       </div>
     </div>,
