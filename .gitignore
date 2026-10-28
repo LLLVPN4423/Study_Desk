@@ -59,3 +59,5 @@ docs/figma/pnpm-lock.yaml
 /public/pdfjs/
 
 .DS_Store
+
+.vercel

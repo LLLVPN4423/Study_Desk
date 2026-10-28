@@ -41,10 +41,12 @@ import {
   patchFile,
   saveCustomWallpaper,
   saveDesk,
+  saveDeskAsync,
   usedStorageBytes,
   type DeskFile,
   type DeskState,
   type DeskTask,
+  type SaveDeskResult,
 } from "@/lib/desk-store";
 import {
   DESK_ACCEPT_HINT,
@@ -208,13 +210,15 @@ function DeskContent({ userName }: { userName: string }) {
     return `${m}:${s}`;
   }, [seconds]);
 
-  function update(next: DeskState) {
+  function update(next: DeskState): Promise<SaveDeskResult> {
     deskRef.current = next;
     setDesk(next);
-    const result = saveDesk(next);
-    if (!result.ok) {
-      setUploadError(result.reason || "Không lưu được desk.");
-    }
+    return saveDeskAsync(next).then((result) => {
+      if (!result.ok) {
+        setUploadError(result.reason || "Không lưu được desk.");
+      }
+      return result;
+    });
   }
 
   function openStudio(id: string) {
@@ -323,7 +327,7 @@ function DeskContent({ userName }: { userName: string }) {
         firstStudyId = id;
       }
     }
-    update({ ...desk, files: nextFiles });
+    await update({ ...desk, files: nextFiles });
     return { firstStudyId, firstMusicId };
   }
 
@@ -333,22 +337,34 @@ function DeskContent({ userName }: { userName: string }) {
     if (firstMusicId) music.play(firstMusicId);
   }
 
-  /** Mở từ máy + quyền ghi → Ctrl+S ghi đè thẳng. */
+  /** Mở từ máy + quyền ghi (Chrome/Edge) hoặc file input (Safari/Firefox). */
   async function onOpenFromDisk() {
     const { pickDeskFilesFromDisk } = await import("@/lib/file-handles");
     const picked = await pickDeskFilesFromDisk();
     if (picked === null) {
-      setUploadError(
-        "Trình duyệt không hỗ trợ «Mở từ máy» — dùng Chrome/Edge.",
-      );
+      setUploadError("Không mở được bộ chọn tệp trong môi trường này.");
       return;
     }
-    if (!picked.length) return;
-    const handleByIndex = new Map(picked.map((p, i) => [i, p.handle]));
+    if (!picked.length) return; // cancelled — not an error
+    const handleByIndex = new Map<number, import("@/lib/file-handles").DeskFileHandle>();
+    let usedFallback = false;
+    picked.forEach((p, i) => {
+      if (p.handle) handleByIndex.set(i, p.handle);
+      if (p.viaInputFallback) usedFallback = true;
+    });
     const files = picked.map((p) => p.file);
-    const { firstStudyId, firstMusicId } = await ingestFiles(files, "study", handleByIndex);
+    const { firstStudyId, firstMusicId } = await ingestFiles(
+      files,
+      "study",
+      handleByIndex.size ? handleByIndex : undefined,
+    );
     if (firstMusicId) music.play(firstMusicId);
     if (firstStudyId) openStudio(firstStudyId);
+    if (usedFallback) {
+      setUploadError(
+        "Đã thêm lên bàn học (chế độ chọn tệp tiêu chuẩn). Ctrl+S ghi đè thẳng ra máy cần Chrome/Edge «Mở từ máy»; trên Safari/Firefox dùng Tải xuống.",
+      );
+    }
   }
 
   /** Kéo thả: ưu tiên File System handle (Chrome) để vẫn Ctrl+S ghi đè được. */
@@ -400,7 +416,7 @@ function DeskContent({ userName }: { userName: string }) {
     if (firstStudyId) openStudio(firstStudyId);
     if (!handleByIndex.size) {
       setUploadError(
-        "File thả vào chưa gắn quyền ghi — dùng «Mở từ máy» nếu cần Ctrl+S ghi đè.",
+        "Đã thêm file lên bàn học. Ghi đè thẳng ra máy (Ctrl+S) cần Chrome/Edge «Mở từ máy»; Safari/Firefox: dùng Tải xuống.",
       );
     }
   }
@@ -569,6 +585,7 @@ function DeskContent({ userName }: { userName: string }) {
           onUploadMusic={() => musicInputRef.current?.click()}
           onCreateNote={createNote}
           music={music}
+          highlightQuote={search.get("highlight") || undefined}
         />
         {uploadError ? (
           <p style={{ color: "var(--danger)", fontSize: 12, marginTop: 8 }}>{uploadError}</p>

@@ -1,7 +1,10 @@
 /**
  * Giữ FileSystemFileHandle để Ctrl+S / Lưu ghi đè đúng file trên máy (Chrome/Edge).
  * Handle lưu trong IndexedDB (có thể serialize).
+ * Safari/Firefox: không có showOpenFilePicker — dùng <input type="file"> (không có handle ghi đè).
  */
+
+import { DESK_ACCEPT, MUSIC_ACCEPT } from "./desk-formats";
 
 const DB_NAME = "study-desk-handles";
 const DB_VERSION = 1;
@@ -20,6 +23,53 @@ function openDb(): Promise<IDBDatabase> {
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error || new Error("IDB open failed"));
+  });
+}
+
+export function supportsOpenFilePicker(): boolean {
+  if (typeof window === "undefined") return false;
+  return typeof (window as Window & { showOpenFilePicker?: unknown }).showOpenFilePicker === "function";
+}
+
+/**
+ * Standard file input — works in Safari/Firefox. Cancellation → empty array (not an error).
+ */
+export function pickFilesViaInput(opts?: {
+  accept?: string;
+  multiple?: boolean;
+}): Promise<File[]> {
+  const accept = opts?.accept ?? `${DESK_ACCEPT},${MUSIC_ACCEPT}`;
+  const multiple = opts?.multiple !== false;
+  return new Promise((resolve) => {
+    if (typeof document === "undefined") {
+      resolve([]);
+      return;
+    }
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = accept;
+    input.multiple = multiple;
+    input.hidden = true;
+    let settled = false;
+    const finish = (files: File[]) => {
+      if (settled) return;
+      settled = true;
+      window.removeEventListener("focus", onFocus);
+      input.remove();
+      resolve(files);
+    };
+    const onFocus = () => {
+      // User cancelled: change may never fire; settle after focus returns.
+      window.setTimeout(() => {
+        if (!settled) finish(Array.from(input.files || []));
+      }, 400);
+    };
+    input.addEventListener("change", () => {
+      finish(Array.from(input.files || []));
+    });
+    document.body.appendChild(input);
+    window.addEventListener("focus", onFocus);
+    input.click();
   });
 }
 
@@ -251,12 +301,21 @@ const OPEN_PICKER_TYPES: SavePickerType[] = [
   },
 ];
 
+export type PickedDeskFile = {
+  file: File;
+  /** Present only when File System Access API succeeded (Chromium). */
+  handle?: DeskFileHandle;
+  /** True when opened via <input type=file> fallback. */
+  viaInputFallback?: boolean;
+};
+
 /**
  * Mở file từ máy kèm quyền ghi — Ctrl+S sau đó ghi đè thẳng (Chrome/Edge).
+ * Safari/Firefox: fallback `<input type="file">` (không có handle ghi đè).
+ * - `[]` = user cancelled
+ * - `null` = only if window unavailable (SSR)
  */
-export async function pickDeskFilesFromDisk(): Promise<
-  Array<{ file: File; handle: DeskFileHandle }> | null
-> {
+export async function pickDeskFilesFromDisk(): Promise<PickedDeskFile[] | null> {
   if (typeof window === "undefined") return null;
   const w = window as Window & {
     showOpenFilePicker?: (opts?: {
@@ -265,30 +324,38 @@ export async function pickDeskFilesFromDisk(): Promise<
       excludeAcceptAllOption?: boolean;
     }) => Promise<DeskFileHandle[]>;
   };
-  if (typeof w.showOpenFilePicker !== "function") return null;
 
-  try {
-    const handles = await w.showOpenFilePicker({
-      multiple: true,
-      types: OPEN_PICKER_TYPES,
-      excludeAcceptAllOption: false,
-    });
-    const out: Array<{ file: File; handle: DeskFileHandle }> = [];
-    for (const handle of handles) {
-      try {
-        await handle.requestPermission({ mode: "readwrite" });
-      } catch {
-        /* vẫn đọc được; ghi có thể hỏi lại lúc Ctrl+S */
+  if (typeof w.showOpenFilePicker === "function") {
+    try {
+      const handles = await w.showOpenFilePicker({
+        multiple: true,
+        types: OPEN_PICKER_TYPES,
+        excludeAcceptAllOption: false,
+      });
+      const out: PickedDeskFile[] = [];
+      for (const handle of handles) {
+        try {
+          await handle.requestPermission({ mode: "readwrite" });
+        } catch {
+          /* vẫn đọc được; ghi có thể hỏi lại lúc Ctrl+S */
+        }
+        const file = await handle.getFile();
+        out.push({ file, handle });
       }
-      const file = await handle.getFile();
-      out.push({ file, handle });
+      return out;
+    } catch (err) {
+      const name = err instanceof DOMException ? err.name : "";
+      if (name === "AbortError") return [];
+      // Unexpected FS API failure → try input fallback rather than hard-fail
+      console.warn("[file-handles] showOpenFilePicker failed, using input fallback", name || err);
     }
-    return out;
-  } catch (err) {
-    const name = err instanceof DOMException ? err.name : "";
-    if (name === "AbortError") return [];
-    return null;
   }
+
+  const files = await pickFilesViaInput({
+    accept: `${DESK_ACCEPT},${MUSIC_ACCEPT}`,
+    multiple: true,
+  });
+  return files.map((file) => ({ file, viaInputFallback: true }));
 }
 
 /**

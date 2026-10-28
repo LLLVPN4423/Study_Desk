@@ -1,6 +1,11 @@
 "use client";
 
-import { deleteDeskBlob, getDeskBlob, putDeskBlob } from "./desk-blobs";
+import {
+  deleteDeskBlob,
+  getDeskBlob,
+  putDeskBlob,
+  userMessageForBlobError,
+} from "./desk-blobs";
 import { FREE_LIMITS } from "./freemium";
 import {
   STORAGE_KEYS,
@@ -198,16 +203,22 @@ function scrubDesignSeeds(state: DeskState): DeskState {
   };
 }
 
-function contentBlobKey(id: string) {
+export function contentBlobKey(id: string) {
   return `content:${id}`;
 }
 
-function annBlobKey(id: string) {
+export function annBlobKey(id: string) {
   return `ann:${id}`;
 }
 
-function sourceBlobKey(id: string) {
+export function sourceBlobKey(id: string) {
   return `source:${id}`;
+}
+
+/** All IndexedDB keys that may hold binary/text for a desk file. */
+export function blobKeysForFile(file: DeskFile): string[] {
+  const keys = [file.id, sourceBlobKey(file.id), contentBlobKey(file.id), annBlobKey(file.id)];
+  return keys;
 }
 
 /** Ghi blob file lên IndexedDB và đợi xong (dùng sau bake PDF/DOCX). */
@@ -223,9 +234,67 @@ export async function persistFileBlobs(file: DeskFile): Promise<void> {
   if (file.pdfAnnotations && Array.isArray(file.pdfAnnotations) && file.pdfAnnotations.length > 0) {
     jobs.push(putDeskBlob(annBlobKey(file.id), JSON.stringify(file.pdfAnnotations)));
   } else {
-    jobs.push(deleteDeskBlob(annBlobKey(file.id)));
+    jobs.push(
+      deleteDeskBlob(annBlobKey(file.id)).catch(() => {
+        /* missing ann key is fine */
+      }),
+    );
   }
   await Promise.all(jobs);
+}
+
+export type SaveDeskResult = { ok: boolean; reason?: string };
+
+/** Persist file blobs then localStorage metadata. Prefer this over saveDesk for user-facing saves. */
+export async function saveDeskAsync(state: DeskState): Promise<SaveDeskResult> {
+  const clean = {
+    ...state,
+    version: DESK_VERSION,
+    tasks: (state.tasks || []).filter((t) => !isDemoTask(t)),
+  };
+  const blobErrors: string[] = [];
+  for (const f of clean.files) {
+    try {
+      await persistFileBlobs(f);
+    } catch (err) {
+      blobErrors.push(f.name || f.id);
+      console.warn("[desk] blob persist failed", f.id, userMessageForBlobError(err));
+    }
+  }
+  const ls = writeDeskLocalStorage(clean);
+  if (!ls.ok) return ls;
+  if (blobErrors.length) {
+    return {
+      ok: false,
+      reason: `Đã lưu danh sách file nhưng không ghi được nội dung: ${blobErrors.slice(0, 3).join(", ")}${blobErrors.length > 3 ? "…" : ""}. Thử xuất bản sao hoặc xóa bớt file lớn.`,
+    };
+  }
+  return { ok: true };
+}
+
+function writeDeskLocalStorage(clean: DeskState): SaveDeskResult {
+  const forLs = {
+    ...clean,
+    files: clean.files.map(({ dataUrl: _d, sourceDataUrl: _s, ...meta }) => meta),
+  };
+  try {
+    localStorage.setItem(STORAGE_KEYS.desk, JSON.stringify(forLs));
+  } catch {
+    try {
+      const slim = {
+        ...forLs,
+        files: forLs.files.map(
+          ({ outputs: _o, pdfAnnotations: _p, content: _c, ...meta }) => meta,
+        ),
+      };
+      localStorage.setItem(STORAGE_KEYS.desk, JSON.stringify(slim));
+    } catch {
+      applyBgAppearance(clean);
+      return { ok: false, reason: "Không ghi được localStorage (quota)." };
+    }
+  }
+  applyBgAppearance(clean);
+  return { ok: true };
 }
 
 export function loadDesk(): DeskState {
@@ -273,7 +342,11 @@ export function loadDesk(): DeskState {
   }
 }
 
-export function saveDesk(state: DeskState): { ok: boolean; reason?: string } {
+/**
+ * Sync save: writes localStorage immediately; kicks off IndexedDB blob writes.
+ * Prefer `saveDeskAsync` for user-visible saves so failures are not silent.
+ */
+export function saveDesk(state: DeskState): SaveDeskResult {
   const clean = {
     ...state,
     version: DESK_VERSION,
@@ -281,43 +354,29 @@ export function saveDesk(state: DeskState): { ok: boolean; reason?: string } {
   };
   for (const f of clean.files) {
     if (f.dataUrl) {
-      void putDeskBlob(f.id, f.dataUrl).catch(() => {});
+      void putDeskBlob(f.id, f.dataUrl).catch((err) => {
+        console.warn("[desk] blob put failed", f.id, userMessageForBlobError(err));
+      });
     }
     if (f.sourceDataUrl) {
-      void putDeskBlob(sourceBlobKey(f.id), f.sourceDataUrl).catch(() => {});
+      void putDeskBlob(sourceBlobKey(f.id), f.sourceDataUrl).catch((err) => {
+        console.warn("[desk] source blob put failed", f.id, userMessageForBlobError(err));
+      });
     }
     if (typeof f.content === "string" && f.content.length > 0) {
-      void putDeskBlob(contentBlobKey(f.id), f.content).catch(() => {});
+      void putDeskBlob(contentBlobKey(f.id), f.content).catch((err) => {
+        console.warn("[desk] content blob put failed", f.id, userMessageForBlobError(err));
+      });
     }
     if (f.pdfAnnotations && Array.isArray(f.pdfAnnotations) && f.pdfAnnotations.length > 0) {
-      void putDeskBlob(annBlobKey(f.id), JSON.stringify(f.pdfAnnotations)).catch(() => {});
+      void putDeskBlob(annBlobKey(f.id), JSON.stringify(f.pdfAnnotations)).catch((err) => {
+        console.warn("[desk] ann blob put failed", f.id, userMessageForBlobError(err));
+      });
     }
     // Không xóa ann ở đây khi rỗng — tránh race: dataUrl bake chưa ghi IDB mà ann đã mất.
     // persistFileBlobs() xóa ann sau khi bake đã await put dataUrl.
   }
-  const forLs = {
-    ...clean,
-    files: clean.files.map(({ dataUrl: _d, sourceDataUrl: _s, ...meta }) => meta),
-  };
-  try {
-    localStorage.setItem(STORAGE_KEYS.desk, JSON.stringify(forLs));
-  } catch {
-    try {
-      // Last resort: drop bulky fields from LS (still in IndexedDB)
-      const slim = {
-        ...forLs,
-        files: forLs.files.map(
-          ({ outputs: _o, pdfAnnotations: _p, content: _c, ...meta }) => meta,
-        ),
-      };
-      localStorage.setItem(STORAGE_KEYS.desk, JSON.stringify(slim));
-    } catch {
-      applyBgAppearance(clean);
-      return { ok: false, reason: "Không ghi được localStorage (quota)." };
-    }
-  }
-  applyBgAppearance(clean);
-  return { ok: true };
+  return writeDeskLocalStorage(clean);
 }
 
 /** Attach dataUrl + content from IndexedDB (and migrate legacy inlined blobs). */
@@ -326,27 +385,46 @@ export async function hydrateDeskBlobs(state: DeskState): Promise<DeskState> {
   const files = await Promise.all(
     state.files.map(async (f) => {
       let next = f;
+      const warn = (label: string, err: unknown) => {
+        console.warn("[desk] hydrate", label, f.id, userMessageForBlobError(err));
+      };
       if (f.dataUrl) {
-        await putDeskBlob(f.id, f.dataUrl).catch(() => {});
-        migrated = true;
+        try {
+          await putDeskBlob(f.id, f.dataUrl);
+          migrated = true;
+        } catch (err) {
+          warn("migrate primary", err);
+        }
       } else {
         const dataUrl = await getDeskBlob(f.id);
         if (dataUrl) next = { ...next, dataUrl };
       }
       if (f.sourceDataUrl) {
-        await putDeskBlob(sourceBlobKey(f.id), f.sourceDataUrl).catch(() => {});
+        try {
+          await putDeskBlob(sourceBlobKey(f.id), f.sourceDataUrl);
+        } catch (err) {
+          warn("migrate source", err);
+        }
       } else {
         const sourceDataUrl = await getDeskBlob(sourceBlobKey(f.id));
         if (sourceDataUrl) next = { ...next, sourceDataUrl };
       }
       if (typeof f.content === "string" && f.content.length > 0) {
-        await putDeskBlob(contentBlobKey(f.id), f.content).catch(() => {});
+        try {
+          await putDeskBlob(contentBlobKey(f.id), f.content);
+        } catch (err) {
+          warn("migrate content", err);
+        }
       } else {
         const stored = await getDeskBlob(contentBlobKey(f.id));
         if (stored) next = { ...next, content: stored };
       }
       if (f.pdfAnnotations && Array.isArray(f.pdfAnnotations) && f.pdfAnnotations.length > 0) {
-        await putDeskBlob(annBlobKey(f.id), JSON.stringify(f.pdfAnnotations)).catch(() => {});
+        try {
+          await putDeskBlob(annBlobKey(f.id), JSON.stringify(f.pdfAnnotations));
+        } catch (err) {
+          warn("migrate ann", err);
+        }
       } else {
         const rawAnn = await getDeskBlob(annBlobKey(f.id));
         if (rawAnn) {
@@ -354,7 +432,7 @@ export async function hydrateDeskBlobs(state: DeskState): Promise<DeskState> {
             const parsed = JSON.parse(rawAnn) as unknown[];
             if (Array.isArray(parsed)) next = { ...next, pdfAnnotations: parsed };
           } catch {
-            /* ignore */
+            /* ignore corrupt ann JSON */
           }
         }
       }

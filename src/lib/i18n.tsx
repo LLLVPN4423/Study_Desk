@@ -126,9 +126,9 @@ const dict = {
     backToLearn: "Về trang Học",
     backupTitle: "Sao lưu",
     backupBody:
-      "Dữ liệu nằm trong trình duyệt này. Xuất JSON định kỳ; nhập trên thiết bị/trình duyệt khác.",
-    backupRestored: "Đã khôi phục. Đang tải lại…",
-    backupFailed: "Không khôi phục được. Kiểm tra file JSON.",
+      "Dữ liệu nằm trong trình duyệt này. Bản sao v2 gồm metadata Learn/Desk và nội dung PDF/audio/ảnh trong IndexedDB (JSON + data URL). Nhập sẽ ghi đè desk/learn hiện tại. Ctrl+S ghi đè file trên máy chỉ có trên Chrome/Edge.",
+    backupRestored: "Đang tải lại…",
+    backupFailed: "Không khôi phục được.",
     settingsFoot:
       "MiniHongo là tuỳ chọn. Cờ Pro mở path JP+EN — chưa có cổng thanh toán. Luyện không chính thức — không liên kết JLPT/IELTS.",
     // Culture
@@ -278,9 +278,9 @@ const dict = {
     backToLearn: "Back to learn",
     backupTitle: "Backup",
     backupBody:
-      "Data lives in this browser. Export JSON regularly; import on another device/browser.",
-    backupRestored: "Backup restored. Reloading…",
-    backupFailed: "Could not restore backup. Check the JSON file.",
+      "Data lives in this browser. Backup v2 includes Learn/Desk metadata plus PDF/audio/image bytes from IndexedDB (JSON + data URLs). Import overwrites current desk/learn. Disk overwrite via Ctrl+S needs Chrome/Edge.",
+    backupRestored: "Reloading…",
+    backupFailed: "Could not restore backup.",
     settingsFoot:
       "MiniHongo is optional. Pro flag unlocks dual JP+EN paths — no payment gateway yet. Unofficial practice — not affiliated with JLPT/IELTS.",
     // Culture

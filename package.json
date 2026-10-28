@@ -14,7 +14,8 @@
     "build:gloss-vi:next": "node scripts/build-gloss-vi.mjs --jp N4 --en A2",
     "build:gloss-vi:remaining": "node scripts/build-gloss-vi.mjs --all-remaining",
     "fix:gloss-vi": "node scripts/fix-gloss-vi.mjs --all",
-    "smoke:gloss-vi": "node scripts/smoke-gloss-vi.mjs --all"
+    "smoke:gloss-vi": "node scripts/smoke-gloss-vi.mjs --all",
+    "smoke:backup": "node --experimental-strip-types scripts/smoke-backup.mjs"
   },
   "dependencies": {
     "@inkbar/core": "^0.8.0",
