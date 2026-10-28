@@ -38,6 +38,7 @@ import {
   suggestLessons,
   type Lesson,
 } from "./lessons";
+import { decideEpochGate } from "./learn-epoch";
 import {
   buildRoadmap,
   buildWeeksFromLessons,
@@ -159,14 +160,21 @@ export function loadLearn(): LearnState {
       return seedBeginnerZeroPaths();
     }
     const parsed = JSON.parse(raw) as LearnState & Record<string, unknown>;
-    const needsPathWipe = parsed.pathsEpoch !== LEARN_PATHS_EPOCH;
-    if (needsPathWipe) {
-      // Wipe then seed beginner JP N5 + EN A1 (user-requested starter paths)
+    const gate = decideEpochGate(parsed, LEARN_PATHS_EPOCH);
+    if (gate.action === "preserve") {
+      // Phase 3 F5: never silently destroy cards/progress after backup restore /
+      // epoch bump. Preserve meaningful learn data; seed beginner only when empty.
+      const migrated = normalize({
+        ...(parsed as LearnState),
+        preferredTrack: gate.preferredTrack,
+        pathsEpoch: LEARN_PATHS_EPOCH,
+      });
+      saveLearn(migrated);
+      return migrated;
+    }
+    if (gate.action === "seed-beginner") {
       const wiped = defaultLearn();
-      wiped.preferredTrack =
-        parsed.preferredTrack === "en" || parsed.preferredTrack === "jp"
-          ? parsed.preferredTrack
-          : "jp";
+      wiped.preferredTrack = gate.preferredTrack;
       wiped.pathsEpoch = LEARN_PATHS_EPOCH;
       saveLearn(wiped);
       return seedBeginnerZeroPaths({ preferredTrack: wiped.preferredTrack });
@@ -458,7 +466,11 @@ function cardReps(t: TrackState, sourceId: string): number {
   return coerceSnapshot(c.card).reps ?? 0;
 }
 
-/** Vocab mastery 0..1 for a week's planned ids (aligns % with data chunks). */
+/**
+ * Week vocab progress 0..100 for planned ids.
+ * Phase 3 F1: count ids that cleared lesson quality (`!cardNeedsLessonPass`),
+ * not mere `reps > 0`, so week unlock matches day pass (≥ Good / Easy).
+ */
 export function weekVocabMastery(
   track: TrackId,
   weekNum: number,
@@ -468,7 +480,7 @@ export function weekVocabMastery(
   const week = t.roadmap?.weeks.find((w) => w.week === weekNum);
   const ids = week ? weekVocabIds(week) : [];
   if (!ids.length) return { touched: 0, total: 0, pct: 0 };
-  const touched = ids.filter((id) => cardReps(t, id) > 0).length;
+  const touched = ids.filter((id) => !cardNeedsLessonPass(t, id)).length;
   return {
     touched,
     total: ids.length,
@@ -1255,6 +1267,53 @@ export function isDayComplete(
   return dayVocabDone(track, day, t) && daySkillsDone(track, day, t);
 }
 
+/** Progress for an arbitrary vocab id list (forced lesson review, etc.). */
+export function vocabIdsProgress(
+  track: TrackId,
+  ids: string[],
+  state = loadLearn(),
+): {
+  touched: number;
+  total: number;
+  pct: number;
+  done: boolean;
+  goodCount: number;
+  needsQuality: boolean;
+  vocabDone: boolean;
+} {
+  const t = getTrack(normalize(state), track);
+  const list = ids || [];
+  if (!list.length) {
+    return {
+      touched: 0,
+      total: 0,
+      pct: 0,
+      done: true,
+      goodCount: 0,
+      needsQuality: false,
+      vocabDone: true,
+    };
+  }
+  const touched = list.filter((id) => cardReps(t, id) > 0).length;
+  const goodCount = list.filter((id) => (cardLastGrade(t, id) ?? 0) >= Rating.Good).length;
+  const total = list.length;
+  const pct = Math.round((touched / total) * 100);
+  const needsQuality =
+    touched >= total && goodCount / total < LESSON_PASS_GOOD_RATIO;
+  const vocabDone =
+    !list.some((id) => cardNeedsLessonPass(t, id)) &&
+    goodCount / total >= LESSON_PASS_GOOD_RATIO;
+  return {
+    touched,
+    total,
+    pct,
+    done: vocabDone,
+    goodCount,
+    needsQuality,
+    vocabDone,
+  };
+}
+
 export function dayVocabProgress(
   track: TrackId,
   day: RoadmapDay,
@@ -1267,6 +1326,8 @@ export function dayVocabProgress(
   skillsPending: string[];
   goodCount: number;
   needsQuality: boolean;
+  /** Vocab quality cleared (ignores skill actions). Phase 3 F2. */
+  vocabDone: boolean;
 } {
   const t = getTrack(normalize(state), track);
   const ids = day.vocabSourceIds || [];
@@ -1274,13 +1335,12 @@ export function dayVocabProgress(
   const fullDone = isDayComplete(track, day, state);
 
   if (ids.length) {
-    const touched = ids.filter((id) => cardReps(t, id) > 0).length;
-    const goodCount = ids.filter((id) => (cardLastGrade(t, id) ?? 0) >= Rating.Good).length;
-    const total = ids.length;
-    const pct = Math.round((touched / total) * 100);
-    const needsQuality =
-      touched >= total && goodCount / total < LESSON_PASS_GOOD_RATIO;
-    return { touched, total, pct, done: fullDone, skillsPending, goodCount, needsQuality };
+    const base = vocabIdsProgress(track, ids, state);
+    return {
+      ...base,
+      done: fullDone,
+      skillsPending,
+    };
   }
 
   if (fullDone) {
@@ -1293,6 +1353,7 @@ export function dayVocabProgress(
       skillsPending: [],
       goodCount: total,
       needsQuality: false,
+      vocabDone: true,
     };
   }
   return {
@@ -1303,6 +1364,7 @@ export function dayVocabProgress(
     skillsPending,
     goodCount: 0,
     needsQuality: false,
+    vocabDone: false,
   };
 }
 

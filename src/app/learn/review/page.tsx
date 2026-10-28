@@ -11,6 +11,7 @@ import type { Grade } from "@/lib/fsrs";
 import {
   canReview,
   dayVocabProgress,
+  ensureLessonCards,
   ensureRoadmap,
   EVIDENCE,
   getDailyStudyProgress,
@@ -18,17 +19,18 @@ import {
   getTrack,
   isLessonDone,
   loadLearn,
-  markCurrentWeekAction,
   markLessonDone,
   pathOverallProgress,
   rateCard,
   Rating,
   recordStudyMinutes,
   studyQueue,
+  vocabIdsProgress,
   type DailyStudyProgress,
   type TodayPlan,
   type TrackId,
 } from "@/lib/learn-store";
+import { getLesson, lessonVocabIds } from "@/lib/lessons";
 import { resolveCardSourceLink } from "@/lib/card-provenance";
 import { loadDesk } from "@/lib/desk-store";
 import { canSpeak, speak } from "@/lib/speech";
@@ -87,14 +89,15 @@ function ReviewContent() {
     return () => {
       const mins = (Date.now() - sessionStart) / 60000;
       if (mins >= 0.5) recordStudyMinutes(mins);
-      if (sessionRatedRef.current >= 3) {
-        markCurrentWeekAction(track, ["review", "vocab"]);
-      }
+      // Phase 3 F3: do not auto-tick week review/vocab on unmount after N grades.
+      // Completion stays gated by syncPathFromActivity / day-week quality rules.
     };
   }, [sessionStart, track]);
 
   function refresh(keepIndex = false) {
     ensureRoadmap(track);
+    // Phase 3 F6: materialize missing curriculum cards for forced lesson
+    if (lessonIdParam) ensureLessonCards(track, lessonIdParam);
     const state = loadLearn();
     const next = studyQueue(track, state, { lessonId: lessonIdParam });
     const t = getTrack(state, track);
@@ -105,10 +108,33 @@ function ReviewContent() {
     setActive(t.pathActive || t.cards.length > 0);
     setDaily(prog);
     setLesson(plan);
+    // Phase 3 F4: forced lessonId progress must track that lesson, not Today
+    const forcedLesson = lessonIdParam ? getLesson(lessonIdParam) : null;
+    const forcedIds = forcedLesson ? lessonVocabIds(forcedLesson) : [];
+    const emptyPct = {
+      touched: 0,
+      total: 0,
+      pct: 0,
+      done: false,
+      goodCount: 0,
+      needsQuality: false,
+    };
     setLessonPct(
-      plan
-        ? dayVocabProgress(track, plan.day, state)
-        : { touched: 0, total: 0, pct: 0, done: false, goodCount: 0, needsQuality: false },
+      forcedIds.length
+        ? (() => {
+            const v = vocabIdsProgress(track, forcedIds, state);
+            return {
+              touched: v.touched,
+              total: v.total,
+              pct: v.pct,
+              done: v.vocabDone,
+              goodCount: v.goodCount,
+              needsQuality: v.needsQuality,
+            };
+          })()
+        : plan
+          ? dayVocabProgress(track, plan.day, state)
+          : emptyPct,
     );
     setReady(true);
     if (!keepIndex) {
@@ -174,29 +200,54 @@ function ReviewContent() {
     const plan = getTodayPlan(track, result.state);
     setDaily(prog);
     setLesson(plan);
+    const forcedLesson = lessonIdParam ? getLesson(lessonIdParam) : null;
+    const forcedIds = forcedLesson ? lessonVocabIds(forcedLesson) : [];
+    const forcedProg = forcedIds.length
+      ? vocabIdsProgress(track, forcedIds, result.state)
+      : null;
+    const dayProg = plan ? dayVocabProgress(track, plan.day, result.state) : null;
+    const activeProg = forcedProg
+      ? {
+          touched: forcedProg.touched,
+          total: forcedProg.total,
+          pct: forcedProg.pct,
+          done: forcedProg.vocabDone,
+          goodCount: forcedProg.goodCount,
+          needsQuality: forcedProg.needsQuality,
+          skillsPending: [] as string[],
+        }
+      : dayProg;
     setLessonPct(
-      plan
-        ? dayVocabProgress(track, plan.day, result.state)
+      activeProg
+        ? {
+            touched: activeProg.touched,
+            total: activeProg.total,
+            pct: activeProg.pct,
+            done: activeProg.done,
+            goodCount: activeProg.goodCount,
+            needsQuality: activeProg.needsQuality,
+          }
         : { touched: 0, total: 0, pct: 0, done: false, goodCount: 0, needsQuality: false },
     );
     const pct = pathOverallProgress(track, result.state);
     const uniq = getTrack(result.state, track).evidence?.reviewIds?.length || 0;
     const kindLabel = current.queueKind === "new" ? "Từ mới" : "Ôn lại";
-    const dayProg = plan ? dayVocabProgress(track, plan.day, result.state) : null;
-    const lessonDone = dayProg?.done ?? false;
-    if (lessonDone && plan?.day.lessonId) markLessonDone(track, plan.day.lessonId);
+    const lessonDone = activeProg?.done ?? false;
+    if (!forcedProg && lessonDone && plan?.day.lessonId) {
+      markLessonDone(track, plan.day.lessonId);
+    }
     if (lessonIdParam && isLessonDone(track, lessonIdParam, result.state)) {
       markLessonDone(track, lessonIdParam);
     }
-    const skillsLeft = dayProg?.skillsPending?.length
-      ? ` · còn ${dayProg.skillsPending.join(", ")} trước khi sang bài tiếp`
+    const skillsLeft = activeProg?.skillsPending?.length
+      ? ` · còn ${activeProg.skillsPending.join(", ")} trước khi sang bài tiếp`
       : "";
     setMessage(
       lessonDone
         ? `${kindLabel} ✓ · Xong bài — có thể học bài tiếp ngay · Lộ trình ${pct}%`
-        : dayProg?.needsQuality
-          ? `${kindLabel} ✓ · Cần ≥70% Ổn/Dễ (hiện ${dayProg.goodCount}/${dayProg.total}) — từ Lại/Khó sẽ hỏi lại`
-          : dayProg && dayProg.touched >= dayProg.total && dayProg.total > 0 && skillsLeft
+        : activeProg?.needsQuality
+          ? `${kindLabel} ✓ · Cần ≥70% Ổn/Dễ (hiện ${activeProg.goodCount}/${activeProg.total}) — từ Lại/Khó sẽ hỏi lại`
+          : activeProg && activeProg.touched >= activeProg.total && activeProg.total > 0 && skillsLeft
             ? `${kindLabel} ✓ · Từ bài này đạt${skillsLeft} · Lộ trình ${pct}%`
             : `${kindLabel} ✓ · Bài ${plan?.day.day ?? "?"} · Lộ trình ${pct}% · SRS ${uniq}/${EVIDENCE.reviewUnique}`,
     );

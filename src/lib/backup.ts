@@ -24,9 +24,15 @@ import {
   type DeskState,
 } from "./desk-store";
 import { loadLearn, saveLearn, type LearnState } from "./learn-store";
+import { LEARN_PATHS_EPOCH } from "./learn-store-core";
+import { prepareLearnForRestore } from "./learn-epoch";
 import { loadSession, saveSession, type SessionUser } from "./session";
 import { STORAGE_KEYS } from "./storage-keys";
 
+/** Bump pathsEpoch so the next loadLearn does not treat restore as a wipe candidate. */
+function learnForRestore(learn: LearnState): { learn: LearnState; epochNote?: string } {
+  return prepareLearnForRestore(learn, LEARN_PATHS_EPOCH);
+}
 
 export type {
   BackupPayload,
@@ -247,15 +253,20 @@ export async function restoreBackupAsync(raw: string): Promise<RestoreResult> {
           message: ls.reason || "Không ghi được desk metadata.",
         };
       }
-      saveLearn(learn);
+      const prepared = learnForRestore(learn);
+      saveLearn(prepared.learn);
       if (data.session) saveSession(data.session as SessionUser);
       if (data.theme) localStorage.setItem(STORAGE_KEYS.theme, data.theme);
       return {
         ok: true,
         version: 1,
         message: "Đã khôi phục metadata (bản v1).",
-        legacyWarning:
+        legacyWarning: [
           "Bản sao lưu v1 không gồm PDF/audio/ảnh trong IndexedDB — chỉ ghi chú/metadata. Xuất lại từ Settings để có bản v2 đầy đủ.",
+          prepared.epochNote,
+        ]
+          .filter(Boolean)
+          .join(" "),
       };
     } catch (err) {
       restoreSnapshot(snap);
@@ -310,7 +321,8 @@ export async function restoreBackupAsync(raw: string): Promise<RestoreResult> {
         blobsWritten: written,
       };
     }
-    saveLearn(data.learn as LearnState);
+    const prepared = learnForRestore(data.learn as LearnState);
+    saveLearn(prepared.learn);
     if (data.session) saveSession(data.session as SessionUser);
     if (data.theme) localStorage.setItem(STORAGE_KEYS.theme, data.theme);
     return {
@@ -318,6 +330,7 @@ export async function restoreBackupAsync(raw: string): Promise<RestoreResult> {
       version: 2,
       message: `Đã khôi phục bản sao v2 (${written} blob).`,
       blobsWritten: written,
+      legacyWarning: prepared.epochNote,
     };
   } catch (err) {
     restoreSnapshot(snap);

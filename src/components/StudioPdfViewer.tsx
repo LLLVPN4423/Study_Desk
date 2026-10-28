@@ -26,6 +26,11 @@ import {
 } from "@inkbar/react";
 import "@inkbar/theme/theme.css";
 import { Button } from "@/components/Button";
+import { ensureMapGetOrInsertComputed } from "@/lib/map-polyfill";
+
+// Inkbar/pdfjs may call Map.getOrInsertComputed (Chrome 145+). Scope polyfill
+// to PDF studio only — not a global app boot patch.
+ensureMapGetOrInsertComputed();
 
 /** Asset local (public/pdfjs) — tránh lỗi mở PDF khi CDN/unpkg fail. */
 const INKBAR_ASSETS = {

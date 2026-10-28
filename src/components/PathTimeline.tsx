@@ -145,9 +145,10 @@ export function PathTimeline({
                           ) : isCurrent ? (
                             <div className="path-step-actions">
                               {(() => {
+                                // Phase 3 F2: require lesson quality, not mere touch
                                 const vocabDone =
                                   !(d.vocabSourceIds?.length) ||
-                                  (dp.touched >= dp.total && dp.total > 0);
+                                  Boolean(dp.vocabDone);
                                 const skillActions = d.actions.filter((a) =>
                                   ["grammar", "kanji", "listening", "mock"].includes(a.kind),
                                 );
