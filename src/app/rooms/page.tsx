@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { RequireAuth } from "@/components/RequireAuth";
-import { loadDesk, saveDesk } from "@/lib/desk-store";
+import { loadDesk, saveDeskMetadata } from "@/lib/desk-store";
 import { useI18n } from "@/lib/i18n";
 
 /**
@@ -37,7 +37,7 @@ function RoomsContent() {
 
   function saveUrl() {
     const desk = loadDesk();
-    saveDesk({ ...desk, studyRoomUrl: url.trim() });
+    saveDeskMetadata({ ...desk, studyRoomUrl: url.trim() });
   }
 
   return (

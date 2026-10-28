@@ -118,13 +118,28 @@ function assert(cond, msg) {
   assert(meta.aud1?.mime === "audio/mpeg", "audio mime in meta");
 }
 
-// 8) missing required blob detected
+// 8) missing required blob detected — S4 export must fail (not warn-ok)
 {
   const missing = findMissingRequiredBlobs(
     { files: [{ id: "pdf1", kind: "pdf", name: "a.pdf" }] },
     {},
   );
   assert(missing.includes("pdf1"), "missing pdf blob detected");
+  assert(missing.length > 0, "S4 export gate: incomplete backup is not export-ok");
+  // Disposable fixture shape: desk references required PDF with no deskBlobs entry
+  const disposable = {
+    desk: { files: [{ id: "missing-pdf", kind: "pdf", name: "gone.pdf", size: 1 }] },
+    deskBlobs: { "content:note": "ok" },
+  };
+  const gate = findMissingRequiredBlobs(disposable.desk, disposable.deskBlobs);
+  assert(gate.includes("missing-pdf"), "disposable fixture export gate fails");
+  assert(
+    findMissingRequiredBlobs(
+      { files: [{ id: "pdf1", kind: "pdf", name: "a.pdf" }] },
+      { pdf1: "data:application/pdf;base64,AAA" },
+    ).length === 0,
+    "valid required blob still export-ok",
+  );
 }
 
 // 9) strip inline blobs

@@ -1,6 +1,6 @@
 # Study Desk — Testing Checklist
 
-**Updated:** 2026-10-29 (Phase 2 acceptance + Phase 3)  
+**Updated:** 2026-10-29 (Phase 4 integrity + Phase 5 culture cards in progress)  
 **Rule:** Only mark pass if the command/journey was actually run.
 
 ---
@@ -10,10 +10,12 @@
 | Command | Purpose | Result | Date | Runner |
 |---------|---------|--------|------|--------|
 | `npm run smoke:study-queue` | Queue / DESK_NEW_SOFT_CAP | **PASS** | 2026-10-29 | agent |
-| `npm run smoke:backup` | Backup format v1/v2 | **PASS** | 2026-10-29 | agent |
+| `npm run smoke:backup` | Backup format v1/v2 + S4 export gate | **PASS** | 2026-10-29 | agent |
 | `npm run smoke:provenance` | Provenance helpers | **PASS** | 2026-10-29 | agent |
 | `npm run smoke:phase3` | Epoch preserve / week pass / Map polyfill | **PASS** (after Phase 3 impl) | 2026-10-29 | agent |
 | `npm run smoke:precommit` | Pre-commit gates F5/F1–F4/F6/polyfill | **PASS** | 2026-10-29 | agent |
+| `npm run smoke:integrity` | Orphan GC plan / restore rollback classify | **PASS** | 2026-10-29 | agent |
+| `npm run smoke:restore-rollback` | V2 mid-fail restore + snapshot abort (memory store) | **PASS** | 2026-10-29 | agent |
 | `npx tsc --noEmit` | Typecheck | **PASS** | 2026-10-29 | agent |
 | `npm run build` | Production build | **PASS** | 2026-10-29 | agent |
 | `npm run lint` | ESLint | **FAIL (baseline)** — pre-existing debt; not Phase 2/3 scope | | |
@@ -86,10 +88,30 @@ Browser re-validation of full Learn path after Phase 3: **NOT RUN** in finalizat
 
 ---
 
+## Phase 4 — Data integrity (logic)
+
+| ID | Case | Result |
+|----|------|--------|
+| S0 | `smoke:integrity` helpers | **PASS** |
+| S1 | Orphan GC plans only unreferenced keys | **PASS** (logic); browser GC **NOT RUN** |
+| S2 | Restore rollback restores overwrite / deletes novel only | **PASS** (logic); browser mid-fail restore **NOT RUN** |
+| S3 | `deleteFileAsync` awaited from Desk UI | **PASS** (code); browser delete **NOT RUN** |
+| S4 | Export fails when required primary blob missing | **PASS** (`smoke:backup` gate + `downloadBackup` code) |
+| S5 | Metadata-only saves use `saveDeskMetadata` | **PASS** (code review) |
+
+## Phase 5 — Culture → vocab card
+
+| ID | Case | Result |
+|----|------|--------|
+| S7 | Culture card `origin: "culture"` + `cultureItemId`; no fake `sourceFileId` | **PASS** (`smoke:provenance`) |
+| S7-B | Culture → Review appears; source nav to `/culture` | browser **NOT RUN** |
+
 ## Regression watchlist
 
 1. Chrome FS open + overwrite.  
 2. TipTap autosave + leave dialog.  
 3. `loadLearn` after backup with older `pathsEpoch` must keep cards.  
 4. Week % / PathTimeline agree with ≥70% Good day pass.  
-5. Review no longer ticks week actions solely from “3 grades then leave”.
+5. Review no longer ticks week actions solely from “3 grades then leave”.  
+6. Failed restore keeps prior Learn/desk LS and restores overwritten blobs.  
+7. Incomplete Desk (missing PDF blob) cannot export “successfully”.

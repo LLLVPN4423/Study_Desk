@@ -63,6 +63,10 @@ const dict = {
     cultureEyebrow: "Văn hóa Nhật",
     cultureFree: "Miễn phí · seed offline",
     cultureStories: "câu chuyện",
+    cultureAddCard: "Thêm thẻ học",
+    cultureCardAdded: "Đã thêm thẻ văn hóa vào hàng đợi ôn.",
+    cultureCardNeedMeaning: "Mục này thiếu mô tả để tạo thẻ.",
+    cultureOpenReview: "Mở ôn tập →",
     roomsTitle: "Phòng học",
     roomsSub: "LiveKit (tuỳ chọn, free tier) hoặc dán link Meet/Zoom — không bắt buộc trả phí.",
     // Desk
@@ -215,6 +219,10 @@ const dict = {
     cultureEyebrow: "Japanese culture",
     cultureFree: "Free · offline seed",
     cultureStories: "stories",
+    cultureAddCard: "Add study card",
+    cultureCardAdded: "Culture card added to review queue.",
+    cultureCardNeedMeaning: "This item has no text to build a card.",
+    cultureOpenReview: "Open review →",
     roomsTitle: "Study rooms",
     roomsSub: "Optional LiveKit (free tier) or paste a Meet/Zoom link — no paid plan required.",
     // Desk

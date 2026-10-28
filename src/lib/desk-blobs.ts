@@ -133,18 +133,49 @@ export async function deleteDeskBlob(id: string): Promise<void> {
   }
 }
 
-export async function deleteDeskBlobs(ids: string[]): Promise<void> {
-  const errors: string[] = [];
+export async function deleteDeskBlobs(
+  ids: string[],
+): Promise<{ deleted: string[]; failed: string[] }> {
+  const deleted: string[] = [];
+  const failed: string[] = [];
   for (const id of ids) {
     try {
       await deleteDeskBlob(id);
+      deleted.push(id);
     } catch (e) {
-      errors.push(id);
+      failed.push(id);
       console.warn("[desk-blobs] delete failed", id, e instanceof Error ? e.message : e);
     }
   }
-  if (errors.length === ids.length && ids.length > 0) {
+  if (failed.length === ids.length && ids.length > 0) {
     throw new DeskBlobError("Không xóa được các blob IndexedDB.", "delete_failed");
+  }
+  return { deleted, failed };
+}
+
+/** All keys currently stored in the Desk blob object store. */
+export async function listDeskBlobKeys(): Promise<string[]> {
+  const db = await openDb();
+  try {
+    return await new Promise<string[]>((resolve, reject) => {
+      const tx = db.transaction(STORE, "readonly");
+      const req = tx.objectStore(STORE).getAllKeys();
+      req.onsuccess = () => {
+        const keys = (req.result as IDBValidKey[]).map(String);
+        keys.sort();
+        resolve(keys);
+      };
+      req.onerror = () =>
+        reject(
+          new DeskBlobError(
+            "Không liệt kê được khóa blob IndexedDB.",
+            mapDomError(req.error, "get_failed"),
+            req.error,
+          ),
+        );
+    });
+  } finally {
+    db.close();
   }
 }
 
@@ -168,8 +199,9 @@ export async function getDeskBlobsByKeys(
 
 export async function putDeskBlobs(
   blobs: Record<string, string>,
-): Promise<{ written: number; failed: string[] }> {
+): Promise<{ written: number; writtenKeys: string[]; failed: string[] }> {
   let written = 0;
+  const writtenKeys: string[] = [];
   const failed: string[] = [];
   for (const [id, data] of Object.entries(blobs)) {
     if (typeof data !== "string" || !data.length) {
@@ -179,12 +211,13 @@ export async function putDeskBlobs(
     try {
       await putDeskBlob(id, data);
       written += 1;
+      writtenKeys.push(id);
     } catch (e) {
       failed.push(id);
       console.warn("[desk-blobs] put failed", id, e instanceof Error ? e.message : e);
     }
   }
-  return { written, failed };
+  return { written, writtenKeys, failed };
 }
 
 export function userMessageForBlobError(err: unknown): string {

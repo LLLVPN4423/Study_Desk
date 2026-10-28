@@ -2148,6 +2148,25 @@ input[type="checkbox"]:checked::after {
 .culture-desc { font-size: 13px; line-height: 1.5; }
 .culture-sub { color: var(--muted); font-size: 12px; }
 .culture-card small { color: var(--muted); font-size: 11px; }
+.culture-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 4px;
+  align-items: center;
+}
+.culture-card.is-focus-item {
+  outline: 2px solid var(--accent, #2a6);
+  outline-offset: 2px;
+}
+.culture-banner {
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--paper) 88%, var(--accent, #2a6) 12%);
+  font-size: 14px;
+}
 .culture-areas-ja { opacity: 0.75; }
 .culture-empty { margin-top: 18px; color: var(--muted); font-size: 14px; }
 .culture-attrib { margin-top: 24px; font-size: 11px; color: var(--muted); max-width: 560px; }

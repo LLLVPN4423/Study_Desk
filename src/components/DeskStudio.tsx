@@ -24,7 +24,7 @@ import {
 import {
   FOCUS_PRESETS_MIN,
   canUpload,
-  deleteFile,
+  deleteFileAsync,
   byteLengthOfText,
   downloadDeskFile,
   formatBytes,
@@ -948,12 +948,16 @@ export function DeskStudio({
     setMsg("Đã thay nội dung file.");
   }
 
-  function removeActive() {
+  async function removeActive() {
     if (!file) return;
     if (!window.confirm(`Xóa “${file.name}”?`)) return;
     if (listeningId === file.id) stop();
-    const next = deleteFile(desk, file.id);
-    onUpdate(next);
+    const result = await deleteFileAsync(desk, file.id);
+    await Promise.resolve(onUpdate(result.state));
+    if (!result.ok) {
+      setMsg(result.reason || "Xóa file chưa gỡ hết blob IndexedDB.");
+    }
+    const next = result.state;
     const fallback = next.files.find((f) => f.kind !== "audio")?.id || next.files[0]?.id;
     if (fallback) onSelect(fallback);
     else onClose();

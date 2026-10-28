@@ -19,7 +19,9 @@
     "smoke:study-queue": "node --experimental-strip-types scripts/smoke-study-queue.mjs",
     "smoke:provenance": "node --experimental-strip-types scripts/smoke-provenance.mjs",
     "smoke:phase3": "node --experimental-strip-types scripts/smoke-phase3.mjs",
-    "smoke:precommit": "node --experimental-strip-types scripts/smoke-precommit-verify.mjs"
+    "smoke:precommit": "node --experimental-strip-types scripts/smoke-precommit-verify.mjs",
+    "smoke:integrity": "node --experimental-strip-types scripts/smoke-integrity.mjs",
+    "smoke:restore-rollback": "node --experimental-strip-types scripts/smoke-restore-rollback.mjs"
   },
   "dependencies": {
     "@inkbar/core": "^0.8.0",

@@ -1,8 +1,9 @@
 /**
- * Slice 2B–2D helpers: optional flashcard provenance (pure; Node-smoke friendly).
+ * Slice 2B–2D + Phase 5 helpers: optional flashcard provenance (pure; Node-smoke friendly).
  *
  * Anchors are quote-based (and optional PDF page). Exact TipTap/PDF character
  * offsets are intentionally not required — editors reflow and PDF text layers vary.
+ * Culture cards use origin + cultureItemId — never a fake Desk sourceFileId.
  */
 
 export type SourceAnchorKind = "selection" | "notes" | "pdf-quote" | "pdf-page";
@@ -16,9 +17,11 @@ export type SourceAnchor = {
 };
 
 export type CardProvenance = {
-  origin?: "curriculum" | "manual" | "desk";
+  origin?: "curriculum" | "manual" | "desk" | "culture";
   sourceFileId?: string;
   sourceAnchor?: SourceAnchor;
+  /** Japan heritage seed id when origin is culture. */
+  cultureItemId?: number;
 };
 
 const QUOTE_MAX = 280;
@@ -28,6 +31,17 @@ export function normalizeQuote(raw: unknown): string | undefined {
   const t = raw.replace(/\s+/g, " ").trim();
   if (!t) return undefined;
   return t.length > QUOTE_MAX ? `${t.slice(0, QUOTE_MAX)}…` : t;
+}
+
+export function normalizeCultureItemId(raw: unknown): number | undefined {
+  if (typeof raw === "number" && Number.isFinite(raw) && raw >= 1) {
+    return Math.floor(raw);
+  }
+  if (typeof raw === "string" && /^\d+$/.test(raw.trim())) {
+    const n = Number(raw.trim());
+    if (n >= 1) return n;
+  }
+  return undefined;
 }
 
 export function normalizeSourceAnchor(raw: unknown): SourceAnchor | undefined {
@@ -55,14 +69,32 @@ export function pickProvenanceFields(
   card: CardProvenance,
 ): CardProvenance {
   const out: CardProvenance = {};
-  if (card.origin === "curriculum" || card.origin === "manual" || card.origin === "desk") {
+  if (
+    card.origin === "curriculum" ||
+    card.origin === "manual" ||
+    card.origin === "desk" ||
+    card.origin === "culture"
+  ) {
     out.origin = card.origin;
   }
-  if (typeof card.sourceFileId === "string" && card.sourceFileId.trim()) {
-    out.sourceFileId = card.sourceFileId.trim();
+  const cultureItemId = normalizeCultureItemId(card.cultureItemId);
+  if (cultureItemId !== undefined) {
+    out.cultureItemId = cultureItemId;
+    if (!out.origin) out.origin = "culture";
   }
-  const anchor = normalizeSourceAnchor(card.sourceAnchor);
-  if (anchor) out.sourceAnchor = anchor;
+  // Culture cards must not invent a Desk file id.
+  if (out.origin !== "culture") {
+    if (typeof card.sourceFileId === "string" && card.sourceFileId.trim()) {
+      out.sourceFileId = card.sourceFileId.trim();
+    }
+    const anchor = normalizeSourceAnchor(card.sourceAnchor);
+    if (anchor) out.sourceAnchor = anchor;
+  } else {
+    const quote = normalizeQuote(card.sourceAnchor?.quote);
+    if (quote) {
+      out.sourceAnchor = { kind: "notes", quote };
+    }
+  }
   return out;
 }
 
@@ -83,6 +115,31 @@ export function isDuplicateDeskCard(
   });
 }
 
+/** Duplicate culture card: same word + same cultureItemId. */
+export function isDuplicateCultureCard(
+  existing: Array<{
+    sourceId?: string;
+    word?: string;
+    origin?: string;
+    cultureItemId?: number;
+  }>,
+  word: string,
+  cultureItemId: number,
+): boolean {
+  const w = word.trim().toLowerCase();
+  if (!w) return false;
+  const cid = normalizeCultureItemId(cultureItemId);
+  if (cid === undefined) return false;
+  return existing.some((c) => {
+    if (!c.sourceId || !String(c.sourceId).startsWith("manual-")) return false;
+    if (c.origin !== "culture" && normalizeCultureItemId(c.cultureItemId) === undefined) {
+      return false;
+    }
+    if ((c.word || "").trim().toLowerCase() !== w) return false;
+    return normalizeCultureItemId(c.cultureItemId) === cid;
+  });
+}
+
 export type DeskFileRef = { id: string; name?: string };
 
 export type ResolveSourceResult =
@@ -93,6 +150,8 @@ export type ResolveSourceResult =
       fileName: string;
       quote?: string;
       page?: number;
+      kind?: "desk" | "culture";
+      cultureItemId?: number;
     }
   | {
       ok: false;
@@ -101,11 +160,37 @@ export type ResolveSourceResult =
       quote?: string;
     };
 
-/** Build /desk?open=…&highlight=… when provenance is resolvable. */
+/** Build /desk?open=…&highlight=… or /culture?item=… when provenance is resolvable. */
 export function resolveCardSourceLink(
-  card: CardProvenance,
+  card: CardProvenance & { word?: string },
   files: DeskFileRef[],
+  opts?: { cultureTitle?: string },
 ): ResolveSourceResult {
+  const cultureItemId = normalizeCultureItemId(card.cultureItemId);
+  if (card.origin === "culture" || cultureItemId !== undefined) {
+    if (cultureItemId === undefined) {
+      return {
+        ok: false,
+        reason: "missing_provenance",
+        message: "Thẻ văn hóa thiếu mã di sản nguồn.",
+      };
+    }
+    const title =
+      opts?.cultureTitle?.trim() ||
+      card.sourceAnchor?.quote ||
+      card.word ||
+      `Di sản #${cultureItemId}`;
+    return {
+      ok: true,
+      kind: "culture",
+      href: `/culture?item=${cultureItemId}`,
+      fileId: `culture:${cultureItemId}`,
+      fileName: title,
+      cultureItemId,
+      quote: card.sourceAnchor?.quote,
+    };
+  }
+
   const fileId = card.sourceFileId?.trim();
   const anchor = normalizeSourceAnchor(card.sourceAnchor);
   const quote = anchor?.quote;
@@ -134,6 +219,7 @@ export function resolveCardSourceLink(
   if (anchor?.page) params.set("page", String(anchor.page));
   return {
     ok: true,
+    kind: "desk",
     href: `/desk?${params.toString()}`,
     fileId,
     fileName: file.name || fileId,

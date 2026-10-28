@@ -49,14 +49,22 @@ Blobs are stored in IndexedDB as **strings** (usually `data:` URLs). Backup v2 e
 
 File System Access handles (`study-desk-handles`) are **not** included — they are origin-specific and not portable.
 
+## Export rules
+
+1. Build v2 payload via `buildBackupAsync` (hydrate desk + collect IDB blobs).
+2. If any PDF/audio/image/doc file is missing its primary blob → **fail** (no file download).
+3. Otherwise download JSON.
+
 ## Restore rules
 
 1. Validate JSON + version + unique file ids + non-empty blob strings.
 2. **v2:** reject if any PDF/audio/image/doc file is missing its primary blob key.
 3. Snapshot current `localStorage` desk/learn/session/theme.
-4. Write all `deskBlobs` to IndexedDB; on any failure → restore LS snapshot and report failure (do not claim success).
-5. Write desk/learn metadata to `localStorage` (import **overwrites** current desk/learn).
-6. **v1:** restore metadata only; surface a legacy warning that binaries were not in the file.
+4. List existing IDB keys; snapshot values for keys that will be overwritten. If an overwrite key cannot be read → **abort before write**.
+5. Write all `deskBlobs` to IndexedDB. On failure or later LS failure: restore LS snapshot; re-put previous overwrite values; delete **only** novel keys written by this attempt. Never delete untouched pre-existing keys. If blob rollback fails, report failure with an explicit IDB warning — never claim success.
+6. Write desk/learn metadata to `localStorage` (import **overwrites** current desk/learn).
+7. After success, GC orphan blob keys not referenced by the restored desk.
+8. **v1:** restore metadata only; surface a legacy warning that binaries were not in the file.
 
 ## Compatibility
 

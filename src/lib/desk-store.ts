@@ -2,10 +2,13 @@
 
 import {
   deleteDeskBlob,
+  deleteDeskBlobs,
   getDeskBlob,
+  listDeskBlobKeys,
   putDeskBlob,
   userMessageForBlobError,
 } from "./desk-blobs";
+import { planOrphanGc } from "./desk-integrity";
 import { FREE_LIMITS } from "./freemium";
 import {
   STORAGE_KEYS,
@@ -335,7 +338,7 @@ export function loadDesk(): DeskState {
       storedVersion < DESK_VERSION ||
       scrubbed.tasks.length !== (parsed.tasks || []).length ||
       scrubbed.focusSeconds !== parsed.focusSeconds;
-    if (dirty) saveDesk(scrubbed);
+    if (dirty) saveDeskMetadata(scrubbed);
     return scrubbed;
   } catch {
     return defaultDesk();
@@ -343,8 +346,23 @@ export function loadDesk(): DeskState {
 }
 
 /**
- * Sync save: writes localStorage immediately; kicks off IndexedDB blob writes.
- * Prefer `saveDeskAsync` for user-visible saves so failures are not silent.
+ * localStorage-only desk write (no IndexedDB). Safe for metadata fields
+ * (studyRoomUrl, focusSeconds, migrations) when blobs are already durable
+ * or absent from memory.
+ */
+export function saveDeskMetadata(state: DeskState): SaveDeskResult {
+  const clean = {
+    ...state,
+    version: DESK_VERSION,
+    tasks: (state.tasks || []).filter((t) => !isDemoTask(t)),
+  };
+  return writeDeskLocalStorage(clean);
+}
+
+/**
+ * Sync save: writes localStorage; fire-and-forget IndexedDB blob puts when
+ * in-memory dataUrl/content/ann are present. Prefer `saveDeskAsync` for any
+ * user-visible content save, and `saveDeskMetadata` when only LS fields change.
  */
 export function saveDesk(state: DeskState): SaveDeskResult {
   const clean = {
@@ -440,7 +458,7 @@ export async function hydrateDeskBlobs(state: DeskState): Promise<DeskState> {
     }),
   );
   const next = { ...state, files };
-  if (migrated) saveDesk(next);
+  if (migrated) saveDeskMetadata(next);
   return next;
 }
 
@@ -634,13 +652,78 @@ export function patchFile(
   };
 }
 
+/** Metadata-only removal (no IndexedDB). Prefer `deleteFileAsync` for user deletes. */
 export function deleteFile(state: DeskState, id: string): DeskState {
-  void deleteDeskBlob(id);
-  void deleteDeskBlob(contentBlobKey(id));
-  void deleteDeskBlob(annBlobKey(id));
-  void deleteDeskBlob(sourceBlobKey(id));
-  void import("./file-handles").then((m) => m.deleteFileHandle(id)).catch(() => {});
   return { ...state, files: state.files.filter((f) => f.id !== id) };
+}
+
+export type DeleteFileResult = {
+  state: DeskState;
+  ok: boolean;
+  deletedKeys: string[];
+  failedKeys: string[];
+  reason?: string;
+};
+
+/**
+ * Remove a file from desk metadata and await IndexedDB blob deletes.
+ * On partial blob failure, metadata is still updated (user intent) and orphans
+ * are retried via GC; `ok: false` surfaces the failure clearly.
+ */
+export async function deleteFileAsync(
+  state: DeskState,
+  id: string,
+): Promise<DeleteFileResult> {
+  const keys = [id, sourceBlobKey(id), contentBlobKey(id), annBlobKey(id)];
+  const next = deleteFile(state, id);
+  let deletedKeys: string[] = [];
+  let failedKeys: string[] = [];
+  try {
+    const result = await deleteDeskBlobs(keys);
+    deletedKeys = result.deleted;
+    failedKeys = result.failed;
+  } catch {
+    failedKeys = keys.slice();
+  }
+  try {
+    await import("./file-handles").then((m) => m.deleteFileHandle(id));
+  } catch {
+    /* handles are best-effort */
+  }
+  const gc = await gcOrphanDeskBlobs(next);
+  deletedKeys = [...new Set([...deletedKeys, ...gc.deleted])];
+  failedKeys = failedKeys.filter((k) => !deletedKeys.includes(k));
+  if (failedKeys.length) {
+    return {
+      state: next,
+      ok: false,
+      deletedKeys,
+      failedKeys,
+      reason: `Đã xóa khỏi bàn nhưng chưa gỡ hết nội dung lưu (${failedKeys.length} blob). Thử tải lại trang hoặc xóa dữ liệu site nếu dung lượng vẫn đầy.`,
+    };
+  }
+  return { state: next, ok: true, deletedKeys, failedKeys: [] };
+}
+
+/**
+ * Delete IndexedDB keys that are not referenced by the given desk metadata.
+ * Only removes keys proven unreferenced — never touches live file/wallpaper keys.
+ */
+export async function gcOrphanDeskBlobs(
+  state: DeskState,
+): Promise<{ candidates: string[]; deleted: string[]; failed: string[] }> {
+  try {
+    const existing = await listDeskBlobKeys();
+    const candidates = planOrphanGc(existing, state);
+    if (!candidates.length) {
+      return { candidates: [], deleted: [], failed: [] };
+    }
+    const { deleted, failed } = await deleteDeskBlobs(candidates);
+    return { candidates, deleted, failed };
+  } catch (err) {
+    console.warn("[desk] orphan GC skipped", userMessageForBlobError(err));
+    return { candidates: [], deleted: [], failed: [] };
+  }
 }
 
 export function pushFileOutput(

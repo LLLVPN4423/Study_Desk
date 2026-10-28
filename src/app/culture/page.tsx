@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { JapanRegionMap } from "@/components/JapanRegionMap";
 import { RequireAuth } from "@/components/RequireAuth";
@@ -14,6 +15,7 @@ import {
   type RegionId,
 } from "@/data/japan-regions";
 import { useI18n } from "@/lib/i18n";
+import { addManualCard, loadLearn } from "@/lib/learn-store";
 
 type Item = {
   id: number;
@@ -30,17 +32,68 @@ export default function CulturePage() {
     <RequireAuth>
       {(user) => (
         <AppShell userName={user.name}>
-          <CultureContent />
+          <Suspense fallback={<p className="page">…</p>}>
+            <CultureContent />
+          </Suspense>
         </AppShell>
       )}
     </RequireAuth>
   );
 }
 
-function CultureCard({ i }: { i: Item }) {
+function CultureCard({
+  i,
+  highlight,
+  onAdded,
+}: {
+  i: Item;
+  highlight?: boolean;
+  onAdded?: (msg: string) => void;
+}) {
   const { t } = useI18n();
+  const [busy, setBusy] = useState(false);
+
+  function addVocabCard() {
+    setBusy(true);
+    try {
+      const learn = loadLearn();
+      const track = learn.preferredTrack === "en" ? "en" : "jp";
+      const meanings = [i.titleVi, i.descVi, i.subname]
+        .map((s) => (typeof s === "string" ? s.trim() : ""))
+        .filter(Boolean);
+      const uniqueMeanings = [...new Set(meanings)];
+      if (!uniqueMeanings.length) {
+        onAdded?.(t("cultureCardNeedMeaning"));
+        return;
+      }
+      const result = addManualCard({
+        track,
+        word: i.name,
+        meanings: uniqueMeanings.slice(0, 3),
+        origin: "culture",
+        cultureItemId: i.id,
+        sourceAnchor: {
+          kind: "notes",
+          quote: (i.titleVi || i.name).slice(0, 200),
+        },
+        rejectDuplicate: true,
+      });
+      if (!result.ok) {
+        onAdded?.(result.reason);
+        return;
+      }
+      onAdded?.(t("cultureCardAdded"));
+    } finally {
+      setBusy(false);
+    }
+  }
+
   return (
-    <article className="culture-card">
+    <article
+      className={`culture-card${highlight ? " is-focus-item" : ""}`}
+      id={`culture-item-${i.id}`}
+      data-culture-id={i.id}
+    >
       <p className="eyebrow">#{i.id}</p>
       <h3>{i.titleVi || i.name}</h3>
       <p className="culture-ja" lang="ja">
@@ -55,19 +108,35 @@ function CultureCard({ i }: { i: Item }) {
           · {i.areas}
         </span>
       </small>
-      <a href={i.url} target="_blank" rel="noreferrer" className="text-button">
-        {t("officialPage")}
-      </a>
+      <div className="culture-card-actions">
+        <a href={i.url} target="_blank" rel="noreferrer" className="text-button">
+          {t("officialPage")}
+        </a>
+        <button type="button" className="text-button" disabled={busy} onClick={addVocabCard}>
+          {t("cultureAddCard")}
+        </button>
+      </div>
     </article>
   );
 }
 
 function CultureContent() {
   const { t } = useI18n();
+  const searchParams = useSearchParams();
   const items = heritage as Item[];
   const [q, setQ] = useState("");
   const [region, setRegion] = useState<RegionId | "all">("all");
+  const [banner, setBanner] = useState<string | null>(null);
   const focused = region !== "all";
+  const focusItemId = Number(searchParams.get("item") || "");
+
+  useEffect(() => {
+    if (!Number.isFinite(focusItemId) || focusItemId < 1) return;
+    const el = document.getElementById(`culture-item-${focusItemId}`);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }, [focusItemId, region, q]);
 
   const counts = useMemo(() => {
     const c: Partial<Record<RegionId, number>> = {};
@@ -128,7 +197,12 @@ function CultureContent() {
     <>
       <div className="culture-grid">
         {filtered.map((i) => (
-          <CultureCard key={i.id} i={i} />
+          <CultureCard
+            key={i.id}
+            i={i}
+            highlight={i.id === focusItemId}
+            onAdded={(msg) => setBanner(msg)}
+          />
         ))}
       </div>
       {filtered.length === 0 ? (
@@ -155,6 +229,15 @@ function CultureContent() {
           </strong>
         </div>
       </div>
+
+      {banner ? (
+        <p className="culture-banner" role="status">
+          {banner}{" "}
+          <Link href="/learn/review" className="text-button">
+            {t("cultureOpenReview")}
+          </Link>
+        </p>
+      ) : null}
 
       <div className={`culture-stage ${focused ? "focused" : "overview"}`}>
         <div className="culture-map-pane">

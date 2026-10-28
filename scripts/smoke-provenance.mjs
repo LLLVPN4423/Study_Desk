@@ -3,6 +3,7 @@
  * Run: npm run smoke:provenance
  */
 import {
+  isDuplicateCultureCard,
   isDuplicateDeskCard,
   normalizeSourceAnchor,
   pickProvenanceFields,
@@ -73,6 +74,39 @@ assert(!none.ok && none.reason === "missing_provenance", "no provenance");
 
 // Legacy card without fields still "valid" for pick
 assert(Object.keys(pickProvenanceFields({})).length === 0, "legacy empty provenance");
+
+// Phase 5 culture provenance
+{
+  const cult = pickProvenanceFields({
+    origin: "culture",
+    cultureItemId: 3,
+    sourceFileId: "should-not-keep",
+    sourceAnchor: { kind: "notes", quote: "Takaoka" },
+  });
+  assert(cult.origin === "culture" && cult.cultureItemId === 3, "culture provenance pick");
+  assert(cult.sourceFileId === undefined, "culture must not keep sourceFileId");
+  const link = resolveCardSourceLink(cult, []);
+  assert(
+    link.ok && link.kind === "culture" && link.href.includes("item=3"),
+    "culture source href",
+  );
+  assert(
+    isDuplicateCultureCard(
+      [{ sourceId: "manual-1", word: "加賀", origin: "culture", cultureItemId: 3 }],
+      "加賀",
+      3,
+    ),
+    "culture duplicate",
+  );
+  assert(
+    !isDuplicateCultureCard(
+      [{ sourceId: "manual-1", word: "加賀", origin: "culture", cultureItemId: 3 }],
+      "加賀",
+      4,
+    ),
+    "different culture id not duplicate",
+  );
+}
 
 if (failed) {
   console.error(`\n${failed} failed`);

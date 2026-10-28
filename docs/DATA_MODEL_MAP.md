@@ -29,7 +29,8 @@ flowchart TB
   Desk --> IDBWall
   Learn --> LS
   Backup -->|"reads LS desk+learn+session"| LS
-  Backup -.->|"does NOT read blobs/handles"| IDBBlobs
+  Backup -->|"v2 reads/writes deskBlobs"| IDBBlobs
+  Backup -.->|"handles never backed up"| IDBHandles
   Learn --> Seeds
 ```
 
@@ -116,9 +117,13 @@ flowchart TB
 | Flow | Behavior |
 |------|----------|
 | Sign-in | Any email + password length → new UUID session in LS (`auth/page.tsx`) |
-| Backup v1 | JSON: session + desk metadata + learn + theme (`backup.ts`) |
-| Restore | `saveDesk` + `saveLearn` + session/theme — **does not** restore IDB blobs/handles |
-| Side effect | `buildBackup()` calls `loadLearn()` which may seed paths if empty |
+| Backup v1 | JSON: session + desk metadata + learn + theme (`backup.ts`) — metadata only |
+| Backup v2 | Same + `deskBlobs` / `blobMeta` from IndexedDB (`buildBackupAsync` / `downloadBackup`) |
+| Restore v2 | Snapshot LS → snapshot overwrite blobs → write blobs → write LS; on failure roll back LS **and** restore overwritten blobs / delete novel keys only |
+| Export gate | Missing required primary blobs (pdf/audio/image/doc) → export **fails** (no download) |
+| Orphan GC | `gcOrphanDeskBlobs` deletes IDB keys not referenced by desk metadata (after successful restore / async delete) |
+| Handles | File System Access handles are **not** portable and are omitted from backup |
+| Side effect | `buildBackupAsync()` calls `loadLearn()` which may seed paths if empty |
 
 ---
 
@@ -136,7 +141,7 @@ flowchart TB
 | Desired | Current |
 |---------|---------|
 | Note ↔ document stable anchor | `notes` string on file; PDF anns separate; no char-offset anchors for TipTap |
-| Flashcard ↔ source document | Manual card has no `fileId` / selection range |
+| Flashcard ↔ source document | Desk cards may carry `sourceFileId` + `sourceAnchor` (Phase 2); soft RI if file deleted |
 | Quiz from document | Not implemented |
 | Error notebook | Not a first-class entity |
 | Provenance / license on imports | Gloss scripts local; no DATA_SOURCE_LICENSE_MATRIX yet |

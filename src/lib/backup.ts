@@ -15,17 +15,25 @@ import {
   type BackupPayloadV2,
   type BackupValidationError,
 } from "./backup-format";
-import { getDeskBlobsByKeys, putDeskBlobs, userMessageForBlobError } from "./desk-blobs";
 import {
+  deleteDeskBlobs,
+  getDeskBlobsByKeys,
+  listDeskBlobKeys,
+  putDeskBlobs,
+  userMessageForBlobError,
+} from "./desk-blobs";
+import {
+  gcOrphanDeskBlobs,
   hydrateDeskBlobs,
   loadDesk,
-  saveDesk,
+  saveDeskMetadata,
   type DeskFile,
   type DeskState,
 } from "./desk-store";
 import { loadLearn, saveLearn, type LearnState } from "./learn-store";
 import { LEARN_PATHS_EPOCH } from "./learn-store-core";
 import { prepareLearnForRestore } from "./learn-epoch";
+import { restoreBackupV2Core } from "./restore-v2-core";
 import { loadSession, saveSession, type SessionUser } from "./session";
 import { STORAGE_KEYS } from "./storage-keys";
 
@@ -58,6 +66,8 @@ export type RestoreResult = {
   blobsFailed?: string[];
   missingRequired?: string[];
   legacyWarning?: string;
+  /** True when LS rolled back but IndexedDB recovery was incomplete. */
+  recoveryIncomplete?: boolean;
 };
 
 type StorageSnapshot = {
@@ -186,10 +196,23 @@ export function buildBackup(): BackupPayload {
   };
 }
 
-export async function downloadBackup(): Promise<{ ok: boolean; message: string; bytes?: number }> {
+export async function downloadBackup(): Promise<{
+  ok: boolean;
+  message: string;
+  bytes?: number;
+  missingRequired?: string[];
+}> {
   try {
     const payload = await buildBackupAsync();
     const missing = findMissingRequiredBlobs(payload.desk, payload.deskBlobs);
+    // S4: never claim a successful export when required binary blobs are absent.
+    if (missing.length) {
+      return {
+        ok: false,
+        missingRequired: missing,
+        message: `Không xuất được bản sao đầy đủ — thiếu nội dung bắt buộc cho ${missing.length} file PDF/audio/ảnh/doc. Mở lại các file đó trên Desk hoặc xóa chúng khỏi bàn rồi thử xuất lại.`,
+      };
+    }
     const text = JSON.stringify(payload);
     const blob = new Blob([text], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -198,13 +221,6 @@ export async function downloadBackup(): Promise<{ ok: boolean; message: string; 
     a.download = `study-desk-backup-${payload.exportedAt.slice(0, 10)}.json`;
     a.click();
     URL.revokeObjectURL(url);
-    if (missing.length) {
-      return {
-        ok: true,
-        bytes: blob.size,
-        message: `Đã xuất bản sao (v2, ${Object.keys(payload.deskBlobs).length} blob). Cảnh báo: thiếu nội dung cho ${missing.length} file nhị phân — kiểm tra các file PDF/audio/ảnh trên bàn.`,
-      };
-    }
     return {
       ok: true,
       bytes: blob.size,
@@ -224,8 +240,8 @@ function validationMessage(err: BackupValidationError): string {
 
 /**
  * Restore backup. Overwrites desk/learn/session/theme like prior versions.
- * On critical blob failure, rolls localStorage back to the pre-restore snapshot
- * (orphan blob keys may remain in IndexedDB).
+ * V2: rolls localStorage back and restores overwritten IndexedDB values on failure;
+ * deletes only novel keys written by the failed attempt. GC runs only after success.
  */
 export async function restoreBackupAsync(raw: string): Promise<RestoreResult> {
   const parsed = parseBackupJson(raw);
@@ -238,13 +254,13 @@ export async function restoreBackupAsync(raw: string): Promise<RestoreResult> {
   }
 
   const data = validated.payload;
-  const snap = snapshotStorage();
 
   if (data.version === 1) {
+    const snap = snapshotStorage();
     try {
       const desk = data.desk as unknown as DeskState;
       const learn = data.learn as LearnState;
-      const ls = saveDesk(desk);
+      const ls = saveDeskMetadata(desk);
       if (!ls.ok) {
         restoreSnapshot(snap);
         return {
@@ -278,69 +294,48 @@ export async function restoreBackupAsync(raw: string): Promise<RestoreResult> {
     }
   }
 
-  const missingRequired = findMissingRequiredBlobs(data.desk, data.deskBlobs);
-  if (missingRequired.length) {
-    return {
-      ok: false,
-      version: 2,
-      message: `Bản sao thiếu nội dung nhị phân bắt buộc (${missingRequired.length} file). Không khôi phục để tránh desk trỏ tới file rỗng.`,
-      missingRequired,
-    };
-  }
-
-  const { written, failed } = await putDeskBlobs(data.deskBlobs);
-  if (failed.length) {
-    restoreSnapshot(snap);
-    return {
-      ok: false,
-      version: 2,
-      message: `Ghi IndexedDB thất bại (${failed.length}/${Object.keys(data.deskBlobs).length} blob). Đã giữ nguyên dữ liệu cũ trên localStorage. Thử xóa bớt dữ liệu trình duyệt hoặc xuất bản sao từ thiết bị nguồn rồi thử lại.`,
-      blobsWritten: written,
-      blobsFailed: failed.slice(0, 20),
-    };
-  }
-
-  try {
-    const deskMeta = deskForLocalStorage(data.desk as unknown as DeskState, data.deskBlobs);
-    // Metadata only — blobs already written; avoid re-put storm
-    const ls = saveDesk({
-      ...deskMeta,
-      files: deskMeta.files.map((f) => {
-        const meta = { ...f };
-        delete meta.dataUrl;
-        delete meta.sourceDataUrl;
-        return meta;
-      }),
-    });
-    if (!ls.ok) {
-      restoreSnapshot(snap);
-      return {
-        ok: false,
-        version: 2,
-        message: ls.reason || "Blob đã ghi nhưng không lưu được metadata — đã hoàn tác localStorage.",
-        blobsWritten: written,
-      };
-    }
-    const prepared = learnForRestore(data.learn as LearnState);
-    saveLearn(prepared.learn);
-    if (data.session) saveSession(data.session as SessionUser);
-    if (data.theme) localStorage.setItem(STORAGE_KEYS.theme, data.theme);
-    return {
-      ok: true,
-      version: 2,
-      message: `Đã khôi phục bản sao v2 (${written} blob).`,
-      blobsWritten: written,
-      legacyWarning: prepared.epochNote,
-    };
-  } catch (err) {
-    restoreSnapshot(snap);
-    return {
-      ok: false,
-      version: 2,
-      message: err instanceof Error ? err.message : "Khôi phục thất bại sau khi ghi blob.",
-      blobsWritten: written,
-    };
-  }
+  return restoreBackupV2Core(
+    {
+      desk: data.desk,
+      learn: data.learn,
+      session: data.session,
+      theme: data.theme,
+      deskBlobs: data.deskBlobs,
+      findMissingRequired: (desk, blobs) =>
+        findMissingRequiredBlobs(desk as { files?: unknown }, blobs),
+      deskForLocalStorage: (desk, blobs) =>
+        deskForLocalStorage(desk as DeskState, blobs),
+    },
+    {
+      listKeys: listDeskBlobKeys,
+      getByKeys: getDeskBlobsByKeys,
+      putBlobs: putDeskBlobs,
+      deleteBlobs: deleteDeskBlobs,
+    },
+    {
+      snapshot: snapshotStorage,
+      restoreSnapshot: (snap) => restoreSnapshot(snap as StorageSnapshot),
+      saveDeskMetadata: (desk) => {
+        const d = desk as DeskState;
+        return saveDeskMetadata({
+          ...d,
+          files: (d.files || []).map((f) => {
+            const meta = { ...f };
+            delete meta.dataUrl;
+            delete meta.sourceDataUrl;
+            return meta;
+          }),
+        });
+      },
+      saveLearn: (learn) => saveLearn(learn as LearnState),
+      saveSession: (session) => saveSession(session as SessionUser),
+      setTheme: (theme) => localStorage.setItem(STORAGE_KEYS.theme, theme),
+      prepareLearn: (learn) => learnForRestore(learn as LearnState),
+      gcOrphans: (desk) => {
+        void gcOrphanDeskBlobs(desk as DeskState).catch(() => {});
+      },
+    },
+  );
 }
 
 /** Sync restore kept for callers; prefers async path. */
@@ -353,7 +348,7 @@ export function restoreBackup(raw: string) {
   if (data.version === 2) {
     throw new Error("Dùng restoreBackupAsync cho bản sao v2 (có blob IndexedDB).");
   }
-  saveDesk(data.desk as unknown as DeskState);
+  saveDeskMetadata(data.desk as unknown as DeskState);
   saveLearn(data.learn as LearnState);
   if (data.session) saveSession(data.session as SessionUser);
   if (data.theme) localStorage.setItem(STORAGE_KEYS.theme, data.theme);

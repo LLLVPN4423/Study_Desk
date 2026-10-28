@@ -43,7 +43,8 @@ function SettingsContent({ user }: { user: SessionUser }) {
     setMsg(null);
     try {
       const result = await downloadBackup();
-      setMsg(result.message);
+      // Never present a missing-blob / failed export as a quiet success string.
+      setMsg(result.ok ? result.message : `${t("backupFailed")} ${result.message}`);
     } catch {
       setMsg(t("backupFailed"));
     } finally {

@@ -115,3 +115,11 @@ Do **not** replace TipTap/PDF.js/ts-fsrs without a proven gap.
 | Doc→Learn | **Out of scope** — next slice |
 
 **Stop gate for Phase 2:** Do not start Document-to-Learning until Phase 1 manual browser checks (T2–T3, T7–T8) are signed off.
+
+---
+
+## Phase 4–5 status (program integrity + Culture bridge)
+
+**Phase 4 (data ownership / RI / backup / blobs)** — slices S0–S6: integrity helpers, orphan GC, restore rollback with overwrite snapshots, async delete, export reject on missing required blobs, `saveDeskMetadata` for sync metadata paths, docs.
+
+**Phase 5 (Culture → vocab)** — slice S7: flashcards with `origin: "culture"` + `cultureItemId` (no fake Desk `sourceFileId`). Quiz / error notebook / due-today / Desk search remain **out of scope**.

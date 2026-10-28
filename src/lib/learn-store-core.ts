@@ -22,6 +22,7 @@ import {
 import { STORAGE_KEYS } from "./storage-keys";
 import type { RoadmapPlan } from "./roadmap";
 import {
+  isDuplicateCultureCard,
   isDuplicateDeskCard,
   pickProvenanceFields,
   type SourceAnchor,
@@ -41,10 +42,11 @@ export type SerializedCard = {
   exampleEn?: string;
   card: CardSnapshot;
   lastGrade?: number;
-  /** Slice 2B — optional Desk provenance (additive; legacy cards omit). */
-  origin?: "curriculum" | "manual" | "desk";
+  /** Slice 2B / Phase 5 — optional provenance (additive; legacy cards omit). */
+  origin?: "curriculum" | "manual" | "desk" | "culture";
   sourceFileId?: string;
   sourceAnchor?: SourceAnchor;
+  cultureItemId?: number;
 };
 
 export type ActionProgressEntry = {
@@ -250,8 +252,10 @@ export function addManualCard(input: {
   /** Slice 2B — optional Desk file id + quote/page anchor. */
   sourceFileId?: string;
   sourceAnchor?: SourceAnchor;
-  origin?: "manual" | "desk";
-  /** When true, reject same word+sourceFileId already on this track. */
+  origin?: "manual" | "desk" | "culture";
+  /** Phase 5 — Japan heritage seed id (culture cards only). */
+  cultureItemId?: number;
+  /** When true, reject same word+source already on this track. */
   rejectDuplicate?: boolean;
 }) {
   const state = readLearn();
@@ -267,21 +271,48 @@ export function addManualCard(input: {
     return { ok: false as const, reason: "Nhập nghĩa hoặc ghi chú cho thẻ.", state };
   }
   const provenance = pickProvenanceFields({
-    origin: input.origin || (input.sourceFileId ? "desk" : "manual"),
-    sourceFileId: input.sourceFileId,
+    origin:
+      input.origin ||
+      (input.cultureItemId != null
+        ? "culture"
+        : input.sourceFileId
+          ? "desk"
+          : "manual"),
+    sourceFileId: input.origin === "culture" ? undefined : input.sourceFileId,
     sourceAnchor: input.sourceAnchor,
+    cultureItemId: input.cultureItemId,
   });
-  if (
-    input.rejectDuplicate !== false &&
-    isDuplicateDeskCard(t.cards, word, provenance.sourceFileId)
-  ) {
+  if (provenance.origin === "culture" && provenance.cultureItemId == null) {
     return {
       ok: false as const,
-      reason: "Thẻ trùng (cùng từ + cùng tài liệu) đã có trên track này.",
+      reason: "Thẻ văn hóa cần mã di sản (cultureItemId).",
       state,
     };
   }
-  // Desk/manual cards do not require an active curriculum path (Slice 2A).
+  if (input.rejectDuplicate !== false) {
+    if (
+      provenance.origin === "culture" &&
+      provenance.cultureItemId != null &&
+      isDuplicateCultureCard(t.cards, word, provenance.cultureItemId)
+    ) {
+      return {
+        ok: false as const,
+        reason: "Thẻ trùng (cùng từ + cùng di sản) đã có trên track này.",
+        state,
+      };
+    }
+    if (
+      provenance.origin !== "culture" &&
+      isDuplicateDeskCard(t.cards, word, provenance.sourceFileId)
+    ) {
+      return {
+        ok: false as const,
+        reason: "Thẻ trùng (cùng từ + cùng tài liệu) đã có trên track này.",
+        state,
+      };
+    }
+  }
+  // Desk/manual/culture cards do not require an active curriculum path (Slice 2A).
   // Do not create or activate a path as a side effect.
   const card: SerializedCard = {
     sourceId: `manual-${crypto.randomUUID()}`,

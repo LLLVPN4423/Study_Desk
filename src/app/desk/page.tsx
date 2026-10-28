@@ -32,7 +32,7 @@ import {
   canUpload,
   createNoteFile,
   defaultTagForKind,
-  deleteFile,
+  deleteFileAsync,
   deleteFolder,
   formatBytes,
   hydrateBgAppearance,
@@ -40,7 +40,7 @@ import {
   loadDesk,
   patchFile,
   saveCustomWallpaper,
-  saveDesk,
+  saveDeskMetadata,
   saveDeskAsync,
   usedStorageBytes,
   type DeskFile,
@@ -184,7 +184,7 @@ function DeskContent({ userName }: { userName: string }) {
             const next = { ...d, focusSeconds: d.focusSeconds };
             deskRef.current = next;
             setDesk(next);
-            saveDesk(next);
+            saveDeskMetadata(next);
           }
           return 0;
         }
@@ -446,10 +446,14 @@ function DeskContent({ userName }: { userName: string }) {
     update(patchFile(desk, f.id, { name: next.trim() }));
   }
 
-  function removeFile(f: DeskFile) {
+  async function removeFile(f: DeskFile) {
     if (!desk) return;
     if (!window.confirm(`Xóa “${f.name}”? Không hoàn tác được.`)) return;
-    update(deleteFile(desk, f.id));
+    const result = await deleteFileAsync(desk, f.id);
+    await update(result.state);
+    if (!result.ok) {
+      setUploadError(result.reason || "Xóa file chưa gỡ hết blob IndexedDB.");
+    }
     if (activeFileId === f.id) closeStudio();
   }
 

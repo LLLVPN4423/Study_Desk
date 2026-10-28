@@ -455,7 +455,7 @@ function ReviewContent() {
           {sourceNav?.ok ? (
             <p style={{ marginTop: 12, fontSize: 13 }}>
               <Link href={sourceNav.href} className="text-button">
-                Mở nguồn · {sourceNav.fileName}
+                {sourceNav.kind === "culture" ? "Mở di sản" : "Mở nguồn"} · {sourceNav.fileName}
                 {sourceNav.page ? ` · tr.${sourceNav.page}` : ""}
               </Link>
               {sourceNav.quote ? (
