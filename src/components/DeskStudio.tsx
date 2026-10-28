@@ -43,6 +43,10 @@ import {
   writeBlobToDisk,
 } from "@/lib/file-handles";
 import { addManualCard, readLearn, type TrackId } from "@/lib/learn-store-core";
+import {
+  normalizeQuote,
+  type SourceAnchor,
+} from "@/lib/card-provenance";
 import { canListen, listenOnce } from "@/lib/speech";
 
 const StudioRichEditor = dynamic(
@@ -69,7 +73,7 @@ type Props = {
   running: boolean;
   onSeconds: (n: number) => void;
   onRunning: (v: boolean) => void;
-  onUpdate: (next: DeskState) => void;
+  onUpdate: (next: DeskState) => void | Promise<{ ok: boolean; reason?: string } | void>;
   onSelect: (id: string) => void;
   onClose: () => void;
   /** Mở từ máy (có quyền ghi) — Ctrl+S ghi đè thẳng. */
@@ -77,6 +81,8 @@ type Props = {
   onUploadMusic: () => void;
   onCreateNote: () => void;
   music: DeskMusicApi;
+  /** Slice 2D — best-effort quote to select when opening from Review. */
+  highlightQuote?: string;
 };
 
 type SideTab = "learn" | "out" | "focus";
@@ -105,6 +111,7 @@ export function DeskStudio({
   onUploadMusic,
   onCreateNote,
   music,
+  highlightQuote,
 }: Props) {
   const file = desk.files.find((f) => f.id === activeId) || null;
   const [linkedToDisk, setLinkedToDisk] = useState(false);
@@ -112,8 +119,10 @@ export function DeskStudio({
   const [notes, setNotes] = useState(file?.notes || "");
   const [snippet, setSnippet] = useState("");
   const [meaning, setMeaning] = useState("");
+  const [draftAnchor, setDraftAnchor] = useState<SourceAnchor | null>(null);
   const [track, setTrack] = useState<TrackId>("jp");
   const [msg, setMsg] = useState<string | null>(null);
+  const highlightTried = useRef<string | null>(null);
   const [saveState, setSaveState] = useState<"idle" | "dirty" | "saving" | "saved">("idle");
   const [imgZoom, setImgZoom] = useState(100);
   const [imgRotate, setImgRotate] = useState(0);
@@ -149,10 +158,17 @@ export function DeskStudio({
   const { listeningId, play, stop } = music;
   function persist(next: DeskState) {
     deskLive.current = next;
-    onUpdate(next);
-    setSaveState("saved");
-    if (savedFlashTimer.current) window.clearTimeout(savedFlashTimer.current);
-    savedFlashTimer.current = window.setTimeout(() => setSaveState("idle"), 1600);
+    setSaveState("saving");
+    void Promise.resolve(onUpdate(next)).then((result) => {
+      if (result && typeof result === "object" && "ok" in result && result.ok === false) {
+        setSaveState("dirty");
+        setMsg(result.reason || "Không lưu được lên bàn học.");
+        return;
+      }
+      setSaveState("saved");
+      if (savedFlashTimer.current) window.clearTimeout(savedFlashTimer.current);
+      savedFlashTimer.current = window.setTimeout(() => setSaveState("idle"), 1600);
+    });
   }
 
   function flushPending() {
@@ -273,8 +289,18 @@ export function DeskStudio({
               size: sizeFromDataUrl(dataUrl),
             });
             const latest = next.files.find((f) => f.id === file.id)!;
+            try {
+              await persistFileBlobs(latest);
+            } catch (blobErr) {
+              setSaveState("dirty");
+              setMsg(
+                blobErr instanceof Error
+                  ? blobErr.message
+                  : "Không ghi được PDF vào IndexedDB.",
+              );
+              return null;
+            }
             persist(next);
-            await persistFileBlobs(latest);
             setPdfEpoch((n) => n + 1);
             setMsg(
               `Đã cập nhật PDF trên bàn (${baked} chú thích). Mở lại file này vẫn còn — chỉ Tải khi cần bản trên máy.`,
@@ -315,8 +341,18 @@ export function DeskStudio({
           size: sizeFromDataUrl(dataUrl),
         });
         const latest = next.files.find((f) => f.id === file.id)!;
+        try {
+          await persistFileBlobs(latest);
+        } catch (blobErr) {
+          setSaveState("dirty");
+          setMsg(
+            blobErr instanceof Error
+              ? blobErr.message
+              : "Không ghi được .docx vào IndexedDB.",
+          );
+          return null;
+        }
         persist(next);
-        await persistFileBlobs(latest);
         setMsg("Đã cập nhật .docx trên bàn học — mở lại vẫn còn.");
         return latest;
       } catch (err) {
@@ -389,8 +425,14 @@ export function DeskStudio({
       });
       latest = next.files.find((f) => f.id === file.id) || null;
       if (latest) {
-        persist(next);
-        await persistFileBlobs(latest);
+        try {
+          await persistFileBlobs(latest);
+          persist(next);
+        } catch (blobErr) {
+          setSaveState("dirty");
+          setMsg(blobErr instanceof Error ? blobErr.message : "Không lưu được nội dung.");
+          return;
+        }
       }
     }
     if (!latest) return;
@@ -441,8 +483,14 @@ export function DeskStudio({
       });
       latest = next.files.find((f) => f.id === file.id) || null;
       if (latest) {
-        persist(next);
-        await persistFileBlobs(latest);
+        try {
+          await persistFileBlobs(latest);
+          persist(next);
+        } catch (blobErr) {
+          setSaveState("dirty");
+          setMsg(blobErr instanceof Error ? blobErr.message : "Không lưu được nội dung.");
+          return;
+        }
       }
     }
 
@@ -559,8 +607,13 @@ export function DeskStudio({
         });
         latest = next.files.find((f) => f.id === file.id) || null;
         if (latest) {
-          persist(next);
-          await persistFileBlobs(latest);
+          try {
+            await persistFileBlobs(latest);
+            persist(next);
+          } catch {
+            setSaveState("dirty");
+            return;
+          }
         }
       }
       if (!latest) {
@@ -638,6 +691,8 @@ export function DeskStudio({
     setImgRotate(0);
     setTrack(readLearn().preferredTrack);
     setLinkedToDisk(false);
+    setDraftAnchor(null);
+    highlightTried.current = null;
     if (file?.id) {
       void hasFileHandle(file.id).then(setLinkedToDisk);
     }
@@ -646,6 +701,32 @@ export function DeskStudio({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps -- activeId drives file switch only
   }, [activeId]);
+
+  /** Slice 2D — best-effort select quote in TipTap/plain; PDF only shows quote banner. */
+  useEffect(() => {
+    const q = (highlightQuote || "").trim();
+    if (!q || !file) return;
+    const key = `${file.id}::${q}`;
+    if (highlightTried.current === key) return;
+    highlightTried.current = key;
+    if (file.kind === "pdf") {
+      setMsg(`Trích dẫn từ Review: “${q.slice(0, 120)}${q.length > 120 ? "…" : ""}” — PDF không nhảy tới đúng vị trí chữ.`);
+      return;
+    }
+    if (file.kind !== "note" && file.kind !== "doc") {
+      setMsg(`Trích dẫn: “${q.slice(0, 80)}…” — không chọn được trong loại file này.`);
+      return;
+    }
+    const t = window.setTimeout(() => {
+      const ok = richRef.current?.findAndSelect(q) ?? false;
+      setMsg(
+        ok
+          ? "Đã tô vùng trích dẫn từ Review (best-effort)."
+          : `Không tìm thấy đúng trích dẫn trong tài liệu: “${q.slice(0, 80)}${q.length > 80 ? "…" : ""}”`,
+      );
+    }, 400);
+    return () => window.clearTimeout(t);
+  }, [highlightQuote, file?.id, file?.kind]);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -747,6 +828,47 @@ export function DeskStudio({
     setMsg("Đã đẩy sang Output.");
   }
 
+  function prefillFromText(text: string, anchor: SourceAnchor) {
+    const q = normalizeQuote(text);
+    if (!q) {
+      setMsg("Vùng chọn trống.");
+      return;
+    }
+    if (!file) {
+      setMsg("Không có tài liệu nguồn đang mở.");
+      return;
+    }
+    setSnippet(q);
+    setDraftAnchor({ ...anchor, quote: q });
+    setSideTab("learn");
+    setMsg("Đã điền từ vùng chọn — chỉnh nghĩa rồi Thêm thẻ.");
+  }
+
+  function fillFromEditorSelection() {
+    if (!file) {
+      setMsg("Mở một ghi chú/tài liệu trước.");
+      return;
+    }
+    if (file.kind !== "note" && file.kind !== "doc") {
+      setMsg("Vùng chọn TipTap chỉ hỗ trợ ghi chú / Word. PDF: dùng «Vùng chọn → thẻ».");
+      return;
+    }
+    const text = richRef.current?.getSelectedText() || "";
+    if (!text.trim()) {
+      setMsg("Hãy bôi đen đoạn chữ trong editor trước.");
+      return;
+    }
+    prefillFromText(text, { kind: "selection", quote: text });
+  }
+
+  function fillFromPdfSelection(payload: { text: string; page?: number }) {
+    prefillFromText(payload.text, {
+      kind: payload.page ? "pdf-page" : "pdf-quote",
+      quote: payload.text,
+      page: payload.page,
+    });
+  }
+
   function makeCard() {
     if (!file) return;
     const word = snippet.trim();
@@ -755,7 +877,15 @@ export function DeskStudio({
       return;
     }
     const gloss = meaning.trim() || "Từ ghi chú desk";
-    const result = addManualCard({ track, word, meanings: [gloss] });
+    const result = addManualCard({
+      track,
+      word,
+      meanings: [gloss],
+      origin: "desk",
+      sourceFileId: file.id,
+      sourceAnchor: draftAnchor || { kind: "notes", quote: word },
+      rejectDuplicate: true,
+    });
     if (!result.ok) {
       setMsg(result.reason);
       return;
@@ -770,8 +900,9 @@ export function DeskStudio({
     );
     setSnippet("");
     setMeaning("");
+    setDraftAnchor(null);
     setSideTab("out");
-    setMsg("Đã thêm thẻ SRS.");
+    setMsg("Đã thêm thẻ SRS (đã gắn nguồn tài liệu).");
   }
 
   async function replaceBinary(list: FileList | null) {
@@ -1172,6 +1303,7 @@ export function DeskStudio({
                       onAnnotationsChange={(next) => scheduleAnnotations(next)}
                       pageNotes={notes}
                       onPageNotes={(text) => schedule("notes", text)}
+                      onCardFromText={fillFromPdfSelection}
                     />
                   ) : (
                     <div className="studio-empty">
@@ -1391,13 +1523,35 @@ export function DeskStudio({
                 </div>
                 <label>
                   Cụm từ
-                  <input value={snippet} onChange={(e) => setSnippet(e.target.value)} placeholder="Dán…" />
+                  <input
+                    value={snippet}
+                    onChange={(e) => {
+                      setSnippet(e.target.value);
+                      setDraftAnchor(null);
+                    }}
+                    placeholder="Dán…"
+                  />
                 </label>
                 <label>
                   Nghĩa
                   <input value={meaning} onChange={(e) => setMeaning(e.target.value)} placeholder="Tùy chọn" />
                 </label>
-                <Button onClick={makeCard}>Thêm thẻ</Button>
+                {draftAnchor?.quote ? (
+                  <p style={{ fontSize: 12, color: "var(--muted)", margin: "6px 0" }}>
+                    Nguồn: {draftAnchor.kind}
+                    {draftAnchor.page ? ` · tr.${draftAnchor.page}` : ""} · “
+                    {draftAnchor.quote.slice(0, 60)}
+                    {draftAnchor.quote.length > 60 ? "…" : ""}”
+                  </p>
+                ) : null}
+                <div className="studio-tool-actions" style={{ marginTop: 8, gap: 8, display: "flex", flexWrap: "wrap" }}>
+                  <Button onClick={makeCard}>Thêm thẻ</Button>
+                  {(file?.kind === "note" || file?.kind === "doc") && (
+                    <Button variant="secondary" onClick={fillFromEditorSelection}>
+                      Từ vùng chọn
+                    </Button>
+                  )}
+                </div>
               </div>
               {file?.kind === "audio" ? (
                 <div className="studio-tool-block">

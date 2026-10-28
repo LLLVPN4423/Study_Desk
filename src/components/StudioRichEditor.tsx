@@ -25,6 +25,13 @@ export type StudioRichHandle = {
   getContent: () => string;
   /** Đẩy nội dung editor ra onChange + trả về chuỗi. */
   flush: () => string;
+  /** Plain text of the current selection (empty if none). */
+  getSelectedText: () => string;
+  /**
+   * Best-effort: find first occurrence of quote and select it.
+   * Returns false if not found / unsupported mode — does not invent a position.
+   */
+  findAndSelect: (quote: string) => boolean;
 };
 
 type Props = {
@@ -69,6 +76,7 @@ export const StudioRichEditor = forwardRef<StudioRichHandle, Props>(
     const valueRef = useRef(value);
     /** Bản gõ mới nhất (plain) — tránh Ctrl+S lấy value React bị trễ 1 nhịp. */
     const plainDraftRef = useRef(value);
+    const plainTaRef = useRef<HTMLTextAreaElement | null>(null);
 
     useEffect(() => {
       onChangeRef.current = onChange;
@@ -83,6 +91,54 @@ export const StudioRichEditor = forwardRef<StudioRichHandle, Props>(
       valueRef.current = value;
       plainDraftRef.current = value;
     }, [value]);
+
+    function selectionFromPlain(): string {
+      const el = plainTaRef.current;
+      if (!el) return "";
+      const a = el.selectionStart ?? 0;
+      const b = el.selectionEnd ?? 0;
+      if (a === b) return "";
+      return (el.value || "").slice(Math.min(a, b), Math.max(a, b));
+    }
+
+    function findAndSelectInPlain(quote: string): boolean {
+      const el = plainTaRef.current;
+      const q = quote.trim();
+      if (!el || !q) return false;
+      const idx = el.value.indexOf(q);
+      if (idx < 0) return false;
+      el.focus();
+      el.setSelectionRange(idx, idx + q.length);
+      return true;
+    }
+
+    function selectionFromEditor(): string {
+      if (!editor) return "";
+      const { from, to, empty } = editor.state.selection;
+      if (empty || from === to) return "";
+      return editor.state.doc.textBetween(from, to, " ").replace(/\s+/g, " ").trim();
+    }
+
+    function findAndSelectInEditor(quote: string): boolean {
+      if (!editor) return false;
+      const q = quote.trim();
+      if (!q) return false;
+      let foundFrom = -1;
+      let foundTo = -1;
+      editor.state.doc.descendants((node, pos) => {
+        if (foundFrom >= 0 || !node.isText || !node.text) return true;
+        const i = node.text.indexOf(q);
+        if (i >= 0) {
+          foundFrom = pos + i;
+          foundTo = foundFrom + q.length;
+          return false;
+        }
+        return true;
+      });
+      if (foundFrom < 0) return false;
+      editor.chain().focus().setTextSelection({ from: foundFrom, to: foundTo }).run();
+      return true;
+    }
 
     // Ctrl+S do DeskStudio bắt (tránh double-save / double Save As)
 
@@ -168,38 +224,58 @@ export const StudioRichEditor = forwardRef<StudioRichHandle, Props>(
       [format],
     );
 
-    useImperativeHandle(ref, () => ({
-      getContent: () => {
-        if (formatRef.current === "plain") return plainDraftRef.current || "";
-        if (mode === "source") return sourceDraft;
-        if (!editor) return valueRef.current || "";
-        if (formatRef.current === "markdown") {
-          const md = editor as typeof editor & { getMarkdown?: () => string };
-          return typeof md.getMarkdown === "function" ? md.getMarkdown() : editor.getHTML();
-        }
-        return editor.getHTML();
-      },
-      flush: () => {
-        let next = valueRef.current || "";
-        if (formatRef.current === "plain") {
-          next = plainDraftRef.current || "";
-        } else if (mode === "source") {
-          next = sourceDraft;
-        } else if (editor) {
+    useImperativeHandle(
+      ref,
+      () => ({
+        getContent: () => {
+          if (formatRef.current === "plain") return plainDraftRef.current || "";
+          if (mode === "source") return sourceDraft;
+          if (!editor) return valueRef.current || "";
           if (formatRef.current === "markdown") {
             const md = editor as typeof editor & { getMarkdown?: () => string };
-            next =
-              typeof md.getMarkdown === "function" ? md.getMarkdown() : editor.getHTML();
-          } else {
-            next = editor.getHTML();
+            return typeof md.getMarkdown === "function" ? md.getMarkdown() : editor.getHTML();
           }
-        }
-        valueRef.current = next;
-        plainDraftRef.current = next;
-        onChangeRef.current(next);
-        return next;
-      },
-    }));
+          return editor.getHTML();
+        },
+        flush: () => {
+          let next = valueRef.current || "";
+          if (formatRef.current === "plain") {
+            next = plainDraftRef.current || "";
+          } else if (mode === "source") {
+            next = sourceDraft;
+          } else if (editor) {
+            if (formatRef.current === "markdown") {
+              const md = editor as typeof editor & { getMarkdown?: () => string };
+              next =
+                typeof md.getMarkdown === "function" ? md.getMarkdown() : editor.getHTML();
+            } else {
+              next = editor.getHTML();
+            }
+          }
+          valueRef.current = next;
+          plainDraftRef.current = next;
+          onChangeRef.current(next);
+          return next;
+        },
+        getSelectedText: () => {
+          if (formatRef.current === "plain") return selectionFromPlain();
+          if (mode === "source") {
+            // source textarea selection not tracked — fall back to window
+            const sel = typeof window !== "undefined" ? window.getSelection()?.toString() : "";
+            return (sel || "").replace(/\s+/g, " ").trim();
+          }
+          return selectionFromEditor();
+        },
+        findAndSelect: (quote: string) => {
+          if (formatRef.current === "plain") return findAndSelectInPlain(quote);
+          if (mode === "source") return false;
+          return findAndSelectInEditor(quote);
+        },
+      }),
+      // editor/mode/sourceDraft intentionally read via refs/closures at call time
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      [editor, mode, sourceDraft],
+    );
 
     if (format === "plain") {
       return (
@@ -214,6 +290,7 @@ export const StudioRichEditor = forwardRef<StudioRichHandle, Props>(
             ) : null}
           </div>
           <textarea
+            ref={plainTaRef}
             className="studio-plain-editor"
             value={value}
             onChange={(e) => {

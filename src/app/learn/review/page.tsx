@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { Button } from "@/components/Button";
 import { RequireAuth } from "@/components/RequireAuth";
@@ -29,6 +29,8 @@ import {
   type TodayPlan,
   type TrackId,
 } from "@/lib/learn-store";
+import { resolveCardSourceLink } from "@/lib/card-provenance";
+import { loadDesk } from "@/lib/desk-store";
 import { canSpeak, speak } from "@/lib/speech";
 import { useI18n } from "@/lib/i18n";
 import { displayExampleVi } from "@/lib/gloss-vi";
@@ -124,6 +126,23 @@ function ReviewContent() {
   const current = queue[index];
   const remaining = queue.length;
   const isNew = current?.queueKind === "new";
+  const longFront = Boolean(current?.word && current.word.length > 48);
+  const longMeaning = Boolean(
+    current?.meanings?.join("; ") && current.meanings.join("; ").length > 80,
+  );
+  const sourceNav = useMemo(() => {
+    if (!current || (!current.sourceFileId && !current.sourceAnchor)) return null;
+    try {
+      const deskFiles = loadDesk().files.map((f) => ({ id: f.id, name: f.name }));
+      return resolveCardSourceLink(current, deskFiles);
+    } catch {
+      return {
+        ok: false as const,
+        reason: "file_missing" as const,
+        message: "Không đọc được danh sách file trên bàn.",
+      };
+    }
+  }, [current]);
 
   function goPrev() {
     setFlipped(false);
@@ -227,7 +246,7 @@ function ReviewContent() {
               : `Ôn · ${track.toUpperCase()}`}
           </p>
           <h1>{remaining} thẻ trong bài</h1>
-          <p style={{ color: "var(--muted)", marginTop: 6, fontSize: 14, maxWidth: 480 }}>
+          <p className="review-summary">
             {lessonPct.total > 0
               ? `Tiến độ bài: ${lessonPct.touched}/${lessonPct.total} từ · Ổn/Dễ ${lessonPct.goodCount ?? 0}/${lessonPct.total} (cần ≥70%)`
               : daily?.summary || ""}
@@ -318,7 +337,12 @@ function ReviewContent() {
                 <p className="eyebrow">
                   {isNew ? "Mở thẻ mới hôm nay" : "Ôn lại (FSRS) — không phải học lại từ đầu"}
                 </p>
-                <div className="kanji" style={{ fontSize: track === "en" ? 48 : undefined }}>
+                <div
+                  className={`kanji${longFront ? " kanji-long" : ""}`}
+                  style={
+                    !longFront && track === "en" ? { fontSize: 48 } : undefined
+                  }
+                >
                   {current.word}
                 </div>
                 <span className="tap">Chạm để hiện đáp án</span>
@@ -326,9 +350,13 @@ function ReviewContent() {
             ) : (
               <>
                 <p className="eyebrow">{track === "jp" ? "Đọc · Nghĩa" : "Nghĩa"}</p>
-                <div className="kanji prompt-word">{current.word}</div>
+                <div className={`kanji prompt-word${longFront ? " kanji-long" : ""}`}>
+                  {current.word}
+                </div>
                 {current.reading ? <div className="reading">{current.reading}</div> : null}
-                <h2 className="meaning-line">{current.meanings.join("; ")}</h2>
+                <h2 className={`meaning-line${longMeaning ? " meaning-long" : ""}`}>
+                  {current.meanings.join("; ")}
+                </h2>
                 {current.exampleJa ? (
                   <p className="example">
                     {current.exampleJa}
@@ -371,6 +399,25 @@ function ReviewContent() {
                 </Button>
               ) : null}
             </div>
+          ) : null}
+
+          {sourceNav?.ok ? (
+            <p style={{ marginTop: 12, fontSize: 13 }}>
+              <Link href={sourceNav.href} className="text-button">
+                Mở nguồn · {sourceNav.fileName}
+                {sourceNav.page ? ` · tr.${sourceNav.page}` : ""}
+              </Link>
+              {sourceNav.quote ? (
+                <span style={{ color: "var(--muted)", display: "block", marginTop: 4 }}>
+                  “{sourceNav.quote.slice(0, 100)}
+                  {sourceNav.quote.length > 100 ? "…" : ""}”
+                </span>
+              ) : null}
+            </p>
+          ) : sourceNav && !sourceNav.ok ? (
+            <p style={{ marginTop: 12, fontSize: 13, color: "var(--muted)" }}>
+              {sourceNav.message}
+            </p>
           ) : null}
 
           <p className="ratings-lock-hint">{t("srsFlipFirst")}</p>

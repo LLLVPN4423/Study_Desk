@@ -21,9 +21,15 @@ import {
 } from "./path-goals";
 import { STORAGE_KEYS } from "./storage-keys";
 import type { RoadmapPlan } from "./roadmap";
+import {
+  isDuplicateDeskCard,
+  pickProvenanceFields,
+  type SourceAnchor,
+} from "./card-provenance";
 
 export type TrackId = "jp" | "en";
 export type { RoadmapPlan };
+export type { SourceAnchor } from "./card-provenance";
 
 export type SerializedCard = {
   sourceId: string;
@@ -35,6 +41,10 @@ export type SerializedCard = {
   exampleEn?: string;
   card: CardSnapshot;
   lastGrade?: number;
+  /** Slice 2B — optional Desk provenance (additive; legacy cards omit). */
+  origin?: "curriculum" | "manual" | "desk";
+  sourceFileId?: string;
+  sourceAnchor?: SourceAnchor;
 };
 
 export type ActionProgressEntry = {
@@ -237,21 +247,52 @@ export function addManualCard(input: {
   word: string;
   meanings: string[];
   reading?: string;
+  /** Slice 2B — optional Desk file id + quote/page anchor. */
+  sourceFileId?: string;
+  sourceAnchor?: SourceAnchor;
+  origin?: "manual" | "desk";
+  /** When true, reject same word+sourceFileId already on this track. */
+  rejectDuplicate?: boolean;
 }) {
   const state = readLearn();
   const t = getTrack(state, input.track);
-  if (!t.pathActive) {
-    return { ok: false as const, reason: "Hãy kích hoạt một lộ trình học trước.", state };
+  const word = (input.word || "").trim();
+  if (!word) {
+    return { ok: false as const, reason: "Nhập cụm từ trước.", state };
   }
+  const meanings = (input.meanings || [])
+    .map((m) => (typeof m === "string" ? m.trim() : ""))
+    .filter(Boolean);
+  if (!meanings.length) {
+    return { ok: false as const, reason: "Nhập nghĩa hoặc ghi chú cho thẻ.", state };
+  }
+  const provenance = pickProvenanceFields({
+    origin: input.origin || (input.sourceFileId ? "desk" : "manual"),
+    sourceFileId: input.sourceFileId,
+    sourceAnchor: input.sourceAnchor,
+  });
+  if (
+    input.rejectDuplicate !== false &&
+    isDuplicateDeskCard(t.cards, word, provenance.sourceFileId)
+  ) {
+    return {
+      ok: false as const,
+      reason: "Thẻ trùng (cùng từ + cùng tài liệu) đã có trên track này.",
+      state,
+    };
+  }
+  // Desk/manual cards do not require an active curriculum path (Slice 2A).
+  // Do not create or activate a path as a side effect.
   const card: SerializedCard = {
     sourceId: `manual-${crypto.randomUUID()}`,
     track: input.track,
-    word: input.word,
-    reading: input.reading,
-    meanings: input.meanings,
+    word,
+    reading: input.reading?.trim() || undefined,
+    meanings,
     card: serializeCard(newCard(new Date())),
+    ...provenance,
   };
   t.cards.unshift(card);
   saveLearn(state);
-  return { ok: true as const, state };
+  return { ok: true as const, state, sourceId: card.sourceId };
 }

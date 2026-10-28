@@ -76,6 +76,9 @@ import {
   type EnBand,
   type JpBand,
 } from "./vocab-seeds";
+import { assembleStudyQueue, DESK_NEW_SOFT_CAP } from "./study-queue";
+
+export { DESK_NEW_SOFT_CAP, isManualDeskCardId, assembleStudyQueue } from "./study-queue";
 
 export type { TrackId, JpBand, EnBand };
 export type { VocabSeed, RoadmapPlan, PathGoals, PathEvidence, PathAdvice };
@@ -1659,12 +1662,18 @@ export function getDailyStudyProgress(
     }
   }
   const total = t.cards.length;
+  /** Keep header readable — desk cards may store long excerpts as `word`. */
+  const previewNext = nextNewWord
+    ? nextNewWord.length > 42
+      ? `${nextNewWord.slice(0, 42).trimEnd()}…`
+      : nextNewWord
+    : undefined;
   const summary =
     untouched === 0
       ? `Đã mở hết ${total} từ · hôm nay ôn ${dueCount} due (không reset).`
       : `Đã mở ${touched}/${total} · hôm nay còn ${newLeftToday} từ mới` +
         (dueCount ? ` + ${dueCount} ôn lại` : "") +
-        (nextNewWord ? ` · tiếp: ${nextNewWord}` : "");
+        (previewNext ? ` · tiếp: ${previewNext}` : "");
   return {
     newCap,
     newDoneToday,
@@ -1699,10 +1708,11 @@ export function dueCards(track?: TrackId, state = loadLearn()): QueuedCard[] {
 }
 
 /**
- * Session queue for the current lesson (bài):
- * - New cards ONLY from this lesson’s vocabSourceIds (no future lessons/weeks).
- * - When freemium unlocked: no daily new/review caps — finish bài 1 → học bài 2 ngay.
- * - Soft ETA (newPerDay) is estimate only, not a hard stop.
+ * Session queue:
+ * 1) Lesson work (vocabSourceIds for current/forced bài) — unchanged priority.
+ * 2) Due reviews outside the lesson (reps > 0).
+ * 3) New Desk/manual cards (sourceId `manual-*`, reps === 0), soft-capped by DESK_NEW_SOFT_CAP.
+ * Soft ETA (newPerDay) is estimate only for lesson new pacing, not a hard stop when unlocked.
  */
 export function studyQueue(
   track: TrackId,
@@ -1727,7 +1737,6 @@ export function studyQueue(
   const lessonIds = forced
     ? lessonVocabIds(forced)
     : today?.day.vocabSourceIds || [];
-  const allowNew = new Set<string>(lessonIds);
 
   const now = Date.now();
   const hydrated = t.cards.map((c) => {
@@ -1735,36 +1744,28 @@ export function studyQueue(
     return { ...h, live: deserializeCard(coerceSnapshot(c.card)) };
   });
 
-  // Lesson work queue: never-rated OR last grade < Good (Again/Hard stay until pass quality)
-  const lessonWork =
-    allowNew.size > 0
-      ? hydrated
-          .filter((c) => allowNew.has(c.sourceId) && cardNeedsLessonPass(t, c.sourceId))
-          .map((c) => ({
-            ...c,
-            queueKind: ((c.live.reps ?? 0) > 0 ? "review" : "new") as "new" | "review",
-          }))
-      : [];
-
-  const dueOutsideLesson = hydrated
-    .filter(
-      (c) =>
-        (c.live.reps ?? 0) > 0 &&
-        c.live.due.getTime() <= now &&
-        !(allowNew.size > 0 && allowNew.has(c.sourceId)),
-    )
-    .sort((a, b) => a.live.due.getTime() - b.live.due.getTime())
-    .map((c) => ({ ...c, queueKind: "review" as const }));
-
-  const workSlots = Math.min(newLeft + 50, remainingQuota, lessonWork.length);
+  // Pre-count lesson work length for slot budgets (same formula as pre-2A).
+  const lessonWorkCount =
+    lessonIds.length > 0
+      ? hydrated.filter(
+          (c) => lessonIds.includes(c.sourceId) && cardNeedsLessonPass(t, c.sourceId),
+        ).length
+      : 0;
+  const workSlots = Math.min(newLeft + 50, remainingQuota, lessonWorkCount);
   const dueSlots = unlocked
-    ? Math.min(dueOutsideLesson.length, Math.max(5, remainingQuota - workSlots))
+    ? Math.max(5, remainingQuota - workSlots)
     : Math.max(0, remainingQuota - workSlots);
-  const work = lessonWork.slice(0, workSlots);
-  const due = dueOutsideLesson.slice(0, dueSlots);
 
-  // Finish current lesson first — do not skip Again/Hard cards
-  return unlocked ? [...work, ...due] : [...work, ...due];
+  return assembleStudyQueue({
+    cards: hydrated,
+    lessonSourceIds: lessonIds,
+    needsLessonPass: (sourceId) => cardNeedsLessonPass(t, sourceId),
+    nowMs: now,
+    remainingQuota,
+    lessonWorkSlotLimit: workSlots,
+    dueSlotLimit: dueSlots,
+    deskNewSoftCap: DESK_NEW_SOFT_CAP,
+  });
 }
 
 export function canReview(state = loadLearn()) {

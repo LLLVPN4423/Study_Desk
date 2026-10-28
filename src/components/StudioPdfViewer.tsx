@@ -41,6 +41,8 @@ export type StudioPdfHandle = {
   getAnnotations: () => Annotation[];
   /** Đẩy chú thích ra parent + trả về. */
   flush: () => Annotation[];
+  /** Browser text selection inside the PDF viewport (may be empty). */
+  getSelectedText: () => string;
 };
 
 type Props = {
@@ -51,6 +53,8 @@ type Props = {
   onAnnotationsChange: (next: Annotation[]) => void;
   pageNotes: string;
   onPageNotes: (text: string) => void;
+  /** Slice 2E — create flashcard draft from PDF text selection / extract quote. */
+  onCardFromText?: (payload: { text: string; page?: number }) => void;
 };
 
 export const StudioPdfViewer = forwardRef<StudioPdfHandle, Props>(function StudioPdfViewer(
@@ -62,6 +66,7 @@ export const StudioPdfViewer = forwardRef<StudioPdfHandle, Props>(function Studi
     onAnnotationsChange,
     pageNotes,
     onPageNotes,
+    onCardFromText,
   },
   ref,
 ) {
@@ -101,6 +106,11 @@ export const StudioPdfViewer = forwardRef<StudioPdfHandle, Props>(function Studi
     };
   }, []);
 
+  function readDomSelection(): string {
+    const sel = typeof window !== "undefined" ? window.getSelection()?.toString() : "";
+    return (sel || "").replace(/\s+/g, " ").trim();
+  }
+
   useImperativeHandle(ref, () => ({
     getAnnotations: () => localAnnRef.current,
     flush: () => {
@@ -112,7 +122,22 @@ export const StudioPdfViewer = forwardRef<StudioPdfHandle, Props>(function Studi
       onAnnRef.current(next);
       return next;
     },
+    getSelectedText: () => readDomSelection(),
   }));
+
+  function useSelectionForCard() {
+    const text = readDomSelection();
+    if (!text) {
+      setMsg("Chọn chữ trong PDF (công cụ Select text) rồi thử lại.");
+      return;
+    }
+    if (!onCardFromText) {
+      setMsg("Không gắn được thẻ từ PDF trong phiên này.");
+      return;
+    }
+    onCardFromText({ text });
+    setMsg("Đã đưa vùng chọn sang panel Học — chỉnh rồi Thêm thẻ.");
+  }
 
   // key đổi khi bytes PDF đổi (bake) — không phụ thuộc updatedAt autosave
   const src = useMemo(
@@ -246,6 +271,11 @@ export const StudioPdfViewer = forwardRef<StudioPdfHandle, Props>(function Studi
             <Button variant="secondary" onClick={() => void extractAllText()}>
               Trích chữ → Ghi chú
             </Button>
+            {onCardFromText ? (
+              <Button variant="secondary" onClick={useSelectionForCard}>
+                Vùng chọn → thẻ
+              </Button>
+            ) : null}
             <Button variant="ghost" onClick={downloadAnnotations} disabled={!localAnn.length}>
               Tải chú thích ({localAnn.length})
             </Button>
