@@ -21,7 +21,9 @@
     "smoke:phase3": "node --experimental-strip-types scripts/smoke-phase3.mjs",
     "smoke:precommit": "node --experimental-strip-types scripts/smoke-precommit-verify.mjs",
     "smoke:integrity": "node --experimental-strip-types scripts/smoke-integrity.mjs",
-    "smoke:restore-rollback": "node --experimental-strip-types scripts/smoke-restore-rollback.mjs"
+    "smoke:restore-rollback": "node --experimental-strip-types scripts/smoke-restore-rollback.mjs",
+    "test:e2e": "npm run build && playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "@inkbar/core": "^0.8.0",
@@ -50,6 +52,8 @@
     "ts-fsrs": "^5.4.2"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

@@ -971,7 +971,8 @@ input[type="checkbox"]:checked::after {
 }
 .digit-group small {
   font-size: 9px;
-  color: rgba(200, 240, 216, 0.5);
+  /* Solid mint on clock bg — meets WCAG AA ~4.5:1 (was rgba 0.5 → ~4.3:1). */
+  color: #a3d4b8;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-family: var(--font-ui-stack);
@@ -988,7 +989,7 @@ input[type="checkbox"]:checked::after {
 .clock-hint {
   text-align: center;
   font-size: 11px;
-  color: rgba(200, 240, 216, 0.5);
+  color: #a3d4b8;
   margin: 8px 0 0;
   font-family: var(--font-ui-stack);
 }

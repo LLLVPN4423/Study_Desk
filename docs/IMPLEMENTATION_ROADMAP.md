@@ -123,3 +123,19 @@ Do **not** replace TipTap/PDF.js/ts-fsrs without a proven gap.
 **Phase 4 (data ownership / RI / backup / blobs)** — slices S0–S6: integrity helpers, orphan GC, restore rollback with overwrite snapshots, async delete, export reject on missing required blobs, `saveDeskMetadata` for sync metadata paths, docs.
 
 **Phase 5 (Culture → vocab)** — slice S7: flashcards with `origin: "culture"` + `cultureItemId` (no fake Desk `sourceFileId`). Quiz / error notebook / due-today / Desk search remain **out of scope**.
+
+---
+
+## Phase 6 status — UX / a11y / QA
+
+**Implemented (2026-10-30):** Playwright critical-path e2e + axe serious/critical scans; Rooms hides LiveKit room-name input when `NEXT_PUBLIC_LIVEKIT_URL` is unset.
+
+| Acceptance | Status |
+|------------|--------|
+| `npm run test:e2e` (build + Playwright) | **PASS** (2026-10-30) — 7 tests |
+| Axe serious/critical = 0 on `/`, `/auth`, `/desk`, `/settings` | **PASS** (`e2e/a11y.spec.ts`) |
+| Rooms no dead LiveKit room-name affordance without env | **PASS** (`rooms/page.tsx`) |
+| Full ESLint zero | **Out of scope** — baseline debt remains |
+| LiveKit realtime / tutor / error notebook | **Out of scope** |
+
+**Commands:** `npm run test:e2e` · `npm run test:e2e:ui`

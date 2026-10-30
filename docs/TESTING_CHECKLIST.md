@@ -1,6 +1,6 @@
 # Study Desk — Testing Checklist
 
-**Updated:** 2026-10-29 (Phase 4 integrity + Phase 5 culture cards in progress)  
+**Updated:** 2026-10-30 (Phase 6 Playwright + axe)  
 **Rule:** Only mark pass if the command/journey was actually run.
 
 ---
@@ -18,8 +18,8 @@
 | `npm run smoke:restore-rollback` | V2 mid-fail restore + snapshot abort (memory store) | **PASS** | 2026-10-29 | agent |
 | `npx tsc --noEmit` | Typecheck | **PASS** | 2026-10-29 | agent |
 | `npm run build` | Production build | **PASS** | 2026-10-29 | agent |
-| `npm run lint` | ESLint | **FAIL (baseline)** — pre-existing debt; not Phase 2/3 scope | | |
-| Playwright / axe | e2e / a11y | **NOT RUN** — not in package.json | | |
+| `npm run lint` | ESLint | **FAIL (baseline)** — pre-existing debt; not Phase 6 scope | | |
+| `npm run test:e2e` | Playwright smoke + axe serious/critical | **PASS** | 2026-10-30 | agent |
 
 ---
 
@@ -105,6 +105,18 @@ Browser re-validation of full Learn path after Phase 3: **NOT RUN** in finalizat
 |----|------|--------|
 | S7 | Culture card `origin: "culture"` + `cultureItemId`; no fake `sourceFileId` | **PASS** (`smoke:provenance`) |
 | S7-B | Culture → Review appears; source nav to `/culture` | browser **NOT RUN** |
+
+## Phase 6 — UX / a11y / QA
+
+| ID | Case | Result |
+|----|------|--------|
+| P6-E1 | Landing brand + auth CTAs | **PASS** |
+| P6-E2 | Auth sign-in → `/desk` | **PASS** |
+| P6-E3 | Injected session: desk / learn / culture / settings / rooms | **PASS** |
+| P6-A1 | Axe serious/critical = 0 on `/`, `/auth`, `/desk`, `/settings` | **PASS** (clock contrast fix) |
+| P6-U1 | Rooms: no LiveKit room-name input when env unset | **PASS** |
+
+Run: `npm run test:e2e` (builds then Playwright). Chromium via `npx playwright install chromium` once.
 
 ## Regression watchlist
 

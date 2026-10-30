@@ -68,13 +68,16 @@ function RoomsContent() {
 
       <section className="question">
         <h2 style={{ fontSize: 22, marginBottom: 12 }}>{t("livekitTitle")}</h2>
-        <p style={{ color: "var(--muted)", fontSize: 13, marginBottom: 16 }}>
+        <p style={{ color: "var(--muted)", fontSize: 13, marginBottom: livekitConfigured ? 16 : 0 }}>
           {livekitConfigured ? t("livekitReady") : t("livekitMissing")}
         </p>
-        <label>
-          {t("roomNameLabel")}
-          <input value={roomName} onChange={(e) => setRoomName(e.target.value)} />
-        </label>
+        {/* Avoid a writable room-name field that implies join works when LiveKit is unset. */}
+        {livekitConfigured ? (
+          <label>
+            {t("roomNameLabel")}
+            <input value={roomName} onChange={(e) => setRoomName(e.target.value)} />
+          </label>
+        ) : null}
       </section>
     </div>
   );
